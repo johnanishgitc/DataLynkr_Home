@@ -1,0 +1,24 @@
+# Merge into: /home/datalynkr/public_html/.htaccess
+# Place these rules BEFORE any catch-all that sends requests to index.html.
+# Do not remove existing Passenger or cPanel blocks — add this section only.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Next.js app mounted at /Hometest — let Passenger handle it
+  RewriteCond %{REQUEST_URI} ^/Hometest(/|$) [NC]
+  RewriteRule ^ - [L]
+
+  # Next.js static chunks (legacy root paths or misconfigured builds)
+  RewriteCond %{REQUEST_URI} ^/_next/ [NC]
+  RewriteRule ^ - [L]
+</IfModule>
+
+# If you have a React SPA fallback like the rule below, add the two RewriteCond lines
+# so /Hometest and /_next are excluded:
+#
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_URI} !^/Hometest
+# RewriteCond %{REQUEST_URI} !^/_next/
+# RewriteRule . /index.html [L]

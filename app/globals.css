@@ -1,26 +1,293 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@source "../feature-html/**/*.html";
+@source "../app/**/*.{tsx,ts,jsx,js}";
+@source "../components/**/*.{tsx,ts,jsx,js}";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: #1F3A89;
+  --color-primary-container: #1F3A89;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #fffbff;
+  --color-on-surface: #1d1a24;
+  --color-on-surface-variant: #5b403d;
+  --color-surface-container: #E6ECFD;
+  --color-surface-container-low: #E6ECFD;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #ede5f4;
+  --color-surface-container-highest: #E6ECFD;
+  --color-brand-accent: #F1C74B;
+  --color-on-background: #1d1a24;
+  --color-secondary: #2a6861;
+  --color-secondary-container: #adece2;
+  --color-error: #ba1a1a;
+  --color-outline: #906f6c;
+  --color-outline-variant: #e4beb9;
+
+  --font-headline: "Wix Madefor Display", sans-serif;
+  --font-body: "Wix Madefor Text", sans-serif;
+  --font-label: "Wix Madefor Text", sans-serif;
+
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.125rem;
+  --radius-md: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base body styles */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Wix Madefor Text", sans-serif;
+  background-color: #ffffff !important;
+  color: var(--color-on-surface);
+  min-height: 100dvh;
 }
+
+.headline-font {
+  font-family: "Wix Madefor Display", sans-serif;
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-left {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fade-in-right {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes flowRight {
+  0% { left: -10%; }
+  100% { left: 110%; }
+}
+
+@keyframes flowDown {
+  0% { top: -10%; }
+  100% { top: 110%; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { translate: 0px 0px; }
+  50% { translate: 0px -15px; }
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Reveal on scroll */
+.reveal-on-scroll {
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.is-visible:not([class*="reveal-fade"]) {
+  opacity: 1;
+}
+
+.reveal-fade-up.is-visible {
+  animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.reveal-fade-in-left.is-visible {
+  animation: fade-in-left 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.reveal-fade-in-right.is-visible {
+  animation: fade-in-right 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.reveal-scale-in.is-visible {
+  animation: scale-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Standalone reveal classes (for pages that use them without scroll observer) */
+.reveal-fade-up {
+  opacity: 0;
+  animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.reveal-fade-in-left {
+  opacity: 0;
+  animation: fade-in-left 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.reveal-scale-in {
+  opacity: 0;
+  animation: scale-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Prevent conflict when reveal-on-scroll is combined with animation classes */
+.reveal-on-scroll.reveal-fade-up:not(.is-visible),
+.reveal-on-scroll.reveal-fade-in-left:not(.is-visible),
+.reveal-on-scroll.reveal-fade-in-right:not(.is-visible),
+.reveal-on-scroll.reveal-scale-in:not(.is-visible) {
+  animation: none !important;
+  opacity: 0;
+}
+
+/* Float animations */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out 3s infinite;
+}
+
+.animate-float-fast {
+  animation: float 4.5s ease-in-out 1.5s infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}
+
+/* Shine effect */
+.animate-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+}
+
+/* Stagger Delays */
+.delay-100 { animation-delay: 100ms !important; }
+.delay-200 { animation-delay: 200ms !important; }
+.delay-300 { animation-delay: 300ms !important; }
+.delay-400 { animation-delay: 400ms !important; }
+.delay-500 { animation-delay: 500ms !important; }
+.delay-600 { animation-delay: 600ms !important; }
+.delay-700 { animation-delay: 700ms !important; }
+
+/* Fixed navbar clearance for feature pages (React wrapper below unified Navbar) */
+.feature-page-main {
+  padding-top: 84px;
+}
+
+@media (min-width: 768px) {
+  .feature-page-main {
+    padding-top: 104px;
+  }
+}
+
+/* Features flyout active state */
+#features-flyout.active {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Card hover effect for support page */
+.card-hover {
+  transition: all 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(31, 58, 137, 0.1);
+}
+
+/* Fix for mobile/laptop mockup video overflow/clipping bugs in Safari/WebKit */
+[class*="aspect-[9/19]"],
+[class*="aspect-[16/10]"] {
+  transform: translateZ(0);
+  isolation: isolate;
+}
+
+/* Prose overrides for privacy/terms pages */
+.prose h1,
+.prose h2,
+.prose h3 {
+  font-family: "Wix Madefor Display", sans-serif;
+  color: #1F3A89 !important;
+}
+
+.prose a {
+  color: #1F3A89 !important;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.prose a:hover {
+  color: #15275e !important;
+  text-decoration: underline;
+}
+
+.prose ul > li::marker {
+  color: #1F3A89 !important;
+}
+
+/* ===== MATERIAL SYMBOLS SIZING OVERRIDES ===== */
+/* Prevent Google Fonts stylesheet from overriding Tailwind text sizing utility classes */
+.material-symbols-outlined.text-\[10px\] { font-size: 10px !important; }
+.material-symbols-outlined.text-\[20px\] { font-size: 20px !important; }
+.material-symbols-outlined.text-\[100px\] { font-size: 100px !important; }
+.material-symbols-outlined.text-\[120px\] { font-size: 120px !important; }
+.material-symbols-outlined.text-\[160px\] { font-size: 160px !important; }
+.material-symbols-outlined.text-\[300px\] { font-size: 300px !important; }
+.material-symbols-outlined.text-xs { font-size: 0.75rem !important; }
+.material-symbols-outlined.text-sm { font-size: 0.875rem !important; }
+.material-symbols-outlined.text-base { font-size: 1rem !important; }
+.material-symbols-outlined.text-lg { font-size: 1.125rem !important; }
+.material-symbols-outlined.text-xl { font-size: 1.25rem !important; }
+.material-symbols-outlined.text-2xl { font-size: 1.5rem !important; }
+.material-symbols-outlined.text-3xl { font-size: 1.875rem !important; }
+.material-symbols-outlined.text-4xl { font-size: 2.25rem !important; }
+.material-symbols-outlined.text-5xl { font-size: 3rem !important; }
+.material-symbols-outlined.text-6xl { font-size: 3.75rem !important; }
+.material-symbols-outlined.text-7xl { font-size: 4.5rem !important; }
+.material-symbols-outlined.text-8xl { font-size: 6rem !important; }
+.material-symbols-outlined.text-9xl { font-size: 8rem !important; }
+
+/* Desktop-only sidebar button elements (segment icon + MENU text) */
+@media (min-width: 1024px) {
+  [data-desktop-only="true"] {
+    display: inline !important;
+  }
+  #menu-icon[data-desktop-only="true"] {
+    display: inline-block !important;
+  }
+}
+
+

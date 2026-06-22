@@ -1,0 +1,5 @@
+# Source HTML for Next.js SSR only — block direct HTTP access so Apache
+# does not serve these files instead of the Next.js /features/* routes.
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>

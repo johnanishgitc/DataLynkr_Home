@@ -1,0 +1,12 @@
+# Feature pages are rendered by Next.js at /features/[slug] via Passenger.
+# Do NOT put *.html files in this folder.
+
+Options -MultiViews -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /Hometest/features/
+
+  # Redirect legacy /features/slug.html bookmarks to clean Next.js URLs
+  RewriteRule ^([^/]+)\.html$ /Hometest/features/$1 [R=301,L,NC]
+</IfModule>

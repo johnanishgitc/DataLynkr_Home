@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Dynamic Dashboards | DataLynkr</title>
+    <meta name="description"
+        content="Turn Tally data into live interactive dashboards. Monitor sales drivers, collection risks, and upcoming cash obligations instantly." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&display=swap"
+        rel="stylesheet" />
+    <script src="../resources/js/main.js" defer></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1F3A89",
+                        "secondary": "#2a6861",
+                        "background": "#ffffff",
+                        "surface": "#f8fafc",
+                        "on-surface": "#0f172a",
+                        "brand-accent": "#F1C74B"
+                    },
+                    fontFamily: {
+                        "headline": ["Wix Madefor Display", "sans-serif"],
+                        "body": ["Wix Madefor Text", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Wix Madefor Text', sans-serif;
+            background-color: #ffffff !important;
+            overflow-x: hidden;
+        }
+
+        .headline-font {
+            font-family: 'Wix Madefor Display', sans-serif;
+        }
+
+        #features-flyout.active {
+            transform: translateX(0) !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+
+        /* Reveal on scroll styling */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 9999px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Glow effects for dark mode section */
+        .glow-sphere {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.15;
+            pointer-events: none;
+            mix-blend-mode: screen;
+        }
+
+        /* Fix for mobile/laptop mockup video overflow/clipping bugs in Safari/WebKit */
+        [class*="aspect-[9/19]"],
+        [class*="aspect-[16/10]"] {
+            transform: translateZ(0);
+            isolation: isolate;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-on-surface antialiased flex flex-col min-h-screen">
+    <!-- Sidebar Overlay -->
+    <div id="sidebar-overlay"
+        class="fixed inset-0 bg-black/40 z-[60] opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out">
+    </div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar"
+        class="fixed top-0 left-0 w-[19.9rem] max-w-full h-full z-[70] bg-gradient-to-br from-[#1F3A89] to-[#0F1D44] text-white shadow-2xl flex flex-col transform -translate-x-full transition-transform duration-300 ease-in-out overflow-visible">
+        <div class="flex-1 flex flex-col h-full overflow-y-auto p-8 relative">
+            <div class="pt-16 pb-8 flex items-center relative">
+                <a href="../code.html"
+                    class="absolute left-1/2 -translate-x-1/2 h-10 w-auto flex-shrink-0 block hover:opacity-80 transition-opacity"
+                    title="DataLynkr Home">
+                    <svg class="h-10 w-auto" viewBox="0 0 2352 1825" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="matrix(1,0,0,1,-433.673905,-573.914687)">
+                            <g transform="matrix(4.591033,0,0,4.591033,-170.925878,-4.498795)">
+                                <path
+                                    d="M131.862,129.376C130.04,117.368 139.468,130.36 330.857,284.067C464.376,391.298 465.418,393.678 467.438,392.344C491.547,376.43 639.946,268.123 643.177,269.982C645.959,271.583 643.383,272.976 588.075,330.099C555.999,363.227 556.723,363.618 523.816,395.793C498.522,420.523 467.727,456.829 463.95,453.032C425.167,414.044 345.904,337.391 335.575,327.402C334.374,326.329 333.174,325.255 331.973,324.182C274.761,270.219 188.09,183.592 175.718,171.226C150.89,146.869 137.744,133.558 131.862,129.376Z"
+                                    style="fill:white;" />
+                                <path
+                                    d="M131.862,129.376C137.744,133.558 150.89,146.869 175.718,171.226C174.446,173.082 174.898,173.209 155.463,363.497C147.17,444.698 144.728,462.423 148.577,459.638C318.649,336.613 319.328,337.327 331.973,324.182C333.174,325.255 334.374,326.329 335.575,327.402C330.462,332.41 145.867,516.733 143.253,521.382C142.869,522.064 136.25,528.587 136.312,514.501C136.402,493.868 130.851,133.926 131.862,129.376Z"
+                                    style="fill:rgb(239,201,79);" />
+                            </g>
+                        </g>
+                    </svg></a>
+            </div>
+            <div class="flex-1 flex flex-col gap-6 font-medium text-lg headline-font mt-4">
+                <a href="../code.html" class="hover:text-amber-200 transition-colors">Home</a>
+                <button id="features-toggle-btn"
+                    class="flex items-center justify-between w-full hover:text-amber-200 transition-colors text-left focus:outline-none">
+                    <span>Features</span>
+                    <span id="features-arrow"
+                        class="material-symbols-outlined transition-transform duration-300 pointer-events-none">keyboard_arrow_right</span>
+                </button>
+                <a href="../about.html" class="hover:text-amber-200 transition-colors">About DataLynkr</a>
+                <a href="../pricing.html" class="hover:text-amber-200 transition-colors">Pricing</a>
+                <a href="../contact.html" class="hover:text-amber-200 transition-colors">Contact Us</a>
+                <a href="../support.html" class="hover:text-amber-200 transition-colors">Get Support</a>
+            </div>
+        </div>
+
+        <!-- Features Flyout Panel -->
+        <div id="features-flyout"
+            class="absolute top-0 left-0 sm:left-full w-full sm:w-[19.9rem] h-full bg-gradient-to-br from-[#1F3A89] to-[#0F1D44] border-t sm:border-t-0 sm:border-l border-white/10 shadow-2xl flex flex-col p-8 transform transition-all duration-300 ease-in-out z-50 translate-x-full sm:translate-x-[-10px] opacity-0 pointer-events-none">
+            <button id="features-back-btn"
+                class="flex items-center gap-2 text-amber-400 hover:text-amber-200 transition-colors font-medium mb-6 sm:hidden focus:outline-none">
+                <span class="material-symbols-outlined text-lg">arrow_back</span>
+                <span>Back to Menu</span>
+            </button>
+            <div
+                class="hidden sm:block text-amber-400 font-bold mb-6 text-xl tracking-wide border-b border-white/10 pb-2">
+                Features
+            </div>
+            <div class="flex-1 overflow-y-auto pr-2 flex flex-col gap-5 text-base font-normal">
+                <a href="sales-order-management.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Sales Order Management</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+                <a href="extend-portal-customers.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Extend a Portal for Your Customers</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+                <a href="modern-bcommerce-ordering.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Modern B-Commerce Ordering</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+                <a href="invoice-creation.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Invoice Creation</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+                <a href="authorization-workflows.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Authorization Workflows</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+                <a href="daily-ledger-reports.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Daily Ledger Reports</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+                <a href="offline-transactions.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Offline Transactions</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+                <a href="dynamic-dashboards.html"
+                    class="text-amber-400 transition-colors py-2 flex items-center justify-between group/item pointer-events-none">
+                    <span>Dynamic Dashboards</span>
+                    <span class="material-symbols-outlined text-sm opacity-100 text-amber-400">arrow_forward</span>
+                </a>
+                <a href="payments-collections.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Payments & Collections</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+                <a href="stock-summary.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Stock Summary</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+                <a href="custom-reports.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Custom Reports</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- TopNav Navigation Bar -->
+    <nav id="main-nav"
+        class="static top-0 left-0 w-full z-50 bg-white flex justify-between items-center px-6 md:px-10 lg:px-12 pt-4 pb-1 md:pt-6 md:pb-2 max-w-full">
+        <div class="flex items-center gap-4">
+            <button id="menu-btn"
+                class="relative flex items-center justify-center lg:gap-2 p-0 lg:px-4 lg:py-1.5 rounded-full border-0 lg:border-2 border-primary bg-transparent lg:bg-primary lg:hover:bg-primary/90 lg:hover:border-primary/90 text-[#0E172B] lg:text-white shadow-none lg:shadow-sm lg:hover:shadow-md hover:translate-y-0 lg:hover:-translate-y-0.5 transition-all duration-300 focus:outline-none group active:scale-95">
+                <!-- Simple 3-line hamburger icon (visible on mobile/tablet) -->
+                <svg class="block lg:hidden w-6 h-5 text-[#0E172B] hover:opacity-80 transition-opacity"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <!-- Desktop Icon (visible on desktop only) -->
+                <span id="menu-icon"
+                    class="hidden lg:block material-symbols-outlined text-xl transition-transform duration-300 ease-in-out group-hover:rotate-90"
+                    data-icon="menu">segment</span>
+                <!-- Desktop Text (visible on desktop only) -->
+                <span
+                    class="hidden lg:inline font-['Wix_Madefor_Display'] text-xs font-extrabold uppercase tracking-widest text-white">Menu</span>
+            </button>
+        </div>
+        <a href="../code.html"
+            class="flex items-center justify-center p-2.5 bg-transparent text-[#1F3A89] hover:bg-black/5 rounded-full transition-colors group focus:outline-none"
+            title="Home">
+            <span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">home</span>
+        </a>
+    </nav>
+
+    <!-- Page Content -->
+    <main class="flex-grow">
+
+        <!-- SECTION 1: HERO -->
+        <section class="relative pt-0 pb-20 md:pb-28 px-6 overflow-hidden bg-white">
+
+
+            <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+                <!-- Eyebrow/Story slogan -->
+                <div
+                    class="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-100 text-xs font-semibold text-slate-500 tracking-wider uppercase">
+                    <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                    <span>System of Insight</span>
+                </div>
+
+                <!-- Main Heading -->
+                <h1
+                    class="headline-font text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-slate-900 max-w-4xl leading-[1.08] mb-8">
+                    Understand Your Business. <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-600">Instantly.</span>
+                </h1>
+
+                <!-- Supporting Text -->
+                <p class="font-body text-slate-500 text-lg md:text-xl max-w-2xl leading-relaxed mb-12">
+                    DataLynkr transforms live Tally data into interactive dashboards that help you uncover
+                    opportunities, identify risks, and make faster decisions.
+                </p>
+
+                <!-- Desktop Monitor Mockup containing video (Desktop/Tablet View) -->
+                <div class="hidden sm:block w-full max-w-5xl mx-auto mb-12 px-6 relative reveal-on-scroll">
+                    <!-- Glass reflection cover -->
+                    <div class="relative bg-slate-950 rounded-2xl p-4 shadow-2xl border border-slate-800">
+                        <!-- Screen Bezel wrapper -->
+                        <div
+                            class="relative aspect-[16/10] bg-slate-900 rounded-lg overflow-hidden border border-slate-800">
+                            <!-- Dashboard looping video -->
+                            <picture class="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none">
+                                <source srcset="../resources/poster_images/dash.webp" type="image/webp">
+                                <img src="../resources/poster_images/dash.jpg" alt="" class="w-full h-full object-cover">
+                            </picture>
+                            <video width="1920" height="1200" autoplay loop muted playsinline preload="metadata"
+                                poster="../resources/poster_images/dash.webp" class="w-full h-full object-cover"
+                                onplaying="this.previousElementSibling.classList.add('opacity-0')">
+                                <source src="../resources/videos/dash.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <!-- Monitor Stand Base -->
+                    <div class="relative flex flex-col items-center">
+                        <div
+                            class="w-20 h-6 md:w-24 md:h-8 lg:w-32 lg:h-10 bg-gradient-to-b from-slate-800 to-slate-900 border-x border-slate-700">
+                        </div>
+                        <div class="w-36 h-2 md:w-44 md:h-2 lg:w-56 lg:h-3 bg-slate-950 rounded-t-lg shadow-md"></div>
+                    </div>
+                </div>
+
+                <!-- Laptop Mockup containing video (Mobile View only) -->
+                <div class="block sm:hidden w-full max-w-md mx-auto mb-12 px-6 relative reveal-on-scroll">
+                    <div class="relative w-full">
+                        <!-- Screen Bezel -->
+                        <div
+                            class="relative rounded-t-xl border-[6px] border-slate-950 bg-slate-950 aspect-[16/10] overflow-hidden shadow-2xl">
+                            <div class="absolute inset-0 bg-slate-900 flex justify-center items-center">
+                                <picture class="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none">
+                                    <source srcset="../resources/poster_images/dash.webp" type="image/webp">
+                                    <img src="../resources/poster_images/dash.jpg" alt="" class="w-full h-full object-cover">
+                                </picture>
+                                <video width="1920" height="1200" autoplay loop muted playsinline preload="metadata"
+                                    poster="../resources/poster_images/dash.webp" class="w-full h-full object-cover"
+                                    onplaying="this.previousElementSibling.classList.add('opacity-0')">
+                                    <source src="../resources/videos/dash.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <!-- Keyboard base -->
+                        <div class="relative h-3 bg-slate-800 rounded-b-xl w-[105%] -left-[2.5%] shadow-xl"></div>
+                        <div class="relative h-1 bg-slate-700/50 rounded-b-2xl w-[80%] mx-auto"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brand Logo & Text Container Aligned to the Bottom Right -->
+            <div class="w-full mt-12 reveal-on-scroll reveal-fade-up max-w-5xl mx-auto px-6 sm:px-8">
+                <div class="flex justify-end">
+                    <a href="../code.html" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity"
+                        title="DataLynkr Home">
+                        <!-- DataLynkr SVG Logo -->
+                        <div class="h-7 md:h-8 aspect-[2352/1825] flex-shrink-0">
+                            <svg class="w-full h-full" viewBox="0 0 2352 1825" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g transform="matrix(1,0,0,1,-433.673905,-573.914687)">
+                                    <g transform="matrix(4.591033,0,0,4.591033,-170.925878,-4.498795)">
+                                        <path
+                                            d="M131.862,129.376C130.04,117.368 139.468,130.36 330.857,284.067C464.376,391.298 465.418,393.678 467.438,392.344C491.547,376.43 639.946,268.123 643.177,269.982C645.959,271.583 643.383,272.976 588.075,330.099C555.999,363.227 556.723,363.618 523.816,395.793C498.522,420.523 467.727,456.829 463.95,453.032C425.167,414.044 345.904,337.391 335.575,327.402C334.374,326.329 333.174,325.255 331.973,324.182C274.761,270.219 188.09,183.592 175.718,171.226C150.89,146.869 137.744,133.558 131.862,129.376Z"
+                                            fill="#1F3A89" />
+                                        <path
+                                            d="M131.862,129.376C137.744,133.558 150.89,146.869 175.718,171.226C174.446,173.082 174.898,173.209 155.463,363.497C147.17,444.698 144.728,462.423 148.577,459.638C318.649,336.613 319.328,337.327 331.973,324.182C333.174,325.255 334.374,326.329 335.575,327.402C330.462,332.41 145.867,516.733 143.253,521.382C142.869,522.064 136.25,528.587 136.312,514.501C136.402,493.868 130.851,133.926 131.862,129.376Z"
+                                            fill="#F1C74B" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <span
+                            class="headline-font text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-normal text-black tracking-tight whitespace-nowrap">DataLynkr</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Floating Badges Menu (Sticky under monitor, remains sticky across dashboards) -->
+        <div id="sticky-badge-bar"
+            class="hidden sm:flex w-full max-w-xl mx-auto justify-center gap-3 p-2 bg-slate-50/90 backdrop-blur-md border border-slate-100 rounded-full shadow-md sticky top-6 z-40 transition-all duration-300 -mt-6 mb-16">
+            <a href="#sales-dashboard" id="badge-sales"
+                class="badge-pill px-5 py-2.5 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all duration-200">
+                Sales Dashboard
+            </a>
+            <a href="#receivables-dashboard" id="badge-receivables"
+                class="badge-pill px-5 py-2.5 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all duration-200">
+                Receivables Dashboard
+            </a>
+            <a href="#payables-dashboard" id="badge-payables"
+                class="badge-pill px-5 py-2.5 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all duration-200">
+                Payables Dashboard
+            </a>
+        </div>
+
+        <!-- SECTION: FOLLOW THE QUESTION -->
+        <section id="sales-dashboard"
+            class="py-24 md:py-36 px-6 bg-slate-950 text-white relative overflow-hidden border-t border-slate-900 scroll-mt-24">
+            <!-- Background Radial Glows -->
+            <div
+                class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none">
+            </div>
+            <div
+                class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none">
+            </div>
+
+            <div class="max-w-5xl mx-auto relative z-10">
+                <!-- Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6">
+                        Start Broad. <br class="hidden sm:inline">Drill Down Instantly.
+                    </h2>
+                    <p class="text-lg md:text-xl text-slate-400 font-medium leading-relaxed">
+                        Most business reports force you to choose a filter, run a report, then start over when you have
+                        another question.
+                        <span class="text-white block mt-4 font-bold">DataLynkr works differently.</span>
+                        Simply click on any customer, salesperson, item, state, or stock group and every chart updates
+                        instantly. Keep narrowing your view until you find exactly what you're looking for.
+                    </p>
+                </div>
+
+                <!-- Interactive Visualization Card -->
+                <div
+                    class="bg-slate-900 border border-slate-800 rounded-2xl p-8 md:p-12 shadow-2xl max-w-7xl mx-auto overflow-hidden">
+
+                    <!-- Text guides -->
+                    <div
+                        class="text-center max-w-4xl mx-auto space-y-4 min-h-[180px] flex flex-col justify-center items-center">
+                        <h3 id="zoom-step-question"
+                            class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-snug transition-all duration-300 transform">
+                            How is Reddy performing?
+                        </h3>
+                        <p id="zoom-step-caption"
+                            class="text-lg md:text-xl lg:text-2xl text-slate-400 font-medium max-w-3xl mx-auto transition-all duration-300 transform">
+                            Instantly see Reddy's complete performance picture.
+                        </p>
+                    </div>
+
+                    <!-- Laptop Frame Mockup (Visible immediately, first video playing) -->
+                    <div id="zoom-laptop-container"
+                        class="w-full max-w-6xl mx-auto mt-12 mb-8 transition-all duration-1000 ease-out px-6 sm:px-8">
+                        <div class="relative w-full group">
+                            <!-- Screen Bezel -->
+                            <div
+                                class="relative rounded-t-xl border-[6px] md:border-[10px] border-slate-950 bg-slate-950 aspect-[16/10] overflow-hidden shadow-2xl">
+                                <div class="absolute inset-0 bg-slate-900 flex justify-center items-center">
+                                    <picture class="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none">
+                                        <source id="zoom-video-poster-webp" srcset="../resources/features/dynamic-dashboards/poster_images/filterdash.webp" type="image/webp">
+                                        <img id="zoom-video-poster-jpg" src="../resources/features/dynamic-dashboards/poster_images/filterdash.jpg" alt="" class="w-full h-full object-cover">
+                                    </picture>
+                                    <video id="zoom-video" class="w-full h-full object-cover" autoplay muted playsinline
+                                        loop onplaying="this.previousElementSibling.classList.add('opacity-0')">
+                                        <source id="zoom-video-source"
+                                            src="../resources/features/dynamic-dashboards/videos/filterdash.mp4"
+                                            type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <!-- Keyboard base -->
+                            <div class="relative h-3 md:h-4 bg-slate-800 rounded-b-xl w-[105%] -left-[2.5%] shadow-xl">
+                            </div>
+                            <div class="relative h-1 bg-slate-700/50 rounded-b-2xl w-[80%] mx-auto"></div>
+                        </div>
+                    </div>
+
+                    <!-- Action Button -->
+                    <div class="flex justify-center mt-6">
+                        <button id="zoom-next-btn"
+                            class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-8 py-3.5 rounded-full transition-all shadow-lg hover:shadow-indigo-500/20 active:scale-95 duration-200 focus:outline-none">
+                            <span>What about Reddy's sales for Sri Ganesh Enterprises?</span>
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Closing Statement -->
+                <div class="mt-16 text-center max-w-3xl mx-auto">
+                    <p class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-6">
+                        Every click adds context. <br class="hidden sm:inline">Every filter reveals a clearer story.
+                    </p>
+                    <p class="text-indigo-400 text-xl font-bold">
+                        Just continuous exploration until you find the answer.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: SALES DASHBOARD -->
+        <section id="sales-dashboard-details"
+            class="py-24 md:py-36 px-6 border-t border-slate-50 bg-white scroll-mt-24">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+
+                    <!-- Left: CSS Sales Dashboard Mockup -->
+                    <div class="lg:col-span-6 order-2 lg:order-1 reveal-on-scroll">
+                        <div
+                            class="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden w-full max-w-xl mx-auto">
+                            <!-- Window Header -->
+                            <div
+                                class="bg-slate-50 border-b border-slate-100 px-6 py-3.5 flex items-center justify-between">
+                                <div class="flex gap-1.5">
+                                    <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                                    <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                                    <span class="w-3 h-3 rounded-full bg-green-400"></span>
+                                </div>
+                                <div class="text-xs font-semibold text-slate-400 tracking-wide font-mono">
+                                    sales_analysis_v2</div>
+                                <span class="material-symbols-outlined text-slate-300 text-sm">fullscreen</span>
+                            </div>
+
+                            <!-- Dashboard Simulated View -->
+                            <div class="p-6 space-y-6">
+                                <!-- Top summary -->
+                                <div class="flex items-center justify-between pb-4 border-b border-slate-50">
+                                    <div>
+                                        <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Gross
+                                            Revenue</div>
+                                        <div class="text-3xl font-extrabold text-slate-800 tracking-tight mt-1">$412,480
+                                        </div>
+                                    </div>
+                                    <span
+                                        class="bg-emerald-50 text-emerald-700 border border-emerald-100 rounded-full px-2.5 py-1 text-xs font-bold flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-xs">trending_up</span> +14.2%
+                                    </span>
+                                </div>
+
+                                <!-- Regional Sales chart / Product progress bars -->
+                                <div class="space-y-4">
+                                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Revenue
+                                        Contributions</div>
+                                    <div class="space-y-3">
+                                        <!-- Item 1 -->
+                                        <div>
+                                            <div class="flex justify-between text-xs font-semibold text-slate-600 mb-1">
+                                                <span>Enterprise Sales</span>
+                                                <span class="font-bold text-slate-800">$185.6K (45%)</span>
+                                            </div>
+                                            <div class="w-full bg-slate-100 rounded-full h-2">
+                                                <div class="bg-blue-600 h-2 rounded-full" style="width: 45%"></div>
+                                            </div>
+                                        </div>
+                                        <!-- Item 2 -->
+                                        <div>
+                                            <div class="flex justify-between text-xs font-semibold text-slate-600 mb-1">
+                                                <span>Distributor Channels</span>
+                                                <span class="font-bold text-slate-800">$144.3K (35%)</span>
+                                            </div>
+                                            <div class="w-full bg-slate-100 rounded-full h-2">
+                                                <div class="bg-blue-500/80 h-2 rounded-full" style="width: 35%"></div>
+                                            </div>
+                                        </div>
+                                        <!-- Item 3 -->
+                                        <div>
+                                            <div class="flex justify-between text-xs font-semibold text-slate-600 mb-1">
+                                                <span>Retail / Direct</span>
+                                                <span class="font-bold text-slate-800">$82.5K (20%)</span>
+                                            </div>
+                                            <div class="w-full bg-slate-100 rounded-full h-2">
+                                                <div class="bg-slate-300 h-2 rounded-full" style="width: 20%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Low alert metrics -->
+                                <div
+                                    class="bg-blue-50/50 border border-blue-100 rounded-xl p-4 flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-blue-600">insights</span>
+                                    <div class="text-xs text-blue-800 leading-normal">
+                                        <strong>Growth Insight:</strong> Item profitability increased by 3.2% following
+                                        the product portfolio consolidation.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Content -->
+                    <div class="lg:col-span-6 order-1 lg:order-2 space-y-8 reveal-on-scroll">
+                        <div class="space-y-4">
+                            <span class="text-blue-600 font-bold headline-font uppercase tracking-widest text-xs block">
+                                Eyebrow: Sales Dashboard
+                            </span>
+                            <h2
+                                class="headline-font text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+                                See What's Driving Growth.
+                            </h2>
+                            <p class="font-body text-slate-500 text-base md:text-lg leading-relaxed">
+                                Revenue alone doesn't tell the full story. Understand which customers, products,
+                                salespeople, and regions are driving performance — and which ones need attention.
+                            </p>
+                        </div>
+
+                        <!-- 4 Insight Cards -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                            <!-- Card 1 -->
+                            <div
+                                class="p-5 bg-slate-50/50 border border-slate-100 rounded-xl hover:border-slate-200 transition-colors">
+                                <h3 class="font-bold text-slate-900 text-sm mb-1">Top Performing Customers</h3>
+                                <p class="text-slate-500 text-xs leading-relaxed">
+                                    Discover who contributes most to revenue and profit.
+                                </p>
+                            </div>
+                            <!-- Card 2 -->
+                            <div
+                                class="p-5 bg-slate-50/50 border border-slate-100 rounded-xl hover:border-slate-200 transition-colors">
+                                <h3 class="font-bold text-slate-900 text-sm mb-1">Sales Team Performance</h3>
+                                <p class="text-slate-500 text-xs leading-relaxed">
+                                    Compare contribution across salespeople.
+                                </p>
+                            </div>
+                            <!-- Card 3 -->
+                            <div
+                                class="p-5 bg-slate-50/50 border border-slate-100 rounded-xl hover:border-slate-200 transition-colors">
+                                <h3 class="font-bold text-slate-900 text-sm mb-1">Product Profitability</h3>
+                                <p class="text-slate-500 text-xs leading-relaxed">
+                                    Identify products that sell well and products that earn well.
+                                </p>
+                            </div>
+                            <!-- Card 4 -->
+                            <div
+                                class="p-5 bg-slate-50/50 border border-slate-100 rounded-xl hover:border-slate-200 transition-colors">
+                                <h3 class="font-bold text-slate-900 text-sm mb-1">Inventory Movement</h3>
+                                <p class="text-slate-500 text-xs leading-relaxed">
+                                    Spot fast-moving and slow-moving stock trends.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Quote Callout -->
+                        <div class="border-l-2 border-blue-600 pl-4 py-1.5 mt-6">
+                            <p class="italic text-slate-600 text-sm">
+                                "From revenue trends to item-level profitability, understand what is happening behind
+                                the numbers."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 3: INTERACTIVE ANALYSIS (Dark Mode) -->
+        <section class="relative bg-[#0B0F19] text-white py-28 md:py-36 px-6 overflow-hidden">
+            <!-- Glow spheres -->
+            <div class="glow-sphere top-[-10%] left-[20%] w-[500px] h-[500px] bg-blue-800"></div>
+            <div class="glow-sphere bottom-[-15%] right-[15%] w-[600px] h-[600px] bg-indigo-700"></div>
+
+            <div class="max-w-7xl mx-auto flex flex-col items-center">
+                <!-- Heading -->
+                <div class="text-center max-w-3xl space-y-4 reveal-on-scroll">
+                    <h2 class="headline-font text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+                        Click Anything. Explore Everything.
+                    </h2>
+                </div>
+            </div>
+        </section> <!-- SECTION 4: RECEIVABLES DASHBOARD (Layout Reversed) -->
+        <section id="receivables-dashboard" class="py-24 md:py-36 px-6 bg-slate-50/30 scroll-mt-24">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+
+                    <!-- Left: Content -->
+                    <div class="lg:col-span-6 space-y-8 reveal-on-scroll">
+                        <div class="space-y-4">
+                            <span
+                                class="text-indigo-600 font-bold headline-font uppercase tracking-widest text-xs block">
+                                Eyebrow: Receivables Dashboard
+                            </span>
+                            <h2
+                                class="headline-font text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+                                Identify Risk Before It Impacts Cash Flow.
+                            </h2>
+                            <p class="font-body text-slate-500 text-base md:text-lg leading-relaxed">
+                                Move beyond static aging reports. Understand customer payment behavior, collection
+                                performance, overdue trends, and receivable exposure in real time.
+                            </p>
+                        </div>
+
+                        <!-- 3 Large Metric Panels -->
+                        <div class="space-y-4 pt-2">
+                            <!-- Panel 1 -->
+                            <div
+                                class="p-6 bg-white border border-slate-100 rounded-2xl shadow-sm flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-xl">account_balance_wallet</span>
+                                </div>
+                                <div class="space-y-1">
+                                    <h3 class="font-bold text-slate-900 text-sm">Outstanding Exposure</h3>
+                                    <p class="text-slate-500 text-xs leading-relaxed">
+                                        See where your money is tied up. Keep dynamic tabs on accounts exceeding billing
+                                        thresholds.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Panel 2 -->
+                            <div
+                                class="p-6 bg-white border border-slate-100 rounded-2xl shadow-sm flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-xl">warning</span>
+                                </div>
+                                <div class="space-y-1">
+                                    <h3 class="font-bold text-slate-900 text-sm">Customer Risk Analysis</h3>
+                                    <p class="text-slate-500 text-xs leading-relaxed">
+                                        Identify customers requiring immediate attention based on historical payment
+                                        patterns and overdue limits.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Panel 3 -->
+                            <div
+                                class="p-6 bg-white border border-slate-100 rounded-2xl shadow-sm flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-xl">speed</span>
+                                </div>
+                                <div class="space-y-1">
+                                    <h3 class="font-bold text-slate-900 text-sm">Collection Performance</h3>
+                                    <p class="text-slate-500 text-xs leading-relaxed">
+                                        Track collection efficiency over time. Monitor collection cycles to compress Day
+                                        Sales Outstanding (DSO).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quote Callout -->
+                        <div class="border-l-2 border-indigo-600 pl-4 py-1.5">
+                            <p class="italic text-slate-600 text-sm">
+                                "The best collection problems are the ones you prevent before they happen."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right: CSS Receivables Dashboard Mockup -->
+                    <div class="lg:col-span-6 reveal-on-scroll">
+                        <div
+                            class="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden w-full max-w-xl mx-auto">
+                            <!-- Window Header -->
+                            <div
+                                class="bg-slate-50 border-b border-slate-100 px-6 py-3.5 flex items-center justify-between">
+                                <div class="flex gap-1.5">
+                                    <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                                    <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                                    <span class="w-3 h-3 rounded-full bg-green-400"></span>
+                                </div>
+                                <div class="text-xs font-semibold text-slate-400 tracking-wide font-mono">
+                                    aging_exposure_report</div>
+                                <span class="material-symbols-outlined text-slate-300 text-sm">fullscreen</span>
+                            </div>
+
+                            <!-- Dashboard Simulated View -->
+                            <div class="p-6 space-y-6">
+                                <!-- Top summary -->
+                                <div class="flex justify-between items-start pb-4 border-b border-slate-50">
+                                    <div>
+                                        <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Total
+                                            Receivables</div>
+                                        <div class="text-3xl font-extrabold text-slate-800 tracking-tight mt-1">$142,350
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Avg
+                                            DSO</div>
+                                        <div class="text-xl font-bold text-slate-800 mt-1">31.4 Days</div>
+                                    </div>
+                                </div>
+
+                                <!-- Aging Buckets Grid -->
+                                <div class="space-y-3">
+                                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Aging
+                                        Breakdown</div>
+                                    <!-- Bucket 0-30 -->
+                                    <div class="flex items-center gap-3 text-xs">
+                                        <span class="w-16 font-semibold text-slate-500">0-30 days</span>
+                                        <div class="flex-grow bg-slate-100 rounded-full h-2.5">
+                                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 55%"></div>
+                                        </div>
+                                        <span class="w-14 text-right font-bold text-slate-800">$78.2K</span>
+                                    </div>
+                                    <!-- Bucket 31-60 -->
+                                    <div class="flex items-center gap-3 text-xs">
+                                        <span class="w-16 font-semibold text-slate-500">31-60 days</span>
+                                        <div class="flex-grow bg-slate-100 rounded-full h-2.5">
+                                            <div class="bg-indigo-500/80 h-2.5 rounded-full" style="width: 28%"></div>
+                                        </div>
+                                        <span class="w-14 text-right font-bold text-slate-800">$39.8K</span>
+                                    </div>
+                                    <!-- Bucket 61-90 -->
+                                    <div class="flex items-center gap-3 text-xs">
+                                        <span class="w-16 font-semibold text-slate-500">61-90 days</span>
+                                        <div class="flex-grow bg-slate-100 rounded-full h-2.5">
+                                            <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 12%"></div>
+                                        </div>
+                                        <span class="w-14 text-right font-bold text-slate-800">$17.0K</span>
+                                    </div>
+                                    <!-- Bucket 90+ -->
+                                    <div class="flex items-center gap-3 text-xs text-rose-600">
+                                        <span class="w-16 font-bold">90+ days</span>
+                                        <div class="flex-grow bg-slate-100 rounded-full h-2.5">
+                                            <div class="bg-rose-500 h-2.5 rounded-full" style="width: 5%"></div>
+                                        </div>
+                                        <span class="w-14 text-right font-extrabold">$7.3K</span>
+                                    </div>
+                                </div>
+
+                                <!-- Risk Alert card -->
+                                <div class="bg-rose-50 border border-rose-100 rounded-xl p-4 flex gap-3">
+                                    <span class="material-symbols-outlined text-rose-600">error_outline</span>
+                                    <div class="text-xs text-rose-800 leading-normal">
+                                        <strong>Risk Alert:</strong> Acme Corp has exceeded its credit threshold of
+                                        $50,000 by 15 days. Action recommended.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: PAYABLES DASHBOARD -->
+        <section id="payables-dashboard" class="py-24 md:py-36 px-6 bg-white scroll-mt-24">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+
+                    <!-- Left: CSS Payables Dashboard Mockup -->
+                    <div class="lg:col-span-6 order-2 lg:order-1 reveal-on-scroll">
+                        <div
+                            class="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden w-full max-w-xl mx-auto">
+                            <!-- Window Header -->
+                            <div
+                                class="bg-slate-50 border-b border-slate-100 px-6 py-3.5 flex items-center justify-between">
+                                <div class="flex gap-1.5">
+                                    <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                                    <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                                    <span class="w-3 h-3 rounded-full bg-green-400"></span>
+                                </div>
+                                <div class="text-xs font-semibold text-slate-400 tracking-wide font-mono">
+                                    payables_commitments</div>
+                                <span class="material-symbols-outlined text-slate-300 text-sm">fullscreen</span>
+                            </div>
+
+                            <!-- Dashboard Simulated View -->
+                            <div class="p-6 space-y-6">
+                                <!-- Top summary -->
+                                <div class="flex justify-between items-start pb-4 border-b border-slate-50">
+                                    <div>
+                                        <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">
+                                            Upcoming Outflow</div>
+                                        <div class="text-3xl font-extrabold text-slate-800 tracking-tight mt-1">$94,500
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Next
+                                            30 Days</div>
+                                        <div class="text-xl font-bold text-slate-800 mt-1">$68,200</div>
+                                    </div>
+                                </div>
+
+                                <!-- Liability calendar/outflow list -->
+                                <div class="space-y-3">
+                                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Scheduled
+                                        Supplier Commitments</div>
+                                    <!-- Vendor 1 -->
+                                    <div class="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
+                                        <div class="flex items-center gap-2">
+                                            <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+                                            <span class="text-xs font-bold text-slate-700">Prime Logistics</span>
+                                        </div>
+                                        <span class="text-xs text-slate-500 font-semibold font-mono">Due in 5d</span>
+                                        <span class="text-xs font-extrabold text-slate-800">$24,300</span>
+                                    </div>
+                                    <!-- Vendor 2 -->
+                                    <div class="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
+                                        <div class="flex items-center gap-2">
+                                            <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+                                            <span class="text-xs font-bold text-slate-700">Apex Manufacturing</span>
+                                        </div>
+                                        <span class="text-xs text-slate-500 font-semibold font-mono">Due in 12d</span>
+                                        <span class="text-xs font-extrabold text-slate-800">$38,000</span>
+                                    </div>
+                                    <!-- Vendor 3 -->
+                                    <div class="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
+                                        <div class="flex items-center gap-2">
+                                            <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+                                            <span class="text-xs font-bold text-slate-700">Global Tech Inc</span>
+                                        </div>
+                                        <span class="text-xs text-slate-500 font-semibold font-mono">Due in 25d</span>
+                                        <span class="text-xs font-extrabold text-slate-800">$18,500</span>
+                                    </div>
+                                </div>
+
+                                <!-- Working Capital Health Info -->
+                                <div class="bg-blue-50/50 border border-blue-100 rounded-xl p-4 flex gap-3">
+                                    <span class="material-symbols-outlined text-blue-600">account_balance</span>
+                                    <div class="text-xs text-blue-800 leading-normal">
+                                        <strong>Working Capital Health:</strong> Cash reserve covers upcoming
+                                        commitments comfortably with a 1.8x Coverage Ratio.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Content -->
+                    <div class="lg:col-span-6 order-1 lg:order-2 space-y-8 reveal-on-scroll">
+                        <div class="space-y-4">
+                            <span class="text-blue-600 font-bold headline-font uppercase tracking-widest text-xs block">
+                                Eyebrow: Payables Dashboard
+                            </span>
+                            <h2
+                                class="headline-font text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+                                Plan Payments With Confidence.
+                            </h2>
+                            <p class="font-body text-slate-500 text-base md:text-lg leading-relaxed">
+                                Monitor vendor liabilities, upcoming obligations, and future payment pressure using live
+                                Tally data.
+                            </p>
+                        </div>
+
+                        <!-- 3 Information Blocks -->
+                        <div class="space-y-6 pt-2">
+                            <!-- Block 1 -->
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm mb-1">Vendor Exposure</h3>
+                                <p class="text-slate-500 text-xs leading-relaxed">
+                                    Understand who you owe and how much. Analyze terms, invoice ages, and outstanding
+                                    balances to structure payouts strategically.
+                                </p>
+                            </div>
+                            <!-- Block 2 -->
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm mb-1">Upcoming Commitments</h3>
+                                <p class="text-slate-500 text-xs leading-relaxed">
+                                    Prepare for future payment obligations. Predict liability dates and prevent cash
+                                    crunches before they compromise vendor relations.
+                                </p>
+                            </div>
+                            <!-- Block 3 -->
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm mb-1">Working Capital Visibility</h3>
+                                <p class="text-slate-500 text-xs leading-relaxed">
+                                    Make better cash planning decisions. Know exactly when your payable liabilities
+                                    align with receivable cash inflows.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Quote Callout -->
+                        <div class="border-l-2 border-blue-600 pl-4 py-1.5 mt-6">
+                            <p class="italic text-slate-600 text-sm">
+                                "Know what's coming before it becomes urgent."
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: WHY IT FEELS DIFFERENT -->
+        <section class="py-24 md:py-36 px-6 bg-slate-50/50">
+            <div class="max-w-5xl mx-auto text-center space-y-16">
+                <!-- Heading -->
+                <div class="space-y-4 max-w-2xl mx-auto reveal-on-scroll">
+                    <h2 class="headline-font text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
+                        Built For Decisions.
+                    </h2>
+                </div>
+
+                <!-- Comparison grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal-on-scroll text-left">
+                    <!-- Column 1: Traditional Reports -->
+                    <div class="bg-white border border-slate-100 rounded-2xl p-8 space-y-6">
+                        <div class="flex items-center gap-3 border-b border-slate-50 pb-4">
+                            <span class="material-symbols-outlined text-slate-400">article</span>
+                            <h3 class="headline-font font-bold text-slate-400 text-xl tracking-tight">Traditional
+                                Reports</h3>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Static</h4>
+                                <p class="text-xs text-slate-500 mt-1">Information freeze-frames. A pdf or printout that
+                                    has no response to dynamic queries.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Multiple Screens</h4>
+                                <p class="text-xs text-slate-500 mt-1">Cross-referencing customer balances, sales
+                                    ledgers, and credit limits demands endless clicks.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Manual Filtering</h4>
+                                <p class="text-xs text-slate-500 mt-1">Finding specific growth or liability drivers
+                                    means export-to-Excel and tedious pivot table creation.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Reactive</h4>
+                                <p class="text-xs text-slate-500 mt-1">Reports look backward. You discover critical
+                                    collection delays or inventory blockages long after they occur.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: DataLynkr Dashboards -->
+                    <div
+                        class="bg-white border-2 border-blue-600 rounded-2xl p-8 space-y-6 shadow-md relative overflow-hidden">
+                        <!-- Tiny blue top accent -->
+                        <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
+
+                        <div class="flex items-center justify-between border-b border-slate-50 pb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-blue-600">dashboard</span>
+                                <h3 class="headline-font font-bold text-blue-600 text-xl tracking-tight">DataLynkr
+                                    Dashboards</h3>
+                            </div>
+                            <span
+                                class="text-[10px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-100">
+                                Tally Sync</span>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Interactive</h4>
+                                <p class="text-xs text-slate-600 mt-1">Every element is a filter. Tap a salesperson or
+                                    category and watch all visual charts redraw instantly.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Connected</h4>
+                                <p class="text-xs text-slate-600 mt-1">Customer profiles connect sales, payments, aging
+                                    profiles, and order status in a single pane.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Instant Analysis</h4>
+                                <p class="text-xs text-slate-600 mt-1">Drill down deeply into regional contributions,
+                                    invoice detail, and stock counts within seconds.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Proactive</h4>
+                                <p class="text-xs text-slate-600 mt-1">Automated credit and age alerts draw your eyes to
+                                    pending risks and growth opportunities immediately.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: FINAL CTA -->
+        <section class="relative bg-[#0B0F19] text-white py-28 md:py-36 px-6 overflow-hidden text-center">
+            <!-- Glow background spheres -->
+            <div class="glow-sphere top-[-20%] left-[30%] w-[500px] h-[500px] bg-blue-900"></div>
+            <div class="glow-sphere bottom-[-20%] right-[30%] w-[600px] h-[600px] bg-indigo-950"></div>
+
+            <!-- Floating Blurred Dashboard elements in background -->
+            <div class="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden opacity-10">
+                <!-- Mockup 1 (Left background) -->
+                <div
+                    class="absolute left-[-80px] top-[15%] w-72 bg-white/5 border border-white/10 rounded-xl p-4 transform -rotate-12 blur-[1.5px] scale-90">
+                    <div class="w-16 h-3 bg-white/20 rounded mb-4"></div>
+                    <div class="w-full h-2 bg-white/10 rounded mb-2"></div>
+                    <div class="w-2/3 h-2 bg-white/10 rounded mb-2"></div>
+                    <div class="w-1/2 h-2 bg-white/10 rounded"></div>
+                </div>
+                <!-- Mockup 2 (Right background) -->
+                <div
+                    class="absolute right-[-80px] bottom-[15%] w-72 bg-white/5 border border-white/10 rounded-xl p-4 transform rotate-12 blur-[1.5px] scale-90">
+                    <div class="w-20 h-4 bg-white/20 rounded mb-4"></div>
+                    <div class="w-full h-3 bg-white/10 rounded mb-2"></div>
+                    <div class="w-3/4 h-3 bg-white/10 rounded"></div>
+                </div>
+            </div>
+
+            <div class="relative z-10 max-w-4xl mx-auto space-y-8">
+                <!-- Large centered heading -->
+                <h2
+                    class="headline-font text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    Turn Tally Into A System Of Insight.
+                </h2>
+
+                <!-- Supporting Text -->
+                <p class="font-body text-white/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                    Understand sales. Protect cash flow. Plan with confidence. All from live business data.
+                </p>
+
+                <!-- Primary CTA -->
+                <div class="pt-6">
+                    <a href="../contact.html"
+                        class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white px-8 py-4 rounded-full font-bold text-base shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] transition-all hover:scale-105 active:scale-95 duration-300">
+                        <span>Book A Demo</span>
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Component -->
+    <footer
+        class="w-full border-t border-zinc-100 bg-white flex flex-col md:flex-row justify-between items-center px-6 md:px-12 py-10 md:py-16 gap-6">
+        <div class="flex flex-col items-center md:items-start gap-2">
+            <div class="text-lg font-bold text-zinc-900 headline-font"><span class="text-[#1F3A89]">DataLynk</span>r
+            </div>
+            <div class="flex items-center gap-1.5 font-['Wix_Madefor_Text'] text-xs text-zinc-400">
+                <span>©</span>
+                <span class="font-bold"><span style="color: #e46b0c;">IT</span> <span
+                        style="color: black;">Catalyst</span></span>
+                <span>Software India Pvt Ltd. 2026.</span>
+            </div>
+        </div>
+        <div class="flex gap-8">
+            <a class="text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors"
+                href="#">Privacy</a>
+            <a class="text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors"
+                href="#">Terms</a>
+            <a class="text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors"
+                href="../support.html">Support</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Scrollspy logic for floating badges
+            const sections = [
+                document.getElementById('sales-dashboard'),
+                document.getElementById('receivables-dashboard'),
+                document.getElementById('payables-dashboard')
+            ];
+            const badgeMap = {
+                'sales-dashboard': document.getElementById('badge-sales'),
+                'receivables-dashboard': document.getElementById('badge-receivables'),
+                'payables-dashboard': document.getElementById('badge-payables')
+            };
+
+            const scrollSpyObserverOptions = {
+                root: null,
+                rootMargin: '-30% 0px -60% 0px',
+                threshold: 0
+            };
+
+            const scrollSpyObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Deactivate all first
+                        Object.values(badgeMap).forEach(b => {
+                            b.classList.remove('bg-[#1F3A89]', 'text-white', 'shadow-sm');
+                            b.classList.add('text-slate-600');
+                        });
+                        // Activate current
+                        const activeBadge = badgeMap[entry.target.id];
+                        if (activeBadge) {
+                            activeBadge.classList.add('bg-[#1F3A89]', 'text-white', 'shadow-sm');
+                            activeBadge.classList.remove('text-slate-600');
+                        }
+                    }
+                });
+            }, scrollSpyObserverOptions);
+
+            sections.forEach(sec => {
+                if (sec) scrollSpyObserver.observe(sec);
+            });
+        });
+
+        // Zoom Simulator (Follow the Question) - Sequential Video Laptop Explorer
+        let currentStep = 1;
+
+        function updateText(question, caption) {
+            const qEl = document.getElementById('zoom-step-question');
+            const cEl = document.getElementById('zoom-step-caption');
+
+            // Fade out
+            qEl.classList.add('opacity-0', 'translate-y-2');
+            cEl.classList.add('opacity-0', 'translate-y-2');
+
+            setTimeout(() => {
+                qEl.innerHTML = question;
+                cEl.innerHTML = caption;
+
+                // Fade in
+                qEl.classList.remove('opacity-0', 'translate-y-2');
+                cEl.classList.remove('opacity-0', 'translate-y-2');
+            }, 300);
+        }
+
+        function updateZoomPoster(stepNum) {
+            const webpSource = document.getElementById('zoom-video-poster-webp');
+            const jpgImg = document.getElementById('zoom-video-poster-jpg');
+            const pic = webpSource ? webpSource.parentElement : null;
+            let name = 'filterdash';
+            if (stepNum === 2) name = 'filterdash2';
+            if (stepNum === 3) name = 'filterdash3';
+            
+            if (webpSource && jpgImg) {
+                webpSource.srcset = `../resources/features/dynamic-dashboards/poster_images/${name}.webp`;
+                jpgImg.src = `../resources/features/dynamic-dashboards/poster_images/${name}.jpg`;
+            }
+            if (pic) {
+                pic.classList.remove('opacity-0');
+            }
+        }
+
+        function runStep() {
+            const video = document.getElementById('zoom-video');
+            const btn = document.getElementById('zoom-next-btn');
+
+            if (currentStep === 1) {
+                // Play second video, disable loop
+                updateZoomPoster(2);
+                video.loop = false;
+                video.src = "../resources/features/dynamic-dashboards/videos/filterdash2.mp4";
+                video.load();
+
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.log("Play error:", error);
+                    });
+                }
+
+                updateText(
+                    "Now every chart reflects only Reddy's sales with Sri Ganesh Enterprises.",
+                    ""
+                );
+
+                btn.innerHTML = `<span>What products are Sri Ganesh Enterprises buying from Reddy?</span><span class="material-symbols-outlined text-sm">arrow_forward</span>`;
+                currentStep = 2;
+
+            } else if (currentStep === 2) {
+                // Play third video, disable loop
+                updateZoomPoster(3);
+                video.loop = false;
+                video.src = "../resources/features/dynamic-dashboards/videos/filterdash3.mp4";
+                video.load();
+
+                // Hide button during play of final segment
+                btn.classList.add('opacity-0', 'pointer-events-none');
+
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.log("Play error:", error);
+                    });
+                }
+
+                updateText(
+                    "What products are driving sales for this relationship?",
+                    "Now you're looking at sales data for one salesperson, one customer, and one product — without opening another report."
+                );
+                currentStep = 3;
+
+            } else if (currentStep === 3) {
+                // Reset/Restart flow
+                updateZoomPoster(1);
+                video.loop = true;
+                video.src = "../resources/features/dynamic-dashboards/videos/filterdash.mp4";
+                video.load();
+
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.log("Play error:", error);
+                    });
+                }
+
+                updateText(
+                    "How is Reddy performing?",
+                    "Instantly see Reddy's complete performance picture."
+                );
+
+                btn.innerHTML = `<span>What about Reddy's sales for Sri Ganesh Enterprises?</span><span class="material-symbols-outlined text-sm">arrow_forward</span>`;
+                btn.classList.remove('opacity-0', 'pointer-events-none');
+                currentStep = 1;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const nextBtn = document.getElementById('zoom-next-btn');
+            const video = document.getElementById('zoom-video');
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', runStep);
+            }
+
+            if (video) {
+                video.addEventListener('ended', () => {
+                    if (video.src.includes('filterdash2.mp4')) {
+                        video.loop = true;
+                        video.play();
+                    } else if (video.src.includes('filterdash3.mp4')) {
+                        video.loop = true;
+                        video.play();
+                        // Video 3 finished. Show restart button.
+                        if (nextBtn) {
+                            nextBtn.innerHTML = `<span>Restart Demo</span><span class="material-symbols-outlined text-sm">refresh</span>`;
+                            nextBtn.classList.remove('opacity-0', 'pointer-events-none');
+                        }
+                    }
+                });
+            }
+        });
+
+    </script>
+</body>
+
+</html>

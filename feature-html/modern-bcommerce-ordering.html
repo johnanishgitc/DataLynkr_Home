@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Modern B-Commerce Ordering | DataLynkr</title>
+    <meta name="description"
+        content="Your Tally becomes a live e-commerce engine. Give your customers, dealers, and sales teams a modern ordering experience powered directly by live Tally data." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&display=swap"
+        rel="stylesheet" />
+    <script src="../resources/js/main.js" defer></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#dfd7e6",
+                        "on-secondary-fixed-variant": "#085049",
+                        "on-primary-fixed": "#001036",
+                        "secondary-fixed": "#b0eee5",
+                        "on-secondary-fixed": "#00201d",
+                        "surface-container": "#E6ECFD",
+                        "on-primary-fixed-variant": "#001a4f",
+                        "surface-container-high": "#ede5f4",
+                        "tertiary-fixed-dim": "#cbc4d2",
+                        "surface-container-highest": "#E6ECFD",
+                        "on-surface-variant": "#5b403d",
+                        "tertiary-container": "#78727f",
+                        "surface-variant": "#e8dfee",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#906f6c",
+                        "primary-container": "#1F3A89",
+                        "tertiary-fixed": "#e8dfee",
+                        "surface": "#fef7ff",
+                        "inverse-on-surface": "#f6eefd",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "primary-fixed": "#dce1ff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#2f6c65",
+                        "surface-container-low": "#E6ECFD",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "secondary-container": "#adece2",
+                        "on-background": "#1d1a24",
+                        "on-surface": "#1d1a24",
+                        "on-primary": "#ffffff",
+                        "primary": "#1F3A89",
+                        "background": "#fef7ff",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "tertiary": "#5f5a66",
+                        "secondary": "#2a6861",
+                        "surface-bright": "#fef7ff",
+                        "inverse-surface": "#332f3a",
+                        "on-tertiary-fixed-variant": "#494551",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#1d1a24",
+                        "inverse-primary": "#b4c5ff",
+                        "on-tertiary-container": "#fffbff",
+                        "outline-variant": "#e4beb9",
+                        "secondary-fixed-dim": "#95d2c9",
+                        "surface-tint": "#1F3A89",
+                        "error": "#ba1a1a",
+                        "brand-accent": "#F1C74B",
+                        "architectural-red": "#B22222",
+                        "page-bg": "#fff7db"
+                    },
+                    fontFamily: {
+                        "headline": ["Wix Madefor Display"],
+                        "body": ["Wix Madefor Text"],
+                        "label": ["Wix Madefor Text"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Wix Madefor Text', sans-serif;
+            background-color: #ffffff !important;
+            min-height: max(884px, 100dvh);
+        }
+
+        .headline-font {
+            font-family: 'Wix Madefor Display', sans-serif;
+        }
+
+        #features-flyout.active {
+            transform: translateX(0) !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-on-scroll.is-visible:not([class*="reveal-fade"]) {
+            opacity: 1;
+        }
+
+        .reveal-fade-up.is-visible {
+            animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .reveal-fade-in-left.is-visible {
+            animation: fade-in-left 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .reveal-fade-in-right.is-visible {
+            animation: fade-in-right 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animate-fade-in {
+            opacity: 0;
+            animation: fade-in 0.8s ease-out forwards;
+        }
+
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fade-in-left {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fade-in-right {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Float animations for premium screenshot showcase */
+        @keyframes float-slow {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(0.5deg);
+            }
+        }
+
+        @keyframes float-medium {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(-0.5deg);
+            }
+        }
+
+        @keyframes float-fast {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .animate-float-slow {
+            animation: float-slow 7s ease-in-out infinite;
+        }
+
+        .animate-float-medium {
+            animation: float-medium 5s ease-in-out infinite;
+        }
+
+        .animate-float-fast {
+            animation: float-fast 4s ease-in-out infinite;
+        }
+
+        /* Flow dash animation */
+        @keyframes flow-outward {
+            to {
+                stroke-dashoffset: -20;
+            }
+        }
+
+        @keyframes flow-inward {
+            to {
+                stroke-dashoffset: 20;
+            }
+        }
+
+        .animate-flow-out {
+            stroke-dasharray: 6, 6;
+            animation: flow-outward 1.2s linear infinite;
+        }
+
+        .animate-flow-in {
+            stroke-dasharray: 6, 6;
+            animation: flow-inward 1.2s linear infinite;
+        }
+
+        /* Network grid animation in CTA background */
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.2;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 0.4;
+            }
+
+            100% {
+                transform: scale(0.95);
+                opacity: 0.2;
+            }
+        }
+
+        .pulse-effect {
+            animation: pulse-ring 4s ease-in-out infinite;
+        }
+
+        /* Hide scrollbars but keep scrolling active */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Fix for mobile/laptop mockup video overflow/clipping bugs in Safari/WebKit */
+        [class*="aspect-[9/19]"],
+        [class*="aspect-[16/10]"] {
+            transform: translateZ(0);
+            isolation: isolate;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-on-surface antialiased overflow-x-hidden animate-fade-in flex flex-col min-h-screen">
+    <!-- Sidebar Overlay -->
+    <div id="sidebar-overlay"
+        class="fixed inset-0 bg-black/40 z-[60] opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out">
+    </div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar"
+        class="fixed top-0 left-0 w-[19.9rem] max-w-full h-full z-[70] bg-gradient-to-br from-[#1F3A89] to-[#0F1D44] text-white shadow-2xl flex flex-col transform -translate-x-full transition-transform duration-300 ease-in-out overflow-visible">
+        <div class="flex-1 flex flex-col h-full overflow-y-auto p-8 relative">
+            <div class="pt-16 pb-8 flex items-center relative">
+                <a href="../code.html"
+                    class="absolute left-1/2 -translate-x-1/2 h-10 w-auto flex-shrink-0 block hover:opacity-80 transition-opacity"
+                    title="DataLynkr Home">
+                    <svg class="h-10 w-auto" viewBox="0 0 2352 1825" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g transform="matrix(1,0,0,1,-433.673905,-573.914687)">
+                            <g transform="matrix(4.591033,0,0,4.591033,-170.925878,-4.498795)">
+                                <path
+                                    d="M131.862,129.376C130.04,117.368 139.468,130.36 330.857,284.067C464.376,391.298 465.418,393.678 467.438,392.344C491.547,376.43 639.946,268.123 643.177,269.982C645.959,271.583 643.383,272.976 588.075,330.099C555.999,363.227 556.723,363.618 523.816,395.793C498.522,420.523 467.727,456.829 463.95,453.032C425.167,414.044 345.904,337.391 335.575,327.402C334.374,326.329 333.174,325.255 331.973,324.182C274.761,270.219 188.09,183.592 175.718,171.226C150.89,146.869 137.744,133.558 131.862,129.376Z"
+                                    style="fill:white;" />
+                                <path
+                                    d="M131.862,129.376C137.744,133.558 150.89,146.869 175.718,171.226C174.446,173.082 174.898,173.209 155.463,363.497C147.17,444.698 144.728,462.423 148.577,459.638C318.649,336.613 319.328,337.327 331.973,324.182C333.174,325.255 334.374,326.329 335.575,327.402C330.462,332.41 145.867,516.733 143.253,521.382C142.869,522.064 136.25,528.587 136.312,514.501C136.402,493.868 130.851,133.926 131.862,129.376Z"
+                                    style="fill:rgb(239,201,79);" />
+                            </g>
+                        </g>
+                    </svg></a>
+            </div>
+            <div class="flex-1 flex flex-col gap-6 font-medium text-lg headline-font mt-4">
+                <a href="../code.html" class="hover:text-amber-200 transition-colors">Home</a>
+                <button id="features-toggle-btn"
+                    class="flex items-center justify-between w-full hover:text-amber-200 transition-colors text-left focus:outline-none">
+                    <span>Features</span>
+                    <span id="features-arrow"
+                        class="material-symbols-outlined transition-transform duration-300 pointer-events-none">keyboard_arrow_right</span>
+                </button>
+                <a href="../about.html" class="hover:text-amber-200 transition-colors">About DataLynkr</a>
+                <a href="../pricing.html" class="hover:text-amber-200 transition-colors">Pricing</a>
+                <a href="../contact.html" class="hover:text-amber-200 transition-colors">Contact Us</a>
+                <a href="../support.html" class="hover:text-amber-200 transition-colors">Get Support</a>
+            </div>
+        </div>
+
+        <!-- Features Flyout Panel -->
+        <div id="features-flyout"
+            class="absolute top-0 left-0 sm:left-full w-full sm:w-[19.9rem] h-full bg-gradient-to-br from-[#1F3A89] to-[#0F1D44] border-t sm:border-t-0 sm:border-l border-white/10 shadow-2xl flex flex-col p-8 transform transition-all duration-300 ease-in-out z-50 translate-x-full sm:translate-x-[-10px] opacity-0 pointer-events-none">
+            <button id="features-back-btn"
+                class="flex items-center gap-2 text-amber-400 hover:text-amber-200 transition-colors font-medium mb-6 sm:hidden focus:outline-none">
+                <span class="material-symbols-outlined text-lg">arrow_back</span>
+                <span>Back to Menu</span>
+            </button>
+            <div
+                class="hidden sm:block text-amber-400 font-bold mb-6 text-xl tracking-wide border-b border-white/10 pb-2">
+                Features
+            </div>
+            <div class="flex-1 overflow-y-auto pr-2 flex flex-col gap-5 text-base font-normal">
+                <a href="sales-order-management.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Sales Order Management</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+                <a href="extend-portal-customers.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Extend a Portal for Your Customers</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+                <a href="modern-bcommerce-ordering.html"
+                    class="text-amber-400 transition-colors py-2 flex items-center justify-between group/item pointer-events-none">
+                    <span>Modern B-Commerce Ordering</span>
+                    <span class="material-symbols-outlined text-sm opacity-100 text-amber-400">arrow_forward</span>
+                </a>
+                <a href="invoice-creation.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Invoice Creation</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+                <a href="authorization-workflows.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Authorization Workflows</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+                <a href="daily-ledger-reports.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Daily Ledger Reports</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+                <a href="offline-transactions.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Offline Transactions</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+                <a href="dynamic-dashboards.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Dynamic Dashboards</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+                <a href="payments-collections.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Payments & Collections</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+                <a href="stock-summary.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Stock Summary</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+                <a href="custom-reports.html"
+                    class="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item">
+                    <span>Custom Reports</span>
+                    <span
+                        class="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- TopAppBar Component -->
+    <nav id="main-nav"
+        class="static top-0 left-0 w-full z-50 bg-white flex justify-between items-center px-6 md:px-10 lg:px-12 py-4 md:py-6 max-w-full">
+        <div class="flex items-center gap-4">
+            <button id="menu-btn"
+                class="relative flex items-center justify-center lg:gap-2 p-0 lg:px-4 lg:py-1.5 rounded-full border-0 lg:border-2 border-primary bg-transparent lg:bg-primary lg:hover:bg-primary/90 lg:hover:border-primary/90 text-[#0E172B] lg:text-white shadow-none lg:shadow-sm lg:hover:shadow-md hover:translate-y-0 lg:hover:-translate-y-0.5 transition-all duration-300 focus:outline-none group active:scale-95">
+                <!-- Simple 3-line hamburger icon (visible on mobile/tablet) -->
+                <svg class="block lg:hidden w-6 h-5 text-[#0E172B] hover:opacity-80 transition-opacity"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <!-- Desktop Icon (visible on desktop only) -->
+                <span id="menu-icon"
+                    class="hidden lg:block material-symbols-outlined text-xl transition-transform duration-300 ease-in-out group-hover:rotate-90"
+                    data-icon="menu">segment</span>
+                <!-- Desktop Text (visible on desktop only) -->
+                <span
+                    class="hidden lg:inline font-['Wix_Madefor_Display'] text-xs font-extrabold uppercase tracking-widest text-white">Menu</span>
+            </button>
+        </div>
+        <a href="../code.html"
+            class="flex items-center justify-center p-2.5 bg-transparent text-[#1F3A89] hover:bg-black/5 rounded-full transition-colors group focus:outline-none"
+            title="Home">
+            <span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">home</span>
+        </a>
+    </nav>
+
+    <!-- Redesigned Main Content -->
+    <main class="flex-grow">
+
+        <!-- 1. Hero Section -->
+        <section class="bg-white pt-3 pb-12 md:pb-16 overflow-hidden relative">
+
+            <div class="max-w-7xl mx-auto px-6 md:px-16 lg:px-12 xl:px-24">
+                <!-- Hero Heading & Copy -->
+                <div class="text-center max-w-4xl mx-auto mb-6 space-y-6 reveal-on-scroll reveal-fade-up">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/5 rounded-full border border-primary/10">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-[#1F3A89]">Live e-commerce
+                            Engine</span>
+                    </div>
+                    <h1
+                        class="headline-font text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
+                        The Magic of an E-Commerce Store <br class="hidden md:inline" />
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-[#1F3A89] to-[#0d55e0]">Connected
+                            to Tally</span>
+                    </h1>
+                    <p class="font-body text-slate-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                        Give your customers, dealers, distributors, and sales teams a modern ordering experience powered
+                        directly by live Tally data.
+                    </p>
+                </div>
+
+                <!-- Overlapping Mockups & Floating Badges Container -->
+                <div
+                    class="relative w-full max-w-5xl mx-auto mt-2 flex flex-col items-center justify-center min-h-[420px] md:min-h-[520px] lg:min-h-[580px] xl:min-h-[620px]">
+                    <!-- Web Portal Laptop Mockup (Background / Back layer) -->
+                    <div
+                        class="relative w-full max-w-[620px] lg:max-w-[700px] xl:max-w-3xl transform lg:translate-x-[-40px] animate-float-slow">
+                        <!-- Screen -->
+                        <div
+                            class="relative aspect-[16/10] bg-zinc-900 rounded-t-2xl border-[8px] border-zinc-900 shadow-2xl overflow-hidden">
+                            <!-- Web Screen Content -->
+                            <div class="absolute inset-0 bg-slate-50 flex flex-col">
+                                <!-- Video Screen -->
+                                <div class="flex-1 overflow-hidden relative">
+                                    <video width="1920" height="1200" autoplay loop muted playsinline preload="metadata"
+                                        poster="../resources/poster_images/bcomm_laptop.webp"
+                                        class="w-full h-full object-cover">
+                                        <source src="../resources/videos/bcomm_laptop.mp4" type="video/mp4" />
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Laptop keyboard base parts -->
+                        <div class="relative h-4 bg-zinc-800 rounded-b-xl w-[105%] -left-[2.5%] shadow-xl"></div>
+                        <div class="relative h-2 bg-zinc-700/50 rounded-b-2xl w-[80%] mx-auto"></div>
+                    </div>
+
+                    <!-- Mobile App Mockup (Foreground / Overlapping) -->
+                    <div
+                        class="absolute bottom-[-20px] lg:bottom-[-40px] right-[5%] lg:right-[15%] w-[190px] sm:w-[230px] md:w-[260px] aspect-[9/19] bg-zinc-900 rounded-2xl border-[10px] border-zinc-900 shadow-2xl overflow-hidden group animate-float-medium z-20">
+                        <!-- Video Background -->
+                        <video width="720" height="1520" autoplay loop muted playsinline preload="metadata"
+                            poster="../resources/poster_images/bcomm.webp"
+                            class="absolute inset-0 w-full h-full object-cover rounded-xl z-10">
+                            <source src="../resources/videos/bcomm.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+
+                    <!-- Floating Badges (Absolutely Positioned) -->
+                    <!-- Badge 1: Live Inventory (Top Left) -->
+                    <div
+                        class="absolute top-[5%] left-[2%] md:left-[10%] bg-white/90 backdrop-blur-md border border-slate-200/80 shadow-lg rounded-full py-2.5 px-4 flex items-center gap-2 z-30 animate-float-fast hover:scale-105 transition-transform">
+                        <div
+                            class="w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shadow-inner">
+                            <span class="material-symbols-outlined text-sm font-bold">inventory_2</span>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800">Live Inventory</span>
+                    </div>
+
+                    <!-- Badge 2: Live Pricing (Top Right) -->
+                    <div class="absolute top-[12%] right-[5%] lg:right-[20%] bg-white/90 backdrop-blur-md border border-slate-200/80 shadow-lg rounded-full py-2.5 px-4 flex items-center gap-2 z-30 animate-float-slow hover:scale-105 transition-transform"
+                        style="animation-delay: 1.5s;">
+                        <div
+                            class="w-7 h-7 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center shadow-inner">
+                            <span class="material-symbols-outlined text-sm font-bold">sell</span>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800">Live Pricing</span>
+                    </div>
+
+                    <!-- Badge 3: Direct Tally Orders (Middle Left) -->
+                    <div class="absolute bottom-[35%] left-[1%] md:left-[5%] bg-white/90 backdrop-blur-md border border-slate-200/80 shadow-lg rounded-full py-2.5 px-4 flex items-center gap-2 z-30 animate-float-medium hover:scale-105 transition-transform"
+                        style="animation-delay: 0.8s;">
+                        <div
+                            class="w-7 h-7 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shadow-inner">
+                            <span class="material-symbols-outlined text-sm font-bold">sync_alt</span>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800">Direct Tally Orders</span>
+                    </div>
+
+                    <!-- Badge 4: Zero Sync Required (Bottom Right) -->
+                    <div class="absolute bottom-[4%] lg:bottom-[6%] right-[24%] sm:right-[28%] lg:right-[44%] xl:right-[46%] bg-slate-900/95 backdrop-blur-md border border-slate-800 shadow-xl rounded-full py-2.5 px-4 flex items-center gap-2 z-30 animate-float-fast hover:scale-105 transition-transform"
+                        style="animation-delay: 2.2s;">
+                        <div
+                            class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-inner">
+                            <span class="material-symbols-outlined text-sm font-bold">bolt</span>
+                        </div>
+                        <span class="text-xs font-bold text-white">Zero Sync Required</span>
+                    </div>
+                </div>
+
+                <!-- Brand Logo & Text Container Aligned to the Bottom Right -->
+                <div class="w-full mt-12 reveal-on-scroll reveal-fade-up">
+                    <div class="flex justify-end">
+                        <a href="../code.html"
+                            class="flex items-center gap-2.5 -mr-2 md:-mr-8 lg:-mr-6 xl:-mr-16 2xl:-mr-20 hover:opacity-80 transition-opacity"
+                            title="DataLynkr Home">
+                            <!-- DataLynkr SVG Logo -->
+                            <div class="h-7 md:h-8 w-auto flex-shrink-0">
+                                <svg class="h-7 md:h-8 w-auto" viewBox="0 0 2352 1825" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g transform="matrix(1,0,0,1,-433.673905,-573.914687)">
+                                        <g transform="matrix(4.591033,0,0,4.591033,-170.925878,-4.498795)">
+                                            <path
+                                                d="M131.862,129.376C130.04,117.368 139.468,130.36 330.857,284.067C464.376,391.298 465.418,393.678 467.438,392.344C491.547,376.43 639.946,268.123 643.177,269.982C645.959,271.583 643.383,272.976 588.075,330.099C555.999,363.227 556.723,363.618 523.816,395.793C498.522,420.523 467.727,456.829 463.95,453.032C425.167,414.044 345.904,337.391 335.575,327.402C334.374,326.329 333.174,325.255 331.973,324.182C274.761,270.219 188.09,183.592 175.718,171.226C150.89,146.869 137.744,133.558 131.862,129.376Z"
+                                                fill="#1F3A89" />
+                                            <path
+                                                d="M131.862,129.376C137.744,133.558 150.89,146.869 175.718,171.226C174.446,173.082 174.898,173.209 155.463,363.497C147.17,444.698 144.728,462.423 148.577,459.638C318.649,336.613 319.328,337.327 331.973,324.182C333.174,325.255 334.374,326.329 335.575,327.402C330.462,332.41 145.867,516.733 143.253,521.382C142.869,522.064 136.25,528.587 136.312,514.501C136.402,493.868 130.851,133.926 131.862,129.376Z"
+                                                fill="#F1C74B" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <span
+                                class="headline-font text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-normal text-black tracking-tight">DataLynkr</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Section: Why Traditional E-Commerce Becomes Complicated -->
+        <section class="bg-slate-50 border-t border-b border-slate-100 py-16 md:py-24 px-6 md:px-16 lg:px-12 xl:px-24">
+            <div class="max-w-7xl mx-auto md:px-4">
+                <!-- Header block -->
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4 reveal-on-scroll reveal-fade-up">
+                    <span class="text-amber-500 font-bold headline-font uppercase tracking-widest text-xs block">
+                        Architecture Comparison
+                    </span>
+                    <h2
+                        class="headline-font text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
+                        Stop Synchronizing. Start Operating.
+                    </h2>
+                    <p class="font-body text-slate-600 text-base md:text-lg leading-relaxed">
+                        Most e-commerce platforms require constant synchronization between systems. DataLynkr eliminates
+                        that complexity by making Tally the live backend powering every transaction.
+                    </p>
+                </div>
+
+                <!-- Comparison Layout -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
+
+                    <!-- Left Column: Traditional Setup -->
+                    <div
+                        class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 lg:p-5 xl:p-8 flex flex-col justify-between hover:shadow-md transition-shadow reveal-on-scroll reveal-fade-in-left">
+                        <div>
+                            <div class="flex items-center justify-between pb-6 border-b border-slate-100">
+                                <h3 class="headline-font text-lg font-bold text-slate-800">Traditional Setup</h3>
+                                <span
+                                    class="text-xs font-bold bg-amber-50 text-amber-700 px-3 py-1 rounded-full border border-amber-100">High
+                                    Maintenance</span>
+                            </div>
+
+                            <!-- Visual flow -->
+                            <div
+                                class="py-8 flex flex-nowrap items-center justify-between gap-1 text-[9px] sm:text-xs font-semibold w-full max-w-md mx-auto">
+                                <div
+                                    class="bg-slate-50 border border-slate-200 rounded-lg px-2 py-1 text-slate-600 whitespace-nowrap">
+                                    <span class="hidden xl:inline">Customer</span>
+                                    <span class="inline xl:hidden">User</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-slate-400 text-xs shrink-0 select-none">arrow_forward</span>
+                                <div
+                                    class="bg-slate-50 border border-slate-200 rounded-lg px-2 py-1 text-slate-600 whitespace-nowrap">
+                                    <span class="hidden xl:inline">Website</span>
+                                    <span class="inline xl:hidden">Web</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-slate-400 text-xs shrink-0 select-none">arrow_forward</span>
+                                <div
+                                    class="bg-slate-50 border border-slate-200 rounded-lg px-2 py-1 text-slate-600 whitespace-nowrap">
+                                    <span class="hidden xl:inline">Database</span>
+                                    <span class="inline xl:hidden">DB</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-slate-400 text-xs shrink-0 select-none">sync_alt</span>
+                                <div
+                                    class="bg-slate-50 border border-slate-200 rounded-lg px-2 py-1 text-amber-600 border-amber-200 bg-amber-50 whitespace-nowrap">
+                                    <span class="hidden xl:inline">Sync Tool</span>
+                                    <span class="inline xl:hidden">Sync</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-slate-400 text-xs shrink-0 select-none">arrow_forward</span>
+                                <div
+                                    class="bg-slate-50 border border-slate-200 rounded-lg px-2 py-1 text-slate-600 whitespace-nowrap">
+                                    ERP</div>
+                            </div>
+
+                            <p class="text-sm font-semibold text-slate-500 mb-4 tracking-wide uppercase">Common Points
+                                of Failure:</p>
+
+                            <!-- Warning List -->
+                            <div class="space-y-3">
+                                <div
+                                    class="flex items-start gap-3 bg-red-50/50 p-3 rounded-xl border border-red-100/50">
+                                    <span class="material-symbols-outlined text-rose-500 shrink-0 text-xl">error</span>
+                                    <div>
+                                        <h4 class="text-xs font-bold text-slate-800">Duplicate Data</h4>
+                                        <p class="text-[11px] text-slate-500 font-body leading-relaxed">Inventory,
+                                            pricing, and orders exist in multiple databases, causing mismatches.</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-start gap-3 bg-red-50/50 p-3 rounded-xl border border-red-100/50">
+                                    <span
+                                        class="material-symbols-outlined text-rose-500 shrink-0 text-xl">timer_off</span>
+                                    <div>
+                                        <h4 class="text-xs font-bold text-slate-800">Sync Delays</h4>
+                                        <p class="text-[11px] text-slate-500 font-body leading-relaxed">Updates run on
+                                            schedules (every 1 hour, night jobs), meaning data is constantly stale.</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-start gap-3 bg-red-50/50 p-3 rounded-xl border border-red-100/50">
+                                    <span
+                                        class="material-symbols-outlined text-rose-500 shrink-0 text-xl">warning</span>
+                                    <div>
+                                        <h4 class="text-xs font-bold text-slate-800">Inventory Mismatches</h4>
+                                        <p class="text-[11px] text-slate-500 font-body leading-relaxed">Selling
+                                            out-of-stock items leads to order cancellations and unhappy customers.</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-start gap-3 bg-red-50/50 p-3 rounded-xl border border-red-100/50">
+                                    <span
+                                        class="material-symbols-outlined text-rose-500 shrink-0 text-xl">price_change</span>
+                                    <div>
+                                        <h4 class="text-xs font-bold text-slate-800">Price Discrepancies</h4>
+                                        <p class="text-[11px] text-slate-500 font-body leading-relaxed">
+                                            Customer-specific discounts and rates in Tally don't match the web catalog
+                                            prices.</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-start gap-3 bg-red-50/50 p-3 rounded-xl border border-red-100/50">
+                                    <span
+                                        class="material-symbols-outlined text-rose-500 shrink-0 text-xl">payments</span>
+                                    <div>
+                                        <h4 class="text-xs font-bold text-slate-800">Integration Costs</h4>
+                                        <p class="text-[11px] text-slate-500 font-body leading-relaxed">Custom
+                                            middleware and sync scripts are fragile and expensive to maintain.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: DataLynkr Setup -->
+                    <div
+                        class="bg-white rounded-3xl border-2 border-emerald-500/80 shadow-[0_15px_30px_rgba(16,185,129,0.06)] p-6 lg:p-5 xl:p-8 flex flex-col justify-between hover:shadow-lg transition-all reveal-on-scroll reveal-fade-in-right">
+                        <div>
+                            <div class="flex items-center justify-between pb-6 border-b border-slate-100">
+                                <h3 class="headline-font text-lg font-bold text-slate-900 flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                                    DataLynkr Workflow
+                                </h3>
+                                <span
+                                    class="text-xs font-bold bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full border border-emerald-100">Single
+                                    Source of Truth</span>
+                            </div>
+
+                            <!-- Visual flow -->
+                            <div
+                                class="py-8 flex flex-nowrap items-center justify-center gap-2 sm:gap-4 text-[10px] sm:text-xs font-bold w-full max-w-md mx-auto">
+                                <div class="bg-slate-900 text-white rounded-lg px-3 py-2 whitespace-nowrap">
+                                    <span class="hidden xl:inline">Customer</span>
+                                    <span class="inline xl:hidden">User</span>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-emerald-500 font-bold text-xs sm:text-sm shrink-0 select-none">arrow_forward</span>
+                                <div class="bg-primary text-white rounded-lg px-3 py-2 relative whitespace-nowrap">
+                                    DataLynkr
+                                    <div
+                                        class="absolute -top-1 -right-1 w-2 h-2 bg-emerald-400 rounded-full animate-ping">
+                                    </div>
+                                </div>
+                                <span
+                                    class="material-symbols-outlined text-emerald-500 font-bold text-xs sm:text-sm shrink-0 select-none">arrow_forward</span>
+                                <div class="bg-emerald-600 text-white rounded-lg px-3 py-2 whitespace-nowrap">
+                                    <span class="hidden xl:inline">Tally ERP</span>
+                                    <span class="inline xl:hidden">Tally</span>
+                                </div>
+                            </div>
+
+                            <p class="text-sm font-semibold text-slate-800 mb-4 tracking-wide uppercase">Operational
+                                Advantages:</p>
+
+                            <!-- Success List -->
+                            <div class="space-y-3">
+                                <div
+                                    class="flex items-start gap-3 bg-emerald-50/50 p-3 rounded-xl border border-emerald-100/50">
+                                    <span
+                                        class="material-symbols-outlined text-emerald-600 shrink-0 text-xl">verified</span>
+                                    <div>
+                                        <h4 class="text-xs font-bold text-slate-900">Single Source of Truth</h4>
+                                        <p class="text-[11px] text-slate-600 font-body leading-relaxed">No duplicate
+                                            databases. DataLynkr queries your live Tally directly for every request.</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-start gap-3 bg-emerald-50/50 p-3 rounded-xl border border-emerald-100/50">
+                                    <span
+                                        class="material-symbols-outlined text-emerald-600 shrink-0 text-xl">update</span>
+                                    <div>
+                                        <h4 class="text-xs font-bold text-slate-900">Real-Time Inventory</h4>
+                                        <p class="text-[11px] text-slate-600 font-body leading-relaxed">Stock checks
+                                            pull straight from Tally. What you see is exactly what is available.</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-start gap-3 bg-emerald-50/50 p-3 rounded-xl border border-emerald-100/50">
+                                    <span
+                                        class="material-symbols-outlined text-emerald-600 shrink-0 text-xl">sell</span>
+                                    <div>
+                                        <h4 class="text-xs font-bold text-slate-900">Real-Time Pricing</h4>
+                                        <p class="text-[11px] text-slate-600 font-body leading-relaxed">Displays
+                                            personalized client-specific pricing matrix and credit limits automatically.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-start gap-3 bg-emerald-50/50 p-3 rounded-xl border border-emerald-100/50">
+                                    <span
+                                        class="material-symbols-outlined text-emerald-600 shrink-0 text-xl">bolt</span>
+                                    <div>
+                                        <h4 class="text-xs font-bold text-slate-900">Instant Order Creation</h4>
+                                        <p class="text-[11px] text-slate-600 font-body leading-relaxed">Orders post
+                                            instantly as Sales Orders directly into Tally, ready for your dispatch team.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Section: Everything Comes Directly From Tally -->
+        <section class="bg-white py-20 md:py-28 px-6 md:px-16 lg:px-12 xl:px-24 overflow-hidden relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4 reveal-on-scroll reveal-fade-up">
+                    <span class="text-[#1F3A89] font-bold headline-font uppercase tracking-widest text-xs block">
+                        Native Tally Power
+                    </span>
+                    <h2
+                        class="headline-font text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
+                        Everything Comes Directly From Tally
+                    </h2>
+                    <p class="font-body text-slate-600 text-base md:text-lg leading-relaxed">
+                        Say goodbye to fragile middleware. DataLynkr links directly to Tally to power your digital
+                        catalog.
+                    </p>
+                </div>
+
+                <!-- Animated Interactive Node Layout -->
+                <div class="relative w-full max-w-5xl mx-auto mt-8 lg:mt-16">
+
+                    <!-- Background SVG Flowing Connections -->
+                    <div class="absolute inset-0 w-full h-full pointer-events-none hidden lg:block z-0">
+                        <svg class="w-full h-full" viewBox="0 0 1000 500" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            preserveAspectRatio="none">
+                            <!-- Left to Center paths (Reversed to flow from Tally to outside) -->
+                            <path d="M 500,250 Q 340,120 180,120" stroke="#E2E8F0" stroke-width="3"
+                                stroke-linecap="round" />
+                            <path d="M 500,250 Q 340,120 180,120" stroke="#3B82F6" stroke-width="3"
+                                class="animate-flow-out" stroke-linecap="round" />
+
+                            <path d="M 500,250 Q 340,380 180,380" stroke="#E2E8F0" stroke-width="3"
+                                stroke-linecap="round" />
+                            <path d="M 500,250 Q 340,380 180,380" stroke="#3B82F6" stroke-width="3"
+                                class="animate-flow-out" stroke-linecap="round" />
+
+                            <!-- Right to Center paths (Reversed to flow from Tally to outside) -->
+                            <path d="M 500,250 Q 660,120 820,120" stroke="#E2E8F0" stroke-width="3"
+                                stroke-linecap="round" />
+                            <path d="M 500,250 Q 660,120 820,120" stroke="#3B82F6" stroke-width="3"
+                                class="animate-flow-out" stroke-linecap="round" />
+
+                            <!-- Orders path flows INWARD to Tally -->
+                            <path d="M 820,380 Q 660,380 500,250" stroke="#E2E8F0" stroke-width="3"
+                                stroke-linecap="round" />
+                            <path d="M 820,380 Q 660,380 500,250" stroke="#10B981" stroke-width="3"
+                                class="animate-flow-out" stroke-linecap="round" />
+                        </svg>
+                    </div>
+
+                    <!-- Responsive Layout Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+
+                        <!-- Left Column (2 Feature Cards) -->
+                        <div class="lg:col-span-4 space-y-6">
+                            <!-- Card 1: Inventory -->
+                            <div
+                                class="bg-slate-50 border border-slate-200/80 rounded-3xl p-6 hover:shadow-md hover:border-[#1F3A89]/30 transition-all duration-300 reveal-on-scroll reveal-fade-in-left relative z-20">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-blue-50 text-[#1F3A89] flex items-center justify-center mb-4 shadow-sm">
+                                    <span class="material-symbols-outlined text-2xl font-bold">inventory_2</span>
+                                </div>
+                                <h3 class="headline-font font-bold text-lg text-slate-800 mb-2">Inventory</h3>
+                                <p class="font-body text-sm text-slate-600 leading-relaxed">
+                                    Live stock visibility across every item. Prevent double selling and show real stock
+                                    availability.
+                                </p>
+                            </div>
+
+                            <!-- Card 2: Pricing -->
+                            <div class="bg-slate-50 border border-slate-200/80 rounded-3xl p-6 hover:shadow-md hover:border-[#1F3A89]/30 transition-all duration-300 reveal-on-scroll reveal-fade-in-left relative z-20"
+                                style="transition-delay: 100ms;">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-blue-50 text-[#1F3A89] flex items-center justify-center mb-4 shadow-sm">
+                                    <span class="material-symbols-outlined text-2xl font-bold">sell</span>
+                                </div>
+                                <h3 class="headline-font font-bold text-lg text-slate-800 mb-2">Pricing</h3>
+                                <p class="font-body text-sm text-slate-600 leading-relaxed">
+                                    Customer-specific pricing and discounts loaded directly from your Tally rate sheets.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Center Column (Pulsing Tally Central Node) -->
+                        <div
+                            class="lg:col-span-4 flex flex-col items-center justify-center py-8 lg:py-0 reveal-on-scroll reveal-fade-up">
+                            <div
+                                class="relative w-44 h-44 rounded-full flex items-center justify-center bg-gradient-to-br from-[#1F3A89] to-[#0F1D44] shadow-2xl">
+                                <!-- Glowing outer pulse rings -->
+                                <div class="absolute inset-0 rounded-full border-4 border-blue-400/20 pulse-effect">
+                                </div>
+                                <div class="absolute inset-[-10px] rounded-full border border-blue-400/10 pulse-effect"
+                                    style="animation-delay: 1s;"></div>
+
+                                <div class="text-center text-white z-10 px-4">
+                                    <span
+                                        class="material-symbols-outlined text-4xl text-[#F1C74B] mb-2 animate-bounce">database</span>
+                                    <h4 class="font-extrabold text-sm headline-font tracking-widest uppercase">Live
+                                        Tally</h4>
+                                    <p class="text-[9px] text-blue-200 font-body mt-1 uppercase tracking-widest">Master
+                                        Backend</p>
+                                </div>
+                            </div>
+                            <span class="text-xs font-bold text-slate-400 mt-6 tracking-widest uppercase">Core
+                                Integration</span>
+                        </div>
+
+                        <!-- Right Column (2 Feature Cards) -->
+                        <div class="lg:col-span-4 space-y-6">
+                            <!-- Card 3: Customer Accounts -->
+                            <div
+                                class="bg-slate-50 border border-slate-200/80 rounded-3xl p-6 hover:shadow-md hover:border-[#1F3A89]/30 transition-all duration-300 reveal-on-scroll reveal-fade-in-right relative z-20">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-blue-50 text-[#1F3A89] flex items-center justify-center mb-4 shadow-sm">
+                                    <span class="material-symbols-outlined text-2xl font-bold">badge</span>
+                                </div>
+                                <h3 class="headline-font font-bold text-lg text-slate-800 mb-2">Customer Accounts</h3>
+                                <p class="font-body text-sm text-slate-600 leading-relaxed">
+                                    Displays ledger history, credit balances, and terms from existing accounts
+                                    automatically.
+                                </p>
+                            </div>
+
+                            <!-- Card 4: Orders -->
+                            <div class="bg-emerald-50 border border-emerald-200 rounded-3xl p-6 hover:shadow-md hover:border-emerald-500/30 transition-all duration-300 reveal-on-scroll reveal-fade-in-right relative z-20"
+                                style="transition-delay: 100ms;">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 shadow-sm">
+                                    <span
+                                        class="material-symbols-outlined text-2xl font-bold">shopping_cart_checkout</span>
+                                </div>
+                                <h3 class="headline-font font-bold text-lg text-emerald-900 mb-2">Orders</h3>
+                                <p class="font-body text-sm text-emerald-700 leading-relaxed">
+                                    Every single order flows straight into Tally as an authentic voucher in real time.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Section: What Makes It Feel Like Magic -->
+        <section
+            class="bg-gradient-to-r from-slate-900 via-slate-900 to-[#102454] text-white py-20 md:py-28 px-4 md:px-8 lg:px-6 xl:px-24 relative overflow-hidden">
+            <!-- Background mesh -->
+            <div
+                class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem]">
+            </div>
+
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4 reveal-on-scroll reveal-fade-up">
+                    <span class="text-[#F1C74B] font-bold headline-font uppercase tracking-widest text-xs block">
+                        Instant Loop
+                    </span>
+                    <h2 class="headline-font text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+                        What Makes It Feel Like Magic
+                    </h2>
+                    <p class="font-body text-slate-300 text-base md:text-lg">
+                        Watch how a transaction runs without intermediary synchronizing jobs.
+                    </p>
+                </div>
+
+                <!-- Responsive Step Timeline -->
+                <!-- Horizontal scroll on desktop, vertical list on mobile -->
+                <div
+                    class="grid grid-cols-1 md:grid-cols-5 gap-3 lg:gap-4 xl:gap-6 pb-4 no-scrollbar reveal-on-scroll reveal-fade-up">
+
+                    <!-- Step 1 -->
+                    <div
+                        class="bg-white/5 border border-white/10 rounded-2xl p-4 lg:p-4 xl:p-5 min-w-[140px] md:min-w-0 flex flex-col justify-between hover:bg-white/10 transition-colors">
+                        <div>
+                            <div class="text-[#F1C74B] headline-font text-4xl font-extrabold opacity-40 mb-4">01</div>
+                            <h3 class="font-bold text-base mb-2">Open App</h3>
+                            <p class="font-body text-xs text-slate-300 leading-relaxed">
+                                Customer or sales rep opens the web portal or mobile app.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div
+                        class="bg-white/5 border border-white/10 rounded-2xl p-4 lg:p-4 xl:p-5 min-w-[140px] md:min-w-0 flex flex-col justify-between hover:bg-white/10 transition-colors">
+                        <div>
+                            <div class="text-[#F1C74B] headline-font text-4xl font-extrabold opacity-40 mb-4">02</div>
+                            <h3 class="font-bold text-base mb-2">Live Catalog</h3>
+                            <p class="font-body text-xs text-slate-300 leading-relaxed">
+                                Live inventory items and client-specific pricing load directly from Tally.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div
+                        class="bg-white/5 border border-white/10 rounded-2xl p-4 lg:p-4 xl:p-5 min-w-[140px] md:min-w-0 flex flex-col justify-between hover:bg-white/10 transition-colors">
+                        <div>
+                            <div class="text-[#F1C74B] headline-font text-4xl font-extrabold opacity-40 mb-4">03</div>
+                            <h3 class="font-bold text-base mb-2">Place Order</h3>
+                            <p class="font-body text-xs text-slate-300 leading-relaxed">
+                                Items are added to the cart and the order is submitted.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div
+                        class="bg-white/5 border border-white/10 rounded-2xl p-4 lg:p-4 xl:p-5 min-w-[140px] md:min-w-0 flex flex-col justify-between hover:bg-white/10 transition-colors">
+                        <div>
+                            <div class="text-[#F1C74B] headline-font text-4xl font-extrabold opacity-40 mb-4">04</div>
+                            <h3 class="font-bold text-base mb-2">ERP Sync</h3>
+                            <p class="font-body text-xs text-slate-300 leading-relaxed">
+                                Order instantly appears as a new sales order voucher inside Tally.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div
+                        class="bg-white/5 border border-white/10 rounded-2xl p-4 lg:p-4 xl:p-5 min-w-[140px] md:min-w-0 flex flex-col justify-between hover:bg-white/10 transition-colors">
+                        <div>
+                            <div class="text-[#F1C74B] headline-font text-4xl font-extrabold opacity-40 mb-4">05</div>
+                            <h3 class="font-bold text-base mb-2">Process</h3>
+                            <p class="font-body text-xs text-slate-300 leading-relaxed">
+                                Business handles invoicing and dispatch immediately without latency.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Ending Statement Banner -->
+                <div class="mt-16 text-center reveal-on-scroll reveal-fade-up">
+                    <div class="inline-block bg-white/10 border border-white/20 backdrop-blur-md rounded-2xl px-8 py-4">
+                        <p class="headline-font font-bold text-lg sm:text-xl text-[#F1C74B] tracking-wide">
+                            "No exports. No imports. No syncing. No duplicate databases."
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. Section: Designed For Every Type of Business User -->
+        <section class="bg-white py-20 md:py-28 px-6 md:px-16 lg:px-12 xl:px-24">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4 reveal-on-scroll reveal-fade-up">
+                    <span class="text-[#1F3A89] font-bold headline-font uppercase tracking-widest text-xs block">
+                        Target Audience
+                    </span>
+                    <h2
+                        class="headline-font text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
+                        Designed For Every Type of Business User
+                    </h2>
+                    <p class="font-body text-slate-600 text-base md:text-lg">
+                        A clean, specific ordering interface tailored to each role in your distribution channel.
+                    </p>
+                </div>
+
+                <!-- Persona Grid (5 columns on desktop) -->
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 reveal-on-scroll reveal-fade-up">
+
+                    <!-- Card 1: Dealers -->
+                    <div
+                        class="bg-slate-50 border border-slate-100 hover:border-[#1F3A89]/30 hover:bg-slate-50/50 hover:shadow-md rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div
+                                class="w-10 h-10 rounded-xl bg-blue-50 text-[#1F3A89] group-hover:bg-[#1F3A89] group-hover:text-white flex items-center justify-center mb-6 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-xl">storefront</span>
+                            </div>
+                            <h3 class="headline-font font-bold text-slate-800 text-lg mb-2">Dealers</h3>
+                            <p class="font-body text-xs text-slate-500 leading-relaxed">
+                                Place orders anytime. Access personalized pricing lists, special deals, and clear order
+                                histories without having to call account managers.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Distributors -->
+                    <div
+                        class="bg-slate-50 border border-slate-100 hover:border-[#1F3A89]/30 hover:bg-slate-50/50 hover:shadow-md rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div
+                                class="w-10 h-10 rounded-xl bg-blue-50 text-[#1F3A89] group-hover:bg-[#1F3A89] group-hover:text-white flex items-center justify-center mb-6 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-xl">warehouse</span>
+                            </div>
+                            <h3 class="headline-font font-bold text-slate-800 text-lg mb-2">Distributors</h3>
+                            <p class="font-body text-xs text-slate-500 leading-relaxed">
+                                Manage approvals, dispatch orders, and review customer order queues directly. Instantly
+                                sync status back to parent records.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Sales Teams -->
+                    <div
+                        class="bg-slate-50 border border-slate-100 hover:border-[#1F3A89]/30 hover:bg-slate-50/50 hover:shadow-md rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div
+                                class="w-10 h-10 rounded-xl bg-blue-50 text-[#1F3A89] group-hover:bg-[#1F3A89] group-hover:text-white flex items-center justify-center mb-6 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-xl">phone_iphone</span>
+                            </div>
+                            <h3 class="headline-font font-bold text-slate-800 text-lg mb-2">Sales Teams</h3>
+                            <p class="font-body text-xs text-slate-500 leading-relaxed">
+                                Capture orders in the field directly. Review live product stocks and customer limits
+                                right in front of client stores to finalize deals fast.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Customers -->
+                    <div
+                        class="bg-slate-50 border border-slate-100 hover:border-[#1F3A89]/30 hover:bg-slate-50/50 hover:shadow-md rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div
+                                class="w-10 h-10 rounded-xl bg-blue-50 text-[#1F3A89] group-hover:bg-[#1F3A89] group-hover:text-white flex items-center justify-center mb-6 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-xl">shopping_bag</span>
+                            </div>
+                            <h3 class="headline-font font-bold text-slate-800 text-lg mb-2">Customers</h3>
+                            <p class="font-body text-xs text-slate-500 leading-relaxed">
+                                Self-service ordering experience. Browse clean modern catalogs, put items in carts,
+                                track delivery stages, and download past bills.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Business Owners -->
+                    <div
+                        class="bg-slate-50 border border-slate-100 hover:border-[#1F3A89]/30 hover:bg-slate-50/50 hover:shadow-md rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div
+                                class="w-10 h-10 rounded-xl bg-blue-50 text-[#1F3A89] group-hover:bg-[#1F3A89] group-hover:text-white flex items-center justify-center mb-6 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-xl">insights</span>
+                            </div>
+                            <h3 class="headline-font font-bold text-slate-800 text-lg mb-2">Owners</h3>
+                            <p class="font-body text-xs text-slate-500 leading-relaxed">
+                                Complete visibility and control. Monitor channel sales, set credit check requirements,
+                                block bad debtors, and check company performance metrics.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5.5 Section: Business Continuity -->
+        <section
+            class="bg-gradient-to-b from-slate-50 via-blue-50/10 to-white py-20 md:py-28 px-6 md:px-16 lg:px-12 xl:px-24 border-t border-b border-slate-100 overflow-hidden relative">
+            <!-- Subtle background glowing accents -->
+            <div
+                class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-100/20 rounded-full filter blur-3xl pointer-events-none">
+            </div>
+
+            <div class="max-w-7xl mx-auto relative z-10 text-center">
+                <!-- Header Block -->
+                <div class="max-w-3xl mx-auto mb-16 space-y-4 reveal-on-scroll reveal-fade-up">
+                    <span
+                        class="text-[#1F3A89] font-bold headline-font uppercase tracking-widest text-xs px-3.5 py-1.5 bg-blue-50 border border-blue-100 rounded-full inline-block">
+                        Business Continuity
+                    </span>
+                    <h2
+                        class="headline-font text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
+                        Keep Selling Through Every Disruption
+                    </h2>
+
+                    <div
+                        class="pt-4 space-y-6 text-slate-600 font-body text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+                        <p class="font-bold text-[#1F3A89] text-lg sm:text-xl">
+                            Internet outages and temporary system server downtime shouldn't stop revenue.
+                        </p>
+                        <p>
+                            DataLynkr allows customers, dealers, and sales teams to continue creating orders even when
+                            connectivity is unavailable. Transactions are securely stored and synchronized automatically
+                            once systems reconnect.
+                        </p>
+                        <p
+                            class="font-medium text-slate-800 italic border-l-4 border-[#1F3A89] pl-4 bg-slate-50 py-2.5 rounded-r-lg inline-block text-left">
+                            Your ordering channel stays open when others would be forced to stop.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Thin Horizontal Divider Line -->
+                <div class="w-full max-w-4xl mx-auto h-[1px] bg-slate-200/60 my-12 reveal-on-scroll reveal-fade-up"
+                    style="animation-delay: 100ms;"></div>
+
+                <!-- Supporting Benefits Cards (3 cards, horizontal grid, stack on mobile) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+                    <!-- Benefit Card 1 -->
+                    <div class="bg-white/60 backdrop-blur-md border border-slate-200/60 hover:border-[#1F3A89]/30 hover:bg-white hover:-translate-y-1 hover:shadow-md rounded-2xl p-6 lg:p-8 transition-all duration-300 flex flex-col items-center text-center group reveal-on-scroll reveal-fade-up"
+                        style="animation-delay: 200ms;">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-blue-50 text-[#1F3A89] group-hover:bg-[#1F3A89] group-hover:text-white flex items-center justify-center mb-6 transition-colors shadow-sm">
+                            <span class="material-symbols-outlined text-2xl">sync_saved_locally</span>
+                        </div>
+                        <h3 class="headline-font font-bold text-slate-800 text-lg mb-3">Continuous Order Capture</h3>
+                        <p class="font-body text-sm text-slate-500 leading-relaxed">
+                            Keep accepting orders during temporary disruptions.
+                        </p>
+                    </div>
+
+                    <!-- Benefit Card 2 -->
+                    <div class="bg-white/60 backdrop-blur-md border border-slate-200/60 hover:border-[#1F3A89]/30 hover:bg-white hover:-translate-y-1 hover:shadow-md rounded-2xl p-6 lg:p-8 transition-all duration-300 flex flex-col items-center text-center group reveal-on-scroll reveal-fade-up"
+                        style="animation-delay: 300ms;">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-blue-50 text-[#1F3A89] group-hover:bg-[#1F3A89] group-hover:text-white flex items-center justify-center mb-6 transition-colors shadow-sm">
+                            <span class="material-symbols-outlined text-2xl">sync</span>
+                        </div>
+                        <h3 class="headline-font font-bold text-slate-800 text-lg mb-3">Automatic Synchronization</h3>
+                        <p class="font-body text-sm text-slate-500 leading-relaxed">
+                            Transactions sync automatically when systems reconnect.
+                        </p>
+                    </div>
+
+                    <!-- Benefit Card 3 -->
+                    <div class="bg-white/60 backdrop-blur-md border border-slate-200/60 hover:border-[#1F3A89]/30 hover:bg-white hover:-translate-y-1 hover:shadow-md rounded-2xl p-6 lg:p-8 transition-all duration-300 flex flex-col items-center text-center group reveal-on-scroll reveal-fade-up"
+                        style="animation-delay: 400ms;">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-blue-50 text-[#1F3A89] group-hover:bg-[#1F3A89] group-hover:text-white flex items-center justify-center mb-6 transition-colors shadow-sm">
+                            <span class="material-symbols-outlined text-2xl">monetization_on</span>
+                        </div>
+                        <h3 class="headline-font font-bold text-slate-800 text-lg mb-3">Protected Revenue Opportunities
+                        </h3>
+                        <p class="font-body text-sm text-slate-500 leading-relaxed">
+                            Never miss orders because of downtime.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Section: Key Benefits -->
+        <section class="bg-white py-20 md:py-28 px-6 md:px-16 lg:px-12 xl:px-24">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4 reveal-on-scroll reveal-fade-up">
+                    <span class="text-amber-500 font-bold headline-font uppercase tracking-widest text-xs block">
+                        Measurable Value
+                    </span>
+                    <h2
+                        class="headline-font text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
+                        Why Leaders Choose DataLynkr B-Commerce
+                    </h2>
+                    <p class="font-body text-slate-600 text-base md:text-lg">
+                        Simplify operations and cut costs by eliminating duplicate setups and middleware scripts.
+                    </p>
+                </div>
+
+                <!-- 6 Large Statistic-Style Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-on-scroll reveal-fade-up">
+
+                    <!-- Card 1: 1 Source of Truth -->
+                    <div
+                        class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300">
+                        <div class="text-5xl font-extrabold text-[#1F3A89] headline-font mb-4">1</div>
+                        <h3 class="headline-font font-bold text-slate-800 text-lg mb-2">Source of Truth</h3>
+                        <p class="font-body text-sm text-slate-500 leading-relaxed">
+                            Tally remains the master ledger system. No data warehouse or sync databases needed.
+                        </p>
+                    </div>
+
+                    <!-- Card 2: Real-Time -->
+                    <div
+                        class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300">
+                        <div class="text-5xl font-extrabold text-emerald-500 headline-font mb-4">100%</div>
+                        <h3 class="headline-font font-bold text-slate-800 text-lg mb-2">Real-Time</h3>
+                        <p class="font-body text-sm text-slate-500 leading-relaxed">
+                            Inventory counts and pricing rules are checked live against Tally with zero latency.
+                        </p>
+                    </div>
+
+                    <!-- Card 3: Zero Sync Jobs -->
+                    <div
+                        class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300">
+                        <div class="text-5xl font-extrabold text-[#F1C74B] headline-font mb-4">0</div>
+                        <h3 class="headline-font font-bold text-slate-800 text-lg mb-2">Sync Jobs</h3>
+                        <p class="font-body text-sm text-slate-500 leading-relaxed">
+                            Nothing to schedule, monitor, or fix. Say goodbye to broken nightly catalog imports.
+                        </p>
+                    </div>
+
+                    <!-- Card 4: Faster Order Processing -->
+                    <div
+                        class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300">
+                        <div class="text-5xl font-extrabold text-[#1F3A89] headline-font mb-4">10x</div>
+                        <h3 class="headline-font font-bold text-slate-800 text-lg mb-2">Faster Order Processing</h3>
+                        <p class="font-body text-sm text-slate-500 leading-relaxed">
+                            Orders reach Tally instantly. Warehouse teams can pick, pack, and bill orders in minutes.
+                        </p>
+                    </div>
+
+                    <!-- Card 5: Lower IT Complexity -->
+                    <div
+                        class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300">
+                        <div class="text-5xl font-extrabold text-indigo-500 headline-font mb-4">Min</div>
+                        <h3 class="headline-font font-bold text-slate-800 text-lg mb-2">IT Complexity</h3>
+                        <p class="font-body text-sm text-slate-500 leading-relaxed">
+                            No complex middleware or external databases to patch, host, and maintain.
+                        </p>
+                    </div>
+
+                    <!-- Card 6: Higher Accuracy -->
+                    <div
+                        class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300">
+                        <div class="text-5xl font-extrabold text-emerald-600 headline-font mb-4">99.9%</div>
+                        <h3 class="headline-font font-bold text-slate-800 text-lg mb-2">Higher Accuracy</h3>
+                        <p class="font-body text-sm text-slate-500 leading-relaxed">
+                            Everyone works from the exact same item rates and ledger accounts. No duplicate errors.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Section: Traditional E-Commerce vs DataLynkr -->
+        <section class="bg-slate-50 border-t border-b border-slate-100 py-20 md:py-28 px-6 md:px-16 lg:px-12 xl:px-24">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4 reveal-on-scroll reveal-fade-up">
+                    <span class="text-[#1F3A89] font-bold headline-font uppercase tracking-widest text-xs block">
+                        Direct Feature Compare
+                    </span>
+                    <h2
+                        class="headline-font text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
+                        Traditional E-Commerce vs DataLynkr
+                    </h2>
+                    <p class="font-body text-slate-600 text-base md:text-lg">
+                        See why connecting directly to your ERP outperforms database-sync solutions.
+                    </p>
+                </div>
+
+                <!-- Modern Comparison Table -->
+                <div
+                    class="w-full overflow-x-auto border border-slate-200 rounded-3xl shadow-sm reveal-on-scroll reveal-fade-up">
+                    <table class="w-full text-left border-collapse min-w-[700px]">
+                        <thead>
+                            <tr
+                                class="bg-slate-50 border-b border-slate-200 font-bold headline-font text-slate-700 text-sm">
+                                <th class="p-6">Feature</th>
+                                <th class="p-6">Traditional Setup</th>
+                                <th class="p-6 bg-blue-50/50 text-[#1F3A89]">DataLynkr B-Commerce</th>
+                            </tr>
+                        </thead>
+                        <tbody class="font-body text-slate-600 text-sm">
+
+                            <!-- Row 1: Inventory Updates -->
+                            <tr class="border-b border-slate-100 hover:bg-slate-50/30 transition-colors">
+                                <td class="p-6 font-semibold text-slate-800">Inventory Updates</td>
+                                <td class="p-6 flex items-center gap-2 text-rose-700">
+                                    <span class="material-symbols-outlined text-rose-500 text-lg shrink-0">error</span>
+                                    Sync jobs scheduled (hourly/daily)
+                                </td>
+                                <td class="p-6 bg-blue-50/20 text-emerald-800 font-semibold">
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_circle</span>
+                                        Instantly read from Tally (0s lag)
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Row 2: Price Updates -->
+                            <tr class="border-b border-slate-100 hover:bg-slate-50/30 transition-colors">
+                                <td class="p-6 font-semibold text-slate-800">Price Updates</td>
+                                <td class="p-6 flex items-center gap-2 text-rose-700">
+                                    <span class="material-symbols-outlined text-rose-500 text-lg shrink-0">error</span>
+                                    Manual catalog updates or complex syncs
+                                </td>
+                                <td class="p-6 bg-blue-50/20 text-emerald-800 font-semibold">
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_circle</span>
+                                        Loads customer pricing rates live
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Row 3: Customer Data -->
+                            <tr class="border-b border-slate-100 hover:bg-slate-50/30 transition-colors">
+                                <td class="p-6 font-semibold text-slate-800">Customer Data</td>
+                                <td class="p-6 flex items-center gap-2 text-rose-700">
+                                    <span class="material-symbols-outlined text-rose-500 text-lg shrink-0">error</span>
+                                    Duplicated and synced accounts
+                                </td>
+                                <td class="p-6 bg-blue-50/20 text-emerald-800 font-semibold">
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_circle</span>
+                                        Direct access to Tally ledgers
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Row 4: Order Processing -->
+                            <tr class="border-b border-slate-100 hover:bg-slate-50/30 transition-colors">
+                                <td class="p-6 font-semibold text-slate-800">Order Processing</td>
+                                <td class="p-6 flex items-center gap-2 text-rose-700">
+                                    <span class="material-symbols-outlined text-rose-500 text-lg shrink-0">error</span>
+                                    Manual exports / imports needed
+                                </td>
+                                <td class="p-6 bg-blue-50/20 text-emerald-800 font-semibold">
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_circle</span>
+                                        Vouchers posted straight to Tally
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Row 5: Sync Requirements -->
+                            <tr class="border-b border-slate-100 hover:bg-slate-50/30 transition-colors">
+                                <td class="p-6 font-semibold text-slate-800">Sync Requirements</td>
+                                <td class="p-6 flex items-center gap-2 text-rose-700">
+                                    <span class="material-symbols-outlined text-rose-500 text-lg shrink-0">error</span>
+                                    High (Sync scripts, CRON, monitoring)
+                                </td>
+                                <td class="p-6 bg-blue-50/20 text-emerald-800 font-semibold">
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_circle</span>
+                                        Zero sync required
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Row 6: Integration Maintenance -->
+                            <tr class="border-b border-slate-100 hover:bg-slate-50/30 transition-colors">
+                                <td class="p-6 font-semibold text-slate-800">Integration Maintenance</td>
+                                <td class="p-6 flex items-center gap-2 text-rose-700">
+                                    <span class="material-symbols-outlined text-rose-500 text-lg shrink-0">error</span>
+                                    High (Database drifts, API breakage)
+                                </td>
+                                <td class="p-6 bg-blue-50/20 text-emerald-800 font-semibold">
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_circle</span>
+                                        Zero maintenance, native link
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Row 7: Data Accuracy -->
+                            <tr class="hover:bg-slate-50/30 transition-colors">
+                                <td class="p-6 font-semibold text-slate-800">Data Accuracy</td>
+                                <td class="p-6 flex items-center gap-2 text-rose-700">
+                                    <span class="material-symbols-outlined text-rose-500 text-lg shrink-0">error</span>
+                                    Prone to conflict errors and lag
+                                </td>
+                                <td class="p-6 bg-blue-50/20 text-emerald-800 font-semibold">
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="material-symbols-outlined text-emerald-600 text-lg shrink-0">check_circle</span>
+                                        100% accurate, single master source
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Final CTA Section -->
+        <section
+            class="bg-gradient-to-br from-slate-900 via-slate-900 to-[#1F3A89] text-white py-20 md:py-28 px-6 md:px-16 lg:px-12 xl:px-24 relative overflow-hidden">
+            <!-- Decorative flowing network line SVG in background -->
+            <div class="absolute inset-0 pointer-events-none opacity-20">
+                <svg class="w-full h-full" viewBox="0 0 1000 600" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none">
+                    <!-- Flowing network links -->
+                    <path d="M -50,300 C 200,100 400,500 600,200 C 800,-100 950,400 1100,200" stroke="#93C5FD"
+                        stroke-width="2" class="animate-flow-out" />
+                    <path d="M -50,200 C 150,400 350,100 550,400 C 750,200 900,500 1100,300" stroke="#34D399"
+                        stroke-width="2" class="animate-flow-in" />
+                </svg>
+            </div>
+
+            <div class="max-w-4xl mx-auto text-center relative z-10 space-y-8 reveal-on-scroll reveal-fade-up">
+                <div
+                    class="inline-flex items-center justify-center w-16 h-16 rounded-3xl bg-white/10 border border-white/20 mb-4 shadow-xl">
+                    <span class="material-symbols-outlined text-3xl text-[#F1C74B] animate-pulse">rocket_launch</span>
+                </div>
+                <h2 class="headline-font text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                    Turn Tally Into Your E-Commerce Engine
+                </h2>
+                <p class="font-body text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
+                    Launch a modern web and mobile ordering experience without duplicating your data or building complex
+                    integrations.
+                </p>
+                <div class="pt-6 flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+                    <a href="../contact.html"
+                        class="inline-flex items-center justify-center gap-2 bg-[#F1C74B] text-slate-900 px-8 py-4 rounded-full font-bold hover:bg-white transition-all hover:shadow-xl hover:scale-105 active:scale-95 duration-300">
+                        <span>Book a Demo</span>
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Component -->
+    <footer
+        class="w-full border-t border-zinc-100 bg-white flex flex-col md:flex-row justify-between items-center px-6 md:px-12 py-10 md:py-16 gap-6">
+        <div class="flex flex-col items-center md:items-start gap-2">
+            <div class="text-lg font-bold text-zinc-900 headline-font"><span class="text-[#1F3A89]">DataLynk</span>r
+            </div>
+            <div class="flex items-center gap-1.5 font-['Wix_Madefor_Text'] text-xs text-zinc-400">
+                <span>©</span>
+                <span class="font-bold"><span style="color: #e46b0c;">IT</span> <span
+                        style="color: black;">Catalyst</span></span>
+                <span>Software India Pvt Ltd. 2026.</span>
+            </div>
+        </div>
+        <div class="flex gap-8">
+            <a class="text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors"
+                href="#">Privacy</a>
+            <a class="text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors"
+                href="#">Terms</a>
+            <a class="text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors"
+                href="../support.html">Support</a>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
