@@ -1,8 +1,10 @@
 "use client";
 
+import { useRef } from "react";
 import Link from "next/link";
 import Sidebar from "./Sidebar";
 import { LogoSvg } from "./LogoSvg";
+import { useHideNavOnScroll } from "@/hooks/useHideNavOnScroll";
 
 interface NavbarProps {
   /** Whether to show the center logo + brand name */
@@ -13,6 +15,8 @@ interface NavbarProps {
   loginHref?: string;
   /** Whether to show only the home icon on the right side */
   showHomeIcon?: boolean;
+  /** Hide the nav when scrolling down and reveal it when scrolling up */
+  hideOnScroll?: boolean;
   /** Extra classes for the nav */
   className?: string;
 }
@@ -22,10 +26,15 @@ export default function Navbar({
   showLoginButton = false,
   loginHref = "/login",
   showHomeIcon = true,
+  hideOnScroll = false,
   className = "",
 }: NavbarProps) {
+  const navRef = useRef<HTMLElement>(null);
+  useHideNavOnScroll(hideOnScroll, navRef);
+
   return (
     <nav
+      ref={navRef}
       id="main-nav"
       className={`fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl flex items-center justify-between px-6 md:px-10 lg:px-12 py-4 md:py-6 transition-transform duration-500 ease-in-out ${className}`}
     >

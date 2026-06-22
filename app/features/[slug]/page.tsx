@@ -550,7 +550,12 @@ export default async function FeaturePage({ params }: PageProps) {
       {schemas.video && <JsonLd data={schemas.video} />}
       {schemas.faq && <JsonLd data={schemas.faq} />}
       
-      <Navbar showCenterBrand={false} showLoginButton={false} showHomeIcon={true} />
+      <Navbar
+        showCenterBrand={false}
+        showLoginButton={false}
+        showHomeIcon={true}
+        hideOnScroll
+      />
       {/* Spacer that matches the fixed navbar height (py-4 md:py-6 = ~82px mobile, ~98px desktop) */}
       <div className="feature-page-main flex-grow flex flex-col">
         <FeatureClient
