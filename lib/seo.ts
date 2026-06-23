@@ -15,14 +15,23 @@ export function buildPageMetadata(options: {
   ogImage?: string;
   noIndex?: boolean;
   ogType?: "website" | "article";
+  keywords?: string[];
 }): Metadata {
-  const { title, description, path, ogImage = DEFAULT_OG_IMAGE, noIndex = false, ogType = "website" } =
-    options;
+  const {
+    title,
+    description,
+    path,
+    ogImage = DEFAULT_OG_IMAGE,
+    noIndex = false,
+    ogType = "website",
+    keywords,
+  } = options;
   const url = path === "/" ? siteOrigin() : absoluteUrl(path);
 
   return {
     title,
     description,
+    keywords,
     alternates: { canonical: url },
     ...(noIndex
       ? { robots: { index: false, follow: false } }

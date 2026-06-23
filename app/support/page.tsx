@@ -10,10 +10,18 @@ import {
 } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Get Support",
+  title: "DataLynkr Support Center - Troubleshooting & Guides",
   description:
     "Need help with your DataLynkr account, Tally sync, order placement, or permissions? Access support resources, submit a ticket, or contact our team.",
   path: "/support",
+  keywords: [
+    "DataLynkr support center",
+    "troubleshoot Tally sync",
+    "install Tally connector",
+    "DataLynkr help desk",
+    "Tally integration support",
+    "DataLynkr dynamic permissions help",
+  ],
 });
 
 const breadcrumbs = [

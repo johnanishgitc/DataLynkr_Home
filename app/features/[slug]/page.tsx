@@ -14,6 +14,7 @@ import {
   featureBreadcrumbJsonLd,
   featureWebPageJsonLd,
   getFeatureFaqItems,
+  getFeatureKeywords,
   getFeatureSchemas,
 } from "@/lib/featureSchemas";
 import { buildPageMetadata } from "@/lib/seo";
@@ -131,6 +132,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: data.description,
     path: `/features/${slug}`,
     ogImage: absoluteUrl(FEATURE_OG_IMAGES[slug] ?? "/resources/poster_images/orders_laptop.webp"),
+    keywords: getFeatureKeywords(slug),
   });
 }
 

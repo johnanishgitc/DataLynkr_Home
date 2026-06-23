@@ -5,6 +5,10 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # Route root crawler files to the Next.js app folder under /Hometest
+  RewriteRule ^robots\.txt$ Hometest/robots.txt [L,NC]
+  RewriteRule ^sitemap\.xml$ Hometest/sitemap.xml [L,NC]
+
   # Next.js app mounted at /Hometest — let Passenger handle it
   RewriteCond %{REQUEST_URI} ^/Hometest(/|$) [NC]
   RewriteRule ^ - [L]

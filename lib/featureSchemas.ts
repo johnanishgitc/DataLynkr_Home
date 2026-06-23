@@ -280,6 +280,91 @@ export const FEATURE_OG_IMAGES: Record<string, string> = {
   "custom-reports": "/resources/poster_images/dealer_growth.webp",
 };
 
+export const FEATURE_KEYWORDS: Record<string, string[]> = {
+  "sales-order-management": [
+    "Tally sales order app",
+    "mobile sales order for Tally",
+    "Tally ERP order capture",
+    "real-time sales order TallyPrime",
+    "DataLynkr sales order",
+    "Tally remote sales entry",
+  ],
+  "extend-portal-customers": [
+    "Tally customer portal",
+    "self-service client portal Tally",
+    "download Tally invoices online",
+    "Tally customer ledger access",
+    "customer outstanding statement Tally",
+  ],
+  "modern-bcommerce-ordering": [
+    "B2B ordering screen Tally",
+    "B2B dealer ordering Tally",
+    "distributor order entry Tally",
+    "Tally ecommerce sync",
+    "Tally digital catalog",
+  ],
+  "invoice-creation": [
+    "Tally mobile invoicing",
+    "print Tally invoices Bluetooth",
+    "field invoice creation Tally",
+    "on-the-spot invoicing TallyPrime",
+    "tax calculation Tally mobile",
+  ],
+  "authorization-workflows": [
+    "Tally transaction approvals",
+    "multi-level authorization Tally ERP",
+    "remote Tally approval workflow",
+    "Tally credit limit controls",
+    "Tally transaction check",
+  ],
+  "daily-ledger-reports": [
+    "Tally ledger balance mobile",
+    "live outstanding bills Tally",
+    "share Tally ledger WhatsApp",
+    "Tally outstanding reports app",
+    "Tally ledger statement PDF",
+  ],
+  "offline-transactions": [
+    "Tally offline order entry",
+    "offline Tally app",
+    "sync offline transactions Tally",
+    "no-internet Tally orders",
+    "Tally field offline sync",
+  ],
+  "dynamic-dashboards": [
+    "Tally business dashboard",
+    "live Tally KPIs",
+    "Tally cash flow monitor",
+    "real-time Tally owner report",
+    "Tally sales trend graph",
+  ],
+  "payments-collections": [
+    "Tally payment collections app",
+    "match outstanding bills Tally",
+    "log customer payments Tally",
+    "collections tracking TallyERP",
+    "Tally receipt entry mobile",
+  ],
+  "stock-summary": [
+    "Tally live inventory app",
+    "multi-godown stock tracker",
+    "real-time stock check Tally",
+    "Tally batch tracking mobile",
+    "Tally warehouse stock summary",
+  ],
+  "custom-reports": [
+    "Tally custom reports builder",
+    "live Tally pivot tables",
+    "Tally reports on mobile",
+    "business intelligence for Tally",
+    "Tally spreadsheet analytics",
+  ],
+};
+
+export function getFeatureKeywords(slug: string): string[] {
+  return FEATURE_KEYWORDS[slug] ?? [];
+}
+
 export function getFeatureFaqItems(slug: string): FaqItem[] {
   return FEATURE_FAQ[slug] ?? [];
 }

@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
-import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import { aboutPageJsonLd, breadcrumbJsonLd, buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -9,6 +8,14 @@ export const metadata = buildPageMetadata({
   description:
     "DataLynkr is built by a team with over three decades of experience delivering Tally solutions. Learn about our mission to extend Tally ERP beyond the accounts department.",
   path: "/about",
+  keywords: [
+    "about DataLynkr",
+    "IT Catalyst Software India",
+    "Tally integration experts",
+    "Tally development team",
+    "DataLynkr mission",
+    "Tally ERP solution developers",
+  ],
 });
 
 const breadcrumbs = [
@@ -25,7 +32,6 @@ export default function AboutPage() {
 
       <main className="flex-grow bg-white px-6 md:px-8 py-24 md:py-32 pb-20 md:pb-32">
         <div className="max-w-4xl mx-auto">
-          <SeoBreadcrumbs items={breadcrumbs} className="mb-8" />
           <h1 className="headline-font text-4xl md:text-5xl lg:text-6xl font-bold text-[#1f3a89] mb-8 md:mb-12 text-center">
             About DataLynkr
           </h1>

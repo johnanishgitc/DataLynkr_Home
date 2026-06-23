@@ -13,6 +13,16 @@ export const metadata = buildPageMetadata({
   description:
     "DataLynkr extends Tally beyond the accounts department. Give your sales teams, managers, operations, and customers secure real-time access to Tally data from mobile and browser — anywhere, anytime.",
   path: "/",
+  keywords: [
+    "Tally ERP integration",
+    "TallyPrime mobile app",
+    "real-time Tally browser access",
+    "remote Tally access",
+    "Tally extension for sales",
+    "DataLynkr Tally",
+    "Tally dynamic dashboard",
+    "remote TallyPrime access",
+  ],
 });
 
 const homeWebPageJsonLd = webPageJsonLd({

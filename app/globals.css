@@ -98,9 +98,10 @@ body {
   to { transform: rotate(360deg); }
 }
 
+/* Use transform (not translate) so Tailwind v4 positioning utilities aren't overridden */
 @keyframes float {
-  0%, 100% { translate: 0px 0px; }
-  50% { translate: 0px -15px; }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
 @keyframes shine {

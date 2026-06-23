@@ -11,10 +11,18 @@ import {
 } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Pricing",
+  title: "DataLynkr Pricing - Plans starting at ₹300/user/month",
   description:
     "Explore DataLynkr subscription plans: Silver, Gold, Diamond, and Enterprise. Plans start at ₹300/month per user. 14-day free trial, no credit card required.",
   path: "/pricing",
+  keywords: [
+    "DataLynkr pricing plans",
+    "Tally mobile app subscription",
+    "affordable Tally integration cost",
+    "DataLynkr free trial",
+    "Tally extension pricing",
+    "DataLynkr pricing packages",
+  ],
 });
 
 const breadcrumbs = [
