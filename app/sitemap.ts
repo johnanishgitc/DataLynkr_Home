@@ -17,20 +17,17 @@ const featureSlugs = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
-    { url: absoluteUrl("/"), lastModified: new Date(), changeFrequency: "weekly", priority: 1.0 },
-    { url: absoluteUrl("/about"), lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: absoluteUrl("/pricing"), lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: absoluteUrl("/contact"), lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: absoluteUrl("/support"), lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: absoluteUrl("/login"), lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
-    { url: absoluteUrl("/changepswd"), lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
-    { url: absoluteUrl("/privacy"), lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
-    { url: absoluteUrl("/terms"), lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
+    { url: absoluteUrl("/"), changeFrequency: "weekly", priority: 1.0 },
+    { url: absoluteUrl("/about"), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/pricing"), changeFrequency: "weekly", priority: 0.9 },
+    { url: absoluteUrl("/contact"), changeFrequency: "monthly", priority: 0.7 },
+    { url: absoluteUrl("/support"), changeFrequency: "monthly", priority: 0.7 },
+    { url: absoluteUrl("/privacy"), changeFrequency: "yearly", priority: 0.3 },
+    { url: absoluteUrl("/terms"), changeFrequency: "yearly", priority: 0.3 },
   ];
 
   const featurePages: MetadataRoute.Sitemap = featureSlugs.map((slug) => ({
     url: absoluteUrl(`/features/${slug}`),
-    lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));

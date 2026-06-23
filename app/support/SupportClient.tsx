@@ -3,6 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import FaqSection from "@/components/FaqSection";
+import { SUPPORT_FAQ } from "@/lib/seo";
 
 export default function SupportClient() {
   const [issueCategory, setIssueCategory] = useState("");
@@ -444,6 +446,12 @@ export default function SupportClient() {
           </div>
         </section>
       </main>
+
+      <FaqSection
+        items={SUPPORT_FAQ}
+        title="Support & Setup FAQ"
+        subtitle="Quick answers for connecting DataLynkr to Tally and resolving common issues."
+      />
 
       {/* Footer (Simplified as in support.html, converted to modern styling) */}
       <footer className="bg-slate-900 text-white/60 py-12 px-6 md:px-16 lg:px-24">

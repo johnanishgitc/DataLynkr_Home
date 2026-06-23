@@ -4,6 +4,7 @@ import JsonLd from "@/components/JsonLd";
 import ClientAnimations from "@/components/ClientAnimations";
 import LegacyLinkInterceptor from "@/components/LegacyLinkInterceptor";
 import { absoluteUrl, siteOrigin, basePath } from "@/lib/site";
+import { DEFAULT_OG_IMAGE, webSiteJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin()),
@@ -44,6 +45,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  applicationName: "DataLynkr",
+  category: "business",
+  manifest: absoluteUrl("/manifest.webmanifest"),
   openGraph: {
     type: "website",
     locale: "en_IN",
@@ -52,12 +56,21 @@ export const metadata: Metadata = {
     title: "DataLynkr - Take Tally Beyond The Finance Team",
     description:
       "Empower every team with real-time access to Tally. From orders and approvals to payments, insights, and execution — anywhere, anytime.",
+    images: [
+      {
+        url: DEFAULT_OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "DataLynkr - Take Tally Beyond The Finance Team",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "DataLynkr - Take Tally Beyond The Finance Team",
     description:
       "Extend Tally to your entire organization. Sales orders, invoices, dashboards, and more — from mobile and browser.",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 
@@ -135,6 +148,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href={`${basePath}/logo.svg`} type="image/svg+xml" />
         <link rel="icon" href={`${basePath}/logo.svg`} type="image/svg+xml" />
         <JsonLd data={organizationJsonLd} />
+        <JsonLd data={webSiteJsonLd()} />
       </head>
       <body className="bg-white text-on-surface antialiased overflow-x-hidden animate-fade-in">
         <LegacyLinkInterceptor />

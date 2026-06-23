@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
 import ChangePswdClient from "./ChangePswdClient";
-import { absoluteUrl } from "@/lib/site";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Change Password",
   description: "Securely change your DataLynkr portal password.",
-  alternates: { canonical: absoluteUrl("/changepswd") },
-};
+  path: "/changepswd",
+  noIndex: true,
+});
 
 export default function ChangePasswordPage() {
   return <ChangePswdClient />;

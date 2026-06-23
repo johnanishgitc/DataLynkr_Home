@@ -1,22 +1,31 @@
-import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
+import { aboutPageJsonLd, breadcrumbJsonLd, buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "About DataLynkr",
   description:
     "DataLynkr is built by a team with over three decades of experience delivering Tally solutions. Learn about our mission to extend Tally ERP beyond the accounts department.",
-};
+  path: "/about",
+});
+
+const breadcrumbs = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+];
 
 export default function AboutPage() {
   return (
     <>
-      {/* Navbar */}
+      <JsonLd data={aboutPageJsonLd()} />
+      <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />
       <Navbar showHomeIcon={true} />
 
-      {/* Main Content */}
       <main className="flex-grow bg-white px-6 md:px-8 py-24 md:py-32 pb-20 md:pb-32">
         <div className="max-w-4xl mx-auto">
+          <SeoBreadcrumbs items={breadcrumbs} className="mb-8" />
           <h1 className="headline-font text-4xl md:text-5xl lg:text-6xl font-bold text-[#1f3a89] mb-8 md:mb-12 text-center">
             About DataLynkr
           </h1>
@@ -86,7 +95,6 @@ export default function AboutPage() {
         </div>
       </main>
 
-      {/* Footer */}
       <Footer />
     </>
   );

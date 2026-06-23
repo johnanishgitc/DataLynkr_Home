@@ -1,16 +1,33 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { LogoSvg } from "@/components/LogoSvg";
+import JsonLd from "@/components/JsonLd";
+import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
+import { breadcrumbJsonLd, buildPageMetadata, webPageJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Terms of Service",
   description:
     "Review the DataLynkr Terms of Service. Understand the rules, subscription payments, intellectual property policies, and liabilities associated with our Service.",
-};
+  path: "/terms",
+});
+
+const breadcrumbs = [
+  { name: "Home", path: "/" },
+  { name: "Terms of Service", path: "/terms" },
+];
 
 export default function TermsPage() {
   return (
     <div className="bg-[#f7f9fc] text-on-surface antialiased overflow-x-hidden min-h-screen flex flex-col pt-16">
+      <JsonLd
+        data={webPageJsonLd({
+          path: "/terms",
+          name: "DataLynkr Terms of Service",
+          description:
+            "Terms and conditions governing use of the DataLynkr platform and services.",
+        })}
+      />
+      <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />
       {/* Header Navbar */}
       <header className="w-full bg-white shadow-sm border-b border-zinc-200 py-3 md:py-4 px-4 md:px-6 lg:px-12 flex items-center justify-between z-50 fixed top-0 left-0">
         <Link
@@ -50,6 +67,7 @@ export default function TermsPage() {
 
         <div className="bg-white rounded-[24px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-black/5 p-6 md:p-10 lg:p-14 w-full prose prose-zinc prose-base md:prose-lg min-w-full">
           <div className="text-center mb-10 pb-10 border-b border-zinc-100">
+            <SeoBreadcrumbs items={breadcrumbs} className="justify-center mb-6" />
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold headline-font text-zinc-900 mb-2 m-0 mt-0">
               Terms of Service
             </h1>

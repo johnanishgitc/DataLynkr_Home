@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FaqSection from "@/components/FaqSection";
+import { PRICING_FAQ } from "@/lib/seo";
 import {
   type BankDetails,
   type PricingSlab,
@@ -185,6 +187,12 @@ export default function PricingClient({ plans, bankDetails }: PricingClientProps
           </Link>
         </p>
       </div>
+
+      <FaqSection
+        items={PRICING_FAQ}
+        title="Pricing Questions"
+        subtitle="Common questions about DataLynkr plans, billing, and trials."
+      />
 
       {/* Footer */}
       <Footer />

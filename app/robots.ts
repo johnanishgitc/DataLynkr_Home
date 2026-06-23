@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/_next/"],
+        disallow: ["/api/", "/_next/", "/login", "/changepswd"],
       },
       // Explicitly welcome AI search/answer engine bots
       {

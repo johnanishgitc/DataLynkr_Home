@@ -6,6 +6,8 @@ import { useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FaqSection from "@/components/FaqSection";
+import { HOME_FAQ } from "@/lib/seo";
 
 export default function HomeClient() {
   // Controlled state for Mobile / Laptop view toggles
@@ -77,7 +79,7 @@ export default function HomeClient() {
           <div className="space-y-6 relative z-20">
             {/* Primary Headline */}
             <div className="space-y-4">
-              <h1 className="headline-font text-5xl md:text-7xl lg:text-6xl xl:text-7xl font-normal leading-tight tracking-tighter text-black reveal-on-scroll reveal-fade-up">
+              <h1 id="hero-headline" className="headline-font text-5xl md:text-7xl lg:text-6xl xl:text-7xl font-normal leading-tight tracking-tighter text-black reveal-on-scroll reveal-fade-up">
                 Take Tally
                 <br />
                 Beyond The Finance Team
@@ -2207,6 +2209,10 @@ export default function HomeClient() {
       </section>
 
       {/* Footer Component */}
+      <FaqSection
+        items={HOME_FAQ}
+        subtitle="Answers to common questions about DataLynkr, Tally integration, pricing, and security."
+      />
       <Footer />
     </>
   );

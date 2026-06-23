@@ -1,12 +1,41 @@
-import type { Metadata } from "next";
 import SupportClient from "./SupportClient";
+import JsonLd from "@/components/JsonLd";
+import {
+  breadcrumbJsonLd,
+  buildPageMetadata,
+  faqPageJsonLd,
+  howToConnectTallyJsonLd,
+  SUPPORT_FAQ,
+  webPageJsonLd,
+} from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Get Support",
   description:
-    "Need help with your DataLynkr account, order placement, sync issues, or permissions? Access our support resources, submit a ticket, or contact our support team.",
-};
+    "Need help with your DataLynkr account, Tally sync, order placement, or permissions? Access support resources, submit a ticket, or contact our team.",
+  path: "/support",
+});
+
+const breadcrumbs = [
+  { name: "Home", path: "/" },
+  { name: "Support", path: "/support" },
+];
 
 export default function SupportPage() {
-  return <SupportClient />;
+  return (
+    <>
+      <JsonLd data={faqPageJsonLd(SUPPORT_FAQ)} />
+      <JsonLd data={howToConnectTallyJsonLd()} />
+      <JsonLd
+        data={webPageJsonLd({
+          path: "/support",
+          name: "DataLynkr Support",
+          description:
+            "Get help connecting DataLynkr to Tally, resolving sync issues, and managing your account.",
+        })}
+      />
+      <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />
+      <SupportClient />
+    </>
+  );
 }
