@@ -244,6 +244,26 @@ export const HOME_FAQ: FaqItem[] = [
     answer:
       "DataLynkr has a custom Authorization Workflow feature. Transactions entered by field sales staff can be marked as pending. Managers or accounts teams can review, approve, or reject these transactions from their dashboard before they are permanently written to Tally.",
   },
+  {
+    question: "Can DataLynkr connect to other ERPs like Zoho Books, Busy ERP, Marg ERP, or SAP?",
+    answer:
+      "DataLynkr is built primarily to integrate seamlessly with Tally ERP 9, TallyPrime, and TallyPrime Edit Log. However, if you are currently using Zoho Books, Busy ERP, Marg ERP, SAP, or other ERP systems and require custom mobile or web integrations for your sales reps, collections agents, or B2B dealer ordering portals, please reach out to our team to discuss custom API integration possibilities.",
+  },
+  {
+    question: "Why should I use Tally + DataLynkr instead of migrating to a cloud-based ERP like Zoho Books?",
+    answer:
+      "Migrating your entire business data and training your staff on a new cloud-based ERP like Zoho Books is highly disruptive, expensive, and time-consuming. DataLynkr gives you the best of both worlds: you keep your secure, robust, and familiar offline-first desktop accounting (Tally) while instantly enabling real-time cloud mobile/web access for your field sales, operations, and management teams.",
+  },
+  {
+    question: "Does DataLynkr offer field sales capabilities comparable to enterprise ERP solutions?",
+    answer:
+      "Yes. DataLynkr extends Tally with advanced features found in premium enterprise ERP solutions (such as SAP Business One or Oracle NetSuite), including multi-level transaction authorization workflows, real-time multi-godown stock summary, credit limit validation, and live sales performance dashboards—all at a fraction of the cost.",
+  },
+  {
+    question: "Is DataLynkr a replacement for ERP systems?",
+    answer:
+      "No, DataLynkr is not a replacement. It is a secure, real-time extension companion that unlocks the capabilities of your existing ERP (Tally) and extends it to the web and mobile devices for non-accounting users (like customers, distributors, sales executives, and business owners).",
+  },
 ];
 
 export const PRICING_FAQ: FaqItem[] = [
