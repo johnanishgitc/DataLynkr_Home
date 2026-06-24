@@ -44,6 +44,14 @@ if (fs.existsSync(outDir)) {
     const featurePages = fs.readdirSync(featuresOutDir).filter((name) => name.endsWith(".html"));
     console.log(`Feature pages: ${featurePages.join(", ") || "(none)"}`);
   }
+
+  // Copy .htaccess to out/ directory for deployment convenience
+  const htaccessSrc = path.join(root, ".htaccess");
+  const htaccessDest = path.join(outDir, ".htaccess");
+  if (fs.existsSync(htaccessSrc)) {
+    fs.copyFileSync(htaccessSrc, htaccessDest);
+    console.log("Copied .htaccess to out/ directory.");
+  }
 } else {
   console.warn("WARNING: out/ directory missing — static export may have failed.");
 }
