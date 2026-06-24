@@ -65,6 +65,14 @@ export default function Sidebar() {
     return pathname.startsWith(href);
   };
 
+  const isFeaturesActive = pathname.startsWith("/features");
+
+  useEffect(() => {
+    if (isSidebarOpen && isFeaturesActive) {
+      setIsFeaturesOpen(true);
+    }
+  }, [isSidebarOpen, isFeaturesActive]);
+
   return (
     <>
       {/* Menu Button - rendered separately for different navbars to pick up */}
@@ -157,7 +165,9 @@ export default function Sidebar() {
                 {/* Features toggle button */}
                 <button
                   id="features-toggle-btn"
-                  className="flex items-center justify-between w-full hover:text-amber-200 transition-colors text-left focus:outline-none"
+                  className={`flex items-center justify-between w-full transition-colors text-left focus:outline-none ${
+                    isFeaturesActive ? "text-amber-400" : "hover:text-amber-200"
+                  }`}
                   onClick={(e) => {
                     e.preventDefault();
                     setIsFeaturesOpen((prev) => !prev);
@@ -167,7 +177,7 @@ export default function Sidebar() {
                   <span
                     id="features-arrow"
                     className="material-symbols-outlined transition-transform duration-300 pointer-events-none"
-                    style={{ transform: isFeaturesOpen ? "rotate(90deg)" : "rotate(0deg)" }}
+                    style={{ transform: isFeaturesOpen || isFeaturesActive ? "rotate(90deg)" : "rotate(0deg)" }}
                   >
                     keyboard_arrow_right
                   </span>
@@ -268,19 +278,36 @@ export default function Sidebar() {
                 Features
               </div>
               <div className="flex-1 overflow-y-auto pr-2 flex flex-col gap-5 text-base font-normal">
-                {featureLinks.map((feature) => (
+                {featureLinks.map((feature) => {
+                  const featureActive = isActive(feature.href);
+                  return (
                   <button
                     key={feature.href}
                     type="button"
-                    className="hover:text-amber-200 transition-colors py-2 flex items-center justify-between group/item text-left w-full"
-                    onClick={() => navigateTo(feature.href)}
+                    className={`transition-colors py-2 flex items-center justify-between group/item text-left w-full ${
+                      featureActive
+                        ? "text-amber-400 pointer-events-none"
+                        : "hover:text-amber-200"
+                    }`}
+                    onClick={() => {
+                      if (featureActive) {
+                        closeSidebar();
+                      } else {
+                        navigateTo(feature.href);
+                      }
+                    }}
                   >
                     <span>{feature.label}</span>
-                    <span className="material-symbols-outlined text-sm opacity-0 group-hover/item:opacity-100 transition-opacity">
+                    <span
+                      className={`material-symbols-outlined text-sm transition-opacity ${
+                        featureActive ? "opacity-100" : "opacity-0 group-hover/item:opacity-100"
+                      }`}
+                    >
                       arrow_forward
                     </span>
                   </button>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </aside>
