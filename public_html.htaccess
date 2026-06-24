@@ -5,17 +5,17 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Route root crawler files to the Next.js app folder under /Hometest
-  RewriteRule ^robots\.txt$ Hometest/robots.txt [L,NC]
-  RewriteRule ^sitemap\.xml$ Hometest/sitemap.xml [L,NC]
+  # Route root crawler files to the DataLynkr_Home folder
+  RewriteRule ^robots\.txt$ DataLynkr_Home/robots.txt [L,NC]
+  RewriteRule ^sitemap\.xml$ DataLynkr_Home/sitemap.xml [L,NC]
 
-  # Next.js app mounted at /Hometest — let Passenger handle it
+  # Rewrite /Hometest requests internally to the DataLynkr_Home directory
   RewriteCond %{REQUEST_URI} ^/Hometest(/|$) [NC]
-  RewriteRule ^ - [L]
+  RewriteRule ^Hometest(/(.*))?$ DataLynkr_Home/$2 [L]
 
-  # Next.js static chunks (legacy root paths or misconfigured builds)
+  # Fallback for root /_next requests to DataLynkr_Home
   RewriteCond %{REQUEST_URI} ^/_next/ [NC]
-  RewriteRule ^ - [L]
+  RewriteRule ^_next/(.*)$ DataLynkr_Home/_next/$1 [L]
 </IfModule>
 
 # If you have a React SPA fallback like the rule below, add the two RewriteCond lines
