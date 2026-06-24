@@ -44,7 +44,7 @@ export default function ContactClient() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/demo-request", {
+      const response = await fetch("https://itcatalystindia.com/Development/CustomerPortal_API/api/customer-engagement/demo-request", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

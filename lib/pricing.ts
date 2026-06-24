@@ -62,9 +62,7 @@ export function formatPrice(price: string): string {
 
 export async function getPricingData(): Promise<PricingData> {
   try {
-    const response = await fetch(PRICING_SLABS_URL, {
-      next: { revalidate: 3600 },
-    });
+    const response = await fetch(PRICING_SLABS_URL);
 
     if (!response.ok) {
       return { plans: [], bankDetails: null };

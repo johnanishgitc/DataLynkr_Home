@@ -4,13 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "build": "next build",
     "build:prod": "node scripts/clean-build.cjs",
-    "start": "next start -p 3200",
-    "pm2:start": "pm2 start ecosystem.config.cjs",
-    "pm2:restart": "pm2 restart datalynkr-next",
-    "pm2:stop": "pm2 stop datalynkr-next",
-    "pm2:logs": "pm2 logs datalynkr-next",
     "lint": "eslint"
   },
   "dependencies": {

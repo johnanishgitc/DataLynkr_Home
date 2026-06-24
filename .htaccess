@@ -1,12 +1,5 @@
-# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
-PassengerAppRoot "/home/datalynkr/public_html/Hometest"
-PassengerBaseURI "/Hometest"
-PassengerNodejs "/home/datalynkr/nodevenv/public_html/Hometest/20/bin/node"
-PassengerAppType node
-PassengerStartupFile server.js
-# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
-
-# App folder: public_html/Hometest/.htaccess
+# Static site — no Passenger / Node.js server needed.
+# Apache serves the static export directly.
 
 Options -MultiViews
 
@@ -16,22 +9,14 @@ DirectoryIndex disabled
   RewriteEngine On
   RewriteBase /Hometest/
 
-  # Route /features/* through Passenger (Next.js), not legacy static files.
+  # Legacy .html redirects to clean URLs
   RewriteRule ^features/([^/]+)\.html$ features/$1 [R=301,L,NC]
-  RewriteRule ^features/ - [L]
-
-  # Let Passenger + server.js serve _next assets (Apache cannot map [slug] chunk paths).
-  RewriteRule ^_next/ - [L]
-
   RewriteRule ^code\.html$ ./ [R=301,L,NC]
   RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)\.html$ $1 [R=301,L,NC]
 
-  # Do NOT rewrite _next/static to disk here. Apache mishandles chunk paths that
-  # contain literal [slug] folders (404 on feature page JS). Passenger + server.js
-  # serves .next/static via Node fs instead.
+  # Serve the correct .html file for clean URLs (Next.js static export creates /page.html files)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)$ $1.html [L]
 </IfModule>
-
-# Deploy steps for feature routes:
-# 1. DELETE all *.html files from public_html/Hometest/features/ on the server.
-# 2. Keep only features/.htaccess from this repo in that folder.
-# 3. Feature HTML sources for Next.js live in feature-html/ (not web-accessible).
