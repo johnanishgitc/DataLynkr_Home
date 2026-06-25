@@ -1,4 +1,0 @@
-:HL["/Hometest/_next/static/chunks/0bj4b_tgsdero.css","style"]
-:HL["https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&display=swap","style"]
-:HL["https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"features","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"daily-ledger-reports","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"kS4ExL_11NMEHF0rPhOPg"}
