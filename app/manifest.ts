@@ -1,7 +1,13 @@
 import type { MetadataRoute } from "next";
-import { absoluteUrl, basePath } from "@/lib/site";
+import { basePath } from "@/lib/site";
 
 export const dynamic = "force-static";
+
+/** Manifest icons must resolve on the current origin (not a hardcoded production URL in dev). */
+function manifestIcon(path: string) {
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  return `${basePath}${normalized}`;
+}
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -18,7 +24,7 @@ export default function manifest(): MetadataRoute.Manifest {
     orientation: "portrait-primary",
     icons: [
       {
-        src: absoluteUrl("/logo.svg"),
+        src: manifestIcon("/logo.svg"),
         sizes: "any",
         type: "image/svg+xml",
         purpose: "any",

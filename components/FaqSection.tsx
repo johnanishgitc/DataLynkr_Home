@@ -100,6 +100,7 @@ function FaqAccordionItem({ item }: { item: FaqItem }) {
     <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
       <button
         type="button"
+        suppressHydrationWarning
         className="faq-toggle-btn w-full px-6 py-5 flex items-center justify-between text-left font-bold text-slate-800 hover:text-blue-600 transition-colors focus:outline-none"
       >
         <span className="text-sm md:text-base pr-4">{item.question}</span>
