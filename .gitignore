@@ -51,9 +51,6 @@ pids/
 *.pid
 *.pid.lock
 
-# legacy static HTML copied into features/ during deploy (removed by scripts/clean-build.cjs)
-/features/*.html
-
 # windows
 Thumbs.db
 Desktop.ini
@@ -63,3 +60,35 @@ Desktop.ini
 *.swp
 *.swo
 *~
+
+# --- static export deploy artifacts (copied from out/ on server only) ---
+/_next/
+/resources/
+/index.html
+/404.html
+/_not-found.html
+/_not-found/
+/__next*.txt
+/*.txt
+/manifest.webmanifest
+/robots.txt
+/sitemap.xml
+/about.html
+/pricing.html
+/contact.html
+/support.html
+/login.html
+/privacy.html
+/terms.html
+/changepswd.html
+/about/
+/pricing/
+/contact/
+/support/
+/login/
+/privacy/
+/terms/
+/changepswd/
+/features/*.html
+/features/*.txt
+/features/*/

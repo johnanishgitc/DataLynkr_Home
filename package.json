@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "build:prod": "node scripts/clean-build.cjs",
+    "deploy:prod": "node -e \"process.env.DEPLOY='1'; require('./scripts/clean-build.cjs')\"",
     "lint": "eslint"
   },
   "dependencies": {

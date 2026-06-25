@@ -4,7 +4,8 @@
  * Run on the server after upload: npm run build:prod
  *
  * On the server, Apache serves this project root (DataLynkr_Home/), not out/.
- * After next build, out/ is copied here automatically unless SKIP_DEPLOY=1.
+ * After next build, out/ is copied here only when DEPLOY=1:
+ *   NODE_ENV=production DEPLOY=1 npm run build:prod
  */
 const fs = require("fs");
 const path = require("path");
@@ -49,8 +50,8 @@ function removeStaleRouteDirectories() {
 }
 
 function deployOutToWebRoot() {
-  if (process.env.SKIP_DEPLOY === "1") {
-    console.log("SKIP_DEPLOY=1 — left built files in out/ only.");
+  if (process.env.DEPLOY !== "1") {
+    console.log("Build output is in out/. On the server run: DEPLOY=1 npm run build:prod");
     return;
   }
 
@@ -112,4 +113,4 @@ if (fs.existsSync(outDir)) {
   console.warn("WARNING: out/ directory missing — static export may have failed.");
 }
 
-console.log("\nBuild complete. Site is live if you ran this on the server in DataLynkr_Home/.");
+console.log("\nBuild complete. Output is in out/.");
