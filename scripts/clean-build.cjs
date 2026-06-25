@@ -2,6 +2,9 @@
 /**
  * Clean production build — removes stale build artifacts before generating a fresh static export.
  * Run on the server after upload: npm run build:prod
+ *
+ * On the server, Apache serves this project root (DataLynkr_Home/), not out/.
+ * After next build, out/ is copied here automatically unless SKIP_DEPLOY=1.
  */
 const fs = require("fs");
 const path = require("path");
@@ -10,6 +13,55 @@ const { execSync } = require("child_process");
 const root = path.join(__dirname, "..");
 const nextDir = path.join(root, ".next");
 const outDir = path.join(root, "out");
+
+/** Route names that must be .html files, not physical directories (directories cause 403 on /route/). */
+const STALE_ROUTE_DIRS = [
+  "about",
+  "pricing",
+  "contact",
+  "support",
+  "login",
+  "privacy",
+  "terms",
+  "changepswd",
+];
+
+function copyRecursive(src, dest) {
+  const stat = fs.statSync(src);
+  if (stat.isDirectory()) {
+    fs.mkdirSync(dest, { recursive: true });
+    for (const entry of fs.readdirSync(src)) {
+      copyRecursive(path.join(src, entry), path.join(dest, entry));
+    }
+    return;
+  }
+  fs.copyFileSync(src, dest);
+}
+
+function removeStaleRouteDirectories() {
+  for (const name of STALE_ROUTE_DIRS) {
+    const dirPath = path.join(root, name);
+    if (fs.existsSync(dirPath) && fs.statSync(dirPath).isDirectory()) {
+      fs.rmSync(dirPath, { recursive: true, force: true });
+      console.log(`Removed stale directory ${name}/ (was causing 403 on /${name}/).`);
+    }
+  }
+}
+
+function deployOutToWebRoot() {
+  if (process.env.SKIP_DEPLOY === "1") {
+    console.log("SKIP_DEPLOY=1 — left built files in out/ only.");
+    return;
+  }
+
+  removeStaleRouteDirectories();
+
+  for (const entry of fs.readdirSync(outDir)) {
+    copyRecursive(path.join(outDir, entry), path.join(root, entry));
+  }
+
+  console.log("Deployed out/ contents to web root (DataLynkr_Home/).");
+}
 
 // Remove stale build artifacts
 if (fs.existsSync(nextDir)) {
@@ -52,8 +104,10 @@ if (fs.existsSync(outDir)) {
     fs.copyFileSync(htaccessSrc, htaccessDest);
     console.log("Copied .htaccess to out/ directory.");
   }
+
+  deployOutToWebRoot();
 } else {
   console.warn("WARNING: out/ directory missing — static export may have failed.");
 }
 
-console.log("\nBuild complete. Upload the out/ directory contents to your web root.");
+console.log("\nBuild complete. Site is live if you ran this on the server in DataLynkr_Home/.");
