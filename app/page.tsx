@@ -4,6 +4,7 @@ import {
   buildPageMetadata,
   faqPageJsonLd,
   HOME_FAQ,
+  productJsonLd,
   softwareApplicationJsonLd,
   webPageJsonLd,
 } from "@/lib/seo";
@@ -37,6 +38,7 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={softwareApplicationJsonLd()} />
+      <JsonLd data={productJsonLd()} />
       <JsonLd data={faqPageJsonLd(HOME_FAQ)} />
       <JsonLd data={homeWebPageJsonLd} />
       <HomeClient />

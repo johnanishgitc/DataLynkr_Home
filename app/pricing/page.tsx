@@ -11,9 +11,9 @@ import {
 } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "DataLynkr Pricing - Plans starting at ₹300/user/month",
+  title: "DataLynkr Pricing - Plans from ₹1,800/user/year",
   description:
-    "Explore DataLynkr subscription plans: Silver, Gold, Diamond, and Enterprise. Plans start at ₹300/month per user. 14-day free trial, no credit card required.",
+    "Explore DataLynkr subscription plans: Silver, Gold, Diamond, and Enterprise. Yearly plans from ₹1,800/user/year (₹3,600/year for smaller teams). Monthly billing also available. 14-day free trial, no credit card required.",
   path: "/pricing",
   keywords: [
     "DataLynkr pricing plans",

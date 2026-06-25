@@ -1,10 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import ClientAnimations from "@/components/ClientAnimations";
 import LegacyLinkInterceptor from "@/components/LegacyLinkInterceptor";
 import { absoluteUrl, siteOrigin, basePath } from "@/lib/site";
 import { DEFAULT_OG_IMAGE, webSiteJsonLd } from "@/lib/seo";
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin()),
@@ -296,7 +300,9 @@ const organizationJsonLd = {
   },
   sameAs: [
     "https://play.google.com/store/apps/details?id=com.datalynkr",
-    "https://www.linkedin.com/company/it-catalyst",
+    "https://www.linkedin.com/company/it-catalyst-software-india-private-limited/",
+    "https://www.youtube.com/@datalynkr",
+    "https://www.instagram.com/datalynkr",
   ],
   contactPoint: [
     {

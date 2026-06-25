@@ -1,5 +1,5 @@
 import { absoluteUrl, siteOrigin } from "@/lib/site";
-import type { FaqItem } from "@/lib/seo";
+import { datalynkrAggregateOffer, faqQuestionsForSchema, type FaqItem } from "@/lib/seo";
 
 function videoObject(
   slug: string,
@@ -19,152 +19,268 @@ function videoObject(
     duration,
     contentUrl: absoluteUrl(videoFile),
     embedUrl: absoluteUrl(`/features/${slug}`),
-  };
-}
-
-function faqSchema(items: FaqItem[]) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: items.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: { "@type": "Answer", text: item.answer },
-    })),
+    creator: { "@id": `${siteOrigin()}/#organization` },
+    publisher: {
+      "@type": "Organization",
+      "@id": `${siteOrigin()}/#organization`,
+      name: "DataLynkr",
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl("/logo.svg"),
+      },
+    },
+    about: { "@id": `${siteOrigin()}/#software` },
+    isPartOf: { "@id": `${absoluteUrl(`/features/${slug}`)}#feature` },
   };
 }
 
 const FEATURE_FAQ: Record<string, FaqItem[]> = {
   "sales-order-management": [
     {
-      question: "Can sales orders be approved before syncing to Tally?",
+      question: "How do I sync field orders into Tally instantly?",
       answer:
-        "Yes, DataLynkr allows you to set up multi-level authorization workflows. Sales orders captured on mobile remain pending until approved by managers, after which they are written to Tally in real-time.",
+        "With DataLynkr, field sales teams create orders on mobile or browser and those orders synchronize with Tally in real time. Stock levels, customer credit limits, and order status update automatically without manual re-entry in Tally.",
     },
     {
-      question: "Does it support real-time stock checks?",
+      question:
+        "What is the best secure mobile app for field managers to view real-time TallyPrime inventory without accounting access?",
       answer:
-        "Yes, sales teams can check current stock levels, across multiple warehouses or companies, directly on their mobile devices before placing an order.",
+        "DataLynkr lets field managers and sales teams view live TallyPrime inventory, customer balances, and pricing through role-based permissions, without granting direct access to the accounting module in Tally.",
+    },
+    {
+      question: "Can sales teams check customer balances?",
+      answer:
+        "Yes, DataLynkr allows sales teams to view customer details including outstanding balances, credit limits, and historical ledger reports, helping them make informed decisions in the field.",
+    },
+    {
+      question: "Can sales teams check inventory levels?",
+      answer:
+        "Yes, DataLynkr allows sales teams to view real-time inventory levels including available stock, batch details, and pricing without needing direct Tally access.",
+    },
+    {
+      question: "Can sales teams check pending orders?",
+      answer:
+        "Yes, DataLynkr allows sales teams to view pending orders, delivery statuses, and pending approvals directly from their mobile or web app.",
+    },
+    {
+      question: "Can sales teams check customer outstanding?",
+      answer:
+        "Yes, sales teams can view customer balances and outstanding invoices on-the-go to assist in collections.",
+    },
+    {
+      question: "Can sales teams create orders?",
+      answer:
+        "Yes, DataLynkr allows sales teams to create sales orders from mobile or web interfaces which sync back to Tally automatically.",
+    },
+    {
+      question: "Can sales teams access Tally reports?",
+      answer:
+        "Yes, managers can configure permissions to grant sales teams access to specific sales and outstanding reports.",
+    },
+    {
+      question: "Can I track order status?",
+      answer:
+        "Yes, DataLynkr allows businesses to track sales orders from creation to approval, dispatch, and billing, keeping everyone updated.",
+    },
+    {
+      question: "Can sales orders sync with Tally?",
+      answer:
+        "Yes. Sales orders created in DataLynkr synchronize with Tally to reduce duplicate entry and administrative workload.",
+    },
+    {
+      question: "Can I configure order approvals?",
+      answer:
+        "Yes. DataLynkr includes approval workflows that allow businesses to require authorization for orders before they are processed in Tally.",
+    },
+    {
+      question: "Can customers place orders?",
+      answer:
+        "Yes, using our dedicated Customer Portal or B-Commerce Ordering features, which link directly back to Tally.",
     },
   ],
   "extend-portal-customers": [
     {
-      question: "What can customers do on the DataLynkr portal?",
+      question: "What is the Customer Portal?",
       answer:
-        "Customers can view their account statement, download PDF invoices, check outstanding balances, and even place new orders directly, which syncs with Tally ERP.",
+        "The Customer Portal is a self-service space where customers can log in to view their orders, invoices, ledger balances, and place new orders.",
     },
     {
-      question: "Is customer data stored on the portal?",
+      question: "Can customers view their ledger statement?",
       answer:
-        "No, the portal reads directly from your Tally ERP via secure real-time connections. No customer data or transaction logs are stored on DataLynkr servers.",
+        "Yes. Customers can access and download their account statement and outstanding bill details directly.",
+    },
+    {
+      question: "Can customers track their order status?",
+      answer:
+        "Yes. Customers can check the real-time status of their orders from placement to invoicing.",
+    },
+    {
+      question: "Can I control what information customers see?",
+      answer:
+        "Yes. You can configure permissions to determine what data, pricing, and features are visible to each customer.",
     },
   ],
   "modern-bcommerce-ordering": [
     {
-      question: "How does B2B Ordering sync with Tally?",
+      question: "What is B-Commerce ordering?",
       answer:
-        "Dealers or customers place orders via the self-service web ordering screen. These orders are written directly to your Tally database as pending sales orders for approval.",
+        "It is a digital ordering tool designed for business-to-business transactions, allowing distributors, retailers, or partners to place orders online.",
     },
     {
-      question: "Can we set custom pricing rules for different dealers?",
+      question: "Can I set custom pricing for different customers?",
       answer:
-        "Yes, DataLynkr pulls the price lists, discounts, and customer group rates directly from your Tally ERP, ensuring every dealer sees their designated pricing.",
+        "Yes. DataLynkr supports Tally price lists and rates, showing customers their specific pricing.",
+    },
+    {
+      question: "Does it support minimum order quantities?",
+      answer:
+        "Yes. You can configure order rules, including minimum quantities or value, before order submission.",
+    },
+    {
+      question: "Are orders sent to Tally automatically?",
+      answer:
+        "Yes, orders can either sync directly or pass through an approval workflow before entering Tally.",
     },
   ],
   "invoice-creation": [
     {
-      question: "Can field teams print invoices immediately?",
+      question: "Can I create invoices directly from the field?",
       answer:
-        "Yes, once an invoice is created, representatives can download a PDF or print it using standard Bluetooth or Wi-Fi printers on the spot.",
+        "Yes. Authorized users can generate invoices from mobile or web interfaces, reducing billing delays.",
     },
     {
-      question: "Are tax rates automated?",
+      question: "Does it support print formats?",
       answer:
-        "Yes, CGST, SGST, IGST, and other tax parameters are auto-calculated in real time using the tax configuration established inside your Tally ERP.",
+        "Yes. You can print or share invoices as PDFs via WhatsApp, email, or other channels.",
+    },
+    {
+      question: "How does it sync with Tally?",
+      answer:
+        "Invoices created in DataLynkr sync with your Tally setup, maintaining consistent accounting records.",
     },
   ],
   "authorization-workflows": [
     {
-      question: "Can we set custom credit limits for approval triggers?",
+      question: "How do approval workflows work?",
       answer:
-        "Yes, you can configure approval rules so that transactions exceeding a specific customer's credit limit, or containing custom discounts, are automatically sent for management approval.",
+        "You can create rules requiring specific transactions (like high-value orders or discounts) to be approved by managers before being sent to Tally.",
     },
     {
-      question: "How are approvers notified?",
+      question: "Can managers approve transactions from mobile?",
       answer:
-        "Approvers receive instant notifications on mobile or desktop via email or push notification, allowing them to review and authorize the transaction in seconds.",
+        "Yes. Managers receive notifications and can review, approve, or reject transactions from their mobile devices or browsers.",
+    },
+    {
+      question: "Can I set up multi-level approvals?",
+      answer:
+        "Yes. Workflows can be configured with multiple approval levels based on transaction value, department, or user roles.",
+    },
+    {
+      question: "What happens if a transaction is rejected?",
+      answer:
+        "The transaction is marked as rejected, and the creator is notified with comments for necessary corrections.",
     },
   ],
   "daily-ledger-reports": [
     {
-      question: "Are the ledger details real-time?",
+      question: "Can I view party ledger details?",
       answer:
-        "Yes, ledger balances and outstanding figures are queried in real time from your Tally ERP, ensuring your field team is always viewing up-to-date account statements.",
+        "Yes. You can search for customers and view their complete ledger transactions, opening balances, and closing balances.",
     },
     {
-      question: "Can sales agents share ledger reports with clients?",
+      question: "How frequently does ledger data update?",
       answer:
-        "Yes, agents can download ledger statements or outstanding bills report as a PDF and share them instantly via WhatsApp or Email.",
+        "Ledger data updates in real-time as transactions are recorded in your connected Tally database.",
+    },
+    {
+      question: "Can I share ledger copies?",
+      answer:
+        "Yes. You can export ledger reports as PDFs or Excel sheets and share them via email or WhatsApp.",
     },
   ],
   "offline-transactions": [
     {
-      question: "What happens if there's no internet in the field?",
+      question: "How does offline mode work?",
       answer:
-        "DataLynkr safely saves all entries locally on the mobile device. Once the device detects an internet connection, all saved transactions are synchronized back to your Tally system.",
+        "Users can access downloaded customer lists, product details, and create transactions without internet access.",
     },
     {
-      question: "Is my data secure when stored offline?",
+      question: "When does data synchronize?",
       answer:
-        "Yes, offline data stored locally on mobile devices is encrypted and can only be accessed by authenticated users within the secure DataLynkr app.",
+        "Transactions created offline are saved locally and synchronized automatically once internet connectivity is restored.",
+    },
+    {
+      question: "Are stock levels accurate offline?",
+      answer:
+        "Stock levels reflect the last synchronized state. Offline transactions are validated against that data to prevent discrepancies.",
     },
   ],
   "dynamic-dashboards": [
     {
-      question: "Can I customize the dashboard metrics?",
+      question: "What kind of dashboards are available?",
       answer:
-        "Yes, owners and managers can build custom visualizations, select key KPIs (e.g., total sales, cash flow, outstanding collections), and arrange cards to display the data that matters most.",
+        "DataLynkr provides visual dashboards for sales performance, inventory levels, collections, and overall business metrics.",
     },
     {
-      question: "Can we configure different dashboards for different users?",
+      question: "Is dashboard data real-time?",
       answer:
-        "Yes, user roles define dashboard views. Sales heads, area managers, and owners can have custom tailored metrics visible to them depending on their authorization levels.",
+        "Yes. The dashboards reflect updated information from your connected Tally database.",
+    },
+    {
+      question: "Can I customize dashboards for different users?",
+      answer:
+        "Yes. Managers, sales teams, and business owners can have access to different dashboards tailored to their roles.",
     },
   ],
   "payments-collections": [
     {
-      question: "Can payments be matched against specific pending bills?",
+      question: "Can I record payments from the field?",
       answer:
-        "Yes, collections teams can view outstanding bills for each customer and allocate received payments directly against those specific invoice numbers, syncing instantly to Tally.",
+        "Yes. Sales and collection teams can enter payment receipts, cash collections, or bank details directly from the mobile app.",
     },
     {
-      question: "Does it support logging check details or online payments?",
+      question: "Does it support digital payment links?",
       answer:
-        "Yes, you can log payment method details (Cash, Check, Bank Transfer, UPI reference) and upload receipts directly to complete the entry.",
+        "Yes. You can share payment links with customers to collect payments via digital methods.",
+    },
+    {
+      question: "How do collections update in Tally?",
+      answer:
+        "Recorded receipts sync with Tally to update ledger accounts and clear outstanding balances.",
     },
   ],
   "stock-summary": [
     {
-      question: "Does it support multiple godown/warehouse stock tracking?",
+      question: "Can I check live stock levels?",
       answer:
-        "Yes, DataLynkr queries stock details at the godown, branch, or individual company level in real-time, matching the warehouse organization inside your Tally ERP.",
+        "Yes. DataLynkr shows current inventory levels, including stock in hand and available quantities across different locations.",
     },
     {
-      question: "Can users see item pictures or batch details?",
+      question: "Does it support multiple godowns or locations?",
       answer:
-        "Yes, batch numbers, manufacturing/expiry dates, and custom item details configured in Tally are accessible to sales agents immediately.",
+        "Yes. If you use multiple locations in Tally, DataLynkr displays stock details by godown.",
+    },
+    {
+      question: "Can I see item images and details?",
+      answer:
+        "Yes. You can add images and descriptions to items to help sales teams and customers identify products.",
     },
   ],
   "custom-reports": [
     {
-      question: "Can we generate pivot tables from Tally data?",
+      question: "What reports can I access?",
       answer:
-        "Yes, DataLynkr marries the power of Excel pivot tables with live Tally data, allowing users to drill down, slice, and filter reports to analyze business operations.",
+        "You can view sales reports, customer outstanding statements, stock summaries, ledger transactions, and custom business reports.",
     },
     {
-      question: "Can reports be scheduled for auto-export?",
+      question: "Can I export reports?",
       answer:
-        "Yes, administrators can configure automated exports or save custom reporting templates for regular business performance analysis.",
+        "Yes. Reports can be exported or shared as PDFs and spreadsheets.",
+    },
+    {
+      question: "Can I view historical Tally data?",
+      answer:
+        "Yes. You can run reports covering historical periods available in your Tally company.",
     },
   ],
 };
@@ -263,6 +379,102 @@ const FEATURE_VIDEOS: Record<
     thumbnails: ["/resources/poster_images/dealer_growth.webp"],
     videoFile: "/resources/videos/dealer_growth.mp4",
     duration: "PT0M45S",
+  },
+};
+
+const FEATURE_SOFTWARE: Record<string, { name: string; featureList: string[] }> = {
+  "sales-order-management": {
+    name: "Sales Order Management",
+    featureList: [
+      "Mobile sales order creation",
+      "Real-time Tally synchronization",
+      "Stock visibility",
+      "Customer credit limit checks",
+      "Order status tracking",
+    ],
+  },
+  "extend-portal-customers": {
+    name: "Customer Portal",
+    featureList: [
+      "Self-service customer login",
+      "Ledger statement access",
+      "Order status tracking",
+      "Configurable customer permissions",
+    ],
+  },
+  "modern-bcommerce-ordering": {
+    name: "B-Commerce Ordering",
+    featureList: [
+      "B2B digital ordering screen",
+      "Tally price list support",
+      "Minimum order quantity rules",
+      "Automatic Tally order sync",
+    ],
+  },
+  "invoice-creation": {
+    name: "Invoice Creation",
+    featureList: [
+      "Field invoice creation",
+      "PDF print and share",
+      "Real-time Tally synchronization",
+    ],
+  },
+  "authorization-workflows": {
+    name: "Authorization Workflows",
+    featureList: [
+      "Configurable approval rules",
+      "Mobile manager approvals",
+      "Multi-level authorization",
+      "Rejection notifications",
+    ],
+  },
+  "daily-ledger-reports": {
+    name: "Daily Ledger Reports",
+    featureList: [
+      "Party ledger details",
+      "Real-time balance updates",
+      "PDF and Excel export",
+    ],
+  },
+  "offline-transactions": {
+    name: "Offline Transactions",
+    featureList: [
+      "Offline order entry",
+      "Automatic sync on reconnect",
+      "Cached stock validation",
+    ],
+  },
+  "dynamic-dashboards": {
+    name: "Dynamic Dashboards",
+    featureList: [
+      "Sales and inventory KPIs",
+      "Real-time Tally data",
+      "Role-based dashboard access",
+    ],
+  },
+  "payments-collections": {
+    name: "Payments and Collections",
+    featureList: [
+      "Field payment receipt entry",
+      "Digital payment links",
+      "Tally outstanding bill updates",
+    ],
+  },
+  "stock-summary": {
+    name: "Stock Summary",
+    featureList: [
+      "Live inventory levels",
+      "Multi-godown stock visibility",
+      "Item images and details",
+    ],
+  },
+  "custom-reports": {
+    name: "Custom Reports",
+    featureList: [
+      "Custom report builder",
+      "Live pivot-style views",
+      "PDF and spreadsheet export",
+    ],
   },
 };
 
@@ -418,6 +630,20 @@ export const FEATURE_KEYWORDS: Record<string, string[]> = {
   ],
 };
 
+const FEATURE_FAQ_SUBTITLES: Record<string, string> = {
+  "authorization-workflows": "Got questions about Approval Workflows? We've got answers.",
+  "custom-reports": "Got questions about Reports? We've got answers.",
+  "daily-ledger-reports": "Got questions about Daily Ledger Reports? We've got answers.",
+  "dynamic-dashboards": "Got questions about Dashboards & Analytics? We've got answers.",
+  "extend-portal-customers": "Got questions about the Customer Portal? We've got answers.",
+  "invoice-creation": "Got questions about Invoice Creation? We've got answers.",
+  "modern-bcommerce-ordering": "Got questions about B-Commerce Ordering? We've got answers.",
+  "offline-transactions": "Got questions about Offline Mode? We've got answers.",
+  "payments-collections": "Got questions about Payments & Collections? We've got answers.",
+  "sales-order-management": "Got questions about Sales Team & Order Management? We've got answers.",
+  "stock-summary": "Got questions about Inventory Management? We've got answers.",
+};
+
 export function getFeatureKeywords(slug: string): string[] {
   return FEATURE_KEYWORDS[slug] ?? [];
 }
@@ -426,13 +652,39 @@ export function getFeatureFaqItems(slug: string): FaqItem[] {
   return FEATURE_FAQ[slug] ?? [];
 }
 
-export function getFeatureSchemas(slug: string): {
-  video?: Record<string, unknown>;
-  faq?: Record<string, unknown>;
-} {
-  const faqItems = FEATURE_FAQ[slug];
+export function getFeatureFaqSubtitle(slug: string): string {
+  return FEATURE_FAQ_SUBTITLES[slug] ?? "";
+}
+
+export function featureSoftwareJsonLd(slug: string, description: string) {
+  const meta = FEATURE_SOFTWARE[slug];
+  if (!meta) return null;
+
+  const ogImage = FEATURE_OG_IMAGES[slug] ?? "/resources/poster_images/orders_laptop.webp";
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": `${absoluteUrl(`/features/${slug}`)}#feature`,
+    name: `DataLynkr ${meta.name}`,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Windows, Web, Android, iOS",
+    description,
+    url: absoluteUrl(`/features/${slug}`),
+    isPartOf: { "@id": `${siteOrigin()}/#software` },
+    author: { "@id": `${siteOrigin()}/#organization` },
+    featureList: meta.featureList,
+    keywords: FEATURE_KEYWORDS[slug],
+    offers: datalynkrAggregateOffer(),
+    screenshot: absoluteUrl(ogImage),
+  };
+}
+
+export function getFeatureSchemas(slug: string, description: string) {
   const videoMeta = FEATURE_VIDEOS[slug];
-  const result: { video?: Record<string, unknown>; faq?: Record<string, unknown> } = {};
+  const result: {
+    video?: Record<string, unknown>;
+    softwareFeature?: Record<string, unknown>;
+  } = {};
 
   if (videoMeta) {
     result.video = videoObject(
@@ -445,15 +697,22 @@ export function getFeatureSchemas(slug: string): {
     );
   }
 
-  if (faqItems?.length) {
-    result.faq = faqSchema(faqItems);
+  const softwareFeature = featureSoftwareJsonLd(slug, description);
+  if (softwareFeature) {
+    result.softwareFeature = softwareFeature;
   }
 
   return result;
 }
 
-export function featureWebPageJsonLd(slug: string, name: string, description: string) {
-  return {
+export function featureWebPageJsonLd(
+  slug: string,
+  name: string,
+  description: string,
+  faqItems: FaqItem[] = [],
+) {
+  const ogImage = FEATURE_OG_IMAGES[slug] ?? "/resources/poster_images/orders_laptop.webp";
+  const page: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "@id": `${absoluteUrl(`/features/${slug}`)}#webpage`,
@@ -462,7 +721,18 @@ export function featureWebPageJsonLd(slug: string, name: string, description: st
     description,
     isPartOf: { "@id": `${siteOrigin()}/#website` },
     about: { "@id": `${siteOrigin()}/#software` },
+    mainEntity: { "@id": `${absoluteUrl(`/features/${slug}`)}#feature` },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: absoluteUrl(ogImage),
+    },
   };
+
+  if (faqItems.length > 0) {
+    page.hasPart = faqQuestionsForSchema(faqItems);
+  }
+
+  return page;
 }
 
 export function featureBreadcrumbJsonLd(slug: string, name: string) {

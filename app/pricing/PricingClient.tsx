@@ -21,28 +21,28 @@ type PricingClientProps = {
 const delayClasses = ["delay-100", "delay-200", "delay-300", "delay-400", "delay-500", "delay-600"];
 
 export default function PricingClient({ plans, bankDetails }: PricingClientProps) {
-  const [billingPeriod, setBillingPeriod] = useState<"monthly" | "yearly">("monthly");
+  const [billingPeriod, setBillingPeriod] = useState<"monthly" | "yearly">("yearly");
 
   const activeBtnClass =
-    "bg-blue-600 text-white text-[13px] font-semibold py-2 px-8 rounded shadow transition-all duration-200 cursor-default";
+    "bg-blue-600 text-white text-[13px] font-semibold py-2 px-8 rounded cursor-default shadow transition-all";
   const inactiveBtnClass =
-    "text-slate-500 text-[13px] font-semibold py-2 px-8 rounded hover:text-slate-800 transition-all duration-200";
+    "text-slate-500 text-[13px] font-semibold py-2 px-8 rounded hover:text-slate-800 transition-all";
 
   return (
-    <div className="bg-[#F4F6F9] min-h-screen text-slate-800 antialiased relative overflow-x-hidden pt-20">
+    <div className="cdn-tailwind-content pricing-page bg-[#F4F6F9] min-h-screen text-slate-800 antialiased relative overflow-x-hidden">
       {/* Decorative Floating Elements */}
       <div className="fixed top-0 right-0 -mr-32 -mt-32 w-[30rem] h-[30rem] bg-[#1F3A89] opacity-[0.05] rounded-full blur-[100px] animate-float pointer-events-none z-0"></div>
       <div className="fixed bottom-0 left-0 -ml-32 -mb-32 w-[40rem] h-[40rem] bg-[#f1c74b] opacity-[0.03] rounded-full blur-[120px] animate-float-delayed pointer-events-none z-0"></div>
 
-      {/* Navbar */}
-      <Navbar showHomeIcon={true} />
+      {/* Navbar — transparent/static to match pricing.html */}
+      <Navbar showHomeIcon={true} staticNav transparentNav />
 
       {/* Header */}
-      <div className="text-center mt-12 mb-12 relative z-10">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-800 mb-4 tracking-tight reveal-scale-in">
+      <div className="text-center mt-4 mb-12 relative z-10">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-800 mb-2 tracking-tight leading-tight reveal-scale-in">
           Subscription Plan
         </h1>
-        <p className="text-slate-500 text-sm mb-8 reveal-fade-up delay-100">
+        <p className="text-slate-500 text-sm mb-6 reveal-fade-up delay-100">
           Select the plan that best fits your needs
         </p>
 
@@ -50,16 +50,16 @@ export default function PricingClient({ plans, bankDetails }: PricingClientProps
         <div className="flex justify-center reveal-fade-up delay-200">
           <div className="bg-white p-1 rounded-lg shadow-sm border border-slate-200 inline-flex items-center">
             <button
-              onClick={() => setBillingPeriod("monthly")}
-              className={billingPeriod === "monthly" ? activeBtnClass : inactiveBtnClass}
-            >
-              Monthly
-            </button>
-            <button
               onClick={() => setBillingPeriod("yearly")}
               className={billingPeriod === "yearly" ? activeBtnClass : inactiveBtnClass}
             >
               Yearly
+            </button>
+            <button
+              onClick={() => setBillingPeriod("monthly")}
+              className={billingPeriod === "monthly" ? activeBtnClass : inactiveBtnClass}
+            >
+              Monthly
             </button>
           </div>
         </div>
@@ -86,9 +86,9 @@ export default function PricingClient({ plans, bankDetails }: PricingClientProps
             {plans.map((plan, index) => {
               const isYearly = billingPeriod === "yearly";
               const price = isYearly ? plan.yearly_price : plan.monthly_price;
-              const monthlyEquivalent = isYearly
+              const secondaryPrice = isYearly
                 ? `₹${formatPrice(String(Number.parseFloat(plan.yearly_price) / 12))}/month`
-                : undefined;
+                : `₹${formatPrice(plan.yearly_price)}/year`;
 
               return (
                 <div
@@ -110,13 +110,9 @@ export default function PricingClient({ plans, bankDetails }: PricingClientProps
                       {isYearly ? "/year" : "/month"}
                     </span>
                   </div>
-                  {monthlyEquivalent ? (
-                    <div className="text-[10px] text-slate-400 font-medium mb-8">
-                      {monthlyEquivalent}
-                    </div>
-                  ) : (
-                    <div className="h-[15px] mb-8"></div>
-                  )}
+                  <div className="text-[10px] text-slate-400 font-medium mb-8">
+                    {secondaryPrice}
+                  </div>
                   <div className="mt-auto border-t border-slate-100 pt-6 space-y-4">
                     <div className="flex justify-between items-center text-xs">
                       <span className="text-slate-500">User Range:</span>
@@ -190,8 +186,8 @@ export default function PricingClient({ plans, bankDetails }: PricingClientProps
 
       <FaqSection
         items={PRICING_FAQ}
-        title="Pricing Questions"
-        subtitle="Common questions about DataLynkr plans, billing, and trials."
+        title="Frequently Asked Questions"
+        subtitle="Got questions about our pricing plans? We've got answers."
       />
 
       {/* Footer */}

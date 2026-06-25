@@ -69,18 +69,19 @@ export default function SupportClient() {
   ];
 
   return (
-    <div className="bg-white text-on-surface antialiased overflow-x-hidden min-h-screen pb-20">
+    <div className="bg-white text-on-surface antialiased overflow-x-hidden min-h-screen">
       {/* Navbar with smooth slide-up effect */}
       <Navbar
         showCenterBrand={true}
         showLoginButton={true}
         showHomeIcon={false}
+        surfaceNav
         className={`transition-transform duration-300 ${navVisible ? "translate-y-0" : "-translate-y-full"}`}
       />
 
       <main>
         {/* HERO SECTION */}
-        <section className="pt-32 md:pt-48 px-6 md:px-16 lg:px-24 pb-16 md:pb-24 bg-gradient-to-b from-[#E6ECFD] to-white overflow-hidden relative">
+        <section className="pt-32 md:pt-48 px-6 md:px-16 lg:px-24 pb-16 md:pb-24 bg-gradient-to-b from-surface-container to-white overflow-hidden relative">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-fade-in">
               <div className="space-y-4">
@@ -115,10 +116,10 @@ export default function SupportClient() {
               </div>
             </div>
             <div className="relative flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <div className="w-full max-w-[260px] sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto aspect-square bg-primary/5 rounded-full flex items-center justify-center p-8 border border-primary/10 relative">
+              <div className="shrink-0 size-[320px] sm:size-[380px] md:size-[440px] lg:size-[500px] mx-auto rounded-[50%] bg-primary/5 flex items-center justify-center p-8 border border-primary/10 relative overflow-hidden">
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-brand-accent/20 rounded-full blur-2xl"></div>
                 <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
-                <span className="material-symbols-outlined text-[100px] sm:text-[120px] lg:text-[160px] text-primary/20">
+                <span className="material-symbols-outlined support-hero-icon text-primary/20">
                   support_agent
                 </span>
               </div>
@@ -449,8 +450,8 @@ export default function SupportClient() {
 
       <FaqSection
         items={SUPPORT_FAQ}
-        title="Support & Setup FAQ"
-        subtitle="Quick answers for connecting DataLynkr to Tally and resolving common issues."
+        title="Frequently Asked Questions"
+        subtitle="Got questions about security or system functionality? We've got answers."
       />
 
       {/* Footer (Simplified as in support.html, converted to modern styling) */}

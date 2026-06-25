@@ -75,7 +75,7 @@ export default function ContactClient() {
       <Navbar showHomeIcon={true} />
 
       {/* Main Content */}
-      <main className="pb-10 md:py-20 lg:py-24 px-6 md:px-10 lg:px-12 max-w-7xl mx-auto flex-grow flex flex-col justify-center w-full">
+      <main className="md:py-20 lg:py-24 px-6 md:px-10 lg:px-12 max-w-7xl mx-auto flex-grow flex flex-col justify-center w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-start">
           {/* Left Side: Header & Info */}
           <div className="space-y-12 animate-fade-in" style={{ animationDelay: "0.2s" }}>

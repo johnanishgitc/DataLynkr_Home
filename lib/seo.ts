@@ -5,6 +5,29 @@ export type FaqItem = { question: string; answer: string };
 
 export type BreadcrumbItem = { name: string; path: string };
 
+/** Strip HTML from FAQ answers before JSON-LD output — keeps UI markup out of AEO/RAG parsers. */
+export function faqAnswerForSchema(answer: string): string {
+  return answer
+    .replace(/<br\s*\/?>/gi, "\n\n")
+    .replace(/<\/?(strong|em|b|i|p|ul|ol)>/gi, "")
+    .replace(/<li>/gi, "- ")
+    .replace(/<\/li>/gi, "\n")
+    .replace(/<[^>]+>/g, "")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+export function faqQuestionsForSchema(items: FaqItem[]) {
+  return items.map((item) => ({
+    "@type": "Question" as const,
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer" as const,
+      text: faqAnswerForSchema(item.answer),
+    },
+  }));
+}
+
 /** Default social / OG preview image */
 export const DEFAULT_OG_IMAGE = absoluteUrl("/resources/poster_images/orders_laptop.webp");
 
@@ -58,11 +81,7 @@ export function faqPageJsonLd(items: FaqItem[]) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: items.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: { "@type": "Answer", text: item.answer },
-    })),
+    mainEntity: faqQuestionsForSchema(items),
   };
 }
 
@@ -85,6 +104,7 @@ export function webPageJsonLd(options: {
   name: string;
   description: string;
   speakableSelectors?: string[];
+  faqItems?: FaqItem[];
 }) {
   const url = options.path === "/" ? siteOrigin() : absoluteUrl(options.path);
   const page: Record<string, unknown> = {
@@ -98,6 +118,10 @@ export function webPageJsonLd(options: {
     about: { "@id": `${siteOrigin()}/#software` },
     inLanguage: "en-IN",
   };
+
+  if (options.faqItems?.length) {
+    page.hasPart = faqQuestionsForSchema(options.faqItems);
+  }
 
   if (options.speakableSelectors?.length) {
     page.speakable = {
@@ -145,6 +169,29 @@ export function aboutPageJsonLd() {
   });
 }
 
+/** Public per-user/year pricing shown on /pricing (Silver ₹3,600 → Enterprise ₹1,800). */
+export function datalynkrAggregateOffer() {
+  return {
+    "@type": "AggregateOffer" as const,
+    priceCurrency: "INR",
+    lowPrice: "1800",
+    highPrice: "3600",
+    offerCount: "4",
+    availability: "https://schema.org/InStock",
+    url: absoluteUrl("/pricing"),
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      price: "3600",
+      priceCurrency: "INR",
+      referenceQuantity: {
+        "@type": "QuantitativeValue",
+        value: "1",
+        unitCode: "ANN",
+      },
+    },
+  };
+}
+
 export function softwareApplicationJsonLd() {
   return {
     "@context": "https://schema.org",
@@ -152,30 +199,13 @@ export function softwareApplicationJsonLd() {
     "@id": `${siteOrigin()}/#software`,
     name: "DataLynkr",
     applicationCategory: "BusinessApplication",
-    operatingSystem: "Web, Android, iOS",
+    operatingSystem: "Windows, Web, Android, iOS",
     logo: absoluteUrl("/logo.svg"),
     url: siteOrigin(),
     downloadUrl: "https://play.google.com/store/apps/details?id=com.datalynkr",
     description:
       "DataLynkr extends Tally ERP beyond the accounts department, giving sales teams, managers, operations, customers, and business owners secure real-time access to live Tally data from mobile and browser. It operates via secure, encrypted tunnels without storing your business data on external servers.",
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "INR",
-      lowPrice: "300",
-      offerCount: "3",
-      availability: "https://schema.org/InStock",
-      url: absoluteUrl("/pricing"),
-      priceSpecification: {
-        "@type": "UnitPriceSpecification",
-        price: "300",
-        priceCurrency: "INR",
-        referenceQuantity: {
-          "@type": "QuantitativeValue",
-          value: "1",
-          unitCode: "MON",
-        },
-      },
-    },
+    offers: datalynkrAggregateOffer(),
     publisher: { "@id": `${siteOrigin()}/#organization` },
     screenshot: [
       absoluteUrl("/resources/poster_images/orders_laptop.webp"),
@@ -199,121 +229,194 @@ export function softwareApplicationJsonLd() {
   };
 }
 
+export function productJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `${siteOrigin()}/#product`,
+    name: "DataLynkr",
+    brand: {
+      "@type": "Brand",
+      name: "DataLynkr",
+    },
+    category: "Tally ERP Integration Software",
+    description:
+      "DataLynkr extends Tally ERP beyond the accounts department, giving sales teams, managers, operations, customers, and business owners secure real-time access to live Tally data from mobile and browser.",
+    logo: absoluteUrl("/logo.svg"),
+    image: absoluteUrl("/resources/poster_images/orders_laptop.webp"),
+    offers: datalynkrAggregateOffer(),
+    manufacturer: { "@id": `${siteOrigin()}/#organization` },
+  };
+}
+
 export const HOME_FAQ: FaqItem[] = [
   {
     question: "What is DataLynkr?",
     answer:
-      "DataLynkr extends Tally beyond the accounts department, giving sales teams, managers, operations staff, customers, and business owners secure access to live Tally data from anywhere. All information is fetched directly from Tally in real time — no customer data is stored on DataLynkr servers.",
-  },
-  {
-    question: "Who is DataLynkr for?",
-    answer:
-      "DataLynkr is built for any business that uses Tally as its ERP. It serves Sales Teams (place orders, create invoices from the field), Managers & Owners (monitor operations, approve transactions), Accounts & Finance Teams (maintain financial control while enabling collaboration), Operations Teams (improve inventory visibility), and Customers (access invoices, outstanding balances, self-service portals). Key industries supported include Manufacturing, Distribution, Wholesale, Retail, Trading, and Services.",
+      "<strong>DataLynkr is a business management platform that extends Tally beyond accounting.</strong> It connects with your existing Tally setup and gives sales teams, managers, customers, and business owners access to real-time business information such as inventory, orders, invoices, reports, dashboards, and approvals from mobile and web.<br/><br/>DataLynkr helps businesses turn Tally into a complete operational platform without replacing their existing ERP.",
   },
   {
     question: "How does DataLynkr work with Tally?",
     answer:
-      "DataLynkr connects directly to your Tally ERP in real time via secure encrypted API tunnels. It reads and writes data to Tally without requiring any changes to your existing Tally setup. All data stays within your control — DataLynkr does not store your business data on its servers.",
+      "DataLynkr works alongside Tally by connecting with your existing Tally data and making important business information accessible outside the accounting department.<br/><br/>Businesses can continue using Tally as their accounting system while DataLynkr enables other teams to access live information such as stock availability, customer balances, sales orders, reports, and approvals.",
   },
   {
-    question: "What features does DataLynkr offer?",
+    question: "Can I access Tally from mobile?",
     answer:
-      "DataLynkr offers 11 key features: Sales Order Management, Invoice Creation, Extend a Portal for Your Customers, Modern B-Commerce Ordering, Authorization Workflows, Dynamic Dashboards, Payments & Collections, Stock Summary, Custom Reports, Daily Ledger Reports, and Offline Transactions.",
+      "Yes. DataLynkr allows users to access Tally-based business information from mobile devices and browsers.<br/><br/>Sales teams can check stock, view customer information, create orders, track transactions, and access important business updates without being physically present at the office.",
   },
   {
-    question: "How much does DataLynkr cost?",
-    answer: `DataLynkr plans start at just ₹300/month per user. Visit ${absoluteUrl("/pricing")} for detailed pricing information.`,
-  },
-  {
-    question: "How does DataLynkr ensure data security and privacy?",
+    question: "Can sales teams use Tally without accounting access?",
     answer:
-      "DataLynkr connects to Tally ERP via secure, end-to-end encrypted API tunnels. We respect your data privacy: no transaction data or customer lists are stored on our servers. All information remains on your local Tally database under your full control.",
-  },
-  {
-    question: "Can I enter transactions offline using DataLynkr?",
-    answer:
-      "Yes, DataLynkr supports Offline Transactions. Your sales team can place orders, view inventory, and log customer interactions without an active internet connection. Once online, the app automatically queues and syncs all offline activities directly to Tally.",
+      "Yes. DataLynkr allows businesses to give sales teams access to the information they need without giving them direct access to Tally.<br/><br/>Salespeople can view inventory, customer details, outstanding balances, pricing information, and create orders while keeping accounting data controlled through permissions.",
   },
   {
     question: "Does DataLynkr work with TallyPrime?",
     answer:
-      "Yes, DataLynkr is fully compatible with Tally ERP 9, TallyPrime, and TallyPrime Edit Log. It integrates seamlessly without requiring any modifications to your existing Tally license or database setup.",
+      "Yes. DataLynkr works with TallyPrime and helps businesses extend TallyPrime capabilities beyond traditional accounting workflows.<br/><br/>Businesses can continue using TallyPrime while giving sales, operations, and management teams access to real-time business information.",
   },
   {
-    question: "How do approval and authorization workflows work?",
+    question: "Does DataLynkr store my business data?",
     answer:
-      "DataLynkr has a custom Authorization Workflow feature. Transactions entered by field sales staff can be marked as pending. Managers or accounts teams can review, approve, or reject these transactions from their dashboard before they are permanently written to Tally.",
+      "No. DataLynkr is designed to work with your existing Tally environment rather than creating a separate disconnected business database.<br/><br/>Your Tally system remains the source of truth while DataLynkr provides access, workflows, dashboards, and business tools around that information.",
   },
   {
-    question: "Can DataLynkr connect to other ERPs like Zoho Books, Busy ERP, Marg ERP, or SAP?",
+    question: "Can DataLynkr create invoices from mobile?",
     answer:
-      "DataLynkr is built primarily to integrate seamlessly with Tally ERP 9, TallyPrime, and TallyPrime Edit Log. However, if you are currently using Zoho Books, Busy ERP, Marg ERP, SAP, or other ERP systems and require custom mobile or web integrations for your sales reps, collections agents, or B2B dealer ordering portals, please reach out to our team to discuss custom API integration possibilities.",
+      "Yes. DataLynkr allows authorized users to create invoices from mobile or web interfaces.<br/><br/>This helps businesses reduce delays by allowing sales teams and field teams to generate invoices closer to the point of transaction while maintaining connection with the Tally workflow.",
   },
   {
-    question: "Why should I use Tally + DataLynkr instead of migrating to a cloud-based ERP like Zoho Books?",
+    question: "Can customers place orders online through Tally?",
     answer:
-      "Migrating your entire business data and training your staff on a new cloud-based ERP like Zoho Books is highly disruptive, expensive, and time-consuming. DataLynkr gives you the best of both worlds: you keep your secure, robust, and familiar offline-first desktop accounting (Tally) while instantly enabling real-time cloud mobile/web access for your field sales, operations, and management teams.",
+      "Yes. With DataLynkr, businesses can provide customers with a digital ordering experience connected with their Tally data.<br/><br/>Customers can browse products, place orders, and access relevant information while businesses maintain centralized control through their existing Tally system.",
   },
   {
-    question: "Does DataLynkr offer field sales capabilities comparable to enterprise ERP solutions?",
+    question: "Can DataLynkr work offline?",
     answer:
-      "Yes. DataLynkr extends Tally with advanced features found in premium enterprise ERP solutions (such as SAP Business One or Oracle NetSuite), including multi-level transaction authorization workflows, real-time multi-godown stock summary, credit limit validation, and live sales performance dashboards—all at a fraction of the cost.",
+      "Yes. DataLynkr supports offline workflows that allow users to continue working even when internet connectivity is unavailable.<br/><br/>Transactions created during offline periods can synchronize automatically once connectivity is restored.",
   },
   {
-    question: "Is DataLynkr a replacement for ERP systems?",
+    question: "Can DataLynkr replace Excel reports?",
     answer:
-      "No, DataLynkr is not a replacement. It is a secure, real-time extension companion that unlocks the capabilities of your existing ERP (Tally) and extends it to the web and mobile devices for non-accounting users (like customers, distributors, sales executives, and business owners).",
+      "Yes, for many business reporting needs.<br/><br/>Instead of manually exporting data from Tally into Excel, businesses can create live reports and dashboards using current Tally information. This reduces manual work and helps teams make decisions using updated data.",
+  },
+  {
+    question: "Can I create custom reports from Tally data?",
+    answer:
+      "Yes. DataLynkr allows businesses to create customized reports using live Tally data.<br/><br/>Users can build reports based on their business requirements instead of depending on repeated Excel exports or manually prepared reports.",
+  },
+  {
+    question: "How does DataLynkr help distributors?",
+    answer:
+      "DataLynkr helps distributors improve sales and operations by giving teams real-time access to inventory, customer information, orders, payments, and reports.<br/><br/>Distributors can provide customers with digital ordering options, reduce manual order processing, improve sales visibility, and respond faster to customer requirements.",
+  },
+  {
+    question: "How does DataLynkr help manufacturers?",
+    answer:
+      "DataLynkr helps manufacturers connect production, sales, inventory, and management teams with the information they need.<br/><br/>Manufacturers can improve visibility into stock levels, sales demand, orders, approvals, and business performance while continuing to use Tally as their core ERP.",
+  },
+  {
+    question: "How does DataLynkr improve sales efficiency?",
+    answer:
+      "DataLynkr improves sales efficiency by reducing dependency on the office for information.<br/><br/>Sales teams can instantly check product availability, customer history, outstanding balances, and create orders while interacting with customers.<br/><br/>This helps salespeople respond faster, reduce delays, and close more opportunities.",
+  },
+  {
+    question: "How much does DataLynkr cost?",
+    answer:
+      "DataLynkr pricing starts at ₹3,600/year per user (₹300/month equivalent).<br/><br/>Pricing depends on the number of users and the features required by your business. Businesses can choose yearly or monthly billing based on their sales, reporting, workflow, and customer access requirements.",
+  },
+  {
+    question: "What problem does DataLynkr solve?",
+    answer:
+      "DataLynkr solves the problem of businesses having valuable information trapped inside Tally. It enables teams outside accounts to access inventory, customer balances, orders, invoices, reports, approvals, and dashboards without depending on the finance team for every update.",
+  },
+  {
+    question: "Who is DataLynkr built for?",
+    answer:
+      "DataLynkr is built for businesses using Tally ERP that want their sales, operations, management, and customers to access business information in real time.<br/><br/>It is especially useful for:<br/>- Manufacturers<br/>- Distributors<br/>- Wholesalers<br/>- Retail businesses<br/>- Trading companies<br/>- Service businesses",
+  },
+  {
+    question: "Can DataLynkr replace Tally?",
+    answer:
+      "No. DataLynkr works alongside Tally. Tally remains the accounting and ERP system while DataLynkr extends its capabilities by making information accessible to other teams.",
+  },
+  {
+    question: "How does DataLynkr connect with Tally?",
+    answer:
+      "DataLynkr connects with Tally and allows businesses to access and manage live Tally information through mobile and browser interfaces.",
+  },
+  {
+    question: "Does DataLynkr require changing my Tally workflow?",
+    answer:
+      "No. Businesses can continue using Tally as they do today while giving other teams access to the information they need.",
+  },
+  {
+    question: "Does DataLynkr store my Tally data?",
+    answer:
+      "No. DataLynkr is designed so that business information remains connected to the customer's Tally environment instead of being stored as a separate database on DataLynkr servers.",
+  },
+  {
+    question: "Is DataLynkr a cloud ERP?",
+    answer:
+      "DataLynkr is not a replacement ERP. It is a real-time business access layer that extends your existing Tally ERP capabilities.",
+  },
+  {
+    question: "Can I access Tally data from mobile?",
+    answer:
+      "Yes. DataLynkr allows users to access Tally-based business information through mobile and browser access.",
   },
 ];
 
 export const PRICING_FAQ: FaqItem[] = [
   {
-    question: "How much does DataLynkr cost per user?",
+    question: "What are the pricing options?",
     answer:
-      "DataLynkr subscription plans start at ₹300 per user per month. Silver, Gold, Diamond, and Enterprise tiers are available based on team size and feature requirements.",
+      "DataLynkr offers yearly and monthly plans based on user count and feature requirements.",
   },
   {
-    question: "Is there a free trial for DataLynkr?",
+    question: "Are there any setup fees?",
     answer:
-      "Yes, DataLynkr offers a 14-day free trial with no credit card required. You can connect your Tally and explore features before subscribing.",
+      "Basic setups have no additional fee, while custom integrations or dedicated deployments may involve configuration charges.",
   },
   {
-    question: "Can I pay annually for DataLynkr?",
+    question: "Can I change plans later?",
     answer:
-      "Yes, annual billing is available on all plans. Annual subscriptions typically offer savings compared to monthly billing.",
-  },
-  {
-    question: "Does DataLynkr pricing include external customer portal users?",
-    answer:
-      "Each plan includes a set number of free external portal users per internal user. Check the plan details on the pricing page for exact limits.",
+      "Yes. You can upgrade, downgrade, or add/remove user licenses as your business requirements change.",
   },
 ];
 
 export const SUPPORT_FAQ: FaqItem[] = [
   {
-    question: "How do I connect DataLynkr to my Tally ERP?",
+    question: "Where is my Tally data stored?",
     answer:
-      "DataLynkr connects to Tally via a secure connector installed on the machine running Tally. Setup typically takes about 5 minutes. Contact support or request a demo for guided onboarding.",
+      "Your data remains on your local Tally server. DataLynkr only retrieves and caches the necessary information to serve your users securely.",
   },
   {
-    question: "What should I do if DataLynkr is not syncing with Tally?",
+    question: "Is my data secure during transmission?",
     answer:
-      "First, verify that Tally is running and the DataLynkr connector service is active. Check your internet connection and firewall settings. If the issue persists, submit a support ticket with your company name and error details.",
+      "Yes. All data transmitted between your Tally server, DataLynkr servers, and user devices is encrypted using industry-standard protocols.",
   },
   {
-    question: "How do I reset my DataLynkr portal password?",
+    question: "What happens if my server goes offline?",
     answer:
-      "Use the Change Password page in the portal or contact your company administrator. For account lockouts, email support@datalynkr.com with your registered email address.",
-  },
-  {
-    question: "Does DataLynkr support TallyPrime and Tally ERP 9?",
-    answer:
-      "Yes, DataLynkr is compatible with Tally ERP 9, TallyPrime, and TallyPrime Edit Log without modifying your existing Tally license or database.",
+      "If your local Tally server goes offline, users can still access cached data and perform offline actions, but live updates will pause until connectivity is restored.",
   },
 ];
 
+/** Offer price validity — end of next calendar year, rolled forward automatically. */
+export function pricingOfferValidUntil(): string {
+  return `${new Date().getFullYear() + 1}-12-31`;
+}
+
 export function pricingOffersJsonLd(
-  plans: Array<{ name: string; description: string; monthly_price: string; min_users: number; max_users: number }>,
+  plans: Array<{
+    name: string;
+    description: string;
+    monthly_price: string;
+    yearly_price: string;
+    min_users: number;
+    max_users: number;
+  }>,
 ) {
   if (plans.length === 0) return null;
 
@@ -328,11 +431,21 @@ export function pricingOffersJsonLd(
       "@type": "Offer",
       name: plan.name,
       description: plan.description,
-      price: plan.monthly_price,
+      price: plan.yearly_price,
       priceCurrency: "INR",
-      priceValidUntil: "2027-12-31",
+      priceValidUntil: pricingOfferValidUntil(),
       availability: "https://schema.org/InStock",
       url: absoluteUrl("/pricing"),
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: plan.yearly_price,
+        priceCurrency: "INR",
+        referenceQuantity: {
+          "@type": "QuantitativeValue",
+          value: "1",
+          unitCode: "ANN",
+        },
+      },
       eligibleQuantity: {
         "@type": "QuantitativeValue",
         minValue: plan.min_users,
@@ -357,28 +470,70 @@ export function howToConnectTallyJsonLd() {
         "@type": "HowToStep",
         position: 1,
         name: "Request a demo or sign up",
-        text: "Register on DataLynkr or contact sales@datalynkr.com to start your free trial.",
+        itemListElement: [
+          {
+            "@type": "HowToDirection",
+            text: "Visit the DataLynkr contact page or email sales@datalynkr.com to request a demo.",
+          },
+          {
+            "@type": "HowToDirection",
+            text: "Complete registration to start your 14-day free trial.",
+          },
+        ],
         url: absoluteUrl("/contact"),
       },
       {
         "@type": "HowToStep",
         position: 2,
         name: "Install the Tally connector",
-        text: "Install the DataLynkr connector on the computer where Tally ERP is running. The connector creates a secure encrypted tunnel.",
+        itemListElement: [
+          {
+            "@type": "HowToDirection",
+            text: "Download the DataLynkr connector on the primary PC where Tally ERP or TallyPrime is installed.",
+          },
+          {
+            "@type": "HowToDirection",
+            text: "Run the installer and verify the secure encrypted tunnel status displays as connected.",
+          },
+        ],
       },
       {
         "@type": "HowToStep",
         position: 3,
         name: "Configure users and permissions",
-        text: "Set up internal users, roles, and optional customer portal access from the DataLynkr admin panel.",
+        itemListElement: [
+          {
+            "@type": "HowToDirection",
+            text: "Open the DataLynkr admin panel and create internal user accounts.",
+          },
+          {
+            "@type": "HowToDirection",
+            text: "Assign roles and permissions for sales, operations, and optional customer portal access.",
+          },
+        ],
       },
       {
         "@type": "HowToStep",
         position: 4,
         name: "Access Tally from mobile or browser",
-        text: "Log in to the DataLynkr portal or mobile app to place orders, create invoices, view dashboards, and approve workflows in real time.",
+        itemListElement: [
+          {
+            "@type": "HowToDirection",
+            text: "Log in to the DataLynkr web portal or mobile app with your assigned credentials.",
+          },
+          {
+            "@type": "HowToDirection",
+            text: "Place orders, create invoices, view dashboards, and approve workflows using live Tally data.",
+          },
+        ],
         url: absoluteUrl("/login"),
       },
     ],
+    result: {
+      "@type": "Thing",
+      name: "Live Tally access from mobile and browser",
+      description:
+        "Teams can view inventory, customer balances, orders, and reports in real time without direct Tally accounting access.",
+    },
   };
 }

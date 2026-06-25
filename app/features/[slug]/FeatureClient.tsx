@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { rewriteLegacyAnchors } from "@/lib/legacyHrefToRoute";
+import { initFaqAccordion } from "@/lib/initFaqAccordion";
 
 interface FeatureClientProps {
   slug: string;
@@ -74,6 +75,7 @@ export default function FeatureClient({ slug, body, styles, scripts }: FeatureCl
     };
 
     const cleanupObservers = initPageObservers();
+    const cleanupFaqAccordion = initFaqAccordion(root);
 
     const runPageScripts = () => {
       const originalAddEventListener = document.addEventListener.bind(document);
@@ -126,6 +128,7 @@ export default function FeatureClient({ slug, body, styles, scripts }: FeatureCl
 
     return () => {
       cleanupObservers();
+      cleanupFaqAccordion();
 
       timeouts.forEach((id) => originalClearTimeout(id));
       intervals.forEach((id) => originalClearInterval(id));
@@ -160,7 +163,11 @@ export default function FeatureClient({ slug, body, styles, scripts }: FeatureCl
         <style key={idx} dangerouslySetInnerHTML={{ __html: styleContent }} />
       ))}
 
-      <div ref={contentRef} dangerouslySetInnerHTML={{ __html: body }} />
+      <div
+        ref={contentRef}
+        className="cdn-tailwind-content"
+        dangerouslySetInnerHTML={{ __html: body }}
+      />
     </>
   );
 }

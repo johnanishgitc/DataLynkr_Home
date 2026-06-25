@@ -25,12 +25,12 @@ const breadcrumbs = [
 
 export default function AboutPage() {
   return (
-    <>
+    <div className="bg-white min-h-screen flex flex-col">
       <JsonLd data={aboutPageJsonLd()} />
       <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />
       <Navbar showHomeIcon={true} />
 
-      <main className="flex-grow bg-white px-6 md:px-8 py-24 md:py-32 pb-20 md:pb-32">
+      <main className="flex-grow bg-white px-6 md:px-8 py-24 md:py-32">
         <div className="max-w-4xl mx-auto">
           <h1 className="headline-font text-4xl md:text-5xl lg:text-6xl font-bold text-[#1f3a89] mb-8 md:mb-12 text-center">
             About DataLynkr
@@ -102,6 +102,6 @@ export default function AboutPage() {
       </main>
 
       <Footer />
-    </>
+    </div>
   );
 }

@@ -202,6 +202,44 @@ body {
 .delay-600 { animation-delay: 600ms !important; }
 .delay-700 { animation-delay: 700ms !important; }
 
+/* Legacy HTML / HomeClient was authored for Tailwind CDN, where text-* bundled
+   line-heights win over leading-* utilities. TW4 lets leading-* override via --tw-leading. */
+.cdn-tailwind-content
+  :is(
+    [class*="text-xs"],
+    [class*="text-sm"],
+    [class*="text-base"],
+    [class*="text-lg"],
+    [class*="text-xl"],
+    [class*="text-2xl"],
+    [class*="text-3xl"],
+    [class*="text-4xl"],
+    [class*="text-5xl"],
+    [class*="text-6xl"],
+    [class*="text-7xl"],
+    [class*="text-8xl"],
+    [class*="text-9xl"]
+  ),
+.cdn-tailwind-content
+  :is(
+    [class*="text-xs"],
+    [class*="text-sm"],
+    [class*="text-base"],
+    [class*="text-lg"],
+    [class*="text-xl"],
+    [class*="text-2xl"],
+    [class*="text-3xl"],
+    [class*="text-4xl"],
+    [class*="text-5xl"],
+    [class*="text-6xl"],
+    [class*="text-7xl"],
+    [class*="text-8xl"],
+    [class*="text-9xl"]
+  )
+  :where(:not([class*="leading-"])) {
+  --tw-leading: initial;
+}
+
 /* Fixed navbar clearance for feature pages (React wrapper below unified Navbar) */
 .feature-page-main {
   padding-top: 84px;
@@ -227,6 +265,25 @@ body {
 .card-hover:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px -5px rgba(31, 58, 137, 0.1);
+}
+
+.support-hero-icon {
+  font-size: 140px !important;
+  line-height: 1 !important;
+  width: 1em;
+  height: 1em;
+}
+
+@media (min-width: 640px) {
+  .support-hero-icon {
+    font-size: 200px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .support-hero-icon {
+    font-size: 260px !important;
+  }
 }
 
 /* Fix for mobile/laptop mockup video overflow/clipping bugs in Safari/WebKit */
@@ -264,13 +321,16 @@ body {
 .material-symbols-outlined.text-\[10px\] { font-size: 10px !important; }
 .material-symbols-outlined.text-\[20px\] { font-size: 20px !important; }
 .material-symbols-outlined.text-\[100px\] { font-size: 100px !important; }
+.material-symbols-outlined.text-\[110px\] { font-size: 110px !important; }
 .material-symbols-outlined.text-\[120px\] { font-size: 120px !important; }
+.material-symbols-outlined.text-\[140px\] { font-size: 140px !important; }
 .material-symbols-outlined.text-\[160px\] { font-size: 160px !important; }
+.material-symbols-outlined.text-\[180px\] { font-size: 180px !important; }
 .material-symbols-outlined.text-\[300px\] { font-size: 300px !important; }
-.material-symbols-outlined.text-xs { font-size: 0.75rem !important; }
-.material-symbols-outlined.text-sm { font-size: 0.875rem !important; }
-.material-symbols-outlined.text-base { font-size: 1rem !important; }
-.material-symbols-outlined.text-lg { font-size: 1.125rem !important; }
+.material-symbols-outlined.text-xs { font-size: 0.75rem !important; line-height: 1rem !important; }
+.material-symbols-outlined.text-sm { font-size: 0.875rem !important; line-height: 1.25rem !important; }
+.material-symbols-outlined.text-base { font-size: 1rem !important; line-height: 1.5rem !important; }
+.material-symbols-outlined.text-lg { font-size: 1.125rem !important; line-height: 1.75rem !important; }
 .material-symbols-outlined.text-xl { font-size: 1.25rem !important; }
 .material-symbols-outlined.text-2xl { font-size: 1.5rem !important; }
 .material-symbols-outlined.text-3xl { font-size: 1.875rem !important; }
@@ -281,7 +341,15 @@ body {
 .material-symbols-outlined.text-8xl { font-size: 6rem !important; }
 .material-symbols-outlined.text-9xl { font-size: 8rem !important; }
 
-/* Desktop-only sidebar button elements (segment icon + MENU text) */
+/* Pricing page — match legacy pricing.html Tailwind CDN text metrics in Next.js */
+.pricing-page h1[class*="text-"] {
+  line-height: 1.25 !important;
+}
+
+.pricing-page p.text-sm {
+  line-height: 1.25rem;
+}
+
 @media (min-width: 1024px) {
   [data-desktop-only="true"] {
     display: inline !important;

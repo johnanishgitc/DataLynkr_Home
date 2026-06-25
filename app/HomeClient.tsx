@@ -68,7 +68,7 @@ export default function HomeClient() {
   };
 
   return (
-    <>
+    <div className="cdn-tailwind-content">
       {/* Navbar */}
       <Navbar showCenterBrand showLoginButton showHomeIcon={false} />
 
@@ -2211,9 +2211,11 @@ export default function HomeClient() {
       {/* Footer Component */}
       <FaqSection
         items={HOME_FAQ}
-        subtitle="Answers to common questions about DataLynkr, Tally integration, pricing, and security."
+        title="Frequently Asked Questions"
+        subtitle="Got questions about DataLynkr? We've got answers. If you don't find what you're looking for, feel free to contact us."
+        layout="home"
       />
       <Footer />
-    </>
+    </div>
   );
 }

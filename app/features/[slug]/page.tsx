@@ -14,7 +14,7 @@ import {
   featureBreadcrumbJsonLd,
   featureWebPageJsonLd,
   getFeatureFaqItems,
-  getFeatureKeywords,
+  getFeatureFaqSubtitle,
   getFeatureSchemas,
 } from "@/lib/featureSchemas";
 import { buildPageMetadata } from "@/lib/seo";
@@ -36,6 +36,11 @@ const AVAILABLE_SLUGS = [
   "sales-order-management",
   "stock-summary",
 ];
+
+/** Remove legacy hardcoded FAQ blocks — React FaqSection + FEATURE_FAQ is the single source of truth. */
+function stripInlineFaqSection(html: string): string {
+  return html.replace(/<!--\s*FAQs Section\s*-->[\s\S]*?<\/section>/i, "");
+}
 
 // Helper to read and extract data from feature HTML files
 function getFeatureData(slug: string) {
@@ -103,6 +108,12 @@ function getFeatureData(slug: string) {
     // Remove raw script tags from body to prevent script execution issues
     body = body.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
 
+    // Styles are injected via FeatureClient; strip inline blocks from body markup
+    body = body.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, "");
+
+    // Avoid duplicate FAQs: render from FEATURE_FAQ via FaqSection instead of static HTML
+    body = stripInlineFaqSection(body);
+
     return {
       title,
       description,
@@ -132,7 +143,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: data.description,
     path: `/features/${slug}`,
     ogImage: absoluteUrl(FEATURE_OG_IMAGES[slug] ?? "/resources/poster_images/orders_laptop.webp"),
-    keywords: getFeatureKeywords(slug),
   });
 }
 
@@ -144,23 +154,24 @@ export default async function FeaturePage({ params }: PageProps) {
     notFound();
   }
 
-  const schemas = getFeatureSchemas(slug);
+  const schemas = getFeatureSchemas(slug, data.description);
   const faqItems = getFeatureFaqItems(slug);
 
   return (
     <div className="flex flex-col min-h-screen overflow-x-hidden">
       {schemas.video && <JsonLd data={schemas.video} />}
-      {schemas.faq && <JsonLd data={schemas.faq} />}
-      <JsonLd data={featureWebPageJsonLd(slug, data.title, data.description)} />
+      {schemas.softwareFeature && <JsonLd data={schemas.softwareFeature} />}
+      <JsonLd data={featureWebPageJsonLd(slug, data.title, data.description, faqItems)} />
       <JsonLd data={featureBreadcrumbJsonLd(slug, data.title)} />
 
       <Navbar
         showCenterBrand={false}
         showLoginButton={false}
         showHomeIcon={true}
-        hideOnScroll
+        hideOnScroll={false}
+        staticNav
       />
-      <div className="feature-page-main flex-grow flex flex-col">
+      <div className="flex-grow flex flex-col">
         <FeatureClient
           slug={slug}
           body={data.body}
@@ -170,7 +181,8 @@ export default async function FeaturePage({ params }: PageProps) {
         {faqItems.length > 0 && (
           <FaqSection
             items={faqItems}
-            title={`${data.title} — FAQ`}
+            title="Frequently Asked Questions"
+            subtitle={getFeatureFaqSubtitle(slug)}
             className="bg-white"
           />
         )}
