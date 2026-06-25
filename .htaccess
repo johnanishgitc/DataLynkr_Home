@@ -5,9 +5,18 @@ Options -MultiViews
 
 DirectoryIndex index.html
 
+# Stop mod_dir from auto-redirecting /login -> /login/ when a stale empty dir exists.
+<IfModule mod_dir.c>
+  DirectorySlash Off
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /Hometest/
+
+  # Known app routes -> .html FIRST (wins before mod_dir, so leftover empty
+  # directories like login/ or pricing/ can never trigger a 403).
+  RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)/?$ $1.html [L,NC]
 
   # Legacy *.html bookmarks -> clean URLs (browser request only — not internal rewrites)
   RewriteCond %{THE_REQUEST} \s[^\s]*\.html[\s?] [NC]
@@ -20,7 +29,7 @@ DirectoryIndex index.html
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(.+)/$ $1 [R=301,L]
 
-  # Serve .html for clean URLs (works even when stale empty route directories exist)
+  # Serve .html for any other clean URL (works even when stale directories exist)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^(.+?)/?$ $1.html [L]
