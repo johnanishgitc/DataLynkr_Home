@@ -3,7 +3,7 @@
 import { basePath } from "@/lib/site";
 
 import { useState } from "react";
-import Link from "next/link";
+import SiteLink from "@/components/SiteLink";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FaqSection from "@/components/FaqSection";
@@ -328,13 +328,13 @@ export default function HomeClient() {
               {/* CTA Button */}
               <div className="pt-2">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                  <Link
+                  <SiteLink
                     href="/pricing"
                     className="group inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-[#1F3A89] to-[#2563EB] hover:from-[#152960] hover:to-[#1D4ED8] active:scale-[0.98] text-white font-bold text-base md:text-lg px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-[#1F3A89]/25 hover:shadow-xl hover:shadow-[#1F3A89]/35 hover:scale-[1.02] shrink-0"
                   >
                     <span>Simple, Affordable Pricing</span>
                     <span className="material-symbols-outlined text-lg md:text-xl transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
-                  </Link>
+                  </SiteLink>
                   <div className="flex items-center gap-2 px-1">
                     <span className="relative flex h-2.5 w-2.5">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -592,13 +592,13 @@ export default function HomeClient() {
                 </div>
               </div>
               <div className="pt-4 hidden sm:block">
-                <Link
+                <SiteLink
                   href="/features/sales-order-management"
                   className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
                 >
                   <span>Explore More</span>
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                </Link>
+                </SiteLink>
               </div>
             </div>
 
@@ -668,13 +668,13 @@ export default function HomeClient() {
 
           {/* Mobile-only Explore Button */}
           <div className="pt-8 flex justify-center sm:hidden w-full">
-            <Link
+            <SiteLink
               href="/features/sales-order-management"
               className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
             >
               <span>Explore More</span>
               <span className="material-symbols-outlined text-lg">arrow_forward</span>
-            </Link>
+            </SiteLink>
           </div>
         </div>
       </section>
@@ -776,26 +776,26 @@ export default function HomeClient() {
                 </div>
               </div>
               <div className="pt-4 hidden sm:block">
-                <Link
+                <SiteLink
                   href="/features/extend-portal-customers"
                   className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
                 >
                   <span>Explore More</span>
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                </Link>
+                </SiteLink>
               </div>
             </div>
           </div>
 
           {/* Mobile-only Explore Button */}
           <div className="pt-8 flex justify-center sm:hidden w-full">
-            <Link
+            <SiteLink
               href="/features/extend-portal-customers"
               className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
             >
               <span>Explore More</span>
               <span className="material-symbols-outlined text-lg">arrow_forward</span>
-            </Link>
+            </SiteLink>
           </div>
         </div>
       </section>
@@ -865,13 +865,13 @@ export default function HomeClient() {
                 </div>
               </div>
               <div className="pt-4 hidden sm:block">
-                <Link
+                <SiteLink
                   href="/features/modern-bcommerce-ordering"
                   className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
                 >
                   <span>Explore More</span>
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                </Link>
+                </SiteLink>
               </div>
             </div>
 
@@ -941,13 +941,13 @@ export default function HomeClient() {
 
           {/* Mobile-only Explore Button */}
           <div className="pt-8 flex justify-center sm:hidden w-full">
-            <Link
+            <SiteLink
               href="/features/modern-bcommerce-ordering"
               className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
             >
               <span>Explore More</span>
               <span className="material-symbols-outlined text-lg">arrow_forward</span>
-            </Link>
+            </SiteLink>
           </div>
         </div>
       </section>
@@ -1083,26 +1083,26 @@ export default function HomeClient() {
                 </div>
               </div>
               <div className="pt-4 hidden sm:block">
-                <Link
+                <SiteLink
                   href="/features/invoice-creation"
                   className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
                 >
                   <span>Explore More</span>
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                </Link>
+                </SiteLink>
               </div>
             </div>
           </div>
 
           {/* Mobile-only Explore Button */}
           <div className="pt-8 flex justify-center sm:hidden w-full">
-            <Link
+            <SiteLink
               href="/features/invoice-creation"
               className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
             >
               <span>Explore More</span>
               <span className="material-symbols-outlined text-lg">arrow_forward</span>
-            </Link>
+            </SiteLink>
           </div>
         </div>
       </section>
@@ -1170,13 +1170,13 @@ export default function HomeClient() {
                 </div>
               </div>
               <div className="pt-4 hidden sm:block">
-                <Link
+                <SiteLink
                   href="/features/authorization-workflows"
                   className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
                 >
                   <span>Explore More</span>
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                </Link>
+                </SiteLink>
               </div>
             </div>
 
@@ -1248,13 +1248,13 @@ export default function HomeClient() {
 
           {/* Mobile-only Explore Button */}
           <div className="pt-8 flex justify-center sm:hidden w-full">
-            <Link
+            <SiteLink
               href="/features/authorization-workflows"
               className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
             >
               <span>Explore More</span>
               <span className="material-symbols-outlined text-lg">arrow_forward</span>
-            </Link>
+            </SiteLink>
           </div>
         </div>
       </section>
@@ -1385,26 +1385,26 @@ export default function HomeClient() {
                 </div>
               </div>
               <div className="pt-4 hidden sm:block">
-                <Link
+                <SiteLink
                   href="/features/daily-ledger-reports"
                   className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
                 >
                   <span>Explore More</span>
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                </Link>
+                </SiteLink>
               </div>
             </div>
           </div>
 
           {/* Mobile-only Explore Button */}
           <div className="pt-8 flex justify-center sm:hidden w-full">
-            <Link
+            <SiteLink
               href="/features/daily-ledger-reports"
               className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
             >
               <span>Explore More</span>
               <span className="material-symbols-outlined text-lg">arrow_forward</span>
-            </Link>
+            </SiteLink>
           </div>
         </div>
       </section>
@@ -1477,13 +1477,13 @@ export default function HomeClient() {
                 </div>
               </div>
               <div className="pt-4 hidden sm:block">
-                <Link
+                <SiteLink
                   href="/features/offline-transactions"
                   className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
                 >
                   <span>Explore More</span>
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                </Link>
+                </SiteLink>
               </div>
             </div>
 
@@ -1553,13 +1553,13 @@ export default function HomeClient() {
 
           {/* Mobile-only Explore Button */}
           <div className="pt-8 flex justify-center sm:hidden w-full">
-            <Link
+            <SiteLink
               href="/features/offline-transactions"
               className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
             >
               <span>Explore More</span>
               <span className="material-symbols-outlined text-lg">arrow_forward</span>
-            </Link>
+            </SiteLink>
           </div>
         </div>
       </section>
@@ -1660,26 +1660,26 @@ export default function HomeClient() {
                 </div>
               </div>
               <div className="pt-4 hidden sm:block">
-                <Link
+                <SiteLink
                   href="/features/dynamic-dashboards"
                   className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
                 >
                   <span>Explore More</span>
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                </Link>
+                </SiteLink>
               </div>
             </div>
           </div>
 
           {/* Mobile-only Explore Button */}
           <div className="pt-8 flex justify-center sm:hidden w-full">
-            <Link
+            <SiteLink
               href="/features/dynamic-dashboards"
               className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
             >
               <span>Explore More</span>
               <span className="material-symbols-outlined text-lg">arrow_forward</span>
-            </Link>
+            </SiteLink>
           </div>
         </div>
       </section>
@@ -1750,13 +1750,13 @@ export default function HomeClient() {
                 </div>
               </div>
               <div className="pt-4 hidden sm:block">
-                <Link
+                <SiteLink
                   href="/features/payments-collections"
                   className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
                 >
                   <span>Explore More</span>
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                </Link>
+                </SiteLink>
               </div>
             </div>
 
@@ -1826,13 +1826,13 @@ export default function HomeClient() {
 
           {/* Mobile-only Explore Button */}
           <div className="pt-8 flex justify-center sm:hidden w-full">
-            <Link
+            <SiteLink
               href="/features/payments-collections"
               className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
             >
               <span>Explore More</span>
               <span className="material-symbols-outlined text-lg">arrow_forward</span>
-            </Link>
+            </SiteLink>
           </div>
         </div>
       </section>
@@ -1968,26 +1968,26 @@ export default function HomeClient() {
                 </div>
               </div>
               <div className="pt-4 hidden sm:block">
-                <Link
+                <SiteLink
                   href="/features/stock-summary"
                   className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
                 >
                   <span>Explore More</span>
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                </Link>
+                </SiteLink>
               </div>
             </div>
           </div>
 
           {/* Mobile-only Explore Button */}
           <div className="pt-8 flex justify-center sm:hidden w-full">
-            <Link
+            <SiteLink
               href="/features/stock-summary"
               className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
             >
               <span>Explore More</span>
               <span className="material-symbols-outlined text-lg">arrow_forward</span>
-            </Link>
+            </SiteLink>
           </div>
         </div>
       </section>
@@ -2058,13 +2058,13 @@ export default function HomeClient() {
                 </div>
               </div>
               <div className="pt-4 hidden sm:block">
-                <Link
+                <SiteLink
                   href="/features/custom-reports"
                   className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
                 >
                   <span>Explore More</span>
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                </Link>
+                </SiteLink>
               </div>
             </div>
 
@@ -2105,13 +2105,13 @@ export default function HomeClient() {
 
           {/* Mobile-only Explore Button */}
           <div className="pt-8 flex justify-center sm:hidden w-full">
-            <Link
+            <SiteLink
               href="/features/custom-reports"
               className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-zinc-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 duration-300"
             >
               <span>Explore More</span>
               <span className="material-symbols-outlined text-lg">arrow_forward</span>
-            </Link>
+            </SiteLink>
           </div>
         </div>
       </section>

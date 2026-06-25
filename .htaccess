@@ -9,21 +9,19 @@ DirectoryIndex index.html
   RewriteEngine On
   RewriteBase /Hometest/
 
-  # App routes -> .html even when stale empty directories exist (prevents 403 on /route/)
-  RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)/?$ $1.html [L,NC]
-
-  # Legacy .html redirects to clean URLs
+  # Legacy *.html bookmarks -> clean URLs (browser request only — not internal rewrites)
+  RewriteCond %{THE_REQUEST} \s[^\s]*\.html[\s?] [NC]
   RewriteRule ^features/([^/]+)\.html$ features/$1 [R=301,L,NC]
   RewriteRule ^code\.html$ ./ [R=301,L,NC]
   RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)\.html$ $1 [R=301,L,NC]
 
-  # Redirect trailing slashes to non-trailing slash clean URLs (unless it is a physical directory)
+  # Trailing slash -> clean URL (browser request only; skip real asset directories)
+  RewriteCond %{THE_REQUEST} \s[^\s]*/.+?/[\s?] [NC]
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(.*)/$ $1 [R=301,L]
+  RewriteRule ^(.+)/$ $1 [R=301,L]
 
-  # Serve the correct .html file for clean URLs (Next.js static export creates /page.html files)
+  # Serve .html for clean URLs (works even when stale empty route directories exist)
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteRule ^(.+)$ $1.html [L]
+  RewriteRule ^(.+?)/?$ $1.html [L]
 </IfModule>
