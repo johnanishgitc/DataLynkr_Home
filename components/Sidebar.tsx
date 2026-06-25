@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useEffect } from "react";
 import { createPortal } from "react-dom";
-import Link from "next/link";
+import SiteLink from "./SiteLink";
 import { usePathname, useRouter } from "next/navigation";
 import { LogoSvg } from "./LogoSvg";
 
@@ -130,7 +130,7 @@ export default function Sidebar() {
           >
             <div className="flex-1 flex flex-col h-full overflow-y-auto p-8 relative">
               <div className="pt-16 pb-8 flex items-center relative">
-                <Link
+                <SiteLink
                   href="/"
                   className="absolute left-1/2 -translate-x-1/2 h-10 w-auto flex-shrink-0 block hover:opacity-80 transition-opacity"
                   title="DataLynkr Home"
@@ -140,10 +140,10 @@ export default function Sidebar() {
                   }}
                 >
                   <LogoSvg fillPrimary="white" fillAccent="rgb(239, 201, 79)" />
-                </Link>
+                </SiteLink>
               </div>
               <div className="flex-1 flex flex-col gap-6 font-medium text-lg headline-font mt-4">
-                <Link
+                <SiteLink
                   href="/"
                   className={
                     pathname === "/"
@@ -160,7 +160,7 @@ export default function Sidebar() {
                   }}
                 >
                   Home
-                </Link>
+                </SiteLink>
 
                 {/* Features toggle button */}
                 <button
@@ -183,7 +183,7 @@ export default function Sidebar() {
                   </span>
                 </button>
 
-                <Link
+                <SiteLink
                   href="/about"
                   className={
                     isActive("/about")
@@ -200,9 +200,9 @@ export default function Sidebar() {
                   }}
                 >
                   About DataLynkr
-                </Link>
+                </SiteLink>
 
-                <Link
+                <SiteLink
                   href="/pricing"
                   className={
                     isActive("/pricing")
@@ -219,9 +219,9 @@ export default function Sidebar() {
                   }}
                 >
                   Pricing
-                </Link>
+                </SiteLink>
 
-                <Link
+                <SiteLink
                   href="/contact"
                   className={
                     isActive("/contact")
@@ -238,9 +238,9 @@ export default function Sidebar() {
                   }}
                 >
                   Contact Us
-                </Link>
+                </SiteLink>
 
-                <Link
+                <SiteLink
                   href="/support"
                   className={
                     isActive("/support")
@@ -257,7 +257,7 @@ export default function Sidebar() {
                   }}
                 >
                   Get Support
-                </Link>
+                </SiteLink>
               </div>
             </div>
 

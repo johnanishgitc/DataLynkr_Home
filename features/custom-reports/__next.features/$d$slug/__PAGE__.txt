@@ -1,0 +1,1536 @@
+1:"$Sreact.fragment"
+a:I[62319,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js","/Hometest/_next/static/chunks/3hsdf7acact9q.js"],"default"]
+b:I[54585,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js","/Hometest/_next/static/chunks/3hsdf7acact9q.js"],"default"]
+10:I[22016,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js","/Hometest/_next/static/chunks/3hsdf7acact9q.js"],""]
+11:I[97367,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+12:"$Sreact.suspense"
+14:I[1323,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js","/Hometest/_next/static/chunks/3hsdf7acact9q.js"],"default"]
+2:T5f8,{"@context":"https://schema.org","@type":"SoftwareApplication","@id":"https://datalynkr.com/Hometest/features/custom-reports#feature","name":"DataLynkr Custom Reports","applicationCategory":"BusinessApplication","operatingSystem":"Windows, Web, Android, iOS","description":"Eliminate Excel exports. Build, customize, and save powerful pivot-style reports from live Tally data in minutes using a drag-and-drop interface.","url":"https://datalynkr.com/Hometest/features/custom-reports","isPartOf":{"@id":"https://datalynkr.com/Hometest/#software"},"author":{"@id":"https://datalynkr.com/Hometest/#organization"},"featureList":["Custom report builder","Live pivot-style views","PDF and spreadsheet export"],"keywords":["Tally custom reports builder","live Tally pivot tables","Tally reports on mobile","business intelligence for Tally","Tally spreadsheet analytics","live pivot tables Marg ERP Busy ERP alternative","SAP Business One spreadsheet analytics","business intelligence reports Zoho Books app","custom reporting builder ERP","ad-hoc ERP reports on mobile"],"offers":{"@type":"AggregateOffer","priceCurrency":"INR","lowPrice":"1800","highPrice":"3600","offerCount":"4","availability":"https://schema.org/InStock","url":"https://datalynkr.com/Hometest/pricing","priceSpecification":{"@type":"UnitPriceSpecification","price":"3600","priceCurrency":"INR","referenceQuantity":{"@type":"QuantitativeValue","value":"1","unitCode":"ANN"}}},"screenshot":"https://datalynkr.com/Hometest/resources/poster_images/dealer_growth.webp"}3:T51e,{"@context":"https://schema.org","@type":"WebPage","@id":"https://datalynkr.com/Hometest/features/custom-reports#webpage","url":"https://datalynkr.com/Hometest/features/custom-reports","name":"Custom Report Builder","description":"Eliminate Excel exports. Build, customize, and save powerful pivot-style reports from live Tally data in minutes using a drag-and-drop interface.","isPartOf":{"@id":"https://datalynkr.com/Hometest/#website"},"about":{"@id":"https://datalynkr.com/Hometest/#software"},"mainEntity":{"@id":"https://datalynkr.com/Hometest/features/custom-reports#feature"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://datalynkr.com/Hometest/resources/poster_images/dealer_growth.webp"},"hasPart":[{"@type":"Question","name":"What reports can I access?","acceptedAnswer":{"@type":"Answer","text":"You can view sales reports, customer outstanding statements, stock summaries, ledger transactions, and custom business reports."}},{"@type":"Question","name":"Can I export reports?","acceptedAnswer":{"@type":"Answer","text":"Yes. Reports can be exported or shared as PDFs and spreadsheets."}},{"@type":"Question","name":"Can I view historical Tally data?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can run reports covering historical periods available in your Tally company."}}]}0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"flex flex-col min-h-screen overflow-x-hidden","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"VideoObject\",\"name\":\"DataLynkr - Custom Reports Demo\",\"description\":\"See how DataLynkr lets you build custom reports and pivot-style views from live Tally data without Excel exports.\",\"thumbnailUrl\":[\"https://datalynkr.com/Hometest/resources/poster_images/dealer_growth.webp\"],\"uploadDate\":\"2026-06-19T10:00:00Z\",\"duration\":\"PT0M45S\",\"contentUrl\":\"https://datalynkr.com/Hometest/resources/videos/dealer_growth.mp4\",\"embedUrl\":\"https://datalynkr.com/Hometest/features/custom-reports\",\"creator\":{\"@id\":\"https://datalynkr.com/Hometest/#organization\"},\"publisher\":{\"@type\":\"Organization\",\"@id\":\"https://datalynkr.com/Hometest/#organization\",\"name\":\"DataLynkr\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://datalynkr.com/Hometest/logo.svg\"}},\"about\":{\"@id\":\"https://datalynkr.com/Hometest/#software\"},\"isPartOf\":{\"@id\":\"https://datalynkr.com/Hometest/features/custom-reports#feature\"}}"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$3"}}],"$L4","$L5","$L6","$L7"]}],["$L8"],"$L9"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"kS4ExL_11NMEHF0rPhOPg"}
+4:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://datalynkr.com/Hometest\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Custom Report Builder\",\"item\":\"https://datalynkr.com/Hometest/features/custom-reports\"}]}"}}]
+5:["$","$La",null,{"showCenterBrand":false,"showLoginButton":false,"showHomeIcon":true,"hideOnScroll":false,"staticNav":true}]
+c:T131b7,
+
+    <!-- SECTION 1: HERO -->
+    <section
+        class="bg-white pt-4 pb-20 md:pt-6 md:pb-28 px-6 md:px-16 lg:px-24 border-b border-zinc-100 overflow-hidden relative">
+        <!-- Subtle Grid Pattern Background -->
+        <div
+            class="absolute inset-0 bg-[linear-gradient(to_right,#f3f4f6_1px,transparent_1px),linear-gradient(to_bottom,#f3f4f6_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40">
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10 text-center space-y-10">
+            <!-- Badge -->
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1F3A89]/10 text-[#1F3A89] font-bold headline-font uppercase tracking-widest text-xs reveal-on-scroll reveal-fade-up">
+                <span class="w-2 h-2 bg-[#F1C74B] rounded-full animate-pulse"></span>
+                Custom Report Builder
+            </div>
+
+            <!-- Headings -->
+            <div class="space-y-6 max-w-4xl mx-auto !mt-4 reveal-on-scroll reveal-fade-up">
+                <h1
+                    class="headline-font text-4xl sm:text-5xl lg:text-7xl font-extrabold text-[#0E172B] leading-[1.15] tracking-tight">
+                    Build Any Report You Need.<br>
+                    <span class="text-[#1F3A89]">No Excel. No Coding.</span>
+                </h1>
+                <p class="text-slate-600 font-body text-base sm:text-xl leading-relaxed max-w-3xl mx-auto">
+                    Create powerful pivot-style reports using live Tally data with a simple drag-and-drop interface.
+                    Analyze sales, inventory, finance, and custom fields without exports, formulas, or technical
+                    support.
+                </p>
+            </div>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 reveal-on-scroll reveal-fade-up">
+                <a href="/Hometest/contact"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#1F3A89] text-white px-8 py-4 rounded-full font-bold hover:bg-[#1F3A89]/90 hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300">
+                    <span>Book Demo</span>
+                    <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                </a>
+                <button onclick="scrollToSection('build-visually')"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-slate-200 text-slate-800 px-8 py-4 rounded-full font-bold hover:bg-slate-50 hover:border-slate-300 hover:scale-105 active:scale-95 transition-all duration-300">
+                    <span class="material-symbols-outlined text-lg">play_circle</span>
+                    <span>Watch Report Builder</span>
+                </button>
+            </div>
+
+            <!-- Centered Laptop Visual with Floating Labels (NO PHONES) -->
+            <div class="pt-8 max-w-5xl mx-auto relative reveal-on-scroll reveal-fade-up">
+                <!-- Floating labels container -->
+                <div class="hidden md:block absolute inset-0 z-20 pointer-events-none">
+                    <!-- Label 1: Top Left -->
+                    <div
+                        class="absolute top-[15%] left-[-4%] bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-2xl py-3 px-4 shadow-lg flex items-center gap-2.5 animate-float">
+                        <div
+                            class="w-7 h-7 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600">
+                            <span class="material-symbols-outlined text-sm font-bold">sync</span>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800 tracking-tight">Live Tally Data</span>
+                    </div>
+
+                    <!-- Label 2: Mid Left -->
+                    <div
+                        class="absolute top-[48%] left-[-8%] bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-2xl py-3 px-4 shadow-lg flex items-center gap-2.5 animate-float-delayed">
+                        <div class="w-7 h-7 rounded-lg bg-blue-100 flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined text-sm font-bold">table_chart</span>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800 tracking-tight">Pivot Reporting</span>
+                    </div>
+
+                    <!-- Label 3: Bottom Left -->
+                    <div
+                        class="absolute bottom-[10%] left-[-2%] bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-2xl py-3 px-4 shadow-lg flex items-center gap-2.5 animate-float-fast">
+                        <div class="w-7 h-7 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600">
+                            <span class="material-symbols-outlined text-sm font-bold">extension</span>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800 tracking-tight">UDF Support</span>
+                    </div>
+
+                    <!-- Label 4: Top Right -->
+                    <div
+                        class="absolute top-[18%] right-[-4%] bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-2xl py-3 px-4 shadow-lg flex items-center gap-2.5 animate-float-delayed">
+                        <div class="w-7 h-7 rounded-lg bg-violet-100 flex items-center justify-center text-violet-600">
+                            <span class="material-symbols-outlined text-sm font-bold">bolt</span>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800 tracking-tight">Instant Refresh</span>
+                    </div>
+
+                    <!-- Label 5: Mid/Bottom Right -->
+                    <div
+                        class="absolute top-[55%] right-[-8%] bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-2xl py-3 px-4 shadow-lg flex items-center gap-2.5 animate-float">
+                        <div class="w-7 h-7 rounded-lg bg-red-100 flex items-center justify-center text-red-600">
+                            <span class="material-symbols-outlined text-sm font-bold">cancel</span>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800 tracking-tight">No Excel Exports</span>
+                    </div>
+                </div>
+
+                <!-- Laptop Mockup -->
+                <div class="relative w-full max-w-4xl mx-auto px-6 sm:px-8">
+                    <div
+                        class="relative rounded-t-2xl border-[6px] md:border-[12px] lg:border-[16px] border-zinc-900 bg-zinc-900 aspect-[16/10] overflow-hidden shadow-2xl">
+                        <div class="absolute inset-0 bg-white">
+                            <picture class="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none">
+                                <source srcset="/Hometest/resources/poster_images/dealer_growth.webp" type="image/webp">
+                                <img src="/Hometest/resources/poster_images/dealer_growth.jpg" alt="" class="w-full h-full object-cover">
+                            </picture>
+                            <video width="1920" height="1200" autoplay loop muted playsinline preload="metadata"
+                                poster="/Hometest/resources/poster_images/dealer_growth.webp"
+                                class="w-full h-full object-cover"
+                                onplaying="this.previousElementSibling.classList.add('opacity-0')">
+                                <source src="/Hometest/resources/videos/dealer_growth.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                    <div class="relative h-3 md:h-5 bg-zinc-800 rounded-b-2xl w-[106%] -left-[3%] shadow-xl"></div>
+                    <div class="relative h-1.5 md:h-3 bg-zinc-700/50 rounded-b-3xl w-[80%] mx-auto"></div>
+                </div>
+            </div>
+
+            <!-- Brand Logo & Text Container Aligned to the Bottom Right -->
+            <div class="w-full mt-12 reveal-on-scroll reveal-fade-up max-w-4xl mx-auto px-6 sm:px-8">
+                <div class="flex justify-end">
+                    <a href="/Hometest" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity"
+                        title="DataLynkr Home">
+                        <!-- DataLynkr SVG Logo -->
+                        <div class="h-7 md:h-8 aspect-[2352/1825] flex-shrink-0">
+                            <svg class="w-full h-full" viewBox="0 0 2352 1825" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g transform="matrix(1,0,0,1,-433.673905,-573.914687)">
+                                    <g transform="matrix(4.591033,0,0,4.591033,-170.925878,-4.498795)">
+                                        <path
+                                            d="M131.862,129.376C130.04,117.368 139.468,130.36 330.857,284.067C464.376,391.298 465.418,393.678 467.438,392.344C491.547,376.43 639.946,268.123 643.177,269.982C645.959,271.583 643.383,272.976 588.075,330.099C555.999,363.227 556.723,363.618 523.816,395.793C498.522,420.523 467.727,456.829 463.95,453.032C425.167,414.044 345.904,337.391 335.575,327.402C334.374,326.329 333.174,325.255 331.973,324.182C274.761,270.219 188.09,183.592 175.718,171.226C150.89,146.869 137.744,133.558 131.862,129.376Z"
+                                            fill="#1F3A89" />
+                                        <path
+                                            d="M131.862,129.376C137.744,133.558 150.89,146.869 175.718,171.226C174.446,173.082 174.898,173.209 155.463,363.497C147.17,444.698 144.728,462.423 148.577,459.638C318.649,336.613 319.328,337.327 331.973,324.182C333.174,325.255 334.374,326.329 335.575,327.402C330.462,332.41 145.867,516.733 143.253,521.382C142.869,522.064 136.25,528.587 136.312,514.501C136.402,493.868 130.851,133.926 131.862,129.376Z"
+                                            fill="#F1C74B" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <span
+                            class="headline-font text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-normal text-black tracking-tight whitespace-nowrap">DataLynkr</span>
+                    </a>
+                </div>
+            </div>
+    </section>
+
+    <!-- SECTION 2: THE PROBLEM -->
+    <section class="bg-slate-50 py-20 md:py-28 px-6 md:px-16 lg:px-24 border-b border-zinc-100">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header Text -->
+            <div class="text-center space-y-4 max-w-3xl mx-auto mb-16 md:mb-20 reveal-on-scroll reveal-fade-up">
+                <span class="text-[#1F3A89] font-bold headline-font uppercase tracking-widest text-xs">The Efficiency
+                    Trap</span>
+                <h2 class="headline-font text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0E172B] leading-tight">
+                    Why Most Businesses Still Depend On Excel
+                </h2>
+                <div class="h-1.5 w-20 bg-[#1F3A89] mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <!-- Left Column: Flowchart Visual -->
+                <div class="lg:col-span-5 order-2 lg:order-1 reveal-on-scroll reveal-fade-in-left">
+                    <div
+                        class="bg-white border border-slate-200/80 rounded-3xl p-6 md:p-8 shadow-xl flex flex-col justify-center min-h-[400px]">
+                        <h3 class="font-bold text-slate-800 text-center mb-8 headline-font tracking-wide">The Manual
+                            Reporting Loop</h3>
+                        <div class="flex flex-col items-center gap-5 relative w-full">
+                            <!-- Step 1 -->
+                            <div class="flex items-center gap-4 bg-red-50 border border-red-100 rounded-2xl p-4 w-full">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0 font-bold">
+                                    1</div>
+                                <div>
+                                    <h4 class="font-extrabold text-sm text-slate-800">Tally Database</h4>
+                                    <p class="text-[11px] text-slate-500">Transaction records are stored inside Tally
+                                        system.</p>
+                                </div>
+                            </div>
+                            <!-- Arrow 1 -->
+                            <div class="h-5">
+                                <svg class="h-5 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="3">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                                </svg>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="flex items-center gap-4 bg-red-50 border border-red-100 rounded-2xl p-4 w-full">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0 font-bold">
+                                    2</div>
+                                <div>
+                                    <h4 class="font-extrabold text-sm text-slate-800">Manual Export</h4>
+                                    <p class="text-[11px] text-slate-500">Export static rows as XML/Excel worksheets.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Arrow 2 -->
+                            <div class="h-5">
+                                <svg class="h-5 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="3">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                                </svg>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="flex items-center gap-4 bg-red-50 border border-red-100 rounded-2xl p-4 w-full">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0 font-bold">
+                                    3</div>
+                                <div>
+                                    <h4 class="font-extrabold text-sm text-slate-800">Excel Assembly</h4>
+                                    <p class="text-[11px] text-slate-500">Rebuild formulas, link spreadsheets, format
+                                        layouts.</p>
+                                </div>
+                            </div>
+                            <!-- Arrow 3 -->
+                            <div class="h-5">
+                                <svg class="h-5 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="3">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                                </svg>
+                            </div>
+
+                            <!-- Step 4 -->
+                            <div
+                                class="flex items-center gap-4 bg-red-50/50 border border-red-100/60 rounded-2xl p-4 w-full relative">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-red-100/50 text-red-600 flex items-center justify-center flex-shrink-0 font-bold">
+                                    4</div>
+                                <div>
+                                    <h4 class="font-extrabold text-sm text-slate-800">Pivot Tables & Share</h4>
+                                    <p class="text-[11px] text-slate-500">Create pivot views, email out of date sheets
+                                        to team.</p>
+                                </div>
+                                <div
+                                    class="absolute -right-3 top-[-10px] bg-red-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase">
+                                    Repeat Daily</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Frustration Cards -->
+                <div class="lg:col-span-7 order-1 lg:order-2 space-y-6 reveal-on-scroll reveal-fade-up">
+                    <p class="text-slate-600 font-body text-lg leading-relaxed">
+                        Exporting to spreadsheets to build reports is slow, limits team collaboration, and creates major
+                        operational headaches:
+                    </p>
+
+                    <!-- Cards Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div
+                            class="bg-white border border-slate-200/60 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                            <span
+                                class="material-symbols-outlined text-red-500 text-3xl mb-2">security_update_warning</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Security Risks</h4>
+                            <p class="text-xs text-slate-500 mt-1">Confidential client ledger exports are copied on
+                                unprotected local storage.</p>
+                        </div>
+                        <div
+                            class="bg-white border border-slate-200/60 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                            <span
+                                class="material-symbols-outlined text-red-500 text-3xl mb-2">running_with_errors</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Heavy Tally Processing</h4>
+                            <p class="text-xs text-slate-500 mt-1">Exporting massive logs slows down standard
+                                bookkeeping in Tally.</p>
+                        </div>
+                        <div
+                            class="bg-white border border-slate-200/60 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                            <span class="material-symbols-outlined text-red-500 text-3xl mb-2">update_disabled</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Outdated Information</h4>
+                            <p class="text-xs text-slate-500 mt-1">Decision makers look at yesterday's sales figures and
+                                payment outstanding.</p>
+                        </div>
+                        <div
+                            class="bg-white border border-slate-200/60 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                            <span class="material-symbols-outlined text-red-500 text-3xl mb-2">layers_clear</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Complex Spreadsheets</h4>
+                            <p class="text-xs text-slate-500 mt-1">Broken formulas and circular references corrupt
+                                financial numbers.</p>
+                        </div>
+                        <div
+                            class="bg-white border border-slate-200/60 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                            <span class="material-symbols-outlined text-red-500 text-3xl mb-2">group_off</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Staff Dependence</h4>
+                            <p class="text-xs text-slate-500 mt-1">Waiting on the IT or accounts department for
+                                customized filter adjustments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Table Section -->
+            <div
+                class="mt-16 bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-md reveal-on-scroll reveal-fade-up">
+                <h3 class="font-extrabold text-xl md:text-2xl text-slate-800 text-center mb-8 headline-font">Comparison:
+                    How DataLynkr Changes the Equation</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr
+                                class="border-b border-slate-200 text-slate-400 text-xs font-bold uppercase tracking-wider">
+                                <th class="pb-4 w-1/3">Feature</th>
+                                <th class="pb-4 w-1/3 text-red-500 bg-red-50/30 px-4 rounded-t-xl">Traditional Excel
+                                    Reporting</th>
+                                <th class="pb-4 w-1/3 text-primary bg-blue-50/30 px-4 rounded-t-xl">DataLynkr Custom
+                                    Reports</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm text-slate-600 font-body">
+                            <tr class="border-b border-slate-100">
+                                <td class="py-4 font-bold text-slate-700">Data Latency</td>
+                                <td class="py-4 text-red-600 bg-red-50/30 px-4">Hours or Days (outdated snapshot)</td>
+                                <td class="py-4 text-emerald-600 font-bold bg-blue-50/30 px-4">Live Sync (refreshed in
+                                    seconds)</td>
+                            </tr>
+                            <tr class="border-b border-slate-100">
+                                <td class="py-4 font-bold text-slate-700">Report Setup Time</td>
+                                <td class="py-4 text-red-600 bg-red-50/30 px-4">Manual exports, formatting formulas each
+                                    time</td>
+                                <td class="py-4 text-emerald-600 font-bold bg-blue-50/30 px-4">One-click load (saved
+                                    template layout)</td>
+                            </tr>
+                            <tr class="border-b border-slate-100">
+                                <td class="py-4 font-bold text-slate-700">Drag & Drop Dimensions</td>
+                                <td class="py-4 text-red-600 bg-red-50/30 px-4">Complex Excel Pivot wizard setup needed
+                                </td>
+                                <td class="py-4 text-emerald-600 font-bold bg-blue-50/30 px-4">Visual grid controls
+                                    (drag & drop columns)</td>
+                            </tr>
+                            <tr class="border-b border-slate-100">
+                                <td class="py-4 font-bold text-slate-700">Data Control / Security</td>
+                                <td class="py-4 text-red-600 bg-red-50/30 px-4">Files can be copied, sent, or leaked
+                                </td>
+                                <td class="py-4 text-emerald-600 font-bold bg-blue-50/30 px-4">Role-based browser
+                                    permissions</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 font-bold text-slate-700">Tally Performance</td>
+                                <td class="py-4 text-red-600 bg-red-50/30 px-4 rounded-b-xl">Heavy exports freeze Tally
+                                    books</td>
+                                <td class="py-4 text-emerald-600 font-bold bg-blue-50/30 px-4 rounded-b-xl">Local
+                                    caching, zero Tally disruption</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: LIVE DATA REFRESH -->
+    <section class="bg-white py-20 md:py-28 px-6 md:px-16 lg:px-24 border-b border-zinc-100">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header Text -->
+            <div class="text-center space-y-4 max-w-3xl mx-auto mb-16 reveal-on-scroll reveal-fade-up">
+                <span class="text-[#1F3A89] font-bold headline-font uppercase tracking-widest text-xs">Real-Time
+                    Sync</span>
+                <h2 class="headline-font text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0E172B] leading-tight">
+                    Keep Your Reports. Refresh The Numbers.
+                </h2>
+                <p class="text-slate-500 font-body text-base sm:text-lg max-w-2xl mx-auto">
+                    Spreadsheet files require complete rebuilds for new cycles. In DataLynkr, click refresh to pull the
+                    latest Tally vouchers directly into your saved templates.
+                </p>
+                <div class="h-1.5 w-20 bg-[#1F3A89] mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <!-- Interactive Widget and Workflow Steps -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center reveal-on-scroll reveal-fade-up">
+                <!-- Left: Workflow Steps -->
+                <div class="lg:col-span-5 space-y-6">
+                    <!-- Step 1 -->
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-blue-50 text-[#1F3A89] flex items-center justify-center font-bold flex-shrink-0 text-sm">
+                            1</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm sm:text-base">Build Report Once</h4>
+                            <p class="text-xs text-slate-500">Pick dimensions, categories, and custom Tally filters.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-blue-50 text-[#1F3A89] flex items-center justify-center font-bold flex-shrink-0 text-sm">
+                            2</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm sm:text-base">Save Layout</h4>
+                            <p class="text-xs text-slate-500">Click save to lock the report parameters for future
+                                reference.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-blue-50 text-[#1F3A89] flex items-center justify-center font-bold flex-shrink-0 text-sm">
+                            3</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm sm:text-base">Click Live Data</h4>
+                            <p class="text-xs text-slate-500">Trigger the instant sync with your local Tally database.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold flex-shrink-0 text-sm">
+                            4</div>
+                        <div>
+                            <h4 class="font-bold text-emerald-800 text-sm sm:text-base">Everything Refreshes
+                                Automatically</h4>
+                            <p class="text-xs text-slate-500">No rebuilding reports, no exporting again, and zero
+                                spreadsheet maintenance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Interactive Sync Simulator Widget -->
+                <div
+                    class="lg:col-span-7 bg-slate-50 border border-slate-200 rounded-3xl p-6 md:p-8 shadow-lg flex flex-col gap-6">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary text-xl">insert_chart</span>
+                            <span class="text-xs font-extrabold text-slate-700 uppercase tracking-wider font-mono">Q2
+                                Regional Performance</span>
+                        </div>
+
+                        <!-- Refresh Button Trigger -->
+                        <button onclick="triggerInteractiveRefresh()"
+                            class="bg-[#1F3A89] hover:bg-[#1F3A89]/90 text-white text-xs font-bold py-2 px-4 rounded-full flex items-center gap-2 transition-all shadow-sm active:scale-95">
+                            <span id="refresh-icon-spin" class="material-symbols-outlined text-sm">sync</span>
+                            <span>Refresh Tally Data</span>
+                        </button>
+                    </div>
+
+                    <!-- Simulator Table -->
+                    <div class="overflow-x-auto border border-slate-200 rounded-2xl bg-white p-3">
+                        <table class="w-full text-left font-mono text-[11px] sm:text-xs">
+                            <thead>
+                                <tr class="border-b border-slate-200 text-slate-400">
+                                    <th class="pb-2">Sales Territory</th>
+                                    <th class="pb-2 text-right">Invoice Volume</th>
+                                    <th class="pb-2 text-right">Collected Value</th>
+                                    <th class="pb-2 text-right">Receivables</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-slate-600 font-medium">
+                                <tr class="border-b border-slate-100">
+                                    <td class="py-2.5 font-bold text-slate-800">West Zone (Maharashtra/Gujarat)</td>
+                                    <td class="py-2.5 text-right font-mono" id="sim-col-1">1,480 Bills</td>
+                                    <td class="py-2.5 text-right font-mono text-emerald-600" id="sim-col-2">₹4.82 Cr
+                                    </td>
+                                    <td class="py-2.5 text-right font-mono text-red-500" id="sim-col-3">₹85.2 Lakhs</td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <td class="py-2.5 font-bold text-slate-800">North Zone (NCR/Punjab)</td>
+                                    <td class="py-2.5 text-right font-mono" id="sim-col-4">980 Bills</td>
+                                    <td class="py-2.5 text-right font-mono text-emerald-600" id="sim-col-5">₹3.14 Cr
+                                    </td>
+                                    <td class="py-2.5 text-right font-mono text-red-500" id="sim-col-6">₹52.0 Lakhs</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 font-bold text-slate-800">South Zone (Karnataka/TN)</td>
+                                    <td class="py-2.5 text-right font-mono" id="sim-col-7">2,150 Bills</td>
+                                    <td class="py-2.5 text-right font-mono text-emerald-600" id="sim-col-8">₹6.90 Cr
+                                    </td>
+                                    <td class="py-2.5 text-right font-mono text-red-500" id="sim-col-9">₹1.15 Cr</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Progress Indicator Bar -->
+                    <div id="sim-progress-wrapper" class="hidden space-y-2">
+                        <div class="flex justify-between text-[10px] text-slate-400 font-mono">
+                            <span>Syncing transaction vouchers...</span>
+                            <span id="sim-progress-pct">0%</span>
+                        </div>
+                        <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                            <div id="sim-progress-bar" class="bg-primary h-full w-0 transition-all duration-300"></div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between text-[10px] text-slate-400 font-mono">
+                        <div>Report layout ID: `#pivot_q2_regional`</div>
+                        <div id="sim-timestamp" class="text-slate-400">Sync Status: Locked Template</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: SECURITY -->
+    <section class="bg-slate-50 py-20 md:py-28 px-6 md:px-16 lg:px-24 border-b border-zinc-100">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header Text -->
+            <div class="text-center space-y-4 max-w-3xl mx-auto mb-16 reveal-on-scroll reveal-fade-up">
+                <span class="text-[#1F3A89] font-bold headline-font uppercase tracking-widest text-xs">Compliance &
+                    Control</span>
+                <h2 class="headline-font text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0E172B] leading-tight">
+                    A Safer Alternative To Spreadsheet Reporting
+                </h2>
+                <div class="h-1.5 w-20 bg-[#1F3A89] mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <!-- Comparison Cards Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch reveal-on-scroll reveal-fade-up">
+                <!-- Excel Risks Card -->
+                <div class="bg-red-50/20 border border-red-200/50 rounded-3xl p-6 md:p-8 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center">
+                                <span class="material-symbols-outlined">gpp_bad</span>
+                            </div>
+                            <h3 class="headline-font text-lg md:text-xl font-bold text-slate-800">The Risks of Excel
+                                Exports</h3>
+                        </div>
+
+                        <div class="space-y-4 font-body text-slate-600 text-sm">
+                            <div class="flex gap-3">
+                                <span class="material-symbols-outlined text-red-500 mt-0.5">remove_circle</span>
+                                <div>
+                                    <strong class="text-slate-800">Files can be copied</strong>
+                                    <p class="text-xs text-slate-500 mt-0.5">Spreadsheets sent over WhatsApp or email
+                                        are easily saved on personal disks and sent to competitors.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3">
+                                <span class="material-symbols-outlined text-red-500 mt-0.5">remove_circle</span>
+                                <div>
+                                    <strong class="text-slate-800">Data leaves system control</strong>
+                                    <p class="text-xs text-slate-500 mt-0.5">Once exported, you have no audit trail of
+                                        who is viewing, sharing, or editing sensitive ledger figures.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3">
+                                <span class="material-symbols-outlined text-red-500 mt-0.5">remove_circle</span>
+                                <div>
+                                    <strong class="text-slate-800">Access is difficult to manage</strong>
+                                    <p class="text-xs text-slate-500 mt-0.5">Restricting access to specific rows (e.g.
+                                        region-specific sales data) requires maintaining dozens of separate worksheets.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="mt-8 pt-4 border-t border-red-200/50 text-[10px] text-red-500 font-bold uppercase tracking-wider font-mono">
+                        Vulnerable Data Pipeline
+                    </div>
+                </div>
+
+                <!-- DataLynkr Security Card -->
+                <div
+                    class="bg-white border border-slate-200 rounded-3xl p-6 md:p-8 flex flex-col justify-between shadow-md">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                                <span class="material-symbols-outlined">verified_user</span>
+                            </div>
+                            <h3 class="headline-font text-lg md:text-xl font-bold text-slate-800">DataLynkr Secure
+                                Reporting</h3>
+                        </div>
+
+                        <div class="space-y-4 font-body text-slate-600 text-sm">
+                            <div class="flex gap-3">
+                                <span class="material-symbols-outlined text-emerald-500 mt-0.5">check_circle</span>
+                                <div>
+                                    <strong class="text-slate-800">Browser-Based Read-Only Access</strong>
+                                    <p class="text-xs text-slate-500 mt-0.5">Users analyze reports in a secure web
+                                        browser without ever downloading the raw spreadsheet databases.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3">
+                                <span class="material-symbols-outlined text-emerald-500 mt-0.5">check_circle</span>
+                                <div>
+                                    <strong class="text-slate-800">Role-Based Permissions</strong>
+                                    <p class="text-xs text-slate-500 mt-0.5">Limit access by customer categories,
+                                        branches, or territories. Agents only see their designated clients.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3">
+                                <span class="material-symbols-outlined text-emerald-500 mt-0.5">check_circle</span>
+                                <div>
+                                    <strong class="text-slate-800">Centralized Audit Controls</strong>
+                                    <p class="text-xs text-slate-500 mt-0.5">Verify user logs and block portal access
+                                        instantly if a salesperson departs the organization.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="mt-8 pt-4 border-t border-slate-200 text-[10px] text-primary font-bold uppercase tracking-wider font-mono">
+                        Enterprise-Grade Integrity
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: BUILT FOR LARGE DATASETS -->
+    <section class="bg-white py-20 md:py-28 px-6 md:px-16 lg:px-24 border-b border-zinc-100">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header Text -->
+            <div class="text-center space-y-4 max-w-3xl mx-auto mb-16 reveal-on-scroll reveal-fade-up">
+                <span class="text-[#1F3A89] font-bold headline-font uppercase tracking-widest text-xs">Performance
+                    Infrastructure</span>
+                <h2 class="headline-font text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0E172B] leading-tight">
+                    Analyze Millions Of Records Without Slowing Down Tally
+                </h2>
+                <div class="h-1.5 w-20 bg-[#1F3A89] mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <!-- Visual Split Layout (Traditional vs Cached) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch reveal-on-scroll reveal-fade-up">
+
+                <!-- Left: Traditional excel reports -->
+                <div
+                    class="lg:col-span-6 bg-red-50/30 border border-red-100 rounded-3xl p-6 md:p-8 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="w-12 h-12 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl">hourglass_empty</span>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="headline-font text-xl font-bold text-slate-800">Traditional Excel Exports</h3>
+                            <p class="text-xs text-slate-500 leading-relaxed font-body">Direct database exports hit
+                                Tally hardware directly, degrading day-to-day transaction records booking performance.
+                            </p>
+                        </div>
+                        <ul class="space-y-3 font-body text-xs text-slate-600">
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-red-500 text-base">close</span>
+                                Heavy database load during queries
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-red-500 text-base">close</span>
+                                Slow exports on large ledger tables
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-red-500 text-base">close</span>
+                                Frozen screens and desktop app crashes
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-red-500 text-base">close</span>
+                                Minutes spent waiting for data compile
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="mt-8 pt-4 border-t border-red-100/60 text-[11px] text-red-600 font-bold uppercase tracking-wider font-mono">
+                        Inefficient Infrastructure
+                    </div>
+                </div>
+
+                <!-- Right: DataLynkr cache engine -->
+                <div
+                    class="lg:col-span-6 bg-emerald-50/30 border border-emerald-100 rounded-3xl p-6 md:p-8 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl">bolt</span>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="headline-font text-xl font-bold text-slate-800">DataLynkr Performance</h3>
+                            <p class="text-xs text-slate-500 leading-relaxed font-body">Our cache replication
+                                architecture aggregates and indexes transactions locally, serving reports instantly
+                                without stressing Tally.</p>
+                        </div>
+                        <ul class="space-y-3 font-body text-xs text-slate-600">
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-emerald-500 text-base">check</span>
+                                Local cached architecture for speed
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-emerald-500 text-base">check</span>
+                                Instant sub-second report generation
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-emerald-500 text-base">check</span>
+                                Fast filtering on millions of voucher items
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-emerald-500 text-base">check</span>
+                                Zero performance impact on Tally processes
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="mt-8 pt-4 border-t border-emerald-100/60 text-[11px] text-emerald-600 font-bold uppercase tracking-wider font-mono">
+                        Enterprise Caching Core
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: FROM QUESTION TO ANSWER -->
+    <section class="bg-white py-20 md:py-28 px-6 md:px-16 lg:px-24 border-b border-zinc-100">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header Text -->
+            <div class="text-center space-y-4 max-w-3xl mx-auto mb-16 reveal-on-scroll reveal-fade-up">
+                <span class="text-[#1F3A89] font-bold headline-font uppercase tracking-widest text-xs">Dynamic
+                    Analytics</span>
+                <h2 class="headline-font text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0E172B] leading-tight">
+                    Turn Business Questions Into Answers In Minutes
+                </h2>
+                <p class="text-slate-500 font-body text-base sm:text-lg max-w-2xl mx-auto">
+                    Manufacturers, distributors, and finance teams ask complex questions. DataLynkr translates those
+                    queries into clean report visualizations instantly.
+                </p>
+                <div class="h-1.5 w-20 bg-[#1F3A89] mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <!-- Desktop Monitor Mockup containing video (Desktop/Tablet View) -->
+            <div class="hidden sm:block w-full max-w-5xl mx-auto mb-12 px-6 relative reveal-on-scroll">
+                <!-- Glass reflection cover -->
+                <div class="relative bg-slate-950 rounded-2xl p-4 shadow-2xl border border-slate-800">
+                    <!-- Screen Bezel wrapper -->
+                    <div
+                        class="relative aspect-[16/10] bg-slate-900 rounded-lg overflow-hidden border border-slate-800">
+                        <!-- Dashboard looping video -->
+                        <picture class="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none">
+                            <source id="q-viz-desktop-poster-webp" srcset="/Hometest/resources/features/custom-reports/poster_images/salesperson_margin.webp" type="image/webp">
+                            <img id="q-viz-desktop-poster-jpg" src="/Hometest/resources/features/custom-reports/poster_images/salesperson_margin.jpg" alt="" class="w-full h-full object-cover">
+                        </picture>
+                        <video width="1920" height="1200" id="q-viz-video-desktop" autoplay loop muted playsinline
+                            preload="metadata"
+                            poster="/Hometest/resources/features/custom-reports/poster_images/salesperson_margin.webp"
+                            class="w-full h-full object-cover"
+                            onplaying="this.previousElementSibling.classList.add('opacity-0')">
+                            <source src="/Hometest/resources/features/custom-reports/videos/salesperson_margin.mp4"
+                                type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <!-- Monitor Stand Base -->
+                <div class="relative flex flex-col items-center">
+                    <div
+                        class="w-20 h-6 md:w-24 md:h-8 lg:w-32 lg:h-10 bg-gradient-to-b from-slate-800 to-slate-900 border-x border-slate-700">
+                    </div>
+                    <div class="w-36 h-2 md:w-44 md:h-2 lg:w-56 lg:h-3 bg-slate-950 rounded-t-lg shadow-md"></div>
+                </div>
+            </div>
+
+            <!-- Laptop Mockup containing video (Mobile View only) -->
+            <div class="block sm:hidden w-full max-w-md mx-auto mb-12 px-6 relative reveal-on-scroll">
+                <div class="relative w-full">
+                    <!-- Screen Bezel -->
+                    <div
+                        class="relative rounded-t-xl border-[6px] border-slate-950 bg-slate-950 aspect-[16/10] overflow-hidden shadow-2xl">
+                        <div class="absolute inset-0 bg-slate-900 flex justify-center items-center">
+                            <picture class="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none">
+                                <source id="q-viz-mobile-poster-webp" srcset="/Hometest/resources/features/custom-reports/poster_images/salesperson_margin.webp" type="image/webp">
+                                <img id="q-viz-mobile-poster-jpg" src="/Hometest/resources/features/custom-reports/poster_images/salesperson_margin.jpg" alt="" class="w-full h-full object-cover">
+                            </picture>
+                            <video width="1920" height="1200" id="q-viz-video-mobile" autoplay loop muted playsinline
+                                preload="metadata"
+                                poster="/Hometest/resources/features/custom-reports/poster_images/salesperson_margin.webp"
+                                class="w-full h-full object-cover"
+                                onplaying="this.previousElementSibling.classList.add('opacity-0')">
+                                <source src="/Hometest/resources/features/custom-reports/videos/salesperson_margin.mp4"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <!-- Keyboard base -->
+                    <div class="relative h-3 bg-slate-800 rounded-b-xl w-[105%] -left-[2.5%] shadow-xl"></div>
+                    <div class="relative h-1 bg-slate-700/50 rounded-b-2xl w-[80%] mx-auto"></div>
+                </div>
+            </div>
+
+            <!-- Options Grid (centered instruction label then split columns) -->
+            <div class="w-full max-w-5xl mx-auto mt-16 reveal-on-scroll reveal-fade-up">
+                <div class="text-center mb-6">
+                    <p class="text-slate-400 font-bold text-xs uppercase tracking-widest font-mono">Select a Question to
+                        View Report</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <!-- Left Side: Tabs 1, 2 -->
+                    <div class="flex flex-col gap-3">
+                        <!-- Question Tab 1 -->
+                        <button onclick="selectQuestion(1)" id="q-tab-1"
+                            class="text-left w-full p-4 border-2 border-[#1F3A89] bg-[#1F3A89]/5 rounded-2xl flex items-center justify-between hover:bg-slate-50 transition-all duration-300 group">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-2xl">help_outline</span>
+                                <span
+                                    class="font-bold text-sm sm:text-base text-slate-800 group-hover:text-primary">Which
+                                    salesperson drives the highest margin?</span>
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-slate-400 group-hover:translate-x-1 transition-transform">chevron_right</span>
+                        </button>
+
+                        <!-- Question Tab 2 -->
+                        <button onclick="selectQuestion(2)" id="q-tab-2"
+                            class="text-left w-full p-4 border-2 border-slate-100 bg-slate-50/50 rounded-2xl flex items-center justify-between hover:bg-slate-50 transition-all duration-300 group">
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="material-symbols-outlined text-slate-400 text-2xl group-hover:text-primary">help_outline</span>
+                                <span
+                                    class="font-bold text-sm sm:text-base text-slate-600 group-hover:text-slate-800">Which
+                                    dealers are growing fastest?</span>
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-slate-400 group-hover:translate-x-1 transition-transform">chevron_right</span>
+                        </button>
+                    </div>
+
+                    <!-- Right Side: Tabs 3, 4 -->
+                    <div class="flex flex-col gap-3">
+                        <!-- Question Tab 3 -->
+                        <button onclick="selectQuestion(3)" id="q-tab-3"
+                            class="text-left w-full p-4 border-2 border-slate-100 bg-slate-50/50 rounded-2xl flex items-center justify-between hover:bg-slate-50 transition-all duration-300 group">
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="material-symbols-outlined text-slate-400 text-2xl group-hover:text-primary">help_outline</span>
+                                <span
+                                    class="font-bold text-sm sm:text-base text-slate-600 group-hover:text-slate-800">Which
+                                    products generate the highest revenue?</span>
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-slate-400 group-hover:translate-x-1 transition-transform">chevron_right</span>
+                        </button>
+
+                        <!-- Question Tab 4 -->
+                        <button onclick="selectQuestion(4)" id="q-tab-4"
+                            class="text-left w-full p-4 border-2 border-slate-100 bg-slate-50/50 rounded-2xl flex items-center justify-between hover:bg-slate-50 transition-all duration-300 group">
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="material-symbols-outlined text-slate-400 text-2xl group-hover:text-primary">help_outline</span>
+                                <span
+                                    class="font-bold text-sm sm:text-base text-slate-600 group-hover:text-slate-800">What
+                                    inventory groups are slowing down?</span>
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-slate-400 group-hover:translate-x-1 transition-transform">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: BUILD REPORTS VISUALLY -->
+    <section id="build-visually" class="bg-slate-50 py-20 md:py-28 px-6 md:px-16 lg:px-24 border-b border-zinc-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+                <!-- Left: Explanation Column -->
+                <div class="lg:col-span-5 space-y-8 reveal-on-scroll reveal-fade-up">
+                    <div class="space-y-4">
+                        <span class="text-[#1F3A89] font-bold headline-font uppercase tracking-widest text-xs">User
+                            Interface</span>
+                        <h2
+                            class="headline-font text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0E172B] leading-tight">
+                            Drag. Drop. Analyze.
+                        </h2>
+                        <div class="h-1 w-20 bg-[#1F3A89] rounded-full"></div>
+                    </div>
+
+                    <p class="text-slate-600 font-body text-base sm:text-lg leading-relaxed">
+                        DataLynkr provides a simple pivot-table interface. Build deep, layered reports visually in
+                        seconds with simple workflow gestures:
+                    </p>
+
+                    <!-- List of actions -->
+                    <div class="space-y-4 font-body">
+                        <!-- Step 1 -->
+                        <div
+                            class="flex items-start gap-3.5 bg-white border border-slate-100 shadow-sm p-4 rounded-2xl hover:shadow transition-shadow">
+                            <div
+                                class="w-8 h-8 rounded-full bg-blue-50 text-[#1F3A89] flex items-center justify-center font-bold flex-shrink-0 text-sm">
+                                1</div>
+                            <div>
+                                <h4 class="font-extrabold text-slate-800 text-sm sm:text-base">Select Fields</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Pick any parameters: sales ledger, item
+                                    category, dispatch agent, customer tier, or standard fields.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div
+                            class="flex items-start gap-3.5 bg-white border border-slate-100 shadow-sm p-4 rounded-2xl hover:shadow transition-shadow">
+                            <div
+                                class="w-8 h-8 rounded-full bg-blue-50 text-[#1F3A89] flex items-center justify-center font-bold flex-shrink-0 text-sm">
+                                2</div>
+                            <div>
+                                <h4 class="font-extrabold text-slate-800 text-sm sm:text-base">Drag Into Rows</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Determine the vertical breakdown hierarchy. For
+                                    example: Group by Region, then by Dealer.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div
+                            class="flex items-start gap-3.5 bg-white border border-slate-100 shadow-sm p-4 rounded-2xl hover:shadow transition-shadow">
+                            <div
+                                class="w-8 h-8 rounded-full bg-blue-50 text-[#1F3A89] flex items-center justify-center font-bold flex-shrink-0 text-sm">
+                                3</div>
+                            <div>
+                                <h4 class="font-extrabold text-slate-800 text-sm sm:text-base">Drag Into Columns</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Organize metrics horizontally. For instance:
+                                    Compare Q1, Q2, and Q3 side-by-side.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div
+                            class="flex items-start gap-3.5 bg-white border border-slate-100 shadow-sm p-4 rounded-2xl hover:shadow transition-shadow">
+                            <div
+                                class="w-8 h-8 rounded-full bg-blue-50 text-[#1F3A89] flex items-center justify-center font-bold flex-shrink-0 text-sm">
+                                4</div>
+                            <div>
+                                <h4 class="font-extrabold text-slate-800 text-sm sm:text-base">Apply Filters</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Exclude low-margin dealers, drill down to
+                                    specific stock items, or filter by custom Tally classifications.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div
+                            class="flex items-start gap-3.5 bg-white border border-slate-100 shadow-sm p-4 rounded-2xl hover:shadow transition-shadow">
+                            <div
+                                class="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold flex-shrink-0 text-sm">
+                                5</div>
+                            <div>
+                                <h4 class="font-extrabold text-emerald-800 text-sm sm:text-base">Save Layout</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Save your report structure. The layout remains,
+                                    and the numbers sync automatically in real-time.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Highlight statement -->
+                    <div class="p-4 bg-blue-50/50 border border-blue-100/50 rounded-2xl">
+                        <p class="text-xs text-slate-600 leading-relaxed font-semibold italic flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[#1F3A89] text-base">info</span>
+                            No formulas. No custom report development. No coding required.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right: Second Laptop Video (Scroll Zoom effect) -->
+                <div class="lg:col-span-7 flex items-center justify-center reveal-on-scroll reveal-fade-in-right">
+                    <!-- Zoom wrapper controlled via JS -->
+                    <div id="zoom-laptop-container"
+                        class="relative w-full max-w-2xl px-6 sm:px-8 transition-transform duration-300 ease-out origin-center">
+                        <div
+                            class="relative rounded-t-xl border-[4px] md:border-[8px] lg:border-[12px] border-zinc-900 bg-zinc-900 aspect-[16/10] overflow-hidden shadow-2xl">
+                            <div class="absolute inset-0 bg-white">
+                                <picture class="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none">
+                                    <source srcset="/Hometest/resources/features/custom-reports/poster_images/high_revenue.webp" type="image/webp">
+                                    <img src="/Hometest/resources/features/custom-reports/poster_images/high_revenue.jpg" alt="" class="w-full h-full object-cover">
+                                </picture>
+                                <video width="1920" height="1200" autoplay loop muted playsinline preload="metadata"
+                                    poster="/Hometest/resources/features/custom-reports/poster_images/high_revenue.webp"
+                                    class="w-full h-full object-cover"
+                                    onplaying="this.previousElementSibling.classList.add('opacity-0')">
+                                    <source src="/Hometest/resources/features/custom-reports/videos/high_revenue.mp4"
+                                        type="video/mp4" />
+                                </video>
+                            </div>
+                        </div>
+                        <div class="relative h-3 sm:h-4 bg-zinc-800 rounded-b-xl w-[105%] -left-[2.5%] shadow-xl"></div>
+                        <div class="relative h-1.5 sm:h-2 bg-zinc-700/50 rounded-b-2xl w-[80%] mx-auto"></div>
+
+                        <!-- Mini visual focus tag -->
+                        <div
+                            class="absolute bottom-6 right-6 bg-slate-900/90 text-white text-[10px] py-1.5 px-3 rounded-full font-mono flex items-center gap-1.5 backdrop-blur shadow">
+                            <span class="w-1.5 h-1.5 bg-blue-500 rounded-full animate-ping"></span>
+                            Focus: Rearranging Dimensions & Filtering
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- SECTION 6: INCLUDE CUSTOM TALLY FIELDS -->
+    <section class="bg-slate-50 py-20 md:py-28 px-6 md:px-16 lg:px-24 border-b border-zinc-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+                <!-- Left: Content Column -->
+                <div class="lg:col-span-6 space-y-6 reveal-on-scroll reveal-fade-up">
+                    <span class="text-[#1F3A89] font-bold headline-font uppercase tracking-widest text-xs">Complete Data
+                        Sync</span>
+                    <h2
+                        class="headline-font text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0E172B] leading-tight">
+                        Your Customizations Included
+                    </h2>
+                    <div class="h-1.5 w-20 bg-[#1F3A89] rounded-full"></div>
+                    <p class="text-slate-600 font-body text-base sm:text-lg leading-relaxed">
+                        Businesses configure Tally to match their specific industrial processes. DataLynkr does not
+                        limit you to standard reporting layouts—it extracts and indexes custom structures seamlessly:
+                    </p>
+
+                    <ul class="space-y-4 font-body text-sm text-slate-700">
+                        <li class="flex items-start gap-2.5">
+                            <span class="material-symbols-outlined text-emerald-500 mt-0.5">check_circle</span>
+                            <div>
+                                <strong class="text-slate-800">User Defined Fields (UDFs)</strong>
+                                <p class="text-xs text-slate-500 mt-0.5">Whether you log custom dispatch routes, batch
+                                    codes, or shipping coordinates, they appear in report filters.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="material-symbols-outlined text-emerald-500 mt-0.5">check_circle</span>
+                            <div>
+                                <strong class="text-slate-800">Custom Tally Configurations</strong>
+                                <p class="text-xs text-slate-500 mt-0.5">We index all custom ledger subgroups, cost
+                                    centers, and customized inventory categories.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="material-symbols-outlined text-emerald-500 mt-0.5">check_circle</span>
+                            <div>
+                                <strong class="text-slate-800">Business-Specific Data Structures</strong>
+                                <p class="text-xs text-slate-500 mt-0.5">Designed specifically for manufacturers and
+                                    distributors running intricate order and stock setups in Tally.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right: Animated Diagram Visual -->
+                <div class="lg:col-span-6 flex items-center justify-center reveal-on-scroll reveal-fade-in-right">
+                    <div
+                        class="w-full max-w-lg bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-xl space-y-6">
+                        <h4
+                            class="font-extrabold text-sm text-slate-800 text-center uppercase tracking-wider font-mono">
+                            Custom Field Pipeline</h4>
+
+                        <!-- Flow Diagram SVG -->
+                        <div class="w-full h-auto py-2">
+                            <svg class="w-full" viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Box 1: Standard fields -->
+                                <rect x="10" y="10" width="110" height="40" rx="8" fill="#1F3A89" fill-opacity="0.05"
+                                    stroke="#1F3A89" stroke-width="1.5" />
+                                <text x="65" y="30" fill="#1f3a89" font-size="10" font-family="sans-serif"
+                                    font-weight="bold" text-anchor="middle">Standard Fields</text>
+                                <text x="65" y="42" fill="#64748b" font-size="7" font-family="sans-serif"
+                                    text-anchor="middle">Ledger, Qty, Amount</text>
+
+                                <!-- Box 2: Custom fields -->
+                                <rect x="10" y="100" width="110" height="40" rx="8" fill="#f59e0b" fill-opacity="0.05"
+                                    stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,2" />
+                                <text x="65" y="120" fill="#b45309" font-size="10" font-family="sans-serif"
+                                    font-weight="bold" text-anchor="middle">Custom Fields (UDF)</text>
+                                <text x="65" y="132" fill="#64748b" font-size="7" font-family="sans-serif"
+                                    text-anchor="middle">Route, Batch, Agent Tier</text>
+
+                                <!-- Connector lines (animated dashes) -->
+                                <path d="M120 30 Q170 30 190 65" stroke="#1F3A89" stroke-width="1.5"
+                                    stroke-dasharray="4,3" class="animate-dash" />
+                                <path d="M120 120 Q170 120 190 95" stroke="#f59e0b" stroke-width="1.5"
+                                    stroke-dasharray="4,3" class="animate-dash" />
+
+                                <!-- Box 3: DataLynkr Engine (merged) -->
+                                <rect x="190" y="55" width="120" height="50" rx="10" fill="#10b981" fill-opacity="0.08"
+                                    stroke="#10b981" stroke-width="2" />
+                                <text x="250" y="78" fill="#065f46" font-size="11" font-family="sans-serif"
+                                    font-weight="bold" text-anchor="middle">Business-Specific</text>
+                                <text x="250" y="92" fill="#065f46" font-size="10" font-family="sans-serif"
+                                    font-weight="bold" text-anchor="middle">Custom Analytics</text>
+                            </svg>
+                        </div>
+
+                        <!-- Summary block -->
+                        <div
+                            class="bg-slate-50 rounded-2xl p-4 border border-slate-100 flex items-center justify-between text-xs">
+                            <span class="font-bold text-slate-700">Standard Reports + Custom Fields</span>
+                            <span
+                                class="text-emerald-600 font-extrabold uppercase font-mono bg-emerald-100/50 py-1 px-2.5 rounded-lg">Enabled</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: FINAL VALUE PROPOSITION -->
+    <section class="py-20 md:py-28 px-6 md:px-16 lg:px-24 bg-[#0E172B] text-white relative overflow-hidden">
+        <!-- SVG background accent shapes -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <svg class="w-full h-full" viewBox="0 0 1000 400" preserveAspectRatio="none">
+                <path d="M0,200 Q250,50 500,200 T1000,200" fill="none" stroke="white" stroke-width="2"
+                    stroke-dasharray="8,6" />
+                <circle cx="850" cy="100" r="120" fill="none" stroke="white" stroke-width="1" />
+            </svg>
+        </div>
+
+        <div class="max-w-5xl mx-auto text-center space-y-8 relative z-10 reveal-on-scroll reveal-fade-up">
+            <span class="text-amber-400 uppercase tracking-widest text-xs font-bold font-mono">The Strategic
+                Shift</span>
+
+            <h2 class="headline-font text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+                Stop Building Spreadsheets.<br>
+                Start Building Insights.
+            </h2>
+            <div class="h-1.5 w-24 bg-amber-400 mx-auto rounded-full"></div>
+
+            <p class="text-white/80 font-body text-base sm:text-xl leading-relaxed max-w-3xl mx-auto">
+                With DataLynkr, every team gains instant access to powerful analytical reporting directly from live
+                Tally data. Build reports, answer questions, and uncover opportunities without waiting for exports,
+                custom development, or technical support.
+            </p>
+
+            <div class="pt-6 text-xs text-white/50 font-mono tracking-widest uppercase">
+                Tally stores the data. DataLynkr unlocks the insights.
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: CLOSING CTA -->
+    <section
+        class="py-16 md:py-24 px-6 md:px-16 lg:px-24 bg-white text-center border-t border-slate-100 relative overflow-hidden">
+        <!-- Circular abstract pattern -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-slate-50 rounded-full blur-3xl opacity-50 pointer-events-none">
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto space-y-8 reveal-on-scroll reveal-fade-up">
+            <h2 class="headline-font text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0E172B] leading-tight">
+                See What Your Data Has Been Trying To Tell You
+            </h2>
+
+            <p class="text-slate-500 font-body text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                Discover how DataLynkr turns live Tally data into fast, flexible business intelligence. Take the first
+                step to clean self-service analytics.
+            </p>
+
+            <div class="pt-4 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="/Hometest/contact"
+                    class="inline-flex items-center justify-center gap-2 bg-[#1F3A89] text-white px-8 py-4 rounded-full font-bold hover:bg-[#1F3A89]/90 hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300">
+                    <span>Book A Personalized Demo</span>
+                    <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                </a>
+                <a href="/Hometest/pricing"
+                    class="inline-flex items-center justify-center gap-2 border border-slate-200 hover:border-slate-400 text-slate-800 px-8 py-4 rounded-full font-bold hover:bg-slate-50 transition-all hover:scale-105 active:scale-95 duration-300">
+                    <span>Pricing</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+
+    
+
+    <!-- Footer Component -->
+    d:T1025,
+        body {
+            font-family: 'Wix Madefor Text', sans-serif;
+            background-color: #ffffff !important;
+            min-height: max(884px, 100dvh);
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animate-fade-in {
+            opacity: 0;
+            animation: fade-in 0.8s ease-out forwards;
+        }
+
+        .headline-font {
+            font-family: 'Wix Madefor Display', sans-serif;
+        }
+
+        #features-flyout.active {
+            transform: translateX(0) !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+
+        /* Animation utilities copied from code.html */
+        .reveal-on-scroll {
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-on-scroll.is-visible:not([class*="reveal-fade"]) {
+            opacity: 1;
+        }
+
+        .reveal-fade-up.is-visible {
+            animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .reveal-fade-in-left.is-visible {
+            animation: fade-in-left 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .reveal-fade-in-right.is-visible {
+            animation: fade-in-right 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fade-in-left {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fade-in-right {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Floating Animations */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-float-delayed {
+            animation: float 6s ease-in-out 3s infinite;
+        }
+
+        .animate-float-fast {
+            animation: float 4.5s ease-in-out 1.5s infinite;
+        }
+
+        /* Flow diagram animation */
+        @keyframes flowDash {
+            to {
+                stroke-dashoffset: -20;
+            }
+        }
+
+        .animate-dash {
+            stroke-dasharray: 6, 4;
+            animation: flowDash 1.2s linear infinite;
+        }
+
+        /* Fix for mobile/laptop mockup video overflow/clipping bugs in Safari/WebKit */
+        [class*="aspect-[9/19]"],
+        [class*="aspect-[16/10]"] {
+            transform: translateZ(0);
+            isolation: isolate;
+        }
+
+        /* Speedometer needle transition */
+        .gauge-needle {
+            transition: transform 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transform-origin: 50px 50px;
+        }
+
+        /* Grid answer item animations */
+        .transition-dashboard {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Number flash updates */
+        @keyframes number-flash {
+            0% {
+                background-color: rgba(31, 58, 137, 0.2);
+                color: #1f3a89;
+            }
+
+            100% {
+                background-color: transparent;
+            }
+        }
+
+        .flash-update {
+            animation: number-flash 1s ease-out;
+        }
+    e:T2627,const questionsData = {
+            1: {
+                title: "Which salesperson drives the highest margin?",
+                video: "/Hometest/resources/features/custom-reports/videos/salesperson_margin.mp4",
+                poster: "/Hometest/resources/features/custom-reports/poster_images/salesperson_margin.webp"
+            },
+            2: {
+                title: "Which dealers are growing fastest?",
+                video: "/Hometest/resources/videos/dealer_growth.mp4",
+                poster: "/Hometest/resources/poster_images/dealer_growth.webp"
+            },
+            3: {
+                title: "Which products generate the highest revenue?",
+                video: "/Hometest/resources/features/custom-reports/videos/high_revenue.mp4",
+                poster: "/Hometest/resources/features/custom-reports/poster_images/high_revenue.webp"
+            },
+            4: {
+                title: "What inventory groups are slowing down?",
+                video: "/Hometest/resources/features/custom-reports/videos/slow_inventory.mp4",
+                poster: "/Hometest/resources/features/custom-reports/poster_images/slow_inventory.webp"
+            }
+        };
+
+        // Select a Question Tab and update the visualization
+        function selectQuestion(id) {
+            // Update active states of buttons
+            for (let i = 1; i <= 4; i++) {
+                const tab = document.getElementById(`q-tab-${i}`);
+                if (i === id) {
+                    tab.classList.add('border-[#1F3A89]', 'bg-[#1F3A89]/5');
+                    tab.classList.remove('border-slate-100', 'bg-slate-50/50');
+                    tab.querySelector('.material-symbols-outlined').className = 'material-symbols-outlined text-primary text-2xl';
+                    tab.querySelector('span:nth-child(2)').className = 'font-bold text-sm sm:text-base text-slate-800';
+                } else {
+                    tab.classList.remove('border-[#1F3A89]', 'bg-[#1F3A89]/5');
+                    tab.classList.add('border-slate-100', 'bg-slate-50/50');
+                    tab.querySelector('.material-symbols-outlined').className = 'material-symbols-outlined text-slate-400 text-2xl group-hover:text-primary';
+                    tab.querySelector('span:nth-child(2)').className = 'font-bold text-sm sm:text-base text-slate-600 group-hover:text-slate-800';
+                }
+            }
+
+            const data = questionsData[id];
+            const videoNodes = [document.getElementById('q-viz-video-desktop'), document.getElementById('q-viz-video-mobile')];
+            videoNodes.forEach(videoNode => {
+                if (videoNode && data && data.video) {
+                    const sourceNode = videoNode.querySelector('source');
+                    if (sourceNode) {
+                        const currentSrc = sourceNode.getAttribute('src');
+                        if (currentSrc !== data.video) {
+                            sourceNode.src = data.video;
+                            if (data.poster) {
+                                videoNode.setAttribute('poster', data.poster);
+                                const webpSrc = data.poster;
+                                const jpgSrc = data.poster.replace(/\.webp$/i, '.jpg');
+                                const isDesktop = videoNode.id === 'q-viz-video-desktop';
+                                const prefix = isDesktop ? 'q-viz-desktop' : 'q-viz-mobile';
+                                const webpEl = document.getElementById(`${prefix}-poster-webp`);
+                                const jpgEl = document.getElementById(`${prefix}-poster-jpg`);
+                                if (webpEl && jpgEl) {
+                                    webpEl.srcset = webpSrc;
+                                    jpgEl.src = jpgSrc;
+                                    webpEl.parentElement.classList.remove('opacity-0');
+                                }
+                            }
+                            videoNode.load();
+                            videoNode.play();
+                        }
+                    }
+                }
+            });
+        }
+
+        // Interactive Refresh Simulation
+        let isRefreshing = false;
+        function triggerInteractiveRefresh() {
+            if (isRefreshing) return;
+            isRefreshing = true;
+
+            const icon = document.getElementById('refresh-icon-spin');
+            const progressWrapper = document.getElementById('sim-progress-wrapper');
+            const progressBar = document.getElementById('sim-progress-bar');
+            const progressPct = document.getElementById('sim-progress-pct');
+            const timestampText = document.getElementById('sim-timestamp');
+
+            // Start spinning icon
+            icon.classList.add('animate-spin');
+            progressWrapper.classList.remove('hidden');
+            progressBar.style.width = "0%";
+            progressPct.innerText = "0%";
+            timestampText.innerText = "Sync Status: Updating...";
+
+            // Simulate progress
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.floor(Math.random() * 15) + 5;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+
+                    // Stop refresh UI
+                    setTimeout(() => {
+                        icon.classList.remove('animate-spin');
+                        progressWrapper.classList.add('hidden');
+                        isRefreshing = false;
+
+                        // Update values with new refreshed numbers
+                        updateSimulationNumbers();
+
+                        // Flash cells
+                        document.querySelectorAll('[id^="sim-col-"]').forEach(cell => {
+                            cell.classList.add('flash-update');
+                            setTimeout(() => cell.classList.remove('flash-update'), 1000);
+                        });
+
+                        // Get current time
+                        const now = new Date();
+                        const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                        timestampText.innerHTML = `Sync Status: <span class="text-emerald-600 font-bold">Refreshed at ${timeStr}</span>`;
+                    }, 400);
+                }
+                progressBar.style.width = `${progress}%`;
+                progressPct.innerText = `${progress}%`;
+            }, 100);
+        }
+
+        // Generate random updated numbers for simulation
+        function updateSimulationNumbers() {
+            // Generate some randomized numbers to simulate live sync values updating
+            const val1 = Math.floor(Math.random() * 200) + 1400;
+            const val2 = (Math.random() * 2 + 4).toFixed(2);
+            const val3 = (Math.random() * 15 + 80).toFixed(1);
+
+            const val4 = Math.floor(Math.random() * 100) + 950;
+            const val5 = (Math.random() * 1 + 3).toFixed(2);
+            const val6 = (Math.random() * 10 + 50).toFixed(1);
+
+            const val7 = Math.floor(Math.random() * 200) + 2100;
+            const val8 = (Math.random() * 2 + 6.5).toFixed(2);
+            const val9 = (Math.random() * 0.5 + 1).toFixed(2);
+
+            document.getElementById('sim-col-1').innerText = `${val1.toLocaleString()} Bills`;
+            document.getElementById('sim-col-2').innerText = `₹${val2} Cr`;
+            document.getElementById('sim-col-3').innerText = `₹${val3} Lakhs`;
+
+            document.getElementById('sim-col-4').innerText = `${val4.toLocaleString()} Bills`;
+            document.getElementById('sim-col-5').innerText = `₹${val5} Cr`;
+            document.getElementById('sim-col-6').innerText = `₹${val6} Lakhs`;
+
+            document.getElementById('sim-col-7').innerText = `${val7.toLocaleString()} Bills`;
+            document.getElementById('sim-col-8').innerText = `₹${val8} Cr`;
+            document.getElementById('sim-col-9').innerText = `₹${val9} Cr`;
+        }
+
+        // Scroll helper
+        function scrollToSection(id) {
+            const target = document.getElementById(id);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Grid Selection (Question 1)
+            selectQuestion(1);
+
+            // Zoom-in effect for the Section 4 laptop on scroll
+            const laptopContainer = document.getElementById('zoom-laptop-container');
+            if (laptopContainer) {
+                window.addEventListener('scroll', () => {
+                    const rect = laptopContainer.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+
+                    // If element is in view
+                    if (rect.top < windowHeight && rect.bottom > 0) {
+                        // Calculate percentage of scrolling progress through viewport
+                        const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
+                        // Clamp value between 0 and 1
+                        const clampedProgress = Math.max(0, Math.min(1, progress));
+
+                        // Map progress to scale range: e.g., 0.90 to 1.05
+                        const scale = 0.90 + (clampedProgress * 0.15);
+                        laptopContainer.style.transform = `scale(${scale})`;
+                    }
+                });
+            }
+        });6:["$","div",null,{"className":"flex-grow flex flex-col","children":[["$","$Lb",null,{"slug":"custom-reports","body":"$c","styles":["$d"],"scripts":["$e"]}],"$Lf"]}]
+7:["$","footer",null,{"className":"w-full border-t border-zinc-100 bg-white flex flex-col md:flex-row justify-between items-center px-6 md:px-12 py-10 md:py-16 gap-6","children":[["$","div",null,{"className":"flex flex-col items-center md:items-start gap-2","children":[["$","div",null,{"className":"text-lg font-bold text-zinc-900 headline-font","children":[["$","span",null,{"className":"text-[#1F3A89]","children":"DataLynk"}],"r"]}],["$","div",null,{"className":"flex items-center gap-1.5 font-['Wix_Madefor_Text'] text-xs text-zinc-400","children":[["$","span",null,{"children":"©"}],["$","span",null,{"className":"font-bold","children":[["$","span",null,{"style":{"color":"#e46b0c"},"children":"IT"}]," ",["$","span",null,{"style":{"color":"black"},"children":"Catalyst"}]]}],["$","span",null,{"children":"Software India Pvt Ltd. 2026."}]]}]]}],["$","div",null,{"className":"flex gap-8","children":[["$","$L10",null,{"className":"text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors","href":"/privacy","target":"_blank","rel":"noopener noreferrer","children":"Privacy"}],["$","$L10",null,{"className":"text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors","href":"/terms","target":"_blank","rel":"noopener noreferrer","children":"Terms"}],["$","$L10",null,{"className":"text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors","href":"/support","children":"Support"}]]}]]}]
+8:["$","script","script-0",{"src":"/Hometest/_next/static/chunks/3hsdf7acact9q.js","async":true}]
+9:["$","$L11",null,{"children":["$","$12",null,{"name":"Next.MetadataOutlet","children":"$@13"}]}]
+f:["$","$L14",null,{"items":[{"question":"What reports can I access?","answer":"You can view sales reports, customer outstanding statements, stock summaries, ledger transactions, and custom business reports."},{"question":"Can I export reports?","answer":"Yes. Reports can be exported or shared as PDFs and spreadsheets."},{"question":"Can I view historical Tally data?","answer":"Yes. You can run reports covering historical periods available in your Tally company."}],"title":"Frequently Asked Questions","subtitle":"Got questions about Reports? We've got answers.","className":"bg-white"}]
+13:null

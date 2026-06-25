@@ -1,0 +1,1012 @@
+1:"$Sreact.fragment"
+3:I[14006,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"default"]
+4:I[33694,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"default"]
+5:I[39756,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"default"]
+6:I[37457,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"default"]
+d:I[68027,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"default",1]
+:HL["/Hometest/_next/static/chunks/0bj4b_tgsdero.css","style"]
+:HL["https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&display=swap","style"]
+:HL["https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap","style"]
+2:T5ae,{"@context":"https://schema.org","@type":"Organization","@id":"https://datalynkr.com/Hometest/#organization","name":"IT Catalyst Software India Pvt Ltd","legalName":"IT Catalyst Software India Pvt Ltd","brand":{"@type":"Brand","name":"DataLynkr","logo":"https://datalynkr.com/Hometest/logo.svg"},"url":"https://datalynkr.com/Hometest","logo":{"@type":"ImageObject","url":"https://datalynkr.com/Hometest/logo.svg","caption":"DataLynkr Logo"},"sameAs":["https://play.google.com/store/apps/details?id=com.datalynkr","https://www.linkedin.com/company/it-catalyst-software-india-private-limited/","https://www.youtube.com/@datalynkr","https://www.instagram.com/datalynkr"],"contactPoint":[{"@type":"ContactPoint","telephone":"+91-9741911520","contactType":"sales","email":"sales@datalynkr.com","areaServed":"IN","availableLanguage":["English","Hindi"]},{"@type":"ContactPoint","telephone":"+91-9741911520","contactType":"customer support","email":"support@datalynkr.com","areaServed":"IN","availableLanguage":["English","Hindi"]}],"address":{"@type":"PostalAddress","streetAddress":"278, MK, Puttalingiah Rd, Padmanabhanagar","addressLocality":"Bengaluru","addressRegion":"Karnataka","postalCode":"560070","addressCountry":"IN"},"foundingDate":"2000","description":"DataLynkr extends Tally beyond the accounts department, giving sales teams, managers, operations, customers, and business owners secure real-time access to Tally data from mobile and browser."}0:{"P":null,"c":["","features","stock-summary"],"q":"","i":false,"f":[[["",{"children":["features",{"children":[["slug","stock-summary","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/Hometest/_next/static/chunks/0bj4b_tgsdero.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/Hometest/_next/static/chunks/0nw9toud5z-fg.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/Hometest/_next/static/chunks/14mrh2-p_w84d.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"shortcut icon","href":"/Hometest/logo.svg","type":"image/svg+xml"}],["$","link",null,{"rel":"icon","href":"/Hometest/logo.svg","type":"image/svg+xml"}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"@id\":\"https://datalynkr.com/Hometest/#website\",\"name\":\"DataLynkr\",\"url\":\"https://datalynkr.com/Hometest\",\"description\":\"DataLynkr extends Tally ERP beyond the accounts department with real-time mobile and browser access for sales, operations, and management teams.\",\"publisher\":{\"@id\":\"https://datalynkr.com/Hometest/#organization\"},\"inLanguage\":\"en-IN\"}"}}]]}],["$","body",null,{"className":"bg-white text-on-surface antialiased overflow-x-hidden animate-fade-in","children":[["$","$L3",null,{}],["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":"$L7"}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]]}]]}],{"children":["$L8",{"children":["$L9",{"children":["$La",{},null,false,null]},null,false,"$@b"]},null,false,"$@b"]},null,false,null],"$Lc",false]],"m":"$undefined","G":["$d",["$Le"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"kS4ExL_11NMEHF0rPhOPg"}
+10:I[97367,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+11:"$Sreact.suspense"
+14:I[97367,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"ViewportBoundary"]
+16:I[97367,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"MetadataBoundary"]
+7:["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]
+8:["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+9:["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+a:["$","$1","c",{"children":["$Lf",[["$","script","script-0",{"src":"/Hometest/_next/static/chunks/3hsdf7acact9q.js","async":true,"nonce":"$undefined"}]],["$","$L10",null,{"children":["$","$11",null,{"name":"Next.MetadataOutlet","children":"$@12"}]}]]}]
+13:[]
+b:"$W13"
+c:["$","$1","h",{"children":[null,["$","$L14",null,{"children":"$L15"}],["$","div",null,{"hidden":true,"children":["$","$L16",null,{"children":["$","$11",null,{"name":"Next.Metadata","children":"$L17"}]}]}],null]}]
+e:["$","link","0",{"rel":"stylesheet","href":"/Hometest/_next/static/chunks/0bj4b_tgsdero.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+18:T406,{"@context":"https://schema.org","@type":"VideoObject","name":"DataLynkr - Stock Summary and Inventory Visibility Demo","description":"See how DataLynkr gives your sales and operations teams real-time visibility into Tally stock levels across multiple locations and companies.","thumbnailUrl":["https://datalynkr.com/Hometest/resources/poster_images/stock.webp","https://datalynkr.com/Hometest/resources/poster_images/stock_laptop.webp"],"uploadDate":"2026-06-19T10:00:00Z","duration":"PT0M40S","contentUrl":"https://datalynkr.com/Hometest/resources/videos/stock.mp4","embedUrl":"https://datalynkr.com/Hometest/features/stock-summary","creator":{"@id":"https://datalynkr.com/Hometest/#organization"},"publisher":{"@type":"Organization","@id":"https://datalynkr.com/Hometest/#organization","name":"DataLynkr","logo":{"@type":"ImageObject","url":"https://datalynkr.com/Hometest/logo.svg"}},"about":{"@id":"https://datalynkr.com/Hometest/#software"},"isPartOf":{"@id":"https://datalynkr.com/Hometest/features/stock-summary#feature"}}19:T55b,{"@context":"https://schema.org","@type":"SoftwareApplication","@id":"https://datalynkr.com/Hometest/features/stock-summary#feature","name":"DataLynkr Stock Summary","applicationCategory":"BusinessApplication","operatingSystem":"Windows, Web, Android, iOS","description":"Know what","url":"https://datalynkr.com/Hometest/features/stock-summary","isPartOf":{"@id":"https://datalynkr.com/Hometest/#software"},"author":{"@id":"https://datalynkr.com/Hometest/#organization"},"featureList":["Live inventory levels","Multi-godown stock visibility","Item images and details"],"keywords":["Tally live inventory app","multi-godown stock tracker","real-time stock check Tally","Tally batch tracking mobile","Tally warehouse stock summary","godown stock tracker Zoho Books alternative","multi godown warehouse Busy ERP","Marg ERP inventory checking app","live warehouse summary SAP B1","real-time ERP stock check app"],"offers":{"@type":"AggregateOffer","priceCurrency":"INR","lowPrice":"1800","highPrice":"3600","offerCount":"4","availability":"https://schema.org/InStock","url":"https://datalynkr.com/Hometest/pricing","priceSpecification":{"@type":"UnitPriceSpecification","price":"3600","priceCurrency":"INR","referenceQuantity":{"@type":"QuantitativeValue","value":"1","unitCode":"ANN"}}},"screenshot":"https://datalynkr.com/Hometest/resources/poster_images/stock_laptop.webp"}1a:T4cd,{"@context":"https://schema.org","@type":"WebPage","@id":"https://datalynkr.com/Hometest/features/stock-summary#webpage","url":"https://datalynkr.com/Hometest/features/stock-summary","name":"Stock Summary","description":"Know what","isPartOf":{"@id":"https://datalynkr.com/Hometest/#website"},"about":{"@id":"https://datalynkr.com/Hometest/#software"},"mainEntity":{"@id":"https://datalynkr.com/Hometest/features/stock-summary#feature"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://datalynkr.com/Hometest/resources/poster_images/stock_laptop.webp"},"hasPart":[{"@type":"Question","name":"Can I check live stock levels?","acceptedAnswer":{"@type":"Answer","text":"Yes. DataLynkr shows current inventory levels, including stock in hand and available quantities across different locations."}},{"@type":"Question","name":"Does it support multiple godowns or locations?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you use multiple locations in Tally, DataLynkr displays stock details by godown."}},{"@type":"Question","name":"Can I see item images and details?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can add images and descriptions to items to help sales teams and customers identify products."}}]}f:["$","div",null,{"className":"flex flex-col min-h-screen overflow-x-hidden","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$18"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$19"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$1a"}}],"$L1b","$L1c","$L1d","$L1e"]}]
+1f:I[62319,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js","/Hometest/_next/static/chunks/3hsdf7acact9q.js"],"default"]
+20:I[54585,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js","/Hometest/_next/static/chunks/3hsdf7acact9q.js"],"default"]
+25:I[22016,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js","/Hometest/_next/static/chunks/3hsdf7acact9q.js"],""]
+1b:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://datalynkr.com/Hometest\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Stock Summary\",\"item\":\"https://datalynkr.com/Hometest/features/stock-summary\"}]}"}}]
+1c:["$","$L1f",null,{"showCenterBrand":false,"showLoginButton":false,"showHomeIcon":true,"hideOnScroll":false,"staticNav":true}]
+21:Tf02f,
+
+    <!-- Main Content Content Container -->
+    <main class="flex-grow">
+        <!-- HERO SECTION -->
+        <section class="relative bg-gradient-to-b from-indigo-50/40 via-white to-slate-50 pt-16 pb-24 md:pt-20 md:pb-32 w-full overflow-hidden">
+            <!-- Glowing background blobs -->
+            <div class="absolute top-[-10%] left-[20%] w-[600px] h-[600px] bg-blue-100/40 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute top-[20%] right-[10%] w-[500px] h-[500px] bg-indigo-100/40 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-[-10%] left-[10%] w-[400px] h-[400px] bg-amber-100/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- Subtle Grid Pattern -->
+            <div class="absolute inset-0 z-0 opacity-[0.25] pointer-events-none select-none">
+                <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="grid-pattern" width="48" height="48" patternUnits="userSpaceOnUse">
+                            <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(148, 163, 184, 0.15)" stroke-width="1" />
+                        </pattern>
+                        <radialGradient id="grid-fade" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="white" stop-opacity="0" />
+                            <stop offset="100%" stop-color="white" stop-opacity="1" />
+                        </radialGradient>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+                    <rect width="100%" height="100%" fill="url(#grid-fade)" style="mix-blend-mode: multiply;" />
+                </svg>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 xl:px-24 flex flex-col items-center text-center w-full relative z-10">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-bold uppercase tracking-wider mb-6 reveal-on-scroll is-visible">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Live Tally Inventory Intelligence
+                </div>
+
+                <!-- Title -->
+                <h1 class="headline-font text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-none text-slate-900 max-w-4xl mx-auto reveal-on-scroll is-visible">
+                    Stock Summary
+                </h1>
+
+                <!-- Subtitle -->
+                <h2 class="headline-font text-xl md:text-2xl lg:text-3xl font-semibold text-secondary mt-6 max-w-3xl mx-auto reveal-on-scroll is-visible">
+                    Know What's Available, What's Committed, and What's Running Low
+                </h2>
+
+                <!-- Description Paragraphs -->
+                <div class="max-w-3xl mx-auto space-y-4 mt-6 reveal-on-scroll is-visible">
+                    <p class="font-body text-slate-700 text-lg md:text-xl leading-relaxed">
+                        Most inventory reports show what you have. <strong class="text-primary font-bold">DataLynkr shows what you'll need.</strong>
+                    </p>
+                    <p class="font-body text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+                        View stock quantities, values, incoming stock, outgoing stock, and sales commitments directly from Tally. Analyze inventory by stock group, category, or individual item and understand exactly where inventory shortages are likely to occur before they impact sales.
+                    </p>
+                </div>
+
+                <!-- Mockup Area & Floating Cards Container -->
+                <div class="w-full max-w-4xl mt-16 relative flex flex-col items-center justify-center reveal-on-scroll is-visible">
+                    <!-- Decorative background glow for laptop -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-indigo-500/10 rounded-3xl blur-2xl transform scale-95 pointer-events-none"></div>
+
+                    <!-- Left Floating Glassmorphic Status Card (Low Stock) -->
+                    <div class="absolute left-[-2%] lg:left-[-6%] top-[15%] glass-panel shadow-xl rounded-2xl p-3 md:p-4 hidden sm:flex items-center gap-3 z-30 animate-float-slow max-w-[180px] md:max-w-[220px] border border-white/50">
+                        <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-xl font-bold">warning</span>
+                        </div>
+                        <div class="text-left">
+                            <div class="text-slate-400 text-[9px] md:text-[10px] font-bold uppercase tracking-wider">Inventory Alert</div>
+                            <div class="text-red-600 font-extrabold text-xs md:text-sm mt-0.5">12 Items Low</div>
+                            <div class="text-slate-500 text-[8px] md:text-[9px] leading-tight mt-0.5">Action required immediately</div>
+                        </div>
+                    </div>
+
+                    <!-- Right Floating Glassmorphic Status Card (Sync Status) -->
+                    <div class="absolute right-[-2%] lg:right-[-6%] bottom-[20%] glass-panel shadow-xl rounded-2xl p-3 md:p-4 hidden sm:flex items-center gap-3 z-30 animate-float-medium max-w-[180px] md:max-w-[220px] border border-white/50">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-xl font-bold">sync</span>
+                        </div>
+                        <div class="text-left">
+                            <div class="text-slate-400 text-[9px] md:text-[10px] font-bold uppercase tracking-wider">Tally Integration</div>
+                            <div class="text-emerald-600 font-extrabold text-xs md:text-sm mt-0.5">₹1.48 Cr Value</div>
+                            <div class="text-slate-500 text-[8px] md:text-[9px] leading-tight mt-0.5">Synced 2 mins ago</div>
+                        </div>
+                    </div>
+
+                    <!-- Laptop Screen & Bezel -->
+                    <div class="relative w-full max-w-3xl mx-auto group transition-all duration-500 hover:scale-[1.01] z-10">
+                        <!-- Laptop Bezel/Screen Container -->
+                        <div class="relative rounded-t-xl border-[6px] sm:border-[8px] lg:border-[12px] border-zinc-900 bg-zinc-900 aspect-[16/10] overflow-hidden shadow-2xl">
+                            <div class="absolute inset-0 bg-white flex flex-col">
+                                <div class="absolute inset-0 overflow-hidden">
+                                    <video width="1920" height="1200" autoplay loop muted playsinline preload="metadata"
+                                        poster="/Hometest/resources/poster_images/stock_laptop.webp"
+                                        class="w-full h-full object-cover">
+                                        <source src="/Hometest/resources/videos/stock_laptop.mp4"
+                                            type="video/mp4" />
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Laptop Keyboard Base (matching premium look) -->
+                        <div class="relative h-3 sm:h-4 bg-zinc-800 rounded-b-xl w-[105%] -left-[2.5%] shadow-xl"></div>
+                        <div class="relative h-1.5 sm:h-2 bg-zinc-700/50 rounded-b-2xl w-[80%] mx-auto"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brand Logo & Text Container Aligned to the Bottom Right -->
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 xl:px-24 w-full mt-16 reveal-on-scroll reveal-fade-up relative z-10">
+                <div class="flex justify-end">
+                    <a href="/Hometest" class="flex items-center gap-2.5 -mr-2 md:-mr-8 lg:-mr-12 xl:-mr-20 2xl:-mr-28 hover:opacity-80 transition-opacity" title="DataLynkr Home">
+                        <!-- DataLynkr SVG Logo -->
+                        <div class="h-7 md:h-8 w-auto flex-shrink-0">
+                            <svg class="h-7 md:h-8 w-auto" viewBox="0 0 2352 1825" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="matrix(1,0,0,1,-433.673905,-573.914687)">
+                                    <g transform="matrix(4.591033,0,0,4.591033,-170.925878,-4.498795)">
+                                        <path d="M131.862,129.376C130.04,117.368 139.468,130.36 330.857,284.067C464.376,391.298 465.418,393.678 467.438,392.344C491.547,376.43 639.946,268.123 643.177,269.982C645.959,271.583 643.383,272.976 588.075,330.099C555.999,363.227 556.723,363.618 523.816,395.793C498.522,420.523 467.727,456.829 463.95,453.032C425.167,414.044 345.904,337.391 335.575,327.402C334.374,326.329 333.174,325.255 331.973,324.182C274.761,270.219 188.09,183.592 175.718,171.226C150.89,146.869 137.744,133.558 131.862,129.376Z" fill="#1F3A89" />
+                                        <path d="M131.862,129.376C137.744,133.558 150.89,146.869 175.718,171.226C174.446,173.082 174.898,173.209 155.463,363.497C147.17,444.698 144.728,462.423 148.577,459.638C318.649,336.613 319.328,337.327 331.973,324.182C333.174,325.255 334.374,326.329 335.575,327.402C330.462,332.41 145.867,516.733 143.253,521.382C142.869,522.064 136.25,528.587 136.312,514.501C136.402,493.868 130.851,133.926 131.862,129.376Z" fill="#F1C74B" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="headline-font text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-normal text-black tracking-tight">DataLynkr</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Inventory Isn't Just About Stock -->
+        <section id="allocation-simulator" class="py-20 md:py-28 bg-slateBg w-full overflow-hidden border-y border-slate-100">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 xl:px-24">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <!-- Left Column: Copy -->
+                    <div class="space-y-6 reveal-on-scroll">
+                        <div class="inline-flex items-center gap-2">
+                            <div class="h-px w-8 bg-primary"></div>
+                            <span class="text-primary font-bold headline-font uppercase tracking-widest text-sm">Demand-Aware Stock</span>
+                        </div>
+                        <h2 class="headline-font text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                            Inventory Isn't Just About Stock
+                        </h2>
+                        <p class="font-body text-slate-600 text-base md:text-lg leading-relaxed">
+                            A warehouse can look fully stocked while much of that inventory is already committed to customer orders.
+                        </p>
+                        <p class="font-body text-slate-500 text-base leading-relaxed">
+                            Without visibility into demand, purchasing decisions become reactive. DataLynkr combines inventory levels with outstanding sales demand so teams can make better replenishment decisions before shortages happen.
+                        </p>
+                        
+                        <!-- Toggle animation triggers -->
+                        <div class="pt-4 flex gap-4">
+                            <button id="scenario-normal-btn" onclick="toggleScenario('normal')"
+                                class="px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-primary text-white shadow-md">
+                                Scenario A: Normal Stock
+                            </button>
+                            <button id="scenario-committed-btn" onclick="toggleScenario('committed')"
+                                class="px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-white text-slate-600 hover:text-slate-800 border border-slate-200">
+                                Scenario B: Committed Demand
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Allocation Visualizer -->
+                    <div class="flex items-center justify-center reveal-on-scroll">
+                        <div class="w-full max-w-md bg-white border border-slate-200 shadow-xl rounded-2xl p-6 space-y-6 relative overflow-hidden">
+                            <h3 class="headline-font font-extrabold text-slate-800 text-lg flex items-center justify-between">
+                                <span>Allocation Simulator</span>
+                                <span id="simulation-status" class="text-xs bg-blue-50 text-primary px-3 py-1 rounded-full font-bold">Tally Status Check</span>
+                            </h3>
+
+                            <!-- Total Stock Card representation -->
+                            <div class="space-y-4">
+                                <div class="bg-slate-50 border border-slate-100 p-4 rounded-xl flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-primary text-2xl">warehouse</span>
+                                        <div>
+                                            <div class="text-xs text-slate-400 font-semibold uppercase">Current Stock</div>
+                                            <div id="sim-current-qty" class="text-xl font-extrabold text-slate-800">500 Units</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-bold text-slate-400">100% In Warehouse</span>
+                                </div>
+
+                                <!-- Committed / Outstanding Sales Orders -->
+                                <div class="bg-amber-50/40 border border-amber-100/50 p-4 rounded-xl flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-amber-500 text-2xl">shopping_cart</span>
+                                        <div>
+                                            <div class="text-xs text-amber-600 font-semibold uppercase">Pending Commitments</div>
+                                            <div id="sim-committed-qty" class="text-xl font-extrabold text-amber-600">350 Units</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-bold text-amber-500">Sales Orders Pending</span>
+                                </div>
+
+                                <!-- Dynamic Available Stock -->
+                                <div id="sim-available-card" class="bg-emerald-50 border border-emerald-100 p-4 rounded-xl flex items-center justify-between transition-colors duration-300">
+                                    <div class="flex items-center gap-3">
+                                        <span id="sim-available-icon" class="material-symbols-outlined text-emerald-600 text-2xl transition-transform duration-300">check_circle</span>
+                                        <div>
+                                            <div class="text-xs text-emerald-700 font-semibold uppercase">Available Stock</div>
+                                            <div id="sim-available-qty" class="text-xl font-extrabold text-emerald-600">150 Units</div>
+                                        </div>
+                                    </div>
+                                    <span id="sim-available-badge" class="text-xs font-extrabold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">Safe</span>
+                                </div>
+                            </div>
+
+                            <!-- Animated Progression Gauge -->
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-xs font-bold text-slate-500">
+                                    <span>Allocated (Committed)</span>
+                                    <span>Free Stock</span>
+                                </div>
+                                <div class="h-3 w-full bg-slate-100 rounded-full overflow-hidden flex">
+                                    <div id="sim-bar-committed" class="h-full bg-amber-500 transition-all duration-700 ease-out" style="width: 70%;"></div>
+                                    <div id="sim-bar-available" class="h-full bg-emerald-500 transition-all duration-700 ease-out" style="width: 30%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Understand Inventory At Every Level -->
+        <section class="py-20 md:py-28 bg-white w-full overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 xl:px-24">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4 reveal-on-scroll">
+                    <span class="text-primary font-bold uppercase tracking-widest text-sm block">Granular Intelligence</span>
+                    <h2 class="headline-font text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                        Understand Inventory At Every Level
+                    </h2>
+                    <p class="font-body text-slate-600 text-base md:text-lg">
+                        Explore your inventory hierarchy with instant drill-down steps directly pulling from Tally stock groups, categories, and item locations.
+                    </p>
+                </div>
+
+                <!-- Stepper Selection Controls -->
+                <div class="flex justify-center mb-12 relative z-10 reveal-on-scroll">
+                    <div class="grid grid-cols-3 gap-2 p-1.5 bg-slate-100 rounded-full max-w-2xl w-full">
+                        <button onclick="zoomLevel(1, this)" class="zoom-btn px-4 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all bg-white text-primary shadow-sm">
+                            Level 1: Stock Group
+                        </button>
+                        <button onclick="zoomLevel(2, this)" class="zoom-btn px-4 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all text-slate-600 hover:text-slate-900">
+                            Level 2: Category
+                        </button>
+                        <button onclick="zoomLevel(3, this)" class="zoom-btn px-4 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all text-slate-600 hover:text-slate-900">
+                            Level 3: Stock Item
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Drill Down Visualization Box -->
+                <div class="max-w-3xl mx-auto bg-slateBg border border-slate-200 rounded-2xl p-6 shadow-lg relative min-h-[280px] flex flex-col justify-between overflow-hidden reveal-on-scroll">
+                    
+                    <!-- Level 1 View (Default) -->
+                    <div id="drilldown-level-1" class="drilldown-level space-y-6 transition-all duration-500 opacity-100 scale-100">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                            <h3 class="headline-font font-bold text-slate-800 text-base">Level 1 — Stock Group Summary</h3>
+                            <span class="text-xs bg-blue-50 text-primary px-3 py-0.5 rounded-full font-bold">Wide Angle View</span>
+                        </div>
+                        <p class="text-sm font-body text-slate-500">
+                            See inventory grouped into major product categories and understand where inventory value is concentrated.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                                <div class="text-xs font-semibold text-slate-400 uppercase">Electrical Products</div>
+                                <div class="text-lg font-extrabold text-slate-800 mt-1">₹68.4 Lakh</div>
+                                <div class="w-full bg-slate-100 h-1.5 rounded-full mt-2 overflow-hidden">
+                                    <div class="bg-primary h-full" style="width: 62%;"></div>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                                <div class="text-xs font-semibold text-slate-400 uppercase">Mechanical Parts</div>
+                                <div class="text-lg font-extrabold text-slate-800 mt-1">₹34.2 Lakh</div>
+                                <div class="w-full bg-slate-100 h-1.5 rounded-full mt-2 overflow-hidden">
+                                    <div class="bg-primary h-full" style="width: 25%;"></div>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                                <div class="text-xs font-semibold text-slate-400 uppercase">Packaging & Box</div>
+                                <div class="text-lg font-extrabold text-slate-800 mt-1">₹18.1 Lakh</div>
+                                <div class="w-full bg-slate-100 h-1.5 rounded-full mt-2 overflow-hidden">
+                                    <div class="bg-primary h-full" style="width: 13%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Level 2 View (Hidden initially) -->
+                    <div id="drilldown-level-2" class="drilldown-level space-y-6 transition-all duration-500 opacity-0 scale-95 hidden">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                            <h3 class="headline-font font-bold text-slate-800 text-base">Level 2 — Stock Category Analysis</h3>
+                            <span class="text-xs bg-blue-50 text-primary px-3 py-0.5 rounded-full font-bold">Category Distribution</span>
+                        </div>
+                        <p class="text-sm font-body text-slate-500">
+                            Compare quantities and values across categories to identify trends and purchasing requirements within "Electrical Products".
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold text-slate-600 w-1/4">1. Copper Wires</span>
+                                <div class="flex-1 bg-slate-200 h-3.5 rounded-full overflow-hidden mx-4 relative">
+                                    <div class="bg-secondary h-full" style="width: 70%;"></div>
+                                </div>
+                                <span class="text-xs font-extrabold text-slate-800 w-1/5 text-right">₹38.2L (70%)</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold text-slate-600 w-1/4">2. LED Modules</span>
+                                <div class="flex-1 bg-slate-200 h-3.5 rounded-full overflow-hidden mx-4 relative">
+                                    <div class="bg-secondary h-full" style="width: 20%;"></div>
+                                </div>
+                                <span class="text-xs font-extrabold text-slate-800 w-1/5 text-right">₹18.4L (20%)</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold text-slate-600 w-1/4">3. Limit Switches</span>
+                                <div class="flex-1 bg-slate-200 h-3.5 rounded-full overflow-hidden mx-4 relative">
+                                    <div class="bg-secondary h-full" style="width: 10%;"></div>
+                                </div>
+                                <span class="text-xs font-extrabold text-slate-800 w-1/5 text-right">₹11.8L (10%)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Level 3 View (Hidden initially) -->
+                    <div id="drilldown-level-3" class="drilldown-level space-y-6 transition-all duration-500 opacity-0 scale-95 hidden">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                            <h3 class="headline-font font-bold text-slate-800 text-base">Level 3 — Stock Item Visibility</h3>
+                            <span class="text-xs bg-blue-50 text-primary px-3 py-0.5 rounded-full font-bold">Individual Item</span>
+                        </div>
+                        <p class="text-sm font-body text-slate-500">
+                            Drill all the way down to individual products to understand exact quantities, values, and location distributions.
+                        </p>
+                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm space-y-3">
+                            <div class="flex items-center justify-between">
+                                <div class="font-extrabold text-slate-800 text-sm">Industrial Copper Wire 1.5mm</div>
+                                <div class="text-xs bg-red-100 text-red-800 px-2 py-0.5 rounded-full font-bold">Low Stock Warning</div>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2 text-xs border-y border-slate-100 py-2">
+                                <div><span class="text-slate-400">Total Qty:</span> <strong class="text-slate-700">120 Rolls</strong></div>
+                                <div><span class="text-slate-400">Reorder Level:</span> <strong class="text-slate-700">200 Rolls</strong></div>
+                                <div><span class="text-slate-400">Inventory Value:</span> <strong class="text-slate-700">₹2.4 Lakh</strong></div>
+                            </div>
+                            <div class="text-[11px] text-slate-500">
+                                <strong>Warehouse Distribution:</strong> Godown A (80 Rolls), Godown B (40 Rolls)
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: See Demand Before It Becomes A Problem -->
+        <section class="py-20 md:py-28 bg-slateBg w-full overflow-hidden border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 xl:px-24">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    
+                    <!-- Left Column: Visual Chart comparing stock vs demand -->
+                    <div class="order-2 lg:order-1 flex items-center justify-center reveal-on-scroll">
+                        <div class="w-full max-w-md bg-white border border-slate-200 shadow-xl rounded-2xl p-6 space-y-6 relative overflow-hidden">
+                            <h3 class="headline-font font-bold text-slate-800 text-base uppercase tracking-wider">Demand Allocation Model</h3>
+                            
+                            <!-- Visual Bar Chart -->
+                            <div class="space-y-4">
+                                <!-- Bar 1 -->
+                                <div class="space-y-1">
+                                    <div class="flex justify-between text-xs font-semibold text-slate-600">
+                                        <span>Current Stock Level</span>
+                                        <span>5,000 Units</span>
+                                    </div>
+                                    <div class="h-6 w-full bg-slate-100 rounded-lg overflow-hidden flex relative items-center px-2">
+                                        <div class="h-full bg-blue-500 absolute inset-y-0 left-0" style="width: 100%;"></div>
+                                        <span class="relative z-10 text-[10px] text-white font-extrabold">Full Available In Warehouses</span>
+                                    </div>
+                                </div>
+
+                                <!-- Bar 2 -->
+                                <div class="space-y-1">
+                                    <div class="flex justify-between text-xs font-semibold text-slate-600">
+                                        <span>Outstanding Sales Commitments</span>
+                                        <span class="text-amber-600">4,200 Units</span>
+                                    </div>
+                                    <div class="h-6 w-full bg-slate-100 rounded-lg overflow-hidden flex relative items-center px-2 border border-amber-200/50">
+                                        <div class="h-full bg-amber-500 absolute inset-y-0 left-0" style="width: 84%;"></div>
+                                        <span class="relative z-10 text-[10px] text-white font-bold">Committed to Pending Orders</span>
+                                    </div>
+                                </div>
+
+                                <!-- Bar 3 -->
+                                <div class="space-y-1">
+                                    <div class="flex justify-between text-xs font-semibold text-slate-600">
+                                        <span>Projected Free Stock</span>
+                                        <span class="text-red-500 font-extrabold">800 Units (Low)</span>
+                                    </div>
+                                    <div class="h-6 w-full bg-slate-100 rounded-lg overflow-hidden flex relative items-center px-2 border border-red-200/50">
+                                        <div class="h-full bg-red-500 absolute inset-y-0 left-0" style="width: 16%;"></div>
+                                        <span class="relative z-10 text-[10px] text-white font-bold">Net Available for New Sales</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Animated callout badges -->
+                            <div class="grid grid-cols-2 gap-2 pt-2 text-[10px] font-extrabold uppercase">
+                                <div class="bg-red-50 text-red-700 px-3 py-1.5 rounded-lg border border-red-100 flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
+                                    <span>Running Low</span>
+                                </div>
+                                <div class="bg-amber-50 text-amber-700 px-3 py-1.5 rounded-lg border border-amber-100 flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                                    <span>High Demand</span>
+                                </div>
+                                <div class="bg-blue-50 text-blue-700 px-3 py-1.5 rounded-lg border border-blue-100 flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                                    <span>Reorder Recommended</span>
+                                </div>
+                                <div class="bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-lg border border-emerald-100 flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                    <span>Healthy Stock</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Copy -->
+                    <div class="order-1 lg:order-2 space-y-6 reveal-on-scroll">
+                        <div class="inline-flex items-center gap-2">
+                            <div class="h-px w-8 bg-primary"></div>
+                            <span class="text-primary font-bold headline-font uppercase tracking-widest text-sm">Demand Forecasting</span>
+                        </div>
+                        <h2 class="headline-font text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                            See Demand Before It Becomes A Problem
+                        </h2>
+                        <p class="font-body text-slate-600 text-base md:text-lg leading-relaxed">
+                            Outstanding sales orders often reveal inventory shortages before traditional stock reports do.
+                        </p>
+                        <p class="font-body text-slate-500 text-base leading-relaxed">
+                            DataLynkr lets you compare inventory against future demand so your team can act before customers experience delays.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Smart Reorder Management -->
+        <section class="py-20 md:py-28 bg-gradient-to-br from-[#1F3A89] to-[#0F1D44] text-white w-full overflow-hidden relative border-b border-blue-950/40">
+            <!-- Background dot grid overlay -->
+            <div class="absolute inset-0 dot-grid-dark opacity-35"></div>
+
+            <!-- Custom CSS Styles for line flow animations -->
+            
+
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 xl:px-24 relative z-10">
+                
+                <!-- Centered Laptop Mockup -->
+                <div class="flex flex-col items-center justify-center relative w-full reveal-on-scroll mb-16 md:mb-24">
+                    <!-- Laptop Frame Wrapper for Locked Proportions (Resized to be larger) -->
+                    <div class="relative w-full max-w-[720px] lg:max-w-4xl mx-auto group">
+                        
+                        <!-- Laptop Screen -->
+                        <div class="relative rounded-t-xl border-[6px] sm:border-[8px] lg:border-[12px] border-zinc-900 bg-zinc-950 aspect-[16/10] overflow-hidden shadow-2xl">
+                            <div class="absolute inset-0 bg-white flex flex-col">
+                                <picture>
+                                    <source srcset="/Hometest/resources/features/stock-summary/reorder_laptop.webp" type="image/webp">
+                                    <img width="4112" height="2658" src="/Hometest/resources/features/stock-summary/reorder_laptop.png" alt="Smart Reorder Laptop Report" class="w-full h-full object-cover">
+                                </picture>
+                            </div>
+                        </div>
+                        
+                        <!-- Laptop Base Mockup -->
+                        <div class="relative h-3 sm:h-4 bg-zinc-800 rounded-b-xl w-[105%] -left-[2.5%] shadow-xl"></div>
+                        <div class="relative h-1.5 sm:h-2 bg-zinc-700/50 rounded-b-2xl w-[80%] mx-auto"></div>
+                        
+                        <!-- Floating Insight Cards around the laptop -->
+                        <div class="absolute -top-6 -right-4 bg-slate-900/90 backdrop-blur border border-slate-700 rounded-xl p-3 shadow-xl flex items-center gap-2.5 animate-float z-30 max-w-[170px] cursor-default">
+                            <div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 shrink-0">
+                                <span class="material-symbols-outlined text-sm font-bold">warning</span>
+                            </div>
+                            <div>
+                                <p class="text-[8px] font-bold text-slate-400 uppercase tracking-wider">Stock Alert</p>
+                                <p class="text-[10px] font-extrabold text-white">23 Items Require Replenishment</p>
+                            </div>
+                        </div>
+
+                        <div class="absolute top-1/2 -left-10 bg-slate-900/90 backdrop-blur border border-slate-700 rounded-xl p-3 shadow-xl flex items-center gap-2.5 animate-float-delayed z-30 max-w-[170px] cursor-default">
+                            <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                                <span class="material-symbols-outlined text-sm font-bold">payments</span>
+                            </div>
+                            <div>
+                                <p class="text-[8px] font-bold text-slate-400 uppercase tracking-wider">Replenishment Cost</p>
+                                <p class="text-[10px] font-extrabold text-white">₹8.4 Lakh Purchase Value</p>
+                            </div>
+                        </div>
+
+                        <div class="absolute -bottom-4 -right-2 bg-slate-900/90 backdrop-blur border border-slate-700 rounded-xl p-3 shadow-xl flex items-center gap-2.5 animate-float-fast z-30 max-w-[170px] cursor-default">
+                            <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
+                                <span class="material-symbols-outlined text-sm font-bold">assignment_late</span>
+                            </div>
+                            <div>
+                                <p class="text-[8px] font-bold text-slate-400 uppercase tracking-wider">Procurement Pipeline</p>
+                                <p class="text-[10px] font-extrabold text-white">5 Orders Awaiting Approval</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Content Grid: Left and Right side columns -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                    
+                    <!-- Left Side: Content ("Never Run Out Of Stock Again") -->
+                    <div class="space-y-6 reveal-on-scroll">
+                        <div class="inline-flex items-center gap-2">
+                            <div class="h-px w-8 bg-blue-500"></div>
+                            <span class="text-blue-400 font-bold headline-font uppercase tracking-widest text-sm">PROCUREMENT AUTOMATION</span>
+                        </div>
+                        <div class="space-y-6">
+                            <h2 class="headline-font text-3xl md:text-5xl font-extrabold text-white leading-tight">
+                                Never Run Out Of Stock Again
+                            </h2>
+                            <h4 class="headline-font text-xl md:text-2xl font-bold text-slate-200 leading-snug">
+                                Replenish inventory before shortages impact sales.
+                            </h4>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <p class="font-body text-slate-300 text-base md:text-lg leading-relaxed">
+                                Most businesses discover inventory shortages after they become a problem. DataLynkr continuously compares available inventory against future demand, helping teams identify stock shortages before they impact customers.
+                            </p>
+                            <p class="font-body text-slate-300 text-base md:text-lg leading-relaxed">
+                                When replenishment is required, the system calculates order quantities, assigns suppliers, and prepares purchase orders automatically.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side: Content ("Smart Reorder Management") -->
+                    <div class="space-y-6 reveal-on-scroll">
+                        <div class="inline-flex items-center gap-2">
+                            <div class="h-px w-8 bg-amber-500"></div>
+                            <span class="text-amber-400 font-bold headline-font uppercase tracking-widest text-sm">REORDER AUTOMATION</span>
+                        </div>
+                        <div class="space-y-6">
+                            <h3 class="headline-font text-3xl md:text-5xl font-extrabold text-amber-400 leading-tight">
+                                Smart Reorder Management
+                            </h3>
+                            <h4 class="headline-font text-xl md:text-2xl font-bold text-slate-200 leading-snug">
+                                Turn Inventory Insights Into Purchase Orders
+                            </h4>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <p class="font-body text-slate-300 text-base md:text-lg leading-relaxed">
+                                Knowing you're running low is useful. Automatically preparing replenishment orders is even better.
+                            </p>
+                            <p class="font-body text-slate-300 text-base md:text-lg leading-relaxed">
+                                DataLynkr analyzes closing stock, sales order commitments, and net available inventory to automatically prepare purchase orders. Instead of manually monitoring inventory and creating vendor orders, your team can focus on approving and executing replenishment decisions.
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Horizontal Process Flow -->
+                <div class="mt-20 pt-16 border-t border-slate-800 reveal-on-scroll">
+                    <div class="text-center max-w-xl mx-auto mb-12">
+                        <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">Replenishment Lifecycle</span>
+                        <h3 class="headline-font text-xl md:text-2xl font-extrabold text-white mt-2">The Automated Procurement Bridge</h3>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-6 gap-6 md:gap-4 relative">
+                        <!-- Connector lines on larger screens -->
+                        <div class="hidden md:block absolute top-[28px] left-[8%] right-[8%] h-[2px] bg-slate-800 z-0 overflow-hidden">
+                            <div class="h-full bg-emerald-500 animate-line-flow w-full"></div>
+                        </div>
+                        
+                        <!-- Step 1 -->
+                        <div class="relative z-10 flex flex-col items-center text-center group">
+                            <div class="w-14 h-14 rounded-full bg-slate-900 border-2 border-slate-800 group-hover:border-blue-500 flex items-center justify-center text-slate-400 group-hover:text-blue-400 transition-all duration-300 shadow-lg mb-4">
+                                <span class="material-symbols-outlined text-xl">database</span>
+                            </div>
+                            <h4 class="font-bold text-xs text-slate-200">Inventory Position</h4>
+                            <p class="text-[10px] text-slate-500 mt-1 leading-normal max-w-[120px] mx-auto">Real-time stock values from Tally ERP</p>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="relative z-10 flex flex-col items-center text-center group">
+                            <div class="w-14 h-14 rounded-full bg-slate-900 border-2 border-slate-800 group-hover:border-red-500 flex items-center justify-center text-slate-400 group-hover:text-red-400 transition-all duration-300 shadow-lg mb-4">
+                                <span class="material-symbols-outlined text-xl">trending_down</span>
+                            </div>
+                            <h4 class="font-bold text-xs text-slate-200">Shortfall Detected</h4>
+                            <p class="text-[10px] text-slate-500 mt-1 leading-normal max-w-[120px] mx-auto">Calculated shortages vs demand</p>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="relative z-10 flex flex-col items-center text-center group">
+                            <div class="w-14 h-14 rounded-full bg-slate-900 border-2 border-slate-800 group-hover:border-amber-500 flex items-center justify-center text-slate-400 group-hover:text-amber-400 transition-all duration-300 shadow-lg mb-4">
+                                <span class="material-symbols-outlined text-xl">handshake</span>
+                            </div>
+                            <h4 class="font-bold text-xs text-slate-200">Supplier Assigned</h4>
+                            <p class="text-[10px] text-slate-500 mt-1 leading-normal max-w-[120px] mx-auto">Matches vendor reorder contracts</p>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="relative z-10 flex flex-col items-center text-center group">
+                            <div class="w-14 h-14 rounded-full bg-slate-900 border-2 border-slate-800 group-hover:border-blue-500 flex items-center justify-center text-slate-400 group-hover:text-blue-400 transition-all duration-300 shadow-lg mb-4">
+                                <span class="material-symbols-outlined text-xl">description</span>
+                            </div>
+                            <h4 class="font-bold text-xs text-slate-200">PO Generated</h4>
+                            <p class="text-[10px] text-slate-500 mt-1 leading-normal max-w-[120px] mx-auto">Reorders pre-filled and formatted</p>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div class="relative z-10 flex flex-col items-center text-center group">
+                            <div class="w-14 h-14 rounded-full bg-slate-900 border-2 border-slate-800 group-hover:border-purple-500 flex items-center justify-center text-slate-400 group-hover:text-purple-400 transition-all duration-300 shadow-lg mb-4">
+                                <span class="material-symbols-outlined text-xl">assignment_turned_in</span>
+                            </div>
+                            <h4 class="font-bold text-xs text-slate-200">Approval Workflow</h4>
+                            <p class="text-[10px] text-slate-500 mt-1 leading-normal max-w-[120px] mx-auto">Route orders to stakeholders</p>
+                        </div>
+
+                        <!-- Step 6 -->
+                        <div class="relative z-10 flex flex-col items-center text-center group">
+                            <div class="w-14 h-14 rounded-full bg-slate-900 border-2 border-slate-800 group-hover:border-emerald-500 flex items-center justify-center text-slate-400 group-hover:text-emerald-400 transition-all duration-300 shadow-lg mb-4">
+                                <span class="material-symbols-outlined text-xl">local_shipping</span>
+                            </div>
+                            <h4 class="font-bold text-xs text-slate-200">Ready To Order</h4>
+                            <p class="text-[10px] text-slate-500 mt-1 leading-normal max-w-[120px] mx-auto">Dispatched directly to the supplier</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- SECTION 6: Built For Real Inventory Decisions -->
+        <section class="py-20 md:py-28 bg-white w-full overflow-hidden border-y border-slate-100">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 xl:px-24">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4 reveal-on-scroll">
+                    <span class="text-primary font-bold uppercase tracking-widest text-sm block">Core Capabilities</span>
+                    <h2 class="headline-font text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                        Built For Real Inventory Decisions
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                    <!-- Left Column: Cards Grid -->
+                    <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6 reveal-on-scroll">
+                        <!-- Card 1 -->
+                        <div class="glass-panel p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300 mb-6">
+                                <span class="material-symbols-outlined text-2xl">visibility</span>
+                            </div>
+                            <h3 class="headline-font font-bold text-slate-800 text-lg mb-2">Inventory Visibility</h3>
+                            <p class="text-slate-500 font-body text-sm leading-relaxed">
+                                Monitor stock quantities and values directly from Tally. Drill down into groups, categories, or specific products without manual updates.
+                            </p>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="glass-panel p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300 mb-6">
+                                <span class="material-symbols-outlined text-2xl">domain</span>
+                            </div>
+                            <h3 class="headline-font font-bold text-slate-800 text-lg mb-2">Multi-Godown Analysis</h3>
+                            <p class="text-slate-500 font-body text-sm leading-relaxed">
+                                Compare inventory across multiple warehouses, locations, and godowns to balance stocks, reduce logistics costs, and optimize delivery.
+                            </p>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="glass-panel p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300 mb-6">
+                                <span class="material-symbols-outlined text-2xl">pending_actions</span>
+                            </div>
+                            <h3 class="headline-font font-bold text-slate-800 text-lg mb-2">Outstanding Order Tracking</h3>
+                            <p class="text-slate-500 font-body text-sm leading-relaxed">
+                                Understand future demand before stock runs out. Connect sales orders directly to stock quantities to calculate true available stock.
+                            </p>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="glass-panel p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300 mb-6">
+                                <span class="material-symbols-outlined text-2xl">devices</span>
+                            </div>
+                            <h3 class="headline-font font-bold text-slate-800 text-lg mb-2">Anywhere Access</h3>
+                            <p class="text-slate-500 font-body text-sm leading-relaxed">
+                                Access inventory intelligence from any device through DataLynkr's secure, modern cloud SaaS platform.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Phone Mockup -->
+                    <div class="lg:col-span-4 flex flex-col items-center justify-center reveal-on-scroll w-full">
+                        <div class="w-full max-w-[280px] aspect-[9/19] bg-black rounded-2xl border-[12px] border-zinc-900 shadow-2xl relative overflow-hidden group">
+                            <!-- Video Background -->
+                            <video width="720" height="1600" autoplay loop muted playsinline preload="metadata"
+                                poster="/Hometest/resources/poster_images/stock.webp"
+                                class="absolute inset-0 w-full h-full object-cover rounded-xl z-10">
+                                <source src="/Hometest/resources/videos/stock.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: The Result -->
+        <section class="py-20 md:py-28 bg-darkBg text-white w-full overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 xl:px-24">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <!-- Left side: outcomes checklist -->
+                    <div class="space-y-8 reveal-on-scroll">
+                        <div class="space-y-4">
+                            <span class="text-accent font-bold uppercase tracking-widest text-sm block">Proven Business Impact</span>
+                            <h2 class="headline-font text-3xl md:text-5xl font-extrabold leading-tight">
+                                Businesses use DataLynkr to:
+                            </h2>
+                        </div>
+                        <ul class="space-y-4 font-body text-slate-300 text-sm md:text-base">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-emerald-400 font-bold">check_circle</span>
+                                <span>Reduce stockouts and prevent lost sales</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-emerald-400 font-bold">check_circle</span>
+                                <span>Improve purchasing decisions based on pending demand</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-emerald-400 font-bold">check_circle</span>
+                                <span>Increase inventory visibility across multiple godowns</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-emerald-400 font-bold">check_circle</span>
+                                <span>Respond faster to customer demand and inquiries</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-emerald-400 font-bold">check_circle</span>
+                                <span>Eliminate manual inventory reporting in spreadsheets</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-emerald-400 font-bold">check_circle</span>
+                                <span>Make decisions using live, secure Tally data</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Right side: statistics with count-up animations -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6 reveal-on-scroll">
+                        <div class="glass-dark p-6 rounded-2xl flex flex-col justify-between border-slate-700/50">
+                            <span class="text-slate-400 text-xs font-bold uppercase">Reduction in Stockouts</span>
+                            <span id="counter-stockout" class="text-3xl sm:text-4xl font-extrabold text-accent my-2">0%</span>
+                            <span class="text-slate-300 text-[11px]">Prevent critical inventory shortages</span>
+                        </div>
+                        <div class="glass-dark p-6 rounded-2xl flex flex-col justify-between border-slate-700/50">
+                            <span class="text-slate-400 text-xs font-bold uppercase">Reporting Hours Saved</span>
+                            <span id="counter-hours" class="text-3xl sm:text-4xl font-extrabold text-accent my-2">0 hrs</span>
+                            <span class="text-slate-300 text-[11px]">Per week for operations teams</span>
+                        </div>
+                        <div class="glass-dark p-6 rounded-2xl flex flex-col justify-between border-slate-700/50">
+                            <span class="text-slate-400 text-xs font-bold uppercase">Stock Value Optimization</span>
+                            <span id="counter-value" class="text-3xl sm:text-4xl font-extrabold text-accent my-2">0%</span>
+                            <span class="text-slate-300 text-[11px]">Free up tied-up working capital</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA SECTION -->
+        <section class="py-20 md:py-28 px-6 bg-gradient-to-r from-primary to-indigo-950 text-white text-center rounded-3xl max-w-7xl mx-4 sm:mx-6 md:mx-8 lg:mx-auto my-12 md:my-20 relative overflow-hidden shadow-2xl">
+            <div class="absolute -right-20 -top-20 text-white/5 transform rotate-12 pointer-events-none">
+                <span class="material-symbols-outlined" style="font-size: 20rem;">analytics</span>
+            </div>
+            <div class="relative z-10 max-w-3xl mx-auto space-y-6">
+                <h2 class="headline-font text-3xl md:text-5xl font-extrabold">Stop Guessing. Start Planning.</h2>
+                <p class="text-white/80 font-body text-base md:text-lg max-w-xl mx-auto">
+                    Know what inventory you have. Know what inventory is committed. Know what inventory you'll need next. All from the Tally data you already trust.
+                </p>
+                <div class="pt-6 flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="/Hometest/contact" class="inline-flex items-center justify-center gap-2 bg-accent text-slate-900 px-8 py-4 rounded-full font-bold hover:bg-white transition-all hover:shadow-xl hover:scale-105 active:scale-95 duration-300">
+                        <span>Book A Demo</span>
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                    </a>
+                    <a href="/Hometest/pricing" class="inline-flex items-center justify-center gap-2 border border-white/30 hover:border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-all hover:scale-105 active:scale-95 duration-300">
+                        <span>Pricing</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+
+    </main>
+    <!-- Footer Component -->
+    22:T85a,
+        body {
+            font-family: 'Wix Madefor Text', sans-serif;
+            background-color: #ffffff;
+        }
+
+        .headline-font {
+            font-family: 'Wix Madefor Display', sans-serif;
+        }
+
+        #features-flyout.active {
+            transform: translateX(0) !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+
+        /* Reveal on scroll styling */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glassmorphism panel */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Floating animations */
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1.5deg); }
+        }
+        @keyframes float-medium {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(-1.5deg); }
+        }
+        .animate-float-slow {
+            animation: float-slow 7s ease-in-out infinite;
+        }
+        .animate-float-medium {
+            animation: float-medium 6s ease-in-out infinite;
+        }
+    
+        /* Fix for mobile/laptop mockup video overflow/clipping bugs in Safari/WebKit */
+        [class*="aspect-[9/19]"], [class*="aspect-[16/10]"] {
+            transform: translateZ(0);
+            isolation: isolate;
+        }23:T18d8,document.addEventListener('DOMContentLoaded', () => {
+            const counterEl = document.getElementById('counter-stockout');
+            if (counterEl) {
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateResultCounters();
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 });
+                observer.observe(counterEl);
+            }
+        });
+
+        // Section 2: Scenario Toggle logic
+        function toggleScenario(scenario) {
+            const normalBtn = document.getElementById('scenario-normal-btn');
+            const committedBtn = document.getElementById('scenario-committed-btn');
+            
+            const curQty = document.getElementById('sim-current-qty');
+            const comQty = document.getElementById('sim-committed-qty');
+            const avQty = document.getElementById('sim-available-qty');
+            
+            const avCard = document.getElementById('sim-available-card');
+            const avIcon = document.getElementById('sim-available-icon');
+            const avBadge = document.getElementById('sim-available-badge');
+            
+            const barCommitted = document.getElementById('sim-bar-committed');
+            const barAvailable = document.getElementById('sim-bar-available');
+
+            if (scenario === 'normal') {
+                normalBtn.className = "px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-primary text-white shadow-md";
+                committedBtn.className = "px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-white text-slate-600 hover:text-slate-800 border border-slate-200";
+                
+                curQty.innerText = "500 Units";
+                comQty.innerText = "150 Units";
+                avQty.innerText = "350 Units";
+                
+                avCard.className = "bg-emerald-50 border border-emerald-100 p-4 rounded-xl flex items-center justify-between transition-colors duration-300";
+                avIcon.innerText = "check_circle";
+                avIcon.className = "material-symbols-outlined text-emerald-600 text-2xl transition-transform duration-300";
+                avBadge.className = "text-xs font-extrabold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full";
+                avBadge.innerText = "Safe";
+                
+                barCommitted.style.width = "30%";
+                barAvailable.style.width = "70%";
+            } else {
+                normalBtn.className = "px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-white text-slate-600 hover:text-slate-800 border border-slate-200";
+                committedBtn.className = "px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-primary text-white shadow-md";
+                
+                curQty.innerText = "500 Units";
+                comQty.innerText = "420 Units";
+                avQty.innerText = "80 Units";
+                
+                avCard.className = "bg-red-50 border border-red-100 p-4 rounded-xl flex items-center justify-between transition-colors duration-300";
+                avIcon.innerText = "warning";
+                avIcon.className = "material-symbols-outlined text-red-600 text-2xl transition-transform duration-300 animate-bounce";
+                avBadge.className = "text-xs font-extrabold bg-red-100 text-red-800 px-2 py-0.5 rounded-full";
+                avBadge.innerText = "Critical";
+                
+                barCommitted.style.width = "84%";
+                barAvailable.style.width = "16%";
+            }
+        }
+
+        // Section 3: Level switcher
+        function zoomLevel(level, btn) {
+            // Update active button state
+            const buttons = btn.parentElement.querySelectorAll('button');
+            buttons.forEach(b => {
+                b.className = "zoom-btn px-4 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all text-slate-600 hover:text-slate-900";
+            });
+            btn.className = "zoom-btn px-4 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all bg-white text-primary shadow-sm";
+
+            // Update visible drilldown level with transition
+            const levels = document.querySelectorAll('.drilldown-level');
+            levels.forEach(l => {
+                l.classList.add('opacity-0', 'scale-95', 'hidden');
+                l.classList.remove('opacity-100', 'scale-100');
+            });
+
+            const target = document.getElementById(`drilldown-level-${level}`);
+            if (target) {
+                target.classList.remove('hidden');
+                setTimeout(() => {
+                    target.classList.remove('opacity-0', 'scale-95');
+                    target.classList.add('opacity-100', 'scale-100');
+                }, 50);
+            }
+        }
+
+
+
+        // Section 7: Result metrics counters
+        let countersAnimated = false;
+        function animateResultCounters() {
+            if (countersAnimated) return;
+            countersAnimated = true;
+
+            const stockoutCounter = document.getElementById('counter-stockout');
+            const hoursCounter = document.getElementById('counter-hours');
+            const valueCounter = document.getElementById('counter-value');
+
+            animateSingleCounter(stockoutCounter, 0, 45, 1500, '%');
+            animateSingleCounter(hoursCounter, 0, 12, 1500, ' hrs');
+            animateSingleCounter(valueCounter, 0, 18, 1500, '%');
+        }
+
+        function animateSingleCounter(element, start, end, duration, suffix = '') {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.innerText = Math.floor(progress * (end - start) + start) + suffix;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }1d:["$","div",null,{"className":"flex-grow flex flex-col","children":[["$","$L20",null,{"slug":"stock-summary","body":"$21","styles":["$22","\r\n                @keyframes line-flow-loop {\r\n                    0% { transform: scaleX(0); }\r\n                    60%, 100% { transform: scaleX(1); }\r\n                }\r\n                .animate-line-flow {\r\n                    animation: line-flow-loop 6s infinite linear;\r\n                    transform-origin: left;\r\n                }\r\n            "],"scripts":["$23"]}],"$L24"]}]
+1e:["$","footer",null,{"className":"w-full border-t border-zinc-100 bg-white flex flex-col md:flex-row justify-between items-center px-6 md:px-12 py-10 md:py-16 gap-6","children":[["$","div",null,{"className":"flex flex-col items-center md:items-start gap-2","children":[["$","div",null,{"className":"text-lg font-bold text-zinc-900 headline-font","children":[["$","span",null,{"className":"text-[#1F3A89]","children":"DataLynk"}],"r"]}],["$","div",null,{"className":"flex items-center gap-1.5 font-['Wix_Madefor_Text'] text-xs text-zinc-400","children":[["$","span",null,{"children":"©"}],["$","span",null,{"className":"font-bold","children":[["$","span",null,{"style":{"color":"#e46b0c"},"children":"IT"}]," ",["$","span",null,{"style":{"color":"black"},"children":"Catalyst"}]]}],["$","span",null,{"children":"Software India Pvt Ltd. 2026."}]]}]]}],["$","div",null,{"className":"flex gap-8","children":[["$","$L25",null,{"className":"text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors","href":"/privacy","target":"_blank","rel":"noopener noreferrer","children":"Privacy"}],["$","$L25",null,{"className":"text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors","href":"/terms","target":"_blank","rel":"noopener noreferrer","children":"Terms"}],["$","$L25",null,{"className":"text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors","href":"/support","children":"Support"}]]}]]}]
+26:I[1323,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js","/Hometest/_next/static/chunks/3hsdf7acact9q.js"],"default"]
+24:["$","$L26",null,{"items":[{"question":"Can I check live stock levels?","answer":"Yes. DataLynkr shows current inventory levels, including stock in hand and available quantities across different locations."},{"question":"Does it support multiple godowns or locations?","answer":"Yes. If you use multiple locations in Tally, DataLynkr displays stock details by godown."},{"question":"Can I see item images and details?","answer":"Yes. You can add images and descriptions to items to help sales teams and customers identify products."}],"title":"Frequently Asked Questions","subtitle":"Got questions about Inventory Management? We've got answers.","className":"bg-white"}]
+15:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#ffffff"}]]
+27:I[27201,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"IconMark"]
+12:null
+17:[["$","title","0",{"children":"Stock Summary | DataLynkr"}],["$","meta","1",{"name":"description","content":"Know what"}],["$","meta","2",{"name":"application-name","content":"DataLynkr"}],["$","meta","3",{"name":"author","content":"IT Catalyst Software India Pvt Ltd"}],["$","link","4",{"rel":"manifest","href":"/Hometest/manifest.webmanifest","crossOrigin":"$undefined"}],["$","meta","5",{"name":"creator","content":"IT Catalyst Software India Pvt Ltd"}],["$","meta","6",{"name":"publisher","content":"IT Catalyst Software India Pvt Ltd"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","9",{"name":"category","content":"business"}],["$","link","10",{"rel":"canonical","href":"https://datalynkr.com/Hometest/features/stock-summary"}],["$","meta","11",{"property":"og:title","content":"Stock Summary"}],["$","meta","12",{"property":"og:description","content":"Know what"}],["$","meta","13",{"property":"og:url","content":"https://datalynkr.com/Hometest/features/stock-summary"}],["$","meta","14",{"property":"og:site_name","content":"DataLynkr"}],["$","meta","15",{"property":"og:locale","content":"en_IN"}],["$","meta","16",{"property":"og:image","content":"https://datalynkr.com/Hometest/resources/poster_images/stock_laptop.webp"}],["$","meta","17",{"property":"og:image:width","content":"1200"}],["$","meta","18",{"property":"og:image:height","content":"630"}],["$","meta","19",{"property":"og:image:alt","content":"Stock Summary"}],["$","meta","20",{"property":"og:type","content":"website"}],["$","meta","21",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","22",{"name":"twitter:title","content":"Stock Summary"}],["$","meta","23",{"name":"twitter:description","content":"Know what"}],["$","meta","24",{"name":"twitter:image","content":"https://datalynkr.com/Hometest/resources/poster_images/stock_laptop.webp"}],["$","link","25",{"rel":"shortcut icon","href":"/Hometest/logo.svg"}],["$","link","26",{"rel":"icon","href":"/Hometest/logo.svg","type":"image/svg+xml"}],["$","link","27",{"rel":"apple-touch-icon","href":"/Hometest/logo.svg"}],["$","$L27","28",{}]]

@@ -1,0 +1,1535 @@
+1:"$Sreact.fragment"
+3:I[14006,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"default"]
+4:I[33694,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"default"]
+5:I[39756,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"default"]
+6:I[37457,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"default"]
+d:I[68027,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"default",1]
+:HL["/Hometest/_next/static/chunks/0bj4b_tgsdero.css","style"]
+:HL["https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&display=swap","style"]
+:HL["https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap","style"]
+2:T5ae,{"@context":"https://schema.org","@type":"Organization","@id":"https://datalynkr.com/Hometest/#organization","name":"IT Catalyst Software India Pvt Ltd","legalName":"IT Catalyst Software India Pvt Ltd","brand":{"@type":"Brand","name":"DataLynkr","logo":"https://datalynkr.com/Hometest/logo.svg"},"url":"https://datalynkr.com/Hometest","logo":{"@type":"ImageObject","url":"https://datalynkr.com/Hometest/logo.svg","caption":"DataLynkr Logo"},"sameAs":["https://play.google.com/store/apps/details?id=com.datalynkr","https://www.linkedin.com/company/it-catalyst-software-india-private-limited/","https://www.youtube.com/@datalynkr","https://www.instagram.com/datalynkr"],"contactPoint":[{"@type":"ContactPoint","telephone":"+91-9741911520","contactType":"sales","email":"sales@datalynkr.com","areaServed":"IN","availableLanguage":["English","Hindi"]},{"@type":"ContactPoint","telephone":"+91-9741911520","contactType":"customer support","email":"support@datalynkr.com","areaServed":"IN","availableLanguage":["English","Hindi"]}],"address":{"@type":"PostalAddress","streetAddress":"278, MK, Puttalingiah Rd, Padmanabhanagar","addressLocality":"Bengaluru","addressRegion":"Karnataka","postalCode":"560070","addressCountry":"IN"},"foundingDate":"2000","description":"DataLynkr extends Tally beyond the accounts department, giving sales teams, managers, operations, customers, and business owners secure real-time access to Tally data from mobile and browser."}0:{"P":null,"c":["","features","offline-transactions"],"q":"","i":false,"f":[[["",{"children":["features",{"children":[["slug","offline-transactions","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/Hometest/_next/static/chunks/0bj4b_tgsdero.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/Hometest/_next/static/chunks/0nw9toud5z-fg.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/Hometest/_next/static/chunks/14mrh2-p_w84d.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"shortcut icon","href":"/Hometest/logo.svg","type":"image/svg+xml"}],["$","link",null,{"rel":"icon","href":"/Hometest/logo.svg","type":"image/svg+xml"}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"@id\":\"https://datalynkr.com/Hometest/#website\",\"name\":\"DataLynkr\",\"url\":\"https://datalynkr.com/Hometest\",\"description\":\"DataLynkr extends Tally ERP beyond the accounts department with real-time mobile and browser access for sales, operations, and management teams.\",\"publisher\":{\"@id\":\"https://datalynkr.com/Hometest/#organization\"},\"inLanguage\":\"en-IN\"}"}}]]}],["$","body",null,{"className":"bg-white text-on-surface antialiased overflow-x-hidden animate-fade-in","children":[["$","$L3",null,{}],["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],"$L7"],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]]}]]}],{"children":["$L8",{"children":["$L9",{"children":["$La",{},null,false,null]},null,false,"$@b"]},null,false,"$@b"]},null,false,null],"$Lc",false]],"m":"$undefined","G":["$d",["$Le"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"kS4ExL_11NMEHF0rPhOPg"}
+10:I[97367,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+11:"$Sreact.suspense"
+14:I[97367,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"ViewportBoundary"]
+16:I[97367,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"MetadataBoundary"]
+7:["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]
+8:["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+9:["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+a:["$","$1","c",{"children":["$Lf",[["$","script","script-0",{"src":"/Hometest/_next/static/chunks/3hsdf7acact9q.js","async":true,"nonce":"$undefined"}]],["$","$L10",null,{"children":["$","$11",null,{"name":"Next.MetadataOutlet","children":"$@12"}]}]]}]
+13:[]
+b:"$W13"
+c:["$","$1","h",{"children":[null,["$","$L14",null,{"children":"$L15"}],["$","div",null,{"hidden":true,"children":["$","$L16",null,{"children":["$","$11",null,{"name":"Next.Metadata","children":"$L17"}]}]}],null]}]
+e:["$","link","0",{"rel":"stylesheet","href":"/Hometest/_next/static/chunks/0bj4b_tgsdero.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+18:T421,{"@context":"https://schema.org","@type":"VideoObject","name":"DataLynkr - Offline Transactions Demo","description":"Watch how DataLynkr supports offline transaction entry, allowing sales teams to capture orders and customer details without internet access, syncing later with Tally.","thumbnailUrl":["https://datalynkr.com/Hometest/resources/poster_images/offline.webp","https://datalynkr.com/Hometest/resources/poster_images/offline_laptop.webp"],"uploadDate":"2026-06-19T10:00:00Z","duration":"PT0M50S","contentUrl":"https://datalynkr.com/Hometest/resources/videos/offline.mp4","embedUrl":"https://datalynkr.com/Hometest/features/offline-transactions","creator":{"@id":"https://datalynkr.com/Hometest/#organization"},"publisher":{"@type":"Organization","@id":"https://datalynkr.com/Hometest/#organization","name":"DataLynkr","logo":{"@type":"ImageObject","url":"https://datalynkr.com/Hometest/logo.svg"}},"about":{"@id":"https://datalynkr.com/Hometest/#software"},"isPartOf":{"@id":"https://datalynkr.com/Hometest/features/offline-transactions#feature"}}19:T5bc,{"@context":"https://schema.org","@type":"SoftwareApplication","@id":"https://datalynkr.com/Hometest/features/offline-transactions#feature","name":"DataLynkr Offline Transactions","applicationCategory":"BusinessApplication","operatingSystem":"Windows, Web, Android, iOS","description":"Keep your business moving even without internet. Capture transactions offline and sync to Tally automatically.","url":"https://datalynkr.com/Hometest/features/offline-transactions","isPartOf":{"@id":"https://datalynkr.com/Hometest/#software"},"author":{"@id":"https://datalynkr.com/Hometest/#organization"},"featureList":["Offline order entry","Automatic sync on reconnect","Cached stock validation"],"keywords":["Tally offline order entry","offline Tally app","sync offline transactions Tally","no-internet Tally orders","Tally field offline sync","offline billing app Zoho Books alternative","Marg ERP offline sales","Busy ERP offline synchronizer","offline sales order book app","no connection ERP sync software"],"offers":{"@type":"AggregateOffer","priceCurrency":"INR","lowPrice":"1800","highPrice":"3600","offerCount":"4","availability":"https://schema.org/InStock","url":"https://datalynkr.com/Hometest/pricing","priceSpecification":{"@type":"UnitPriceSpecification","price":"3600","priceCurrency":"INR","referenceQuantity":{"@type":"QuantitativeValue","value":"1","unitCode":"ANN"}}},"screenshot":"https://datalynkr.com/Hometest/resources/poster_images/offline_laptop.webp"}1a:T563,{"@context":"https://schema.org","@type":"WebPage","@id":"https://datalynkr.com/Hometest/features/offline-transactions#webpage","url":"https://datalynkr.com/Hometest/features/offline-transactions","name":"Offline Transactions","description":"Keep your business moving even without internet. Capture transactions offline and sync to Tally automatically.","isPartOf":{"@id":"https://datalynkr.com/Hometest/#website"},"about":{"@id":"https://datalynkr.com/Hometest/#software"},"mainEntity":{"@id":"https://datalynkr.com/Hometest/features/offline-transactions#feature"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://datalynkr.com/Hometest/resources/poster_images/offline_laptop.webp"},"hasPart":[{"@type":"Question","name":"How does offline mode work?","acceptedAnswer":{"@type":"Answer","text":"Users can access downloaded customer lists, product details, and create transactions without internet access."}},{"@type":"Question","name":"When does data synchronize?","acceptedAnswer":{"@type":"Answer","text":"Transactions created offline are saved locally and synchronized automatically once internet connectivity is restored."}},{"@type":"Question","name":"Are stock levels accurate offline?","acceptedAnswer":{"@type":"Answer","text":"Stock levels reflect the last synchronized state. Offline transactions are validated against that data to prevent discrepancies."}}]}f:["$","div",null,{"className":"flex flex-col min-h-screen overflow-x-hidden","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$18"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$19"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$1a"}}],"$L1b","$L1c","$L1d","$L1e"]}]
+1f:I[62319,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js","/Hometest/_next/static/chunks/3hsdf7acact9q.js"],"default"]
+20:I[54585,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js","/Hometest/_next/static/chunks/3hsdf7acact9q.js"],"default"]
+25:I[22016,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js","/Hometest/_next/static/chunks/3hsdf7acact9q.js"],""]
+1b:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://datalynkr.com/Hometest\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Offline Transactions\",\"item\":\"https://datalynkr.com/Hometest/features/offline-transactions\"}]}"}}]
+1c:["$","$L1f",null,{"showCenterBrand":false,"showLoginButton":false,"showHomeIcon":true,"hideOnScroll":false,"staticNav":true}]
+21:Tf582,
+
+    <!-- Main Content Area -->
+    <main class="flex-grow">
+        
+        <!-- SECTION 1: HERO SECTION -->
+        <section class="relative bg-gradient-to-b from-slate-50 via-white to-slate-50 py-16 lg:py-28 overflow-hidden bg-grid-pattern">
+            <!-- Decorative blur shapes -->
+            <div class="absolute top-20 left-10 w-72 h-72 bg-[#2e2e2e]/5 rounded-full filter blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#F1C74B]/5 rounded-full filter blur-3xl animate-pulse-slow"></div>
+            
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                    
+                    <!-- Hero Content -->
+                    <div class="lg:col-span-6 space-y-8 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#2e2e2e]/10 text-[#2e2e2e] font-semibold text-xs tracking-wider uppercase headline-font">
+                            <span class="flex h-2 w-2 relative">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2e2e2e] opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#2e2e2e]"></span>
+                            </span>
+                            Offline Resilience Engine
+                        </div>
+                        <h1 class="headline-font text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] tracking-tight">
+                            Keep Working Even When You're <span class="text-[#2e2e2e] bg-gradient-to-r from-[#2e2e2e] to-[#6b7280] bg-clip-text text-transparent">Offline</span>
+                        </h1>
+                        <p class="font-body text-slate-600 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                            Internet outages, weak mobile networks, and temporary Tally downtime shouldn't stop your business. DataLynkr automatically queues transactions and synchronizes them to Tally the moment connectivity is restored.
+                        </p>
+                        
+                        <!-- Animated Status Indicators -->
+                        <div class="py-2 flex flex-wrap justify-center lg:justify-start gap-4">
+                            <!-- Online status -->
+                            <div id="hero-badge-online" class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-200 bg-white text-sm font-semibold shadow-sm transition-all duration-300">
+                                <span class="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                                <span class="text-slate-700">Online</span>
+                            </div>
+                            <!-- Offline status -->
+                            <div id="hero-badge-offline" class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-200 bg-white text-sm font-semibold shadow-sm transition-all duration-300 opacity-40">
+                                <span class="h-2.5 w-2.5 rounded-full bg-slate-400"></span>
+                                <span class="text-slate-700">Offline Mode</span>
+                            </div>
+                            <!-- Syncing status -->
+                            <div id="hero-badge-syncing" class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-200 bg-white text-sm font-semibold shadow-sm transition-all duration-300 opacity-40">
+                                <span class="material-symbols-outlined text-sm text-[#2e2e2e] animate-spin">sync</span>
+                                <span class="text-slate-700">Syncing</span>
+                            </div>
+                            <!-- Synced status -->
+                            <div id="hero-badge-synced" class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-200 bg-white text-sm font-semibold shadow-sm transition-all duration-300 opacity-40">
+                                <span class="material-symbols-outlined text-sm text-emerald-500">check_circle</span>
+                                <span class="text-slate-700">Synced to Tally</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex flex-col sm:flex-row justify-center lg:justify-start gap-4 items-center">
+                            <a href="/Hometest/contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2e2e2e] text-white px-8 py-4 rounded-full font-bold hover:bg-[#1a1a1a] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-95 duration-300">
+                                <span>Book a Demo</span>
+                                <span class="material-symbols-outlined text-lg">calendar_today</span>
+                            </a>
+                            <button onclick="document.getElementById('interactive-demo-section').scrollIntoView({behavior: 'smooth'})" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-slate-400 text-slate-700 px-8 py-4 rounded-full font-semibold hover:bg-slate-50 transition-all hover:-translate-y-0.5 active:scale-95 duration-300 bg-white">
+                                <span>See How Offline Sync Works</span>
+                                <span class="material-symbols-outlined text-lg">arrow_downward</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Centerpiece: Device Mockups Animation -->
+                    <div class="lg:col-span-6 flex flex-col items-center justify-center relative w-full h-[540px] xs:h-[580px] sm:h-[640px] md:h-[620px] lg:h-[620px] xl:h-[660px]">
+                        
+                        <!-- Laptop Mockup -->
+                        <div class="absolute transition-all duration-500 hover:scale-[1.02] left-2 sm:left-6 lg:left-8 top-4 z-10 group">
+                            <div class="relative rounded-t-xl border-[6px] sm:border-[8px] md:border-[12px] border-zinc-900 bg-zinc-900 aspect-[16/10] h-[180px] xs:h-[220px] sm:h-[280px] md:h-[240px] lg:h-[300px] xl:h-[330px] overflow-hidden shadow-2xl">
+                                <div class="absolute inset-0 bg-white flex flex-col">
+                                    <div class="absolute inset-0 overflow-hidden">
+                                        <video width="1920" height="1200" id="hero-laptop-video" muted playsinline preload="metadata"
+                                            poster="/Hometest/resources/poster_images/offline_laptop.webp"
+                                            class="w-full h-full object-cover">
+                                            <source src="/Hometest/resources/videos/offline_laptop.mp4" type="video/mp4" />
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative h-2 sm:h-3 md:h-4 bg-zinc-800 rounded-b-xl w-[105%] -left-[2.5%] shadow-xl"></div>
+                            <div class="relative h-1 sm:h-1.5 md:h-2 bg-zinc-700/50 rounded-b-2xl w-[80%] mx-auto"></div>
+                        </div>
+                        
+                        <!-- Mobile Mockup -->
+                        <div class="absolute w-[240px] xs:w-[260px] sm:w-[280px] aspect-[9/19] bg-black rounded-2xl border-[12px] border-zinc-900 shadow-2xl transition-all duration-500 hover:scale-[1.04] right-2 sm:right-8 lg:right-10 bottom-4 z-20 overflow-hidden group">
+                            <video width="720" height="1600" id="hero-mobile-video" muted playsinline preload="metadata"
+                                poster="/Hometest/resources/poster_images/offline.webp"
+                                class="absolute inset-0 w-full h-full object-cover rounded-xl z-10">
+                                <source src="/Hometest/resources/videos/offline.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- Brand Logo & Text Container Aligned to the Bottom Right -->
+                <div class="w-full mt-12 reveal-on-scroll reveal-fade-up">
+                    <div class="flex justify-end">
+                        <a href="/Hometest" class="flex items-center gap-2.5 -mr-2 md:-mr-8 lg:-mr-6 hover:opacity-80 transition-opacity" title="DataLynkr Home">
+                            <!-- DataLynkr SVG Logo -->
+                            <div class="h-7 md:h-8 w-auto flex-shrink-0">
+                                <svg class="h-7 md:h-8 w-auto" viewBox="0 0 2352 1825" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                    <g transform="matrix(1,0,0,1,-433.673905,-573.914687)">
+                                        <g transform="matrix(4.591033,0,0,4.591033,-170.925878,-4.498795)">
+                                            <path d="M131.862,129.376C130.04,117.368 139.468,130.36 330.857,284.067C464.376,391.298 465.418,393.678 467.438,392.344C491.547,376.43 639.946,268.123 643.177,269.982C645.959,271.583 643.383,272.976 588.075,330.099C555.999,363.227 556.723,363.618 523.816,395.793C498.522,420.523 467.727,456.829 463.95,453.032C425.167,414.044 345.904,337.391 335.575,327.402C334.374,326.329 333.174,325.255 331.973,324.182C274.761,270.219 188.09,183.592 175.718,171.226C150.89,146.869 137.744,133.558 131.862,129.376Z" fill="#1F3A89" />
+                                            <path d="M131.862,129.376C137.744,133.558 150.89,146.869 175.718,171.226C174.446,173.082 174.898,173.209 155.463,363.497C147.17,444.698 144.728,462.423 148.577,459.638C318.649,336.613 319.328,337.327 331.973,324.182C333.174,325.255 334.374,326.329 335.575,327.402C330.462,332.41 145.867,516.733 143.253,521.382C142.869,522.064 136.25,528.587 136.312,514.501C136.402,493.868 130.851,133.926 131.862,129.376Z" fill="#F1C74B" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <span class="headline-font text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-normal text-black tracking-tight">DataLynkr</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: THE PROBLEM -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                    
+                    <!-- Left: Illustration -->
+                    <div class="lg:col-span-6 order-2 lg:order-1 flex justify-center reveal-on-scroll">
+                        <div class="relative w-full max-w-md aspect-square bg-slate-50 rounded-3xl border border-slate-100 shadow-inner p-8 flex flex-col items-center justify-center overflow-hidden">
+                            <!-- Signal Loss SVG Graphic -->
+                            <div class="absolute inset-0 bg-grid-pattern opacity-30"></div>
+                            
+                            <!-- Person / Device Container -->
+                            <div class="relative z-10 flex flex-col items-center justify-center space-y-6 w-full text-center">
+                                <div class="relative">
+                                    <!-- Wireless waves animation -->
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="w-32 h-32 rounded-full border-2 border-red-200 border-dashed animate-ping duration-1000 opacity-60"></div>
+                                    </div>
+                                    <div class="h-24 w-24 rounded-full bg-red-50 flex items-center justify-center text-red-500 relative z-10 shadow-md">
+                                        <span class="material-symbols-outlined text-5xl">signal_wifi_off</span>
+                                    </div>
+                                </div>
+                                <div class="space-y-2 max-w-xs">
+                                    <h4 class="headline-font font-bold text-lg text-slate-800">Connection Lost</h4>
+                                    <p class="text-slate-500 text-sm font-body">Sales representative traveling between customer locations with zero cellular coverage.</p>
+                                </div>
+                                <!-- Signal strength drop indicators -->
+                                <div class="flex items-end justify-center gap-1.5 h-8 w-24">
+                                    <div class="w-3 h-2 bg-red-400 rounded-t-sm"></div>
+                                    <div class="w-3 h-4 bg-slate-200 rounded-t-sm"></div>
+                                    <div class="w-3 h-6 bg-slate-200 rounded-t-sm"></div>
+                                    <div class="w-3 h-8 bg-slate-200 rounded-t-sm"></div>
+                                    <span class="material-symbols-outlined text-red-500 text-sm font-extrabold ml-1">close</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Pain points list -->
+                    <div class="lg:col-span-6 order-1 lg:order-2 space-y-8 reveal-on-scroll">
+                        <div class="space-y-4">
+                            <span class="text-red-500 font-bold headline-font uppercase tracking-widest text-sm">The Vulnerability</span>
+                            <h2 class="headline-font text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
+                                Most Business Apps Stop Working When Connectivity Fails
+                            </h2>
+                        </div>
+                        
+                        <!-- Pain Point Cards -->
+                        <div class="space-y-3.5">
+                            <div class="group flex items-start gap-4 p-4 rounded-xl border border-slate-100 hover:border-red-100 hover:bg-red-50/20 transition-all duration-300">
+                                <span class="flex-shrink-0 h-8 w-8 rounded-lg bg-red-50 text-red-600 flex items-center justify-center font-bold">✕</span>
+                                <div class="space-y-0.5">
+                                    <h4 class="font-bold text-slate-800 group-hover:text-red-700 transition-colors">Can't create orders</h4>
+                                    <p class="text-slate-500 text-sm font-body">Field agents stand idle waiting for a page to load or a connection to sync.</p>
+                                </div>
+                            </div>
+                            <div class="group flex items-start gap-4 p-4 rounded-xl border border-slate-100 hover:border-red-100 hover:bg-red-50/20 transition-all duration-300">
+                                <span class="flex-shrink-0 h-8 w-8 rounded-lg bg-red-50 text-red-600 flex items-center justify-center font-bold">✕</span>
+                                <div class="space-y-0.5">
+                                    <h4 class="font-bold text-slate-800 group-hover:text-red-700 transition-colors">Collections get delayed</h4>
+                                    <p class="text-slate-500 text-sm font-body">Payment receipts and checks are held back, causing working capital inefficiencies.</p>
+                                </div>
+                            </div>
+                            <div class="group flex items-start gap-4 p-4 rounded-xl border border-slate-100 hover:border-red-100 hover:bg-red-50/20 transition-all duration-300">
+                                <span class="flex-shrink-0 h-8 w-8 rounded-lg bg-red-50 text-red-600 flex items-center justify-center font-bold">✕</span>
+                                <div class="space-y-0.5">
+                                    <h4 class="font-bold text-slate-800 group-hover:text-red-700 transition-colors">Transactions need re-entry later</h4>
+                                    <p class="text-slate-500 text-sm font-body">Forcing administrative staff to manually input paper orders back at the home office.</p>
+                                </div>
+                            </div>
+                            <div class="group flex items-start gap-4 p-4 rounded-xl border border-slate-100 hover:border-red-100 hover:bg-red-50/20 transition-all duration-300">
+                                <span class="flex-shrink-0 h-8 w-8 rounded-lg bg-red-50 text-red-600 flex items-center justify-center font-bold">✕</span>
+                                <div class="space-y-0.5">
+                                    <h4 class="font-bold text-slate-800 group-hover:text-red-700 transition-colors">Lost paperwork</h4>
+                                    <p class="text-slate-500 text-sm font-body">Handwritten orders and collections get misplaced, causing customer friction.</p>
+                                </div>
+                            </div>
+                            <div class="group flex items-start gap-4 p-4 rounded-xl border border-slate-100 hover:border-red-100 hover:bg-red-50/20 transition-all duration-300">
+                                <span class="flex-shrink-0 h-8 w-8 rounded-lg bg-red-50 text-red-600 flex items-center justify-center font-bold">✕</span>
+                                <div class="space-y-0.5">
+                                    <h4 class="font-bold text-slate-800 group-hover:text-red-700 transition-colors">Missed customer opportunities</h4>
+                                    <p class="text-slate-500 text-sm font-body">Competitors with responsive, offline-ready technology capture the account.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-2 border-t border-slate-100 text-slate-700 font-semibold italic flex items-center gap-2 font-body">
+                            <span class="material-symbols-outlined text-[#2e2e2e]">info</span>
+                            "Your sales team shouldn't have to wait for internet before they can do their job."
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: THE DATALYNKR DIFFERENCE (TIMELINE) -->
+        <section class="py-20 bg-slate-50 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                    <span class="text-[#2e2e2e] font-bold headline-font uppercase tracking-widest text-sm">Always-On Pipeline</span>
+                    <h2 class="headline-font text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        DataLynkr Doesn't Depend On Constant Connectivity
+                    </h2>
+                    <p class="text-slate-500 font-body text-base">
+                        Explore the automatic transaction workflow from field offline creation to centralized Tally integration.
+                    </p>
+                </div>
+                
+                <!-- Interactive horizontal workflow timeline -->
+                <div class="relative w-full overflow-x-auto pb-8 reveal-on-scroll">
+                    <!-- Connecting Line -->
+                    <div class="absolute top-[24px] left-[10%] right-[10%] h-[3px] bg-slate-200 -translate-y-[1.5px] hidden md:block">
+                        <div id="timeline-progress-line" class="h-full bg-gradient-to-r from-[#2e2e2e] to-[#F1C74B] w-[0%] transition-all duration-1000"></div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-4 md:min-w-[900px] px-4 relative z-20">
+                        <!-- Step 1 -->
+                        <div class="timeline-step flex-1 flex flex-col items-center text-center group" data-step="1">
+                            <div class="h-12 w-12 rounded-full bg-white border-2 border-slate-200 group-hover:border-[#2e2e2e] text-[#2e2e2e] group-hover:bg-[#2e2e2e]/5 transition-all duration-300 flex items-center justify-center font-bold shadow-sm mb-4 relative z-10">
+                                <span class="material-symbols-outlined">edit_note</span>
+                            </div>
+                            <span class="text-xs text-[#2e2e2e] font-bold uppercase tracking-wider mb-1">Step 1</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Create Transaction</h4>
+                            <p class="text-xs text-slate-500 font-body max-w-[150px] mt-1">Agent enters a new sales order or payment collection.</p>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="timeline-step flex-1 flex flex-col items-center text-center group" data-step="2">
+                            <div class="h-12 w-12 rounded-full bg-white border-2 border-slate-200 group-hover:border-[#2e2e2e] text-[#2e2e2e] group-hover:bg-[#2e2e2e]/5 transition-all duration-300 flex items-center justify-center font-bold shadow-sm mb-4 relative z-10">
+                                <span class="material-symbols-outlined">signal_wifi_off</span>
+                            </div>
+                            <span class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Step 2</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Device Goes Offline</h4>
+                            <p class="text-xs text-slate-500 font-body max-w-[150px] mt-1">Outage occurs or agent travels to a dead zone.</p>
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="timeline-step flex-1 flex flex-col items-center text-center group" data-step="3">
+                            <div class="h-12 w-12 rounded-full bg-white border-2 border-slate-200 group-hover:border-[#2e2e2e] text-[#2e2e2e] group-hover:bg-[#2e2e2e]/5 transition-all duration-300 flex items-center justify-center font-bold shadow-sm mb-4 relative z-10">
+                                <span class="material-symbols-outlined">security</span>
+                            </div>
+                            <span class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Step 3</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Stored Securely</h4>
+                            <p class="text-xs text-slate-500 font-body max-w-[150px] mt-1">Transaction is stored locally in encrypted device DB.</p>
+                        </div>
+                        
+                        <!-- Step 4 -->
+                        <div class="timeline-step flex-1 flex flex-col items-center text-center group" data-step="4">
+                            <div class="h-12 w-12 rounded-full bg-white border-2 border-slate-200 group-hover:border-[#2e2e2e] text-[#2e2e2e] group-hover:bg-[#2e2e2e]/5 transition-all duration-300 flex items-center justify-center font-bold shadow-sm mb-4 relative z-10">
+                                <span class="material-symbols-outlined">check_circle</span>
+                            </div>
+                            <span class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Step 4</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Continue Working</h4>
+                            <p class="text-xs text-slate-500 font-body max-w-[150px] mt-1">Create more entries with zero lag or application crashes.</p>
+                        </div>
+                        
+                        <!-- Step 5 -->
+                        <div class="timeline-step flex-1 flex flex-col items-center text-center group" data-step="5">
+                            <div class="h-12 w-12 rounded-full bg-white border-2 border-slate-200 group-hover:border-[#2e2e2e] text-[#2e2e2e] group-hover:bg-[#2e2e2e]/5 transition-all duration-300 flex items-center justify-center font-bold shadow-sm mb-4 relative z-10">
+                                <span class="material-symbols-outlined">wifi</span>
+                            </div>
+                            <span class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Step 5</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Connectivity Returns</h4>
+                            <p class="text-xs text-slate-500 font-body max-w-[150px] mt-1">Device automatically detects connection to the internet.</p>
+                        </div>
+                        
+                        <!-- Step 6 -->
+                        <div class="timeline-step flex-1 flex flex-col items-center text-center group" data-step="6">
+                            <div class="h-12 w-12 rounded-full bg-white border-2 border-slate-200 group-hover:border-[#2e2e2e] text-[#2e2e2e] group-hover:bg-[#2e2e2e]/5 transition-all duration-300 flex items-center justify-center font-bold shadow-sm mb-4 relative z-10">
+                                <span class="material-symbols-outlined">sync</span>
+                            </div>
+                            <span class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Step 6</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Auto Sync To Tally</h4>
+                            <p class="text-xs text-slate-500 font-body max-w-[150px] mt-1">Queued items upload safely in the background.</p>
+                        </div>
+                        
+                        <!-- Step 7 -->
+                        <div class="timeline-step flex-1 flex flex-col items-center text-center group" data-step="7">
+                            <div class="h-12 w-12 rounded-full bg-white border-2 border-slate-200 group-hover:border-[#2e2e2e] text-[#2e2e2e] group-hover:bg-[#2e2e2e]/5 transition-all duration-300 flex items-center justify-center font-bold shadow-sm mb-4 relative z-10">
+                                <span class="material-symbols-outlined">cloud_done</span>
+                            </div>
+                            <span class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Step 7</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Complete</h4>
+                            <p class="text-xs text-slate-500 font-body max-w-[150px] mt-1">Tally registers transactions perfectly with correct timestamps.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: INTERACTIVE QUEUE DEMONSTRATION -->
+        <section id="interactive-demo-section" class="py-20 bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 text-slate-800 relative overflow-hidden">
+            <div class="absolute inset-0 bg-grid-pattern opacity-30"></div>
+            
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                    <span class="text-[#2e2e2e] font-bold headline-font uppercase tracking-widest text-sm">Interactive Sandbox</span>
+                    <h2 class="headline-font text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        See Offline Queueing In Action
+                    </h2>
+                    <p class="text-slate-600 font-body text-base">
+                        Simulate connectivity loss, queue up several transactions, and watch them auto-drain and sync directly to Tally when connection is restored.
+                    </p>
+                </div>
+                
+                <!-- Simulated Devices Layout: Laptop on the left, Phone on the right -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-6xl mx-auto">
+                    
+                    <!-- LEFT: Laptop Mockup (Tally Server & Sync Admin) -->
+                    <div class="lg:col-span-7 xl:col-span-8 flex flex-col justify-center items-center">
+                        <div class="relative w-full max-w-3xl group">
+                            <div class="relative rounded-t-xl border-[6px] sm:border-[8px] md:border-[12px] border-zinc-900 bg-zinc-900 aspect-[16/10] overflow-hidden shadow-2xl">
+                                <div class="absolute inset-0 bg-slate-950 flex flex-col">
+                                    <div class="absolute inset-0 w-full h-full overflow-hidden">
+                                        <video width="1920" height="1200" id="sandbox-laptop-video" muted playsinline preload="metadata"
+                                            poster="/Hometest/resources/features/offline-transactions/poster_images/offline_laptop.webp"
+                                            class="w-full h-full object-cover">
+                                            <source src="/Hometest/resources/features/offline-transactions/videos/offline_laptop.mp4" type="video/mp4" />
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative h-2 sm:h-3 md:h-4 bg-zinc-800 rounded-b-xl w-[105%] -left-[2.5%] shadow-xl"></div>
+                            <div class="relative h-1 sm:h-1.5 md:h-2 bg-zinc-700/50 rounded-b-2xl w-[80%] mx-auto"></div>
+                        </div>
+                    </div>
+                    
+                     <!-- RIGHT: Phone Mockup (Field Agent Mobile App) -->
+                     <div class="lg:col-span-5 xl:col-span-4 flex flex-col justify-center items-center">
+                         <div class="w-full max-w-[280px] aspect-[9/19] bg-black rounded-2xl border-[12px] border-zinc-900 shadow-2xl relative overflow-hidden group">
+                             <video width="720" height="1600" id="sandbox-mobile-video" muted playsinline preload="metadata"
+                                 poster="/Hometest/resources/poster_images/offline.webp"
+                                 class="absolute inset-0 w-full h-full object-cover rounded-xl z-10">
+                                 <source src="/Hometest/resources/videos/offline.mp4" type="video/mp4" />
+                             </video>
+                         </div>
+                     </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: SUPPORTED OFFLINE TRANSACTIONS -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                    <span class="text-[#2e2e2e] font-bold headline-font uppercase tracking-widest text-sm">Supported Operations</span>
+                    <h2 class="headline-font text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        More Than Just Orders
+                    </h2>
+                    <p class="text-slate-500 font-body text-base">
+                        DataLynkr handles multiple Tally voucher categories completely offline. Capture any activity and let the engine sync when ready.
+                    </p>
+                </div>
+                
+                <!-- Modern card grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-on-scroll">
+                    <!-- Sales Orders -->
+                    <div class="group p-8 rounded-2xl border border-slate-100 hover:border-zinc-300 hover:shadow-lg transition-all duration-300 relative overflow-hidden bg-white">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-zinc-500 to-[#2e2e2e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        <div class="h-12 w-12 rounded-xl bg-zinc-100 text-[#2e2e2e] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <span class="material-symbols-outlined text-2xl">shopping_bag</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Sales Orders</h4>
+                        <p class="text-slate-500 text-sm font-body leading-relaxed">
+                            Take customer orders in the field. Add stock items, choose price lists, and set discounts completely offline.
+                        </p>
+                    </div>
+                    
+                    <!-- Sales Invoices -->
+                    <div class="group p-8 rounded-2xl border border-slate-100 hover:border-zinc-300 hover:shadow-lg transition-all duration-300 relative overflow-hidden bg-white">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-zinc-500 to-[#2e2e2e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        <div class="h-12 w-12 rounded-xl bg-zinc-100 text-[#2e2e2e] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <span class="material-symbols-outlined text-2xl">receipt_long</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Sales Invoices</h4>
+                        <p class="text-slate-500 text-sm font-body leading-relaxed">
+                            Generate immediate invoice drafts. Capture taxes, items sold, and dispatch details directly during customer delivery.
+                        </p>
+                    </div>
+                    
+                    <!-- Customer Collections -->
+                    <div class="group p-8 rounded-2xl border border-slate-100 hover:border-zinc-300 hover:shadow-lg transition-all duration-300 relative overflow-hidden bg-white">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-zinc-500 to-[#2e2e2e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        <div class="h-12 w-12 rounded-xl bg-zinc-100 text-[#2e2e2e] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <span class="material-symbols-outlined text-2xl">payments</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Customer Collections</h4>
+                        <p class="text-slate-500 text-sm font-body leading-relaxed">
+                            Log payments and collections immediately. Record checks, cash values, or digital reference receipts offline.
+                        </p>
+                    </div>
+                    
+                    <!-- B-Commerce Orders -->
+                    <div class="group p-8 rounded-2xl border border-slate-100 hover:border-zinc-300 hover:shadow-lg transition-all duration-300 relative overflow-hidden bg-white">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-zinc-500 to-[#2e2e2e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        <div class="h-12 w-12 rounded-xl bg-zinc-100 text-[#2e2e2e] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <span class="material-symbols-outlined text-2xl">store</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">B-Commerce Orders</h4>
+                        <p class="text-slate-500 text-sm font-body leading-relaxed">
+                            Maintain merchant portal access. Enable retailers to submit inventory replenishment tickets offline.
+                        </p>
+                    </div>
+                    
+                    <!-- Vendor Payments -->
+                    <div class="group p-8 rounded-2xl border border-slate-100 hover:border-zinc-300 hover:shadow-lg transition-all duration-300 relative overflow-hidden bg-white">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-zinc-500 to-[#2e2e2e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        <div class="h-12 w-12 rounded-xl bg-zinc-100 text-[#2e2e2e] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <span class="material-symbols-outlined text-2xl">account_balance_wallet</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Vendor Payments</h4>
+                        <p class="text-slate-500 text-sm font-body leading-relaxed">
+                            Record outward payments. Capture check disbursements and vendor deposits without network dependency.
+                        </p>
+                    </div>
+                    
+                    <!-- Expense Claims -->
+                    <div class="group p-8 rounded-2xl border border-slate-100 hover:border-zinc-300 hover:shadow-lg transition-all duration-300 relative overflow-hidden bg-white">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-zinc-500 to-[#2e2e2e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        <div class="h-12 w-12 rounded-xl bg-zinc-100 text-[#2e2e2e] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <span class="material-symbols-outlined text-2xl">rate_review</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Expense Claims</h4>
+                        <p class="text-slate-500 text-sm font-body leading-relaxed">
+                            Let field representatives log travel, food, and accommodation vouchers offline for instant syncing later.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: DESIGNED FOR REAL-WORLD FIELD TEAMS -->
+        <section class="py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                    <span class="text-[#2e2e2e] font-bold headline-font uppercase tracking-widest text-sm">Target Audience</span>
+                    <h2 class="headline-font text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        Designed For Real-World Field Teams
+                    </h2>
+                    <p class="text-slate-500 font-body text-base">
+                        DataLynkr optimizes daily operations for frontline business personas.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal-on-scroll">
+                    <!-- Persona 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                        <div class="space-y-4">
+                            <div class="h-10 w-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
+                                <span class="material-symbols-outlined">person</span>
+                            </div>
+                            <h4 class="font-bold text-slate-800 text-base">Sales Representatives</h4>
+                            <p class="text-slate-500 text-sm font-body">
+                                "Continue taking customer orders while traveling between locations."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center text-xs font-semibold text-indigo-600">
+                            Field Ordering <span class="material-symbols-outlined text-xs ml-1">arrow_forward</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Persona 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                        <div class="space-y-4">
+                            <div class="h-10 w-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                                <span class="material-symbols-outlined">agriculture</span>
+                            </div>
+                            <h4 class="font-bold text-slate-800 text-base">Rural Distribution Teams</h4>
+                            <p class="text-slate-500 text-sm font-body">
+                                "Operate confidently in low-connectivity regions."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center text-xs font-semibold text-emerald-600">
+                            Rural Logistics <span class="material-symbols-outlined text-xs ml-1">arrow_forward</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Persona 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                        <div class="space-y-4">
+                            <div class="h-10 w-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center">
+                                <span class="material-symbols-outlined">payments</span>
+                            </div>
+                            <h4 class="font-bold text-slate-800 text-base">Collection Executives</h4>
+                            <p class="text-slate-500 text-sm font-body">
+                                "Record payments immediately without waiting for signal."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center text-xs font-semibold text-amber-600">
+                            Cash & Check Sync <span class="material-symbols-outlined text-xs ml-1">arrow_forward</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Persona 4 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                        <div class="space-y-4">
+                            <div class="h-10 w-10 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center">
+                                <span class="material-symbols-outlined">dns</span>
+                            </div>
+                            <h4 class="font-bold text-slate-800 text-base">Businesses with Centralized Tally</h4>
+                            <p class="text-slate-500 text-sm font-body">
+                                "Keep operations moving even when the Tally system is temporarily unavailable."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center text-xs font-semibold text-rose-600">
+                            Database Buffer <span class="material-symbols-outlined text-xs ml-1">arrow_forward</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: ONLINE VS OFFLINE COMPARISON -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                    <span class="text-[#2e2e2e] font-bold headline-font uppercase tracking-widest text-sm">Feature Comparison</span>
+                    <h2 class="headline-font text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        Traditional Systems vs DataLynkr
+                    </h2>
+                    <p class="text-slate-500 font-body text-base">
+                        See how DataLynkr's offline architecture stacks up against legacy business tools.
+                    </p>
+                </div>
+                
+                <!-- Highly Visual Comparison Table -->
+                <div class="max-w-4xl mx-auto overflow-hidden rounded-2xl border border-slate-200 shadow-lg reveal-on-scroll">
+                    <table class="w-full text-left border-collapse bg-white">
+                        <thead>
+                            <tr class="bg-slate-50 border-b border-slate-200">
+                                <th class="p-5 font-bold text-slate-800 text-sm sm:text-base">Feature Capability</th>
+                                <th class="p-5 font-bold text-red-600 text-sm sm:text-base text-center">Traditional Systems</th>
+                                <th class="p-5 font-bold text-[#2e2e2e] text-sm sm:text-base text-center bg-zinc-50">DataLynkr</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 font-body text-sm text-slate-600">
+                            <tr>
+                                <td class="p-5 font-semibold text-slate-800">Internet Connection Dependency</td>
+                                <td class="p-5 text-center text-red-500 font-bold">Requires Constant Internet</td>
+                                <td class="p-5 text-center text-[#2e2e2e] font-bold bg-zinc-50">Works 100% Offline</td>
+                            </tr>
+                            <tr>
+                                <td class="p-5 font-semibold text-slate-800">Tally Connection Dependency</td>
+                                <td class="p-5 text-center text-red-500 font-bold">Requires Tally Connection</td>
+                                <td class="p-5 text-center text-[#2e2e2e] font-bold bg-zinc-50">Works Offline</td>
+                            </tr>
+                            <tr>
+                                <td class="p-5 font-semibold text-slate-800">Operational Downtime during Outages</td>
+                                <td class="p-5 text-center text-red-500 font-bold bg-white">
+                                    <div class="inline-flex justify-center items-center gap-1.5 w-full">
+                                        <span class="h-2 w-2 rounded-full bg-red-500 flex-shrink-0"></span>
+                                        <span>Work Stops Immediately</span>
+                                    </div>
+                                </td>
+                                <td class="p-5 text-center text-emerald-600 font-bold bg-zinc-50">
+                                    <div class="inline-flex justify-center items-center gap-1.5 w-full">
+                                        <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0"></span>
+                                        <span>Continue Operations Normally</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-5 font-semibold text-slate-800">Tally Voucher Data Synchronization</td>
+                                <td class="p-5 text-center text-red-500 font-bold">Manual Re-Entry</td>
+                                <td class="p-5 text-center text-emerald-600 font-bold bg-zinc-50">Automatic Background Sync</td>
+                            </tr>
+                            <tr>
+                                <td class="p-5 font-semibold text-slate-800">Security for Pending Transactions</td>
+                                <td class="p-5 text-center text-red-500 font-bold">High Risk of Data Loss</td>
+                                <td class="p-5 text-center text-emerald-600 font-bold bg-zinc-50">Secure Encrypted Queue</td>
+                            </tr>
+                            <tr>
+                                <td class="p-5 font-semibold text-slate-800">Field Customer Response Speed</td>
+                                <td class="p-5 text-center text-red-500 font-bold">Delayed Until Signal Found</td>
+                                <td class="p-5 text-center text-emerald-600 font-bold bg-zinc-50">Instant Client Invoicing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: RELIABILITY METRICS -->
+        <section class="py-20 bg-gradient-to-br from-[#2e2e2e] to-[#1c1c1c] text-white overflow-hidden relative">
+            <div class="absolute inset-0 bg-grid-pattern-dark opacity-10"></div>
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-8 relative z-10">
+                <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                    <span class="text-[#F1C74B] font-bold headline-font uppercase tracking-widest text-sm">Key Benchmarks</span>
+                    <h2 class="headline-font text-3xl sm:text-4xl font-extrabold">Engineered for absolute reliability</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center reveal-on-scroll">
+                    <!-- Metric 1 -->
+                    <div class="p-8 rounded-2xl bg-black border border-white/10 space-y-2">
+                        <div class="headline-font text-5xl font-extrabold text-[#F1C74B]"><span class="counter-num" data-target="100">0</span>%</div>
+                        <h4 class="font-bold text-base text-white">Transaction Retention</h4>
+                        <p class="text-xs text-slate-300 font-body">Not a single voucher lost in transmission.</p>
+                    </div>
+                    
+                    <!-- Metric 2 -->
+                    <div class="p-8 rounded-2xl bg-black border border-white/10 space-y-2">
+                        <div class="headline-font text-5xl font-extrabold text-[#F1C74B]"><span class="counter-num" data-target="0">0</span></div>
+                        <h4 class="font-bold text-base text-white">Manual Re-Entry</h4>
+                        <p class="text-xs text-slate-300 font-body">No second-hand admin work required.</p>
+                    </div>
+                    
+                    <!-- Metric 3 -->
+                    <div class="p-8 rounded-2xl bg-black border border-white/10 space-y-2">
+                        <div class="headline-font text-5xl font-extrabold text-[#F1C74B]">100%</div>
+                        <h4 class="font-bold text-base text-white">Background Sync</h4>
+                        <p class="text-xs text-slate-300 font-body">Automatically uploads when online.</p>
+                    </div>
+                    
+                    <!-- Metric 4 -->
+                    <div class="p-8 rounded-2xl bg-black border border-white/10 space-y-2">
+                        <div class="headline-font text-5xl font-extrabold text-[#F1C74B]">Web & Mobile</div>
+                        <h4 class="font-bold text-base text-white">Multi-Device</h4>
+                        <p class="text-xs text-slate-300 font-body">Works seamlessly across all platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: KEY BENEFITS -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                    <span class="text-[#2e2e2e] font-bold headline-font uppercase tracking-widest text-sm">Key Benefits</span>
+                    <h2 class="headline-font text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        Why Choose DataLynkr's Offline Capability?
+                    </h2>
+                    <p class="text-slate-500 font-body text-base">
+                        Deliver a premium, uninterrupted field experience with our robust sync technology.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-on-scroll">
+                    <!-- Benefit 1 -->
+                    <div class="p-6 rounded-xl border border-slate-100 hover:border-slate-200 transition-all flex gap-4">
+                        <div class="h-10 w-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined">shopping_bag</span>
+                        </div>
+                        <div class="space-y-1.5">
+                            <h4 class="font-bold text-slate-800 text-base">Never Miss A Sale</h4>
+                            <p class="text-slate-500 text-sm font-body leading-relaxed">
+                                Continue creating transactions wherever business happens, regardless of network strength.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Benefit 2 -->
+                    <div class="p-6 rounded-xl border border-slate-100 hover:border-slate-200 transition-all flex gap-4">
+                        <div class="h-10 w-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined">autorenew</span>
+                        </div>
+                        <div class="space-y-1.5">
+                            <h4 class="font-bold text-slate-800 text-base">Eliminate Double Entry</h4>
+                            <p class="text-slate-500 text-sm font-body leading-relaxed">
+                                Data syncs automatically once connectivity returns. No manual voucher typing back in office.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Benefit 3 -->
+                    <div class="p-6 rounded-xl border border-slate-100 hover:border-slate-200 transition-all flex gap-4">
+                        <div class="h-10 w-10 rounded-lg bg-zinc-100 text-zinc-600 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined">shield</span>
+                        </div>
+                        <div class="space-y-1.5">
+                            <h4 class="font-bold text-slate-800 text-base">Protect Transaction Data</h4>
+                            <p class="text-slate-500 text-sm font-body leading-relaxed">
+                                Queued transactions remain safely stored on the device until verified and synchronized.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Benefit 4 -->
+                    <div class="p-6 rounded-xl border border-slate-100 hover:border-slate-200 transition-all flex gap-4">
+                        <div class="h-10 w-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined">groups</span>
+                        </div>
+                        <div class="space-y-1.5">
+                            <h4 class="font-bold text-slate-800 text-base">Empower Field Teams</h4>
+                            <p class="text-slate-500 text-sm font-body leading-relaxed">
+                                Allow employees to work confidently regardless of network conditions or cell coverage dead zones.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Benefit 5 -->
+                    <div class="p-6 rounded-xl border border-slate-100 hover:border-slate-200 transition-all flex gap-4">
+                        <div class="h-10 w-10 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined">schedule</span>
+                        </div>
+                        <div class="space-y-1.5">
+                            <h4 class="font-bold text-slate-800 text-base">Reduce Operational Delays</h4>
+                            <p class="text-slate-500 text-sm font-body leading-relaxed">
+                                Business processes continue uninterrupted, avoiding back-office bottlenecks.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Benefit 6 -->
+                    <div class="p-6 rounded-xl border border-slate-100 hover:border-slate-200 transition-all flex gap-4">
+                        <div class="h-10 w-10 rounded-lg bg-teal-50 text-teal-600 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined">cloud_queue</span>
+                        </div>
+                        <div class="space-y-1.5">
+                            <h4 class="font-bold text-slate-800 text-base">Built For Real-World Conditions</h4>
+                            <p class="text-slate-500 text-sm font-body leading-relaxed">
+                                Designed specifically for mobile sales, collection distribution, and outdoor logistics teams.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 10: FINAL CTA (DARK CONTRASTING SECTION WITH FLOW ANIMATION) -->
+        <section class="relative bg-gradient-to-br from-[#2e2e2e] to-[#1d1d1d] text-white py-24 overflow-hidden border-t border-zinc-800">
+            <!-- Flowing Transaction Particles Background -->
+            <div class="absolute inset-0 z-0">
+                <svg class="w-full h-full opacity-15" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#F1C74B" />
+                            <stop offset="100%" stop-color="#1d1d1d" stop-opacity="0" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Flow Paths -->
+                    <path d="M 100 600 Q 300 400 800 200" fill="none" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="10 5" class="animate-[dash_20s_linear_infinite]" />
+                    <path d="M 200 700 Q 500 300 800 200" fill="none" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="10 5" class="animate-[dash_15s_linear_infinite]" />
+                    <path d="M 600 700 Q 700 450 800 200" fill="none" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="10 5" class="animate-[dash_12s_linear_infinite]" />
+                </svg>
+                
+                <!-- Floating device icons -->
+                <div class="absolute bottom-12 left-12 h-10 w-10 rounded bg-[#F1C74B]/20 text-[#F1C74B] flex items-center justify-center animate-bounce duration-1000">
+                    <span class="material-symbols-outlined text-xl">phone_iphone</span>
+                </div>
+                <div class="absolute bottom-20 right-24 h-12 w-12 rounded bg-[#F1C74B]/20 text-[#F1C74B] flex items-center justify-center animate-bounce duration-1000 delay-300">
+                    <span class="material-symbols-outlined text-xl">laptop_mac</span>
+                </div>
+            </div>
+
+            
+
+            <div class="max-w-4xl mx-auto text-center px-6 md:px-12 lg:px-8 relative z-10 space-y-8">
+                <h2 class="headline-font text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+                    Connectivity Problems Shouldn't Slow Down Your Business
+                </h2>
+                <p class="font-body text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                    Whether your team loses internet access or your Tally system is temporarily unavailable, DataLynkr keeps business moving and automatically synchronizes everything when connections are restored.
+                </p>
+                
+                <div class="pt-6 flex flex-col sm:flex-row justify-center gap-4 items-center">
+                    <a href="/Hometest/contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#F1C74B] text-[#0F1D44] px-8 py-4 rounded-full font-bold hover:bg-white hover:text-slate-900 transition-all shadow-xl hover:-translate-y-0.5 active:scale-95 duration-300">
+                        <span>Book a Demo</span>
+                        <span class="material-symbols-outlined text-lg">calendar_today</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        
+
+    </main>
+    <!-- Footer Component -->
+    22:Tbf2,
+        body {
+            font-family: 'Wix Madefor Text', sans-serif;
+            background-color: #ffffff !important;
+        }
+
+        .headline-font {
+            font-family: 'Wix Madefor Display', sans-serif;
+        }
+
+        #features-flyout.active {
+            transform: translateX(0) !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .glass-panel-dark {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Gradient background animations */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(31, 58, 137, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(31, 58, 137, 0.04) 1px, transparent 1px);
+        }
+
+        .bg-grid-pattern-dark {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.35; transform: scale(1.05); }
+        }
+
+        .animate-pulse-slow {
+            animation: pulse-slow 8s infinite ease-in-out;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Glowing effect */
+        .glow-gray {
+            box-shadow: 0 0 30px rgba(46, 46, 46, 0.15);
+        }
+        .glow-amber {
+            box-shadow: 0 0 30px rgba(241, 199, 75, 0.25);
+        }
+    
+        /* Fix for mobile/laptop mockup video overflow/clipping bugs in Safari/WebKit */
+        [class*="aspect-[9/19]"], [class*="aspect-[16/10]"] {
+            transform: translateZ(0);
+            isolation: isolate;
+        }23:T8fa9,document.addEventListener('DOMContentLoaded', () => {
+            // ==========================================
+            // Scroll Animation Observer (Retained)
+            // ==========================================
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        
+                        // If it's Section 3, trigger progress line animation
+                        if(entry.target.classList.contains('timeline-step')) {
+                            const stepNum = parseInt(entry.target.getAttribute('data-step') || '0');
+                            const percentage = Math.min(100, Math.round(((stepNum - 1) / 6) * 100));
+                            const progressLine = document.getElementById('timeline-progress-line');
+                            if (progressLine) {
+                                progressLine.style.width = percentage + '%';
+                            }
+                        }
+
+                        // If it's statistics section, trigger numbers
+                        if(entry.target.querySelector('.counter-num')) {
+                            triggerStatsCounters();
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-on-scroll, .timeline-step').forEach((el) => {
+                observer.observe(el);
+            });
+
+            // ==========================================
+            // Counter Numbers Animation
+            // ==========================================
+            let statsTriggered = false;
+            function triggerStatsCounters() {
+                if (statsTriggered) return;
+                statsTriggered = true;
+                document.querySelectorAll('.counter-num').forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target') || '0');
+                    if (target === 0) return; // stays 0
+                    
+                    let current = 0;
+                    const increment = Math.ceil(target / 50);
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            counter.innerText = target;
+                            clearInterval(timer);
+                        } else {
+                            counter.innerText = current;
+                        }
+                    }, 30);
+                });
+            }
+
+            // ==========================================
+            // Hero Section: Mockup state loops
+            // ==========================================
+            const heroStateBadges = {
+                online: document.getElementById('hero-badge-online'),
+                offline: document.getElementById('hero-badge-offline'),
+                syncing: document.getElementById('hero-badge-syncing'),
+                synced: document.getElementById('hero-badge-synced')
+            };
+            const laptopScreen = document.getElementById('laptop-screen');
+            const laptopNetStatus = document.getElementById('laptop-net-status');
+            const laptopQueueCount = document.getElementById('laptop-queue-count');
+            const laptopRows = document.getElementById('laptop-rows');
+
+            const mobileScreen = document.getElementById('mobile-screen');
+            const mobileNetIcon = document.getElementById('mobile-net-icon');
+            const mobileBadgeNet = document.getElementById('mobile-badge-net');
+            const mobileQueueBadge = document.getElementById('mobile-queue-badge');
+            const mobileActionPane = document.getElementById('mobile-action-pane');
+            const mobileMainHeading = document.getElementById('mobile-main-heading');
+            const mobileMainText = document.getElementById('mobile-main-text');
+            const mobileList = document.getElementById('mobile-list');
+
+            const heroStates = ['ONLINE', 'OFFLINE', 'QUEUEING', 'SYNCING', 'SYNCED'];
+            let currentHeroState = 0;
+
+            function highlightHeroBadge(activeKey) {
+                Object.keys(heroStateBadges).forEach(key => {
+                    if (heroStateBadges[key]) {
+                        if (key === activeKey) {
+                            heroStateBadges[key].classList.remove('opacity-40');
+                            heroStateBadges[key].classList.add('opacity-100', 'glow-gray', 'scale-105');
+                        } else {
+                            heroStateBadges[key].classList.add('opacity-40');
+                            heroStateBadges[key].classList.remove('glow-gray', 'scale-105');
+                        }
+                    }
+                });
+            }
+
+            function updateHeroDevices() {
+                const state = heroStates[currentHeroState];
+
+                if (state === 'ONLINE') {
+                    highlightHeroBadge('online');
+                    
+                    // Laptop Update
+                    if (laptopScreen) laptopScreen.classList.remove('grayscale', 'brightness-90');
+                    if (laptopNetStatus) {
+                        laptopNetStatus.className = "px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-semibold text-[10px] uppercase flex items-center gap-1";
+                        laptopNetStatus.innerHTML = `<span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Online`;
+                    }
+                    if (laptopQueueCount) laptopQueueCount.innerText = "0";
+                    if (laptopRows) {
+                        laptopRows.innerHTML = `
+                            <div class="p-2 bg-slate-50 border border-slate-100 rounded flex items-center justify-between animate-pulse">
+                                <div class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-slate-400 text-sm">receipt_long</span>
+                                    <span class="font-semibold text-slate-700">Sales Order #1021</span>
+                                </div>
+                                <span class="text-emerald-600 font-bold flex items-center gap-0.5"><span class="material-symbols-outlined text-xs">check_circle</span> Synced</span>
+                            </div>
+                            <div class="p-2 bg-slate-50 border border-slate-100 rounded flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-slate-400 text-sm">payments</span>
+                                    <span class="font-semibold text-slate-700">Collection #809</span>
+                                </div>
+                                <span class="text-emerald-600 font-bold flex items-center gap-0.5"><span class="material-symbols-outlined text-xs">check_circle</span> Synced</span>
+                            </div>
+                        `;
+                    }
+
+                    // Mobile Update
+                    if (mobileScreen) mobileScreen.classList.remove('grayscale', 'brightness-90');
+                    if (mobileNetIcon) {
+                        mobileNetIcon.innerText = "wifi";
+                        mobileNetIcon.className = "material-symbols-outlined text-[10px] text-emerald-400";
+                    }
+                    if (mobileBadgeNet) {
+                        mobileBadgeNet.className = "px-1.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-[7px] uppercase";
+                        mobileBadgeNet.innerText = "Online";
+                    }
+                    if (mobileQueueBadge) mobileQueueBadge.innerText = "0";
+                    if (mobileActionPane) {
+                        mobileActionPane.innerHTML = `
+                            <span class="material-symbols-outlined text-emerald-500 text-base">cloud_done</span>
+                            <span class="font-bold text-[9px] text-slate-800">Tally Connected</span>
+                            <p class="text-[7px] text-slate-400">Waiting for next action...</p>
+                        `;
+                    }
+                    if (mobileList) {
+                        mobileList.innerHTML = `
+                            <div class="p-1.5 bg-white border border-slate-100 rounded flex justify-between items-center shadow-xs">
+                                <span class="font-semibold text-slate-700">Order #1021</span>
+                                <span class="text-emerald-500 font-bold flex items-center gap-0.5"><span class="material-symbols-outlined text-[8px]">check</span> Synced</span>
+                            </div>
+                        `;
+                    }
+
+                } else if (state === 'OFFLINE') {
+                    highlightHeroBadge('offline');
+
+                    // Laptop Update: Signal drop & Grayscale
+                    if (laptopScreen) laptopScreen.classList.add('grayscale', 'brightness-90');
+                    if (laptopNetStatus) {
+                        laptopNetStatus.className = "px-2 py-0.5 rounded-full bg-red-500/20 text-red-300 font-semibold text-[10px] uppercase flex items-center gap-1";
+                        laptopNetStatus.innerHTML = `<span class="h-1.5 w-1.5 rounded-full bg-red-400"></span>Offline`;
+                    }
+
+                    // Mobile Update: Grayscale
+                    if (mobileScreen) mobileScreen.classList.add('grayscale', 'brightness-90');
+                    if (mobileNetIcon) {
+                        mobileNetIcon.innerText = "signal_wifi_off";
+                        mobileNetIcon.className = "material-symbols-outlined text-[10px] text-red-400";
+                    }
+                    if (mobileBadgeNet) {
+                        mobileBadgeNet.className = "px-1.5 py-0.5 rounded-full bg-red-500/20 text-red-300 font-bold text-[7px] uppercase";
+                        mobileBadgeNet.innerText = "Offline";
+                    }
+                    if (mobileActionPane) {
+                        mobileActionPane.innerHTML = `
+                            <span class="material-symbols-outlined text-red-500 text-base">wifi_off</span>
+                            <span class="font-bold text-[9px] text-slate-800">Connection Failed</span>
+                            <p class="text-[7px] text-slate-400">Autosave active. Safe to create data.</p>
+                        `;
+                    }
+
+                } else if (state === 'QUEUEING') {
+                    // Laptop Queue count rises
+                    if (laptopQueueCount) laptopQueueCount.innerText = "2";
+                    if (laptopRows) {
+                        laptopRows.innerHTML = `
+                            <div class="p-2 bg-slate-50 border border-amber-300 rounded flex items-center justify-between animate-pulse">
+                                <div class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-amber-500 text-sm">schedule</span>
+                                    <span class="font-semibold text-slate-700">Sales Order #1022</span>
+                                </div>
+                                <span class="text-amber-600 font-bold flex items-center gap-0.5">Pending</span>
+                            </div>
+                            <div class="p-2 bg-slate-50 border border-amber-300 rounded flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-amber-500 text-sm">schedule</span>
+                                    <span class="font-semibold text-slate-700">Invoice #1023</span>
+                                </div>
+                                <span class="text-amber-600 font-bold flex items-center gap-0.5">Pending</span>
+                            </div>
+                        `;
+                    }
+
+                    // Mobile queues transactions
+                    if (mobileQueueBadge) mobileQueueBadge.innerText = "2";
+                    if (mobileActionPane) {
+                        mobileActionPane.innerHTML = `
+                            <span class="material-symbols-outlined text-amber-500 text-base">hourglass_top</span>
+                            <span class="font-bold text-[9px] text-slate-800">Adding Transactions</span>
+                            <p class="text-[7px] text-slate-400">Orders saved to offline storage.</p>
+                        `;
+                    }
+                    if (mobileList) {
+                        mobileList.innerHTML = `
+                            <div class="p-1.5 bg-white border border-amber-200 rounded flex justify-between items-center shadow-xs animate-pulse">
+                                <span class="font-semibold text-slate-700">Order #1022</span>
+                                <span class="text-amber-500 font-bold flex items-center gap-0.5"><span class="material-symbols-outlined text-[8px]">hourglass_empty</span> Queue</span>
+                            </div>
+                            <div class="p-1.5 bg-white border border-amber-200 rounded flex justify-between items-center shadow-xs">
+                                <span class="font-semibold text-slate-700">Invoice #1023</span>
+                                <span class="text-amber-500 font-bold flex items-center gap-0.5"><span class="material-symbols-outlined text-[8px]">hourglass_empty</span> Queue</span>
+                            </div>
+                        `;
+                    }
+
+                } else if (state === 'SYNCING') {
+                    highlightHeroBadge('syncing');
+
+                    // Turn off grayscale
+                    if (laptopScreen) laptopScreen.classList.remove('grayscale', 'brightness-90');
+                    if (mobileScreen) mobileScreen.classList.remove('grayscale', 'brightness-90');
+
+                    // Laptop Syncing
+                    if (laptopNetStatus) {
+                        laptopNetStatus.className = "px-2 py-0.5 rounded-full bg-zinc-500/20 text-zinc-300 font-semibold text-[10px] uppercase flex items-center gap-1";
+                        laptopNetStatus.innerHTML = `<span class="h-1.5 w-1.5 rounded-full bg-zinc-400 animate-ping"></span>Syncing`;
+                    }
+                    if (laptopQueueCount) laptopQueueCount.innerText = "1";
+ 
+                    // Mobile Syncing
+                    if (mobileNetIcon) {
+                        mobileNetIcon.innerText = "sync";
+                        mobileNetIcon.className = "material-symbols-outlined text-[10px] text-zinc-400 animate-spin";
+                    }
+                    if (mobileBadgeNet) {
+                        mobileBadgeNet.className = "px-1.5 py-0.5 rounded-full bg-zinc-500/20 text-zinc-300 font-bold text-[7px] uppercase";
+                        mobileBadgeNet.innerText = "Syncing";
+                    }
+                    if (mobileQueueBadge) mobileQueueBadge.innerText = "1";
+                    if (mobileActionPane) {
+                        mobileActionPane.innerHTML = `
+                            <span class="material-symbols-outlined text-zinc-400 text-base animate-spin">sync</span>
+                            <span class="font-bold text-[9px] text-slate-800">Synchronizing...</span>
+                            <p class="text-[7px] text-slate-400">Pushing vouchers to Tally server.</p>
+                        `;
+                    }
+
+                } else if (state === 'SYNCED') {
+                    highlightHeroBadge('synced');
+
+                    // Laptop Synced
+                    if (laptopNetStatus) {
+                        laptopNetStatus.className = "px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-semibold text-[10px] uppercase flex items-center gap-1";
+                        laptopNetStatus.innerHTML = `<span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Online`;
+                    }
+                    if (laptopQueueCount) laptopQueueCount.innerText = "0";
+                    if (laptopRows) {
+                        laptopRows.innerHTML = `
+                            <div class="p-2 bg-emerald-50 border border-emerald-100 rounded flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-emerald-500 text-sm">receipt_long</span>
+                                    <span class="font-semibold text-slate-700">Sales Order #1022</span>
+                                </div>
+                                <span class="text-emerald-600 font-bold flex items-center gap-0.5"><span class="material-symbols-outlined text-xs">check_circle</span> Synced</span>
+                            </div>
+                            <div class="p-2 bg-emerald-50 border border-emerald-100 rounded flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-emerald-500 text-sm">receipt_long</span>
+                                    <span class="font-semibold text-slate-700">Invoice #1023</span>
+                                </div>
+                                <span class="text-emerald-600 font-bold flex items-center gap-0.5"><span class="material-symbols-outlined text-xs">check_circle</span> Synced</span>
+                            </div>
+                        `;
+                    }
+
+                    // Mobile Synced
+                    if (mobileNetIcon) {
+                        mobileNetIcon.innerText = "wifi";
+                        mobileNetIcon.className = "material-symbols-outlined text-[10px] text-emerald-400";
+                    }
+                    if (mobileBadgeNet) {
+                        mobileBadgeNet.className = "px-1.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-[7px] uppercase";
+                        mobileBadgeNet.innerText = "Online";
+                    }
+                    if (mobileQueueBadge) mobileQueueBadge.innerText = "0";
+                    if (mobileActionPane) {
+                        mobileActionPane.innerHTML = `
+                            <span class="material-symbols-outlined text-emerald-500 text-base">cloud_done</span>
+                            <span class="font-bold text-[9px] text-slate-800">Vouchers Synced</span>
+                            <p class="text-[7px] text-slate-400">Device databases matched completely.</p>
+                        `;
+                    }
+                    if (mobileList) {
+                        mobileList.innerHTML = `
+                            <div class="p-1.5 bg-emerald-50 border border-emerald-100 rounded flex justify-between items-center shadow-xs">
+                                <span class="font-semibold text-slate-700">Order #1022</span>
+                                <span class="text-emerald-500 font-bold flex items-center gap-0.5"><span class="material-symbols-outlined text-[8px]">check</span> Synced</span>
+                            </div>
+                            <div class="p-1.5 bg-emerald-50 border border-emerald-100 rounded flex justify-between items-center shadow-xs">
+                                <span class="font-semibold text-slate-700">Invoice #1023</span>
+                                <span class="text-emerald-500 font-bold flex items-center gap-0.5"><span class="material-symbols-outlined text-[8px]">check</span> Synced</span>
+                            </div>
+                        `;
+                    }
+                }
+            }
+
+            // Loop state machine
+            updateHeroDevices();
+            setInterval(() => {
+                currentHeroState = (currentHeroState + 1) % heroStates.length;
+                updateHeroDevices();
+            }, 3500);
+
+            // ==========================================
+            // Section 4: Interactive Queue Demo
+            // ==========================================
+            const networkToggleSwitch = document.getElementById('network-toggle-switch');
+            const switchThumb = document.getElementById('switch-thumb');
+            const toggleStateLabel = document.getElementById('toggle-state-label');
+            const simNetBadge = document.getElementById('sim-net-badge');
+            const simWifiIcon = document.getElementById('sim-wifi-icon');
+            const simQueueCount = document.getElementById('sim-queue-count');
+            const simEmptyState = document.getElementById('sim-empty-state');
+            const simTransactionsContainer = document.getElementById('sim-transactions-container');
+            const simSyncStatusIndicator = document.getElementById('sim-sync-status-indicator');
+            const sandboxLog = document.getElementById('sandbox-log');
+
+            const btnCreateOrder = document.getElementById('btn-create-order');
+            const btnCreateInvoice = document.getElementById('btn-create-invoice');
+            const btnCreateCollection = document.getElementById('btn-create-collection');
+
+            let isOnline = true;
+            let pendingQueue = [];
+
+            function updateSandboxUI() {
+                if (!networkToggleSwitch) return;
+                if (isOnline) {
+                    networkToggleSwitch.className = "w-11 h-6 bg-emerald-500 rounded-full p-0.5 transition-colors duration-300 focus:outline-none flex items-center";
+                    if (switchThumb) switchThumb.className = "h-5 w-5 bg-white rounded-full shadow-md transform translate-x-5 transition-transform duration-300";
+                    if (toggleStateLabel) {
+                        toggleStateLabel.innerHTML = `ONLINE`;
+                        toggleStateLabel.className = "text-xs font-bold text-emerald-400";
+                    }
+
+                    if (simNetBadge) {
+                        simNetBadge.className = "px-1.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-[8px] uppercase";
+                        simNetBadge.innerText = "ONLINE";
+                    }
+                    if (simWifiIcon) {
+                        simWifiIcon.innerText = "wifi";
+                        simWifiIcon.className = "material-symbols-outlined text-xs text-emerald-400";
+                    }
+                    if (simSyncStatusIndicator) {
+                        simSyncStatusIndicator.innerHTML = `<span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Online`;
+                        simSyncStatusIndicator.className = "px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-bold uppercase text-[9px] flex items-center gap-1";
+                    }
+                } else {
+                    networkToggleSwitch.className = "w-11 h-6 bg-slate-700 rounded-full p-0.5 transition-colors duration-300 focus:outline-none flex items-center";
+                    if (switchThumb) switchThumb.className = "h-5 w-5 bg-white rounded-full shadow-md transform translate-x-0 transition-transform duration-300";
+                    if (toggleStateLabel) {
+                        toggleStateLabel.innerHTML = `OFFLINE`;
+                        toggleStateLabel.className = "text-xs font-bold text-red-400";
+                    }
+
+                    if (simNetBadge) {
+                        simNetBadge.className = "px-1.5 py-0.5 rounded-full bg-red-500/20 text-red-300 font-bold text-[8px] uppercase";
+                        simNetBadge.innerText = "OFFLINE";
+                    }
+                    if (simWifiIcon) {
+                        simWifiIcon.innerText = "signal_wifi_off";
+                        simWifiIcon.className = "material-symbols-outlined text-xs text-red-400";
+                    }
+                    if (simSyncStatusIndicator) {
+                        simSyncStatusIndicator.innerHTML = `<span class="h-1.5 w-1.5 rounded-full bg-red-400"></span>Offline`;
+                        simSyncStatusIndicator.className = "px-2 py-0.5 rounded-full bg-red-500/10 text-red-400 font-bold uppercase text-[9px] flex items-center gap-1";
+                    }
+                }
+            }
+
+            function triggerSyncAnimation() {
+                if (!networkToggleSwitch) return;
+                if (pendingQueue.length === 0) return;
+                
+                if (sandboxLog) sandboxLog.innerText = `Connectivity restored. Triggering automatic background upload...`;
+                if (simSyncStatusIndicator) {
+                    simSyncStatusIndicator.innerHTML = `<span class="h-1.5 w-1.5 rounded-full bg-zinc-400 animate-ping"></span>Syncing`;
+                    simSyncStatusIndicator.className = "px-2 py-0.5 rounded-full bg-zinc-500/10 text-zinc-400 font-bold uppercase text-[9px] flex items-center gap-1";
+                }
+
+                let index = 0;
+                const syncTimer = setInterval(() => {
+                    if (index < pendingQueue.length) {
+                        const txId = pendingQueue[index].id;
+                        const txEl = document.getElementById(`sim-tx-${txId}`);
+                        if (txEl) {
+                            txEl.classList.remove('border-amber-500/80', 'bg-amber-500/5', 'animate-pulse');
+                            txEl.classList.add('border-slate-800', 'bg-slate-900/50');
+                            const badge = txEl.querySelector('.status-badge');
+                            if (badge) {
+                                badge.innerText = "Synced";
+                                badge.className = "status-badge px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold font-mono text-[9px]";
+                            }
+                        }
+                        
+                        // Add to Tally feed table on sync
+                        const item = pendingQueue[index];
+                        let iconName = 'receipt';
+                        if(item.type === 'order') iconName = 'shopping_bag';
+                        if(item.type === 'collection') iconName = 'payments';
+
+                        const laptopRowHtml = `
+                            <tr class="border-b border-slate-900 transition-all duration-500 bg-emerald-500/5 animate-pulse">
+                                <td class="py-2 flex items-center gap-1 text-slate-300"><span class="material-symbols-outlined text-sm text-emerald-400">${iconName}</span> ${item.label}</td>
+                                <td class="py-2">${item.idText}</td>
+                                <td class="py-2 text-right text-emerald-400 font-bold">✅ Synced</td>
+                            </tr>
+                        `;
+                        const laptopRowsEl = document.getElementById('laptop-tally-rows');
+                        if (laptopRowsEl) {
+                            laptopRowsEl.insertAdjacentHTML('afterbegin', laptopRowHtml);
+                        }
+
+                        index++;
+                        if (simQueueCount) simQueueCount.innerText = (pendingQueue.length - index).toString();
+                        if (sandboxLog) sandboxLog.innerText = `Synchronized ${index} of ${pendingQueue.length} records to Tally.`;
+                    } else {
+                        clearInterval(syncTimer);
+                        if (sandboxLog) sandboxLog.innerText = `Auto-Sync successful. All ${pendingQueue.length} vouchers pushed to Tally Prime.`;
+                        pendingQueue = [];
+                        if (simQueueCount) simQueueCount.innerText = "0";
+                        if (simSyncStatusIndicator) {
+                            simSyncStatusIndicator.innerHTML = `<span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Online`;
+                            simSyncStatusIndicator.className = "px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-bold uppercase text-[9px] flex items-center gap-1";
+                        }
+                    }
+                }, 800);
+            }
+
+            if (networkToggleSwitch) {
+                networkToggleSwitch.addEventListener('click', () => {
+                    isOnline = !isOnline;
+                    updateSandboxUI();
+                    if (isOnline && pendingQueue.length > 0) {
+                        triggerSyncAnimation();
+                    } else {
+                        sandboxLog.innerText = isOnline ? `System online. Listening for local transactions.` : `Network lost. Queue mode is now active.`;
+                    }
+                });
+            }
+
+            function addTransactionToSimulator(type, label, idText) {
+                if (!networkToggleSwitch) return;
+                // Remove empty state
+                if (simEmptyState) simEmptyState.classList.add('hidden');
+                if (simTransactionsContainer) simTransactionsContainer.classList.remove('hidden');
+
+                const txId = Date.now();
+                const txObj = { id: txId, type, label, idText, synced: isOnline };
+                
+                let borderCol = isOnline ? 'border-slate-800 bg-slate-900/50' : 'border-amber-500/80 bg-amber-500/5 animate-pulse';
+                let statusText = isOnline ? 'Synced' : 'Queue';
+                let badgeClass = isOnline ? 'bg-emerald-500/20 text-emerald-400' : 'bg-amber-500/20 text-amber-400';
+                let iconName = 'receipt';
+                if(type === 'order') iconName = 'shopping_bag';
+                if(type === 'collection') iconName = 'payments';
+
+                const newTxHtml = `
+                    <div id="sim-tx-${txId}" class="p-3 rounded-lg border ${borderCol} flex justify-between items-center transition-all duration-500">
+                        <div class="flex items-center gap-2.5">
+                            <span class="material-symbols-outlined text-slate-400 text-base">${iconName}</span>
+                            <div>
+                                <h5 class="font-bold text-slate-200 text-xs">${label}</h5>
+                                <span class="text-[9px] text-slate-500 font-mono">${idText}</span>
+                            </div>
+                        </div>
+                        <span class="status-badge px-2 py-0.5 rounded ${badgeClass} font-bold font-mono text-[9px]">${statusText}</span>
+                    </div>
+                `;
+
+                if (simTransactionsContainer) simTransactionsContainer.insertAdjacentHTML('afterbegin', newTxHtml);
+
+                if (!isOnline) {
+                    pendingQueue.push(txObj);
+                    if (simQueueCount) simQueueCount.innerText = pendingQueue.length.toString();
+                    if (sandboxLog) sandboxLog.innerText = `Captured ${label} in offline queue. Storage remains buffered.`;
+                } else {
+                    if (sandboxLog) sandboxLog.innerText = `Instantly pushed ${label} directly to Tally Prime over active connection.`;
+                    
+                    // Add row immediately to Tally server laptop view
+                    const laptopRowHtml = `
+                        <tr class="border-b border-slate-900">
+                            <td class="py-2 flex items-center gap-1 text-slate-300"><span class="material-symbols-outlined text-sm text-emerald-400">${iconName}</span> ${label}</td>
+                            <td class="py-2">${idText}</td>
+                            <td class="py-2 text-right text-emerald-400 font-bold">✅ Synced</td>
+                        </tr>
+                    `;
+                    const laptopRowsEl = document.getElementById('laptop-tally-rows');
+                    if (laptopRowsEl) {
+                        laptopRowsEl.insertAdjacentHTML('afterbegin', laptopRowHtml);
+                    }
+                }
+            }
+
+            if (btnCreateOrder) {
+                btnCreateOrder.addEventListener('click', () => {
+                    addTransactionToSimulator('order', 'Sales Order', 'SO-1024');
+                });
+            }
+            if (btnCreateInvoice) {
+                btnCreateInvoice.addEventListener('click', () => {
+                    addTransactionToSimulator('invoice', 'Sales Invoice', 'INV-1025');
+                });
+            }
+            if (btnCreateCollection) {
+                btnCreateCollection.addEventListener('click', () => {
+                    addTransactionToSimulator('collection', 'Customer Collection', 'COL-1026');
+                });
+            }
+
+            // ==========================================
+            // Synchronized Video Playback Logic
+            // ==========================================
+            const setupSynchronizedPlayback = (videoMobile, videoLaptop) => {
+                if (!videoMobile || !videoLaptop) return;
+
+                let mobileReady = false;
+                let laptopReady = false;
+                let playAttempted = false;
+
+                const startPlayback = () => {
+                    if (playAttempted) return;
+                    playAttempted = true;
+
+                    videoMobile.currentTime = 0;
+                    videoLaptop.currentTime = 0;
+
+                    const playMobile = videoMobile.play();
+                    const playLaptop = videoLaptop.play();
+
+                    Promise.all([playMobile, playLaptop]).catch(error => {
+                        console.log('Synchronized video play was interrupted or blocked:', error);
+                    });
+                };
+
+                const checkReadyStates = () => {
+                    if (videoMobile.readyState >= 3) mobileReady = true;
+                    if (videoLaptop.readyState >= 3) laptopReady = true;
+
+                    if (mobileReady && laptopReady) {
+                        startPlayback();
+                    }
+                };
+
+                videoMobile.addEventListener('canplay', () => {
+                    mobileReady = true;
+                    if (laptopReady) startPlayback();
+                });
+
+                videoLaptop.addEventListener('canplay', () => {
+                    laptopReady = true;
+                    if (mobileReady) startPlayback();
+                });
+
+                // Synchronized looping logic: when mobile video (primary driver) ends, restart both at the same time
+                videoMobile.addEventListener('ended', () => {
+                    videoMobile.currentTime = 0;
+                    videoLaptop.currentTime = 0;
+                    const playMobile = videoMobile.play();
+                    const playLaptop = videoLaptop.play();
+                    Promise.all([playMobile, playLaptop]).catch(error => {
+                        console.log('Synchronized video loop play was interrupted or blocked:', error);
+                    });
+                });
+
+                checkReadyStates();
+
+                // Safety timeout in case load events don't fire
+                setTimeout(() => {
+                    if (!playAttempted) {
+                        console.log('Safety timeout: starting synchronized video playback');
+                        startPlayback();
+                    }
+                }, 3000);
+            };
+
+            // Set up synchronization for Hero Section
+            setupSynchronizedPlayback(
+                document.getElementById('hero-mobile-video'),
+                document.getElementById('hero-laptop-video')
+            );
+
+            // Set up synchronization for Interactive Sandbox Section
+            setupSynchronizedPlayback(
+                document.getElementById('sandbox-mobile-video'),
+                document.getElementById('sandbox-laptop-video')
+            );
+
+        });1d:["$","div",null,{"className":"flex-grow flex flex-col","children":[["$","$L20",null,{"slug":"offline-transactions","body":"$21","styles":["$22","\r\n                @keyframes dash {\r\n                    to {\r\n                        stroke-dashoffset: -1000;\r\n                    }\r\n                }\r\n            "],"scripts":["$23"]}],"$L24"]}]
+1e:["$","footer",null,{"className":"w-full border-t border-zinc-100 bg-white flex flex-col md:flex-row justify-between items-center px-6 md:px-12 py-10 md:py-16 gap-6","children":[["$","div",null,{"className":"flex flex-col items-center md:items-start gap-2","children":[["$","div",null,{"className":"text-lg font-bold text-zinc-900 headline-font","children":[["$","span",null,{"className":"text-[#1F3A89]","children":"DataLynk"}],"r"]}],["$","div",null,{"className":"flex items-center gap-1.5 font-['Wix_Madefor_Text'] text-xs text-zinc-400","children":[["$","span",null,{"children":"©"}],["$","span",null,{"className":"font-bold","children":[["$","span",null,{"style":{"color":"#e46b0c"},"children":"IT"}]," ",["$","span",null,{"style":{"color":"black"},"children":"Catalyst"}]]}],["$","span",null,{"children":"Software India Pvt Ltd. 2026."}]]}]]}],["$","div",null,{"className":"flex gap-8","children":[["$","$L25",null,{"className":"text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors","href":"/privacy","target":"_blank","rel":"noopener noreferrer","children":"Privacy"}],["$","$L25",null,{"className":"text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors","href":"/terms","target":"_blank","rel":"noopener noreferrer","children":"Terms"}],["$","$L25",null,{"className":"text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors","href":"/support","children":"Support"}]]}]]}]
+26:I[1323,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js","/Hometest/_next/static/chunks/3hsdf7acact9q.js"],"default"]
+24:["$","$L26",null,{"items":[{"question":"How does offline mode work?","answer":"Users can access downloaded customer lists, product details, and create transactions without internet access."},{"question":"When does data synchronize?","answer":"Transactions created offline are saved locally and synchronized automatically once internet connectivity is restored."},{"question":"Are stock levels accurate offline?","answer":"Stock levels reflect the last synchronized state. Offline transactions are validated against that data to prevent discrepancies."}],"title":"Frequently Asked Questions","subtitle":"Got questions about Offline Mode? We've got answers.","className":"bg-white"}]
+15:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#ffffff"}]]
+27:I[27201,["/Hometest/_next/static/chunks/0nw9toud5z-fg.js","/Hometest/_next/static/chunks/14mrh2-p_w84d.js"],"IconMark"]
+12:null
+17:[["$","title","0",{"children":"Offline Transactions | DataLynkr"}],["$","meta","1",{"name":"description","content":"Keep your business moving even without internet. Capture transactions offline and sync to Tally automatically."}],["$","meta","2",{"name":"application-name","content":"DataLynkr"}],["$","meta","3",{"name":"author","content":"IT Catalyst Software India Pvt Ltd"}],["$","link","4",{"rel":"manifest","href":"/Hometest/manifest.webmanifest","crossOrigin":"$undefined"}],["$","meta","5",{"name":"creator","content":"IT Catalyst Software India Pvt Ltd"}],["$","meta","6",{"name":"publisher","content":"IT Catalyst Software India Pvt Ltd"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","9",{"name":"category","content":"business"}],["$","link","10",{"rel":"canonical","href":"https://datalynkr.com/Hometest/features/offline-transactions"}],["$","meta","11",{"property":"og:title","content":"Offline Transactions"}],["$","meta","12",{"property":"og:description","content":"Keep your business moving even without internet. Capture transactions offline and sync to Tally automatically."}],["$","meta","13",{"property":"og:url","content":"https://datalynkr.com/Hometest/features/offline-transactions"}],["$","meta","14",{"property":"og:site_name","content":"DataLynkr"}],["$","meta","15",{"property":"og:locale","content":"en_IN"}],["$","meta","16",{"property":"og:image","content":"https://datalynkr.com/Hometest/resources/poster_images/offline_laptop.webp"}],["$","meta","17",{"property":"og:image:width","content":"1200"}],["$","meta","18",{"property":"og:image:height","content":"630"}],["$","meta","19",{"property":"og:image:alt","content":"Offline Transactions"}],["$","meta","20",{"property":"og:type","content":"website"}],["$","meta","21",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","22",{"name":"twitter:title","content":"Offline Transactions"}],["$","meta","23",{"name":"twitter:description","content":"Keep your business moving even without internet. Capture transactions offline and sync to Tally automatically."}],["$","meta","24",{"name":"twitter:image","content":"https://datalynkr.com/Hometest/resources/poster_images/offline_laptop.webp"}],["$","link","25",{"rel":"shortcut icon","href":"/Hometest/logo.svg"}],["$","link","26",{"rel":"icon","href":"/Hometest/logo.svg","type":"image/svg+xml"}],["$","link","27",{"rel":"apple-touch-icon","href":"/Hometest/logo.svg"}],["$","$L27","28",{}]]

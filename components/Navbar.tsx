@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import Link from "next/link";
+import SiteLink from "./SiteLink";
 import Sidebar from "./Sidebar";
 import { LogoSvg } from "./LogoSvg";
 import { useHideNavOnScroll } from "@/hooks/useHideNavOnScroll";
@@ -60,7 +60,7 @@ export default function Navbar({
       </div>
 
       {showCenterBrand && (
-        <Link
+        <SiteLink
           href="/"
           className="font-headline font-normal tracking-tight absolute left-1/2 -translate-x-1/2 flex items-center gap-3 cursor-pointer"
         >
@@ -74,20 +74,20 @@ export default function Navbar({
           >
             DataLynkr
           </span>
-        </Link>
+        </SiteLink>
       )}
 
       <div className="flex items-center gap-4">
         {showLoginButton && (
-          <Link
+          <SiteLink
             href={loginHref}
             className="hidden md:inline-block bg-primary text-white px-6 py-2.5 rounded-full font-medium hover:bg-primary/90 transition-all active:scale-95 shadow-lg shadow-primary/20"
           >
             Log In
-          </Link>
+          </SiteLink>
         )}
         {showHomeIcon && (
-          <Link
+          <SiteLink
             href="/"
             className="flex items-center justify-center p-2.5 bg-transparent text-[#1F3A89] hover:bg-black/5 rounded-full transition-colors group focus:outline-none focus:ring-2 focus:ring-[#1f3a89] focus:ring-offset-2"
             title="Home"
@@ -95,7 +95,7 @@ export default function Navbar({
             <span className="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">
               home
             </span>
-          </Link>
+          </SiteLink>
         )}
       </div>
     </nav>

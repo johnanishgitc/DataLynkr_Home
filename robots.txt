@@ -1,0 +1,32 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /login
+Disallow: /changepswd
+
+User-Agent: GPTBot
+Allow: /
+
+User-Agent: ChatGPT-User
+Allow: /
+
+User-Agent: Google-Extended
+Allow: /
+
+User-Agent: PerplexityBot
+Allow: /
+
+User-Agent: ClaudeBot
+Allow: /
+
+User-Agent: Claude-Web
+Allow: /
+
+User-Agent: Applebot-Extended
+Allow: /
+
+User-Agent: Amazonbot
+Allow: /
+
+Sitemap: https://datalynkr.com/Hometest/sitemap.xml

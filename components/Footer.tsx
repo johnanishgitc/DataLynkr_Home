@@ -1,4 +1,4 @@
-import Link from "next/link";
+import SiteLink from "./SiteLink";
 
 export default function Footer() {
   return (
@@ -17,28 +17,28 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex gap-8">
-        <Link
+        <SiteLink
           className="text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors"
           href="/privacy"
           target="_blank"
           rel="noopener noreferrer"
         >
           Privacy
-        </Link>
-        <Link
+        </SiteLink>
+        <SiteLink
           className="text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors"
           href="/terms"
           target="_blank"
           rel="noopener noreferrer"
         >
           Terms
-        </Link>
-        <Link
+        </SiteLink>
+        <SiteLink
           className="text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors"
           href="/support"
         >
           Support
-        </Link>
+        </SiteLink>
       </div>
     </footer>
   );

@@ -60,6 +60,8 @@ function deployOutToWebRoot() {
     copyRecursive(path.join(outDir, entry), path.join(root, entry));
   }
 
+  removeStaleRouteDirectories();
+
   console.log("Deployed out/ contents to web root (DataLynkr_Home/).");
 }
 

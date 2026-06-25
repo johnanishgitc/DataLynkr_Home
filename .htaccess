@@ -9,6 +9,9 @@ DirectoryIndex index.html
   RewriteEngine On
   RewriteBase /Hometest/
 
+  # App routes -> .html even when stale empty directories exist (prevents 403 on /route/)
+  RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)/?$ $1.html [L,NC]
+
   # Legacy .html redirects to clean URLs
   RewriteRule ^features/([^/]+)\.html$ features/$1 [R=301,L,NC]
   RewriteRule ^code\.html$ ./ [R=301,L,NC]
