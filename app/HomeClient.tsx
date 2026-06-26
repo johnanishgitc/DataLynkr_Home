@@ -650,7 +650,7 @@ export default function HomeClient() {
                             playsInline
                             preload="metadata"
                             poster={basePath + "/resources/poster_images/orders_laptop.webp"}
-                            className="w-full h-full object-cover rounded-xl z-10"
+                            className="w-full h-full object-cover z-10"
                             onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
                           >
                             <source src={basePath + "/resources/videos/orders_laptop.mp4"} type="video/mp4" />
@@ -923,7 +923,7 @@ export default function HomeClient() {
                             playsInline
                             preload="metadata"
                             poster={basePath + "/resources/poster_images/bcomm_laptop.webp"}
-                            className="w-full h-full object-cover rounded-xl z-10"
+                            className="w-full h-full object-cover z-10"
                             onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
                           >
                             <source src={basePath + "/resources/videos/bcomm_laptop.mp4"} type="video/mp4" />
