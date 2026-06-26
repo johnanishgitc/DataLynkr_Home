@@ -1,19 +1,38 @@
 #!/usr/bin/env node
 /**
  * Clean production build — removes stale build artifacts before generating a fresh static export.
- * Run on the server after upload: npm run build:prod
  *
- * On the server, Apache serves this project root (DataLynkr_Home/), not out/.
- * After next build, out/ is copied here only when DEPLOY=1:
+ * Basic usage (build only, no deploy):
+ *   npm run build:prod
+ *
+ * Deploy into the project root (old default — only valid when the repo IS the web root):
  *   NODE_ENV=production DEPLOY=1 npm run build:prod
+ *
+ * Deploy into a separate web root (e.g. cPanel public_html):
+ *   WEB_ROOT=/home/datalynkr/public_html NODE_ENV=production DEPLOY=1 npm run build:prod
  */
 const fs = require("fs");
 const path = require("path");
+const os = require("os");
 const { execSync } = require("child_process");
 
 const root = path.join(__dirname, "..");
 const nextDir = path.join(root, ".next");
 const outDir = path.join(root, "out");
+
+/**
+ * Resolve the deploy target directory.
+ * WEB_ROOT env var wins; falls back to the project root (old behaviour).
+ * Supports ~ expansion.
+ */
+function resolveWebRoot() {
+  const env = process.env.WEB_ROOT;
+  if (!env) return root;
+  if (env.startsWith("~")) return path.join(os.homedir(), env.slice(1));
+  return path.resolve(env);
+}
+
+const webRoot = resolveWebRoot();
 
 /** Top-level route names that must be .html files, not physical directories. */
 const STALE_ROUTE_DIRS = [
@@ -27,10 +46,7 @@ const STALE_ROUTE_DIRS = [
   "changepswd",
 ];
 
-/** Feature slugs whose old per-slug directories must be removed from features/ on the server.
- *  The old React app deployment created features/slug/ directories with CRA index.html files.
- *  The new Next.js static export serves these as features/slug.html — the old directories
- *  shadow the new files and cause Apache to serve the old "You need to enable JavaScript" page. */
+/** Feature slugs whose old per-slug directories shadow the new .html files. */
 const STALE_FEATURE_DIRS = [
   "authorization-workflows",
   "custom-reports",
@@ -45,6 +61,14 @@ const STALE_FEATURE_DIRS = [
   "stock-summary",
 ];
 
+/** Old CRA-era root files that should be removed from public_html when deploying to web root. */
+const STALE_CRA_ROOT_FILES = [
+  "asset-manifest.json",
+  "precache-manifest.js",
+  "service-worker.js",
+  "manifest.json",
+];
+
 function copyRecursive(src, dest) {
   const stat = fs.statSync(src);
   if (stat.isDirectory()) {
@@ -57,48 +81,66 @@ function copyRecursive(src, dest) {
   fs.copyFileSync(src, dest);
 }
 
-function removeStaleRouteDirectories() {
+function removeStaleRouteDirectories(targetDir) {
   for (const name of STALE_ROUTE_DIRS) {
-    const dirPath = path.join(root, name);
+    const dirPath = path.join(targetDir, name);
     if (fs.existsSync(dirPath) && fs.statSync(dirPath).isDirectory()) {
       fs.rmSync(dirPath, { recursive: true, force: true });
-      console.log(`Removed stale directory ${name}/ (was causing 403 on /${name}/).`);
+      console.log(`Removed stale directory ${name}/`);
     }
   }
 }
 
-function removeStaleFeatureDirectories() {
-  const featuresDir = path.join(root, "features");
+function removeStaleFeatureDirectories(targetDir) {
+  const featuresDir = path.join(targetDir, "features");
   if (!fs.existsSync(featuresDir)) return;
   for (const slug of STALE_FEATURE_DIRS) {
     const dirPath = path.join(featuresDir, slug);
     if (fs.existsSync(dirPath) && fs.statSync(dirPath).isDirectory()) {
       fs.rmSync(dirPath, { recursive: true, force: true });
-      console.log(`Removed stale directory features/${slug}/ (was shadowing features/${slug}.html).`);
+      console.log(`Removed stale features/${slug}/`);
+    }
+  }
+}
+
+function removeStaleCraFiles(targetDir) {
+  for (const name of STALE_CRA_ROOT_FILES) {
+    const filePath = path.join(targetDir, name);
+    if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+      fs.unlinkSync(filePath);
+      console.log(`Removed old CRA file: ${name}`);
     }
   }
 }
 
 function deployOutToWebRoot() {
   if (process.env.DEPLOY !== "1") {
-    console.log("Build output is in out/. On the server run: DEPLOY=1 npm run build:prod");
+    console.log("Build output is in out/.");
+    console.log("To deploy, run:");
+    console.log("  WEB_ROOT=~/public_html NODE_ENV=production DEPLOY=1 npm run build:prod");
     return;
   }
 
-  removeStaleRouteDirectories();
-  removeStaleFeatureDirectories();
+  console.log(`\nDeploying to: ${webRoot}`);
+
+  removeStaleRouteDirectories(webRoot);
+  removeStaleFeatureDirectories(webRoot);
+  if (webRoot !== root) removeStaleCraFiles(webRoot);
 
   for (const entry of fs.readdirSync(outDir)) {
-    copyRecursive(path.join(outDir, entry), path.join(root, entry));
+    copyRecursive(path.join(outDir, entry), path.join(webRoot, entry));
   }
 
-  removeStaleRouteDirectories();
-  removeStaleFeatureDirectories();
+  removeStaleRouteDirectories(webRoot);
+  removeStaleFeatureDirectories(webRoot);
 
-  console.log("Deployed out/ contents to web root (DataLynkr_Home/).");
+  console.log(`\nDeployed out/ → ${webRoot}`);
 }
 
-// Remove stale build artifacts
+// ---------------------------------------------------------------------------
+// Remove stale build artifacts before building
+// ---------------------------------------------------------------------------
+
 if (fs.existsSync(nextDir)) {
   fs.rmSync(nextDir, { recursive: true, force: true });
   console.log("Removed .next for a clean build.");
@@ -121,32 +163,32 @@ if (fs.existsSync(featuresDir)) {
 
 execSync("npx next build", { cwd: root, stdio: "inherit" });
 
-// Verify static export output
+// ---------------------------------------------------------------------------
+// Post-build: verify + copy .htaccess files into out/, then deploy
+// ---------------------------------------------------------------------------
+
 if (fs.existsSync(outDir)) {
-  const pages = fs.readdirSync(outDir).filter((name) => name.endsWith(".html"));
-  console.log(`\nStatic export complete. HTML pages in out/: ${pages.join(", ") || "(none)"}`);
+  const pages = fs.readdirSync(outDir).filter((n) => n.endsWith(".html"));
+  console.log(`\nStatic export complete. HTML pages: ${pages.join(", ") || "(none)"}`);
 
   const featuresOutDir = path.join(outDir, "features");
   if (fs.existsSync(featuresOutDir)) {
-    const featurePages = fs.readdirSync(featuresOutDir).filter((name) => name.endsWith(".html"));
+    const featurePages = fs.readdirSync(featuresOutDir).filter((n) => n.endsWith(".html"));
     console.log(`Feature pages: ${featurePages.join(", ") || "(none)"}`);
   }
 
-  // Copy root .htaccess to out/ for deployment
   const htaccessSrc = path.join(root, ".htaccess");
   const htaccessDest = path.join(outDir, ".htaccess");
   if (fs.existsSync(htaccessSrc)) {
     fs.copyFileSync(htaccessSrc, htaccessDest);
-    console.log("Copied .htaccess to out/ directory.");
+    console.log("Copied .htaccess to out/");
   }
 
-  // Copy features/.htaccess to out/features/ — features subdirectory runs its own
-  // mod_rewrite context so it needs its own .htaccess to serve slug.html files.
   const featuresHtaccessSrc = path.join(root, "features", ".htaccess");
   const featuresHtaccessDest = path.join(outDir, "features", ".htaccess");
   if (fs.existsSync(featuresHtaccessSrc) && fs.existsSync(featuresOutDir)) {
     fs.copyFileSync(featuresHtaccessSrc, featuresHtaccessDest);
-    console.log("Copied features/.htaccess to out/features/ directory.");
+    console.log("Copied features/.htaccess to out/features/");
   }
 
   deployOutToWebRoot();
