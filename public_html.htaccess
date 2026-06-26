@@ -19,8 +19,8 @@
   RewriteRule ^_next/(.*)$ DataLynkr_Home/_next/$1 [L]
   RewriteRule ^resources/(.*)$ DataLynkr_Home/resources/$1 [L]
 
-  # Marketing SEO / icon files
-  RewriteRule ^(robots\.txt|sitemap\.xml|manifest\.webmanifest|favicon\.ico|logo\.svg)$ DataLynkr_Home/$1 [L,NC]
+  # Marketing SEO files (do not include favicon.ico — admin app uses its own at public_html root)
+  RewriteRule ^(robots\.txt|sitemap\.xml|manifest\.webmanifest|logo\.svg)$ DataLynkr_Home/$1 [L,NC]
 
   # Homepage
   RewriteRule ^$ DataLynkr_Home/index.html [L]
@@ -48,6 +48,7 @@
   RewriteRule ^ - [L]
 
   # Admin SPA: client-side routes (admin-dashboard, change-password, …)
+  RewriteCond %{REQUEST_URI} !^/favicon\.ico$ [NC]
   RewriteCond %{REQUEST_URI} !^/_next/
   RewriteCond %{REQUEST_URI} !^/resources/
   RewriteCond %{REQUEST_URI} !^/(about|pricing|contact|support|login|privacy|terms|changepswd|features)(/|$) [NC]

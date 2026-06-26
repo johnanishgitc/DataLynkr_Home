@@ -51,7 +51,26 @@ const STALE_FEATURE_DIRS = [
   "stock-summary",
 ];
 
-function copyRecursive(src, dest) {
+/** Next.js default artifacts — not used; marketing site uses logo.svg */
+const NEXT_DEFAULT_ARTIFACTS = [
+  "favicon.ico",
+  "file.svg",
+  "globe.svg",
+  "next.svg",
+  "vercel.svg",
+  "window.svg",
+];
+
+function removeNextDefaultArtifacts(targetDir) {
+  for (const name of NEXT_DEFAULT_ARTIFACTS) {
+    const filePath = path.join(targetDir, name);
+    if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+      fs.unlinkSync(filePath);
+      console.log(`Removed Next default artifact: ${name}`);
+    }
+  }
+}
+
   const stat = fs.statSync(src);
   if (stat.isDirectory()) {
     fs.mkdirSync(dest, { recursive: true });
@@ -149,6 +168,8 @@ function deployOutToProjectRoot() {
     copyRecursive(path.join(outDir, entry), path.join(root, entry));
   }
 
+  removeNextDefaultArtifacts(root);
+
   removeStaleRouteDirectories(root);
   removeStaleFeatureDirectories(root);
 
@@ -210,6 +231,8 @@ if (fs.existsSync(outDir)) {
     fs.copyFileSync(featuresHtaccessSrc, featuresHtaccessDest);
     console.log("Copied features/.htaccess to out/features/");
   }
+
+  removeNextDefaultArtifacts(outDir);
 
   deployOutToProjectRoot();
 } else {
