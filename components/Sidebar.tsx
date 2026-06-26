@@ -143,18 +143,6 @@ export function SidebarPanel() {
         }`}
       >
         <div className="flex-1 flex flex-col h-full overflow-y-auto p-8 relative">
-          {/* Close button */}
-          <label
-            htmlFor={jsReady ? undefined : "sidebar-toggle"}
-            onClick={jsReady ? closeSidebar : undefined}
-            className="absolute top-6 right-6 w-8 h-8 flex items-center justify-center text-white/60 hover:text-white transition-colors cursor-pointer z-10"
-            aria-label="Close menu"
-            role="button"
-            tabIndex={0}
-          >
-            <span className="material-symbols-outlined text-xl">close</span>
-          </label>
-
           <div className="pt-16 pb-8 flex items-center relative">
             <SiteLink
               href="/"

@@ -667,7 +667,7 @@ export function featureSoftwareJsonLd(slug: string, description: string) {
     "@id": `${absoluteUrl(`/features/${slug}`)}#feature`,
     name: `DataLynkr ${meta.name}`,
     applicationCategory: "BusinessApplication",
-    operatingSystem: "Windows, Web, Android, iOS",
+    operatingSystem: "Windows, Web, Android",
     description,
     url: absoluteUrl(`/features/${slug}`),
     isPartOf: { "@id": `${siteOrigin()}/#software` },
