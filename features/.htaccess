@@ -1,5 +1,5 @@
-# Feature pages are rendered by Next.js at /features/[slug] via Passenger.
-# Do NOT put *.html files in this folder.
+# Static Next.js export — feature pages are served as features/slug.html files.
+# The root .htaccess rewrites /features/slug -> features/slug.html
 
 Options -MultiViews -Indexes
 
@@ -7,6 +7,6 @@ Options -MultiViews -Indexes
   RewriteEngine On
   RewriteBase /Hometest/features/
 
-  # Redirect legacy /features/slug.html bookmarks to clean Next.js URLs
+  # Redirect legacy /features/slug.html bookmarks to clean URLs
   RewriteRule ^([^/]+)\.html$ /Hometest/features/$1 [R=301,L,NC]
 </IfModule>

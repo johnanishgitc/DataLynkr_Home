@@ -15,7 +15,7 @@ const root = path.join(__dirname, "..");
 const nextDir = path.join(root, ".next");
 const outDir = path.join(root, "out");
 
-/** Route names that must be .html files, not physical directories (directories cause 403 on /route/). */
+/** Top-level route names that must be .html files, not physical directories. */
 const STALE_ROUTE_DIRS = [
   "about",
   "pricing",
@@ -25,6 +25,24 @@ const STALE_ROUTE_DIRS = [
   "privacy",
   "terms",
   "changepswd",
+];
+
+/** Feature slugs whose old per-slug directories must be removed from features/ on the server.
+ *  The old React app deployment created features/slug/ directories with CRA index.html files.
+ *  The new Next.js static export serves these as features/slug.html — the old directories
+ *  shadow the new files and cause Apache to serve the old "You need to enable JavaScript" page. */
+const STALE_FEATURE_DIRS = [
+  "authorization-workflows",
+  "custom-reports",
+  "daily-ledger-reports",
+  "dynamic-dashboards",
+  "extend-portal-customers",
+  "invoice-creation",
+  "modern-bcommerce-ordering",
+  "offline-transactions",
+  "payments-collections",
+  "sales-order-management",
+  "stock-summary",
 ];
 
 function copyRecursive(src, dest) {
@@ -49,6 +67,18 @@ function removeStaleRouteDirectories() {
   }
 }
 
+function removeStaleFeatureDirectories() {
+  const featuresDir = path.join(root, "features");
+  if (!fs.existsSync(featuresDir)) return;
+  for (const slug of STALE_FEATURE_DIRS) {
+    const dirPath = path.join(featuresDir, slug);
+    if (fs.existsSync(dirPath) && fs.statSync(dirPath).isDirectory()) {
+      fs.rmSync(dirPath, { recursive: true, force: true });
+      console.log(`Removed stale directory features/${slug}/ (was shadowing features/${slug}.html).`);
+    }
+  }
+}
+
 function deployOutToWebRoot() {
   if (process.env.DEPLOY !== "1") {
     console.log("Build output is in out/. On the server run: DEPLOY=1 npm run build:prod");
@@ -56,12 +86,14 @@ function deployOutToWebRoot() {
   }
 
   removeStaleRouteDirectories();
+  removeStaleFeatureDirectories();
 
   for (const entry of fs.readdirSync(outDir)) {
     copyRecursive(path.join(outDir, entry), path.join(root, entry));
   }
 
   removeStaleRouteDirectories();
+  removeStaleFeatureDirectories();
 
   console.log("Deployed out/ contents to web root (DataLynkr_Home/).");
 }

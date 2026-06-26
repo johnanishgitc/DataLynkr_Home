@@ -18,6 +18,10 @@ DirectoryIndex index.html
   # directories like login/ or pricing/ can never trigger a 403).
   RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)/?$ $1.html [L,NC]
 
+  # Feature pages -> .html FIRST (prevents old features/slug/ directories from the
+  # previous React app deployment from shadowing the new Next.js static .html files).
+  RewriteRule ^features/(authorization-workflows|custom-reports|daily-ledger-reports|dynamic-dashboards|extend-portal-customers|invoice-creation|modern-bcommerce-ordering|offline-transactions|payments-collections|sales-order-management|stock-summary)/?$ features/$1.html [L,NC]
+
   # Legacy *.html bookmarks -> clean URLs (browser request only — not internal rewrites)
   RewriteCond %{THE_REQUEST} \s[^\s]*\.html[\s?] [NC]
   RewriteRule ^features/([^/]+)\.html$ features/$1 [R=301,L,NC]
