@@ -14,13 +14,14 @@ DirectoryIndex index.html
   RewriteEngine On
   RewriteBase /Hometest/
 
-  # Known app routes -> .html FIRST (wins before mod_dir, so leftover empty
-  # directories like login/ or pricing/ can never trigger a 403).
-  RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)/?$ $1.html [L,NC]
+  # Known app routes -> .html.
+  # [END] instead of [L]: in .htaccess context Apache re-processes all rules after every
+  # internal rewrite. Without [END], the legacy .html->clean-URL redirect rule fires on
+  # the re-pass and 301s back to the original URL, creating an infinite redirect loop.
+  RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)/?$ $1.html [END,NC]
 
-  # Feature pages -> .html FIRST (prevents old features/slug/ directories from the
-  # previous React app deployment from shadowing the new Next.js static .html files).
-  RewriteRule ^features/(authorization-workflows|custom-reports|daily-ledger-reports|dynamic-dashboards|extend-portal-customers|invoice-creation|modern-bcommerce-ordering|offline-transactions|payments-collections|sales-order-management|stock-summary)/?$ features/$1.html [L,NC]
+  # Feature pages -> .html (same [END] rationale as above).
+  RewriteRule ^features/(authorization-workflows|custom-reports|daily-ledger-reports|dynamic-dashboards|extend-portal-customers|invoice-creation|modern-bcommerce-ordering|offline-transactions|payments-collections|sales-order-management|stock-summary)/?$ features/$1.html [END,NC]
 
   # Legacy *.html bookmarks -> clean URLs (browser request only — not internal rewrites)
   RewriteCond %{THE_REQUEST} \s[^\s]*\.html[\s?] [NC]
@@ -33,8 +34,9 @@ DirectoryIndex index.html
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(.+)/$ $1 [R=301,L]
 
-  # Serve .html for any other clean URL (works even when stale directories exist)
+  # Serve .html for any other clean URL (works even when stale directories exist).
+  # [END] prevents re-processing loop (same reason as above).
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteRule ^(.+?)/?$ $1.html [L]
+  RewriteRule ^(.+?)/?$ $1.html [END]
 </IfModule>
