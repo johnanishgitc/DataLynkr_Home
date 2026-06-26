@@ -7,7 +7,7 @@ DirectoryIndex index.html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /Hometest/
+  RewriteBase /
 
   # Homepage: serve index.html for /Hometest/ (and /Hometest without trailing slash).
   RewriteRule ^$ index.html [END]

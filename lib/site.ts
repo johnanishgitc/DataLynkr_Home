@@ -5,7 +5,7 @@ const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://datalynkr.com").re
 
 export const basePath =
   process.env.NODE_ENV === "production"
-    ? "/Hometest"
+    ? ""
     : (process.env.NEXT_PUBLIC_BASE_PATH || "");
 
 export function siteOrigin(): string {
