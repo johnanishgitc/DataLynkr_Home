@@ -71,6 +71,7 @@ function removeNextDefaultArtifacts(targetDir) {
   }
 }
 
+function copyRecursive(src, dest) {
   const stat = fs.statSync(src);
   if (stat.isDirectory()) {
     fs.mkdirSync(dest, { recursive: true });
