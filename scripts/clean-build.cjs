@@ -119,7 +119,7 @@ if (fs.existsSync(featuresDir)) {
   }
 }
 
-execSync("next build", { cwd: root, stdio: "inherit" });
+execSync("npx next build", { cwd: root, stdio: "inherit" });
 
 // Verify static export output
 if (fs.existsSync(outDir)) {
