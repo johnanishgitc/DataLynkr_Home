@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import SiteLink from "./SiteLink";
-import Sidebar from "./Sidebar";
+import { SidebarTrigger } from "./Sidebar";
 import { LogoSvg } from "./LogoSvg";
 import { useHideNavOnScroll } from "@/hooks/useHideNavOnScroll";
 
@@ -56,7 +56,7 @@ export default function Navbar({
       className={`top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-10 lg:px-12 py-4 md:py-6 ${navPositionClasses} ${className}`}
     >
       <div className="flex items-center gap-6">
-        <Sidebar />
+        <SidebarTrigger />
       </div>
 
       {showCenterBrand && (

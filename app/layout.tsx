@@ -3,6 +3,8 @@ import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import ClientAnimations from "@/components/ClientAnimations";
 import LegacyLinkInterceptor from "@/components/LegacyLinkInterceptor";
+import { SidebarProvider } from "@/components/SidebarContext";
+import { SidebarPanel } from "@/components/Sidebar";
 import { absoluteUrl, siteOrigin, basePath } from "@/lib/site";
 import { DEFAULT_OG_IMAGE, webSiteJsonLd } from "@/lib/seo";
 
@@ -374,9 +376,12 @@ export default function RootLayout({
         <JsonLd data={webSiteJsonLd()} />
       </head>
       <body className="bg-white text-on-surface antialiased overflow-x-hidden animate-fade-in">
-        <LegacyLinkInterceptor />
-        <ClientAnimations />
-        {children}
+        <SidebarProvider>
+          <SidebarPanel />
+          <LegacyLinkInterceptor />
+          <ClientAnimations />
+          {children}
+        </SidebarProvider>
       </body>
     </html>
   );

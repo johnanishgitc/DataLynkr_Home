@@ -253,10 +253,55 @@ body {
 
 /* Features flyout active state */
 #features-flyout.active {
-  transform: translateX(0) !important;
+  translate: 0 !important;
   opacity: 1 !important;
   pointer-events: auto !important;
 }
+
+/* Ensure smooth transitions for translate/opacity on the sidebar and flyout in both JS/no-JS */
+#sidebar,
+#features-flyout {
+  transition: translate 300ms ease-in-out, opacity 300ms ease-in-out, transform 300ms ease-in-out !important;
+}
+
+/* ===== CSS-ONLY SIDEBAR & FEATURES FLYOUT (no-JS fallback) ===== */
+/* Hidden checkboxes drive the sidebar and features panel via :checked sibling selectors.
+   When JS is enabled, React state adds/removes classes that take precedence. */
+
+#sidebar-toggle,
+#features-flyout-toggle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Sidebar open via checkbox */
+#sidebar-toggle:checked ~ #sidebar-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Tailwind v4 slides the drawer off-screen via the `translate` property
+   (translate: var(--tw-translate-x) var(--tw-translate-y)). Overriding the CSS
+   variables is the reliable way to bring it back: a plain `translate: 0` gets
+   dropped by the CSS optimizer, and `transform` does not cancel `translate`. */
+#sidebar-toggle:checked ~ #sidebar {
+  --tw-translate-x: 0 !important;
+  --tw-translate-y: 0 !important;
+}
+
+/* Features flyout open via checkbox (checkbox is inside #sidebar, adjacent to #features-flyout) */
+#features-flyout-toggle:checked + #features-flyout {
+  --tw-translate-x: 0 !important;
+  --tw-translate-y: 0 !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* When JS overrides sidebar state, disable checkbox influence so they don't conflict */
+#sidebar.js-controlled ~ #sidebar-toggle { display: none; }
 
 /* Card hover effect for support page */
 .card-hover {
