@@ -1,21 +1,16 @@
-# Static Next.js export — feature pages are served as features/slug.html files.
-# Each mod_rewrite directive in a subdirectory .htaccess runs in its own context,
-# so the root .htaccess feature rule does not apply here — we need our own.
+# Feature pages inside DataLynkr_Home/features/
+# Clean URLs at datalynkr.com/features/slug are handled by ../public_html/.htaccess
 
 Options -MultiViews -Indexes
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /Hometest/features/
+  RewriteBase /DataLynkr_Home/features/
 
-  # Serve feature page HTML for clean slug URLs.
-  # [^/.] excludes dots so /slug.html requests fall through to the legacy redirect below.
-  # [END] prevents re-processing after the internal rewrite (avoids redirect loop).
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^([^/.]+)/?$ $1.html [END,NC]
 
-  # Redirect legacy /features/slug.html bookmarks to clean URLs.
   RewriteCond %{THE_REQUEST} \s[^\s]*\.html[\s?] [NC]
-  RewriteRule ^([^/]+)\.html$ /Hometest/features/$1 [R=301,L,NC]
+  RewriteRule ^([^/]+)\.html$ /features/$1 [R=301,L,NC]
 </IfModule>

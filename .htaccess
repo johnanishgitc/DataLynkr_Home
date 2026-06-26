@@ -1,5 +1,5 @@
-# Static site — no Passenger / Node.js server needed.
-# Apache serves the static export directly.
+# Static site — served from public_html/DataLynkr_Home/
+# Clean URLs (datalynkr.com/login, etc.) are handled by ../public_html/.htaccess
 
 Options -MultiViews
 
@@ -7,33 +7,29 @@ DirectoryIndex index.html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /
+  RewriteBase /DataLynkr_Home/
 
-  # Homepage: serve index.html for /Hometest/ (and /Hometest without trailing slash).
+  # Homepage when accessed via /DataLynkr_Home/
   RewriteRule ^$ index.html [END]
 
-  # Known app routes -> .html.
-  # [END] instead of [L]: in .htaccess context Apache re-processes all rules after every
-  # internal rewrite. Without [END], the legacy .html->clean-URL redirect rule fires on
-  # the re-pass and 301s back to the original URL, creating an infinite redirect loop.
+  # Known app routes -> .html
   RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)/?$ $1.html [END,NC]
 
-  # Feature pages -> .html (same [END] rationale as above).
+  # Feature pages -> .html
   RewriteRule ^features/(authorization-workflows|custom-reports|daily-ledger-reports|dynamic-dashboards|extend-portal-customers|invoice-creation|modern-bcommerce-ordering|offline-transactions|payments-collections|sales-order-management|stock-summary)/?$ features/$1.html [END,NC]
 
-  # Legacy *.html bookmarks -> clean URLs (browser request only — not internal rewrites)
+  # Legacy *.html bookmarks -> clean URLs (browser request only)
   RewriteCond %{THE_REQUEST} \s[^\s]*\.html[\s?] [NC]
-  RewriteRule ^features/([^/]+)\.html$ features/$1 [R=301,L,NC]
-  RewriteRule ^code\.html$ ./ [R=301,L,NC]
-  RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)\.html$ $1 [R=301,L,NC]
+  RewriteRule ^features/([^/]+)\.html$ /features/$1 [R=301,L,NC]
+  RewriteRule ^code\.html$ / [R=301,L,NC]
+  RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)\.html$ /$1 [R=301,L,NC]
 
-  # Trailing slash -> clean URL (browser request only; skip real asset directories)
+  # Trailing slash -> clean URL
   RewriteCond %{THE_REQUEST} \s[^\s]*/.+?/[\s?] [NC]
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(.+)/$ $1 [R=301,L]
+  RewriteRule ^(.+)/$ /DataLynkr_Home/$1 [R=301,L]
 
-  # Serve .html for any other clean URL (works even when stale directories exist).
-  # [END] prevents re-processing loop (same reason as above).
+  # Serve .html for any other clean URL
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^(.+?)/?$ $1.html [END]

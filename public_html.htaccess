@@ -1,28 +1,67 @@
-# Merge into: /home/datalynkr/public_html/.htaccess
-# Place these rules BEFORE any catch-all that sends requests to index.html.
-# Do not remove existing Passenger or cPanel blocks — add this section only.
+# Install into: /home/datalynkr/public_html/.htaccess
+#
+# Architecture:
+#   public_html/              → admin app (admin-dashboard, change-password, API, etc.)
+#   public_html/DataLynkr_Home/ → marketing site (this Next.js static export)
+#
+# Clean URLs (datalynkr.com/, /login, /about, …) are rewritten to DataLynkr_Home/.
+# App routes are left alone so datalynkr.com/admin-dashboard serves public_html.
 
+# BEGIN DataLynkr Home
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteBase /
 
-  # Route root crawler files to the DataLynkr_Home folder
-  RewriteRule ^robots\.txt$ DataLynkr_Home/robots.txt [L,NC]
-  RewriteRule ^sitemap\.xml$ DataLynkr_Home/sitemap.xml [L,NC]
+  # Legacy test path → site root
+  RewriteRule ^Hometest/?(.*)$ /$1 [R=301,L,NC]
 
-  # Rewrite /Hometest requests internally to the DataLynkr_Home directory
-  RewriteCond %{REQUEST_URI} ^/Hometest(/|$) [NC]
-  RewriteRule ^Hometest(/(.*))?$ DataLynkr_Home/$2 [L]
+  # App routes — do not rewrite to DataLynkr_Home
+  RewriteCond %{REQUEST_URI} ^/(admin-dashboard|change-password|Development|api)(/|$) [NC]
+  RewriteRule ^ - [L]
 
-  # Fallback for root /_next requests to DataLynkr_Home
-  RewriteCond %{REQUEST_URI} ^/_next/ [NC]
+  # Marketing static assets (Next export uses root-absolute paths)
   RewriteRule ^_next/(.*)$ DataLynkr_Home/_next/$1 [L]
-</IfModule>
+  RewriteRule ^resources/(.*)$ DataLynkr_Home/resources/$1 [L]
 
-# If you have a React SPA fallback like the rule below, add the two RewriteCond lines
-# so /Hometest and /_next are excluded:
+  # Marketing SEO / icon files
+  RewriteRule ^(robots\.txt|sitemap\.xml|manifest\.webmanifest|favicon\.ico|logo\.svg)$ DataLynkr_Home/$1 [L,NC]
+
+  # Homepage
+  RewriteRule ^$ DataLynkr_Home/index.html [L]
+
+  # Marketing pages → .html in DataLynkr_Home
+  RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)/?$ DataLynkr_Home/$1.html [END,NC]
+
+  # Feature pages
+  RewriteRule ^features/(authorization-workflows|custom-reports|daily-ledger-reports|dynamic-dashboards|extend-portal-customers|invoice-creation|modern-bcommerce-ordering|offline-transactions|payments-collections|sales-order-management|stock-summary)/?$ DataLynkr_Home/features/$1.html [END,NC]
+
+  # Legacy *.html bookmarks → clean URLs (marketing only)
+  RewriteCond %{THE_REQUEST} \s[^\s]*\.html[\s?] [NC]
+  RewriteRule ^features/([^/]+)\.html$ /features/$1 [R=301,L,NC]
+  RewriteRule ^code\.html$ / [R=301,L,NC]
+  RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)\.html$ /$1 [R=301,L,NC]
+
+  # Trailing slash → clean URL (skip real directories)
+  RewriteCond %{THE_REQUEST} \s[^\s]*/.+?/[\s?] [NC]
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+  # Existing files/dirs at public_html root (admin app) take priority
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Other clean URLs → .html in DataLynkr_Home if present
+  RewriteCond %{DOCUMENT_ROOT}/DataLynkr_Home/$1.html -f
+  RewriteRule ^(.+?)/?$ DataLynkr_Home/$1.html [END]
+</IfModule>
+# END DataLynkr Home
+
+# If you have a React SPA catch-all for the admin app, exclude marketing paths:
 #
 # RewriteCond %{REQUEST_FILENAME} !-f
 # RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteCond %{REQUEST_URI} !^/Hometest
 # RewriteCond %{REQUEST_URI} !^/_next/
+# RewriteCond %{REQUEST_URI} !^/resources/
+# RewriteCond %{REQUEST_URI} !^/(about|pricing|contact|support|login|privacy|terms|changepswd|features)(/|$) [NC]
 # RewriteRule . /index.html [L]

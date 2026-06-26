@@ -2,14 +2,14 @@
 /**
  * Clean production build — removes stale build artifacts before generating a fresh static export.
  *
- * Basic usage (build only, no deploy):
+ * The repo lives at public_html/DataLynkr_Home/. Built files stay in this folder.
+ * public_html/.htaccess (parent) maps clean URLs (datalynkr.com/, /login, …) here.
+ *
+ * Build only:
  *   npm run build:prod
  *
- * Deploy into the project root (old default — only valid when the repo IS the web root):
+ * Build + deploy into DataLynkr_Home + update parent public_html/.htaccess:
  *   NODE_ENV=production DEPLOY=1 npm run build:prod
- *
- * Deploy into a separate web root (e.g. cPanel public_html):
- *   WEB_ROOT=/home/datalynkr/public_html NODE_ENV=production DEPLOY=1 npm run build:prod
  */
 const fs = require("fs");
 const path = require("path");
@@ -17,22 +17,12 @@ const os = require("os");
 const { execSync } = require("child_process");
 
 const root = path.join(__dirname, "..");
+const parentDir = path.join(root, "..");
 const nextDir = path.join(root, ".next");
 const outDir = path.join(root, "out");
 
-/**
- * Resolve the deploy target directory.
- * WEB_ROOT env var wins; falls back to the project root (old behaviour).
- * Supports ~ expansion.
- */
-function resolveWebRoot() {
-  const env = process.env.WEB_ROOT;
-  if (!env) return root;
-  if (env.startsWith("~")) return path.join(os.homedir(), env.slice(1));
-  return path.resolve(env);
-}
-
-const webRoot = resolveWebRoot();
+const MARKER_BEGIN = "# BEGIN DataLynkr Home";
+const MARKER_END = "# END DataLynkr Home";
 
 /** Top-level route names that must be .html files, not physical directories. */
 const STALE_ROUTE_DIRS = [
@@ -59,14 +49,6 @@ const STALE_FEATURE_DIRS = [
   "payments-collections",
   "sales-order-management",
   "stock-summary",
-];
-
-/** Old CRA-era root files that should be removed from public_html when deploying to web root. */
-const STALE_CRA_ROOT_FILES = [
-  "asset-manifest.json",
-  "precache-manifest.js",
-  "service-worker.js",
-  "manifest.json",
 ];
 
 function copyRecursive(src, dest) {
@@ -103,38 +85,76 @@ function removeStaleFeatureDirectories(targetDir) {
   }
 }
 
-function removeStaleCraFiles(targetDir) {
-  for (const name of STALE_CRA_ROOT_FILES) {
-    const filePath = path.join(targetDir, name);
-    if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
-      fs.unlinkSync(filePath);
-      console.log(`Removed old CRA file: ${name}`);
-    }
-  }
+function extractMarkedBlock(content) {
+  const start = content.indexOf(MARKER_BEGIN);
+  const end = content.indexOf(MARKER_END);
+  if (start === -1 || end === -1 || end < start) return null;
+  return content.slice(start, end + MARKER_END.length);
 }
 
-function deployOutToWebRoot() {
-  if (process.env.DEPLOY !== "1") {
-    console.log("Build output is in out/.");
-    console.log("To deploy, run:");
-    console.log("  WEB_ROOT=~/public_html NODE_ENV=production DEPLOY=1 npm run build:prod");
+function installParentHtaccess() {
+  const srcPath = path.join(root, "public_html.htaccess");
+  const destPath = path.join(parentDir, ".htaccess");
+
+  if (!fs.existsSync(srcPath)) {
+    console.warn("public_html.htaccess not found — skipping parent install.");
     return;
   }
 
-  console.log(`\nDeploying to: ${webRoot}`);
-
-  removeStaleRouteDirectories(webRoot);
-  removeStaleFeatureDirectories(webRoot);
-  if (webRoot !== root) removeStaleCraFiles(webRoot);
-
-  for (const entry of fs.readdirSync(outDir)) {
-    copyRecursive(path.join(outDir, entry), path.join(webRoot, entry));
+  const newBlock = extractMarkedBlock(fs.readFileSync(srcPath, "utf8"));
+  if (!newBlock) {
+    console.warn("public_html.htaccess missing markers — skipping parent install.");
+    return;
   }
 
-  removeStaleRouteDirectories(webRoot);
-  removeStaleFeatureDirectories(webRoot);
+  let destContent = "";
+  if (fs.existsSync(destPath)) {
+    destContent = fs.readFileSync(destPath, "utf8");
+    fs.copyFileSync(destPath, `${destPath}.bak.${Date.now()}`);
+    console.log(`Backed up existing ${destPath}`);
+  }
 
-  console.log(`\nDeployed out/ → ${webRoot}`);
+  let merged;
+  if (destContent.includes(MARKER_BEGIN) && destContent.includes(MARKER_END)) {
+    const before = destContent.slice(0, destContent.indexOf(MARKER_BEGIN));
+    const after = destContent.slice(destContent.indexOf(MARKER_END) + MARKER_END.length);
+    merged = `${before}${newBlock}${after}`;
+    console.log("Updated DataLynkr Home block in parent .htaccess");
+  } else if (destContent.trim()) {
+    merged = `${newBlock}\n\n${destContent}`;
+    console.log("Prepended DataLynkr Home block to existing parent .htaccess");
+  } else {
+    merged = fs.readFileSync(srcPath, "utf8");
+    console.log("Installed new parent .htaccess");
+  }
+
+  fs.writeFileSync(destPath, merged.trimEnd() + "\n", "utf8");
+  console.log(`Parent htaccess: ${destPath}`);
+}
+
+function deployOutToProjectRoot() {
+  if (process.env.DEPLOY !== "1") {
+    console.log("Build output is in out/.");
+    console.log("To deploy on the server:");
+    console.log("  NODE_ENV=production DEPLOY=1 npm run build:prod");
+    return;
+  }
+
+  console.log(`\nDeploying to: ${root}`);
+
+  removeStaleRouteDirectories(root);
+  removeStaleFeatureDirectories(root);
+
+  for (const entry of fs.readdirSync(outDir)) {
+    copyRecursive(path.join(outDir, entry), path.join(root, entry));
+  }
+
+  removeStaleRouteDirectories(root);
+  removeStaleFeatureDirectories(root);
+
+  installParentHtaccess();
+
+  console.log(`\nDeployed out/ → ${root}`);
 }
 
 // ---------------------------------------------------------------------------
@@ -191,7 +211,7 @@ if (fs.existsSync(outDir)) {
     console.log("Copied features/.htaccess to out/features/");
   }
 
-  deployOutToWebRoot();
+  deployOutToProjectRoot();
 } else {
   console.warn("WARNING: out/ directory missing — static export may have failed.");
 }
