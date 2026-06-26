@@ -355,6 +355,21 @@ export default function RootLayout({
         />
         <link rel="shortcut icon" href={`${basePath}/logo.svg`} type="image/svg+xml" />
         <link rel="icon" href={`${basePath}/logo.svg`} type="image/svg+xml" />
+        {/* When JS is disabled, override all animation-gated visibility so content is shown */}
+        <noscript>
+          <style>{`
+            .animate-fade-in { opacity: 1 !important; animation: none !important; }
+            .reveal-on-scroll { opacity: 1 !important; }
+            .reveal-on-scroll.reveal-fade-up,
+            .reveal-on-scroll.reveal-fade-in-left,
+            .reveal-on-scroll.reveal-fade-in-right,
+            .reveal-on-scroll.reveal-scale-in {
+              animation: none !important;
+              opacity: 1 !important;
+              transform: none !important;
+            }
+          `}</style>
+        </noscript>
         <JsonLd data={organizationJsonLd} />
         <JsonLd data={webSiteJsonLd()} />
       </head>
