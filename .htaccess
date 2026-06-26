@@ -5,14 +5,12 @@ Options -MultiViews
 
 DirectoryIndex index.html
 
-# Stop mod_dir from auto-redirecting /login -> /login/ when a stale empty dir exists.
-<IfModule mod_dir.c>
-  DirectorySlash Off
-</IfModule>
-
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /Hometest/
+
+  # Homepage: serve index.html for /Hometest/ (and /Hometest without trailing slash).
+  RewriteRule ^$ index.html [END]
 
   # Known app routes -> .html.
   # [END] instead of [L]: in .htaccess context Apache re-processes all rules after every
