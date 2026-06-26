@@ -6,10 +6,34 @@ import Navbar from "@/components/Navbar";
 import FaqSection from "@/components/FaqSection";
 import { SUPPORT_FAQ } from "@/lib/seo";
 
+const API_BASE = "https://itcatalystindia.com/Development/CustomerPortal_API";
+const S3_BASE_URL = "https://s3.ap-south-2.amazonaws.com/datalynkr.images";
+const MAX_FILE_SIZE = 10 * 1024 * 1024;
+
+type FormState = {
+  name: string;
+  companyName: string;
+  registeredEmail: string;
+  phoneNumber: string;
+  description: string;
+};
+
+const initialFormState: FormState = {
+  name: "",
+  companyName: "",
+  registeredEmail: "",
+  phoneNumber: "",
+  description: "",
+};
+
 export default function SupportClient() {
+  const [form, setForm] = useState<FormState>(initialFormState);
   const [issueCategory, setIssueCategory] = useState("");
   const [priority, setPriority] = useState("Low");
-  const [fileName, setFileName] = useState("");
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState<{ message: string; ticketNo?: string } | null>(null);
   const [navVisible, setNavVisible] = useState(true);
 
   const ticketFormRef = useRef<HTMLDivElement>(null);
@@ -34,14 +58,31 @@ export default function SupportClient() {
 
   const handleCategoryPillClick = (categoryText: string) => {
     setIssueCategory(categoryText);
+    if (success) setSuccess(null);
     if (ticketFormRef.current) {
       ticketFormRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
+  const updateField = (field: keyof FormState, value: string) => {
+    setForm((prev) => ({ ...prev, [field]: value }));
+    if (error) setError("");
+    if (success) setSuccess(null);
+  };
+
+  const setFile = (file: File | null) => {
+    if (file && file.size > MAX_FILE_SIZE) {
+      setError("File must be 10MB or smaller.");
+      return;
+    }
+    setSelectedFile(file);
+    if (error) setError("");
+    if (success) setSuccess(null);
+  };
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
-      setFileName(e.target.files[0].name);
+      setFile(e.target.files[0]);
     }
   };
 
@@ -52,10 +93,121 @@ export default function SupportClient() {
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      setFileName(e.dataTransfer.files[0].name);
+      setFile(e.dataTransfer.files[0]);
       if (fileInputRef.current) {
         fileInputRef.current.files = e.dataTransfer.files;
       }
+    }
+  };
+
+  const uploadAttachment = async (file: File) => {
+    const fileType = file.type || "application/octet-stream";
+
+    const uploadUrlResponse = await fetch(`${API_BASE}/api/images/support-ticket/upload-url`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fileName: file.name,
+        fileType,
+        type: "SupportTicket",
+      }),
+    });
+
+    const uploadUrlData = await uploadUrlResponse.json();
+    if (!uploadUrlResponse.ok || !uploadUrlData.uploadUrl || !uploadUrlData.key) {
+      throw new Error(uploadUrlData.message ?? "Failed to prepare file upload.");
+    }
+
+    const s3Response = await fetch(uploadUrlData.uploadUrl, {
+      method: "PUT",
+      headers: { "Content-Type": fileType },
+      body: file,
+    });
+
+    if (!s3Response.ok) {
+      throw new Error("Failed to upload file. Please try again.");
+    }
+
+    const confirmResponse = await fetch(`${API_BASE}/api/images/support-ticket/confirm`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        s3Key: uploadUrlData.key,
+        type: "SupportTicket",
+        fileType,
+      }),
+    });
+
+    const confirmData = await confirmResponse.json();
+    if (!confirmResponse.ok || confirmData.status !== "success") {
+      throw new Error(confirmData.message ?? "Failed to confirm file upload.");
+    }
+
+    return {
+      s3Key: uploadUrlData.key as string,
+      s3Url: `${S3_BASE_URL}/${uploadUrlData.key}`,
+      fileName: file.name,
+      mimeType: fileType,
+    };
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    setSuccess(null);
+    setIsSubmitting(true);
+
+    try {
+      let attachment: {
+        s3Key: string;
+        s3Url: string;
+        fileName: string;
+        mimeType: string;
+      } | null = null;
+
+      if (selectedFile) {
+        attachment = await uploadAttachment(selectedFile);
+      }
+
+      const payload = {
+        name: form.name,
+        companyName: form.companyName,
+        registeredEmail: form.registeredEmail,
+        phoneNumber: form.phoneNumber,
+        issueCategory,
+        priority,
+        description: form.description,
+        ...(attachment ?? {}),
+      };
+
+      const response = await fetch(`${API_BASE}/api/customer-engagement/support-tickets`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        setError(data.message ?? "Failed to submit your support ticket. Please try again.");
+        return;
+      }
+
+      setSuccess({
+        message: data.message ?? "Support ticket created successfully",
+        ticketNo: data.data?.ticket_no,
+      });
+      setForm(initialFormState);
+      setIssueCategory("");
+      setPriority("Low");
+      setSelectedFile(null);
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Unable to submit your ticket. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -252,19 +404,30 @@ export default function SupportClient() {
                 <h2 className="headline-font text-2xl md:text-3xl font-bold relative z-10">Submit a Support Ticket</h2>
                 <p className="text-white/80 mt-2 relative z-10">Please provide the details below and we'll get right on it.</p>
               </div>
-              <form
-                className="p-6 lg:p-12 md:p-8 space-y-6"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  alert("Support ticket submitted successfully!");
-                }}
-              >
+              <form className="p-6 lg:p-12 md:p-8 space-y-6" onSubmit={handleSubmit}>
+                {error && (
+                  <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                    {error}
+                  </div>
+                )}
+                {success && (
+                  <div className="rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800">
+                    <p className="font-semibold">{success.message}</p>
+                    {success.ticketNo && (
+                      <p className="mt-1">
+                        Ticket number: <span className="font-bold">{success.ticketNo}</span>
+                      </p>
+                    )}
+                  </div>
+                )}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-slate-700">Full Name <span className="text-red-500">*</span></label>
                     <input
                       type="text"
                       required
+                      value={form.name}
+                      onChange={(e) => updateField("name", e.target.value)}
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-1 focus:ring-primary focus:border-primary focus:outline-none transition-all text-slate-900"
                       placeholder="John Doe"
                     />
@@ -274,6 +437,8 @@ export default function SupportClient() {
                     <input
                       type="text"
                       required
+                      value={form.companyName}
+                      onChange={(e) => updateField("companyName", e.target.value)}
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-1 focus:ring-primary focus:border-primary focus:outline-none transition-all text-slate-900"
                       placeholder="Your Company"
                     />
@@ -285,6 +450,8 @@ export default function SupportClient() {
                     <input
                       type="email"
                       required
+                      value={form.registeredEmail}
+                      onChange={(e) => updateField("registeredEmail", e.target.value)}
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-1 focus:ring-primary focus:border-primary focus:outline-none transition-all text-slate-900"
                       placeholder="john@company.com"
                     />
@@ -294,6 +461,8 @@ export default function SupportClient() {
                     <input
                       type="tel"
                       required
+                      value={form.phoneNumber}
+                      onChange={(e) => updateField("phoneNumber", e.target.value)}
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-1 focus:ring-primary focus:border-primary focus:outline-none transition-all text-slate-900"
                       placeholder="+91 XXXXXXXXXX"
                     />
@@ -304,7 +473,10 @@ export default function SupportClient() {
                     <label className="text-sm font-bold text-slate-700">Issue Category <span className="text-red-500">*</span></label>
                     <select
                       value={issueCategory}
-                      onChange={(e) => setIssueCategory(e.target.value)}
+                      onChange={(e) => {
+                        setIssueCategory(e.target.value);
+                        if (success) setSuccess(null);
+                      }}
                       required
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-1 focus:ring-primary focus:border-primary focus:outline-none transition-all text-slate-900 bg-white"
                     >
@@ -327,7 +499,10 @@ export default function SupportClient() {
                           <button
                             type="button"
                             key={lvl}
-                            onClick={() => setPriority(lvl)}
+                            onClick={() => {
+                              setPriority(lvl);
+                              if (success) setSuccess(null);
+                            }}
                             className={`flex-1 text-center py-2 rounded-lg cursor-pointer font-bold text-xs transition-all duration-200 ${
                               isSelected
                                 ? "bg-white text-slate-800 shadow-sm"
@@ -346,6 +521,8 @@ export default function SupportClient() {
                   <textarea
                     rows={4}
                     required
+                    value={form.description}
+                    onChange={(e) => updateField("description", e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-1 focus:ring-primary focus:border-primary focus:outline-none transition-all text-slate-900"
                     placeholder="Tell us more about the issue you're facing..."
                   ></textarea>
@@ -369,9 +546,9 @@ export default function SupportClient() {
                       cloud_upload
                     </span>
                     <p className="text-sm text-slate-500 mt-2">
-                      {fileName ? (
+                      {selectedFile ? (
                         <>
-                          Selected: <span className="text-primary font-bold">{fileName}</span>
+                          Selected: <span className="text-primary font-bold">{selectedFile.name}</span>
                         </>
                       ) : (
                         <>
@@ -385,9 +562,10 @@ export default function SupportClient() {
                 <div className="pt-4">
                   <button
                     type="submit"
-                    className="w-full bg-black text-white py-4 rounded-xl font-bold text-lg hover:bg-zinc-800 transition-all shadow-xl shadow-black/20 active:scale-[0.98] cursor-pointer"
+                    disabled={isSubmitting}
+                    className="w-full bg-black text-white py-4 rounded-xl font-bold text-lg hover:bg-zinc-800 transition-all shadow-xl shadow-black/20 active:scale-[0.98] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed disabled:active:scale-100"
                   >
-                    Submit Ticket
+                    {isSubmitting ? "Submitting..." : "Submit Ticket"}
                   </button>
                   <p className="text-center text-xs text-[#5b403d] mt-4">
                     Our team typically responds within <span className="font-bold text-primary">24 hours</span>.
