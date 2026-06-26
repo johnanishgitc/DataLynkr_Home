@@ -5,6 +5,8 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const API_BASE = "https://itcatalystindia.com/Development/CustomerPortal_API";
+
 type FormState = {
   name: string;
   companyName: string;
@@ -44,7 +46,7 @@ export default function ContactClient() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://itcatalystindia.com/Development/CustomerPortal_API/api/customer-engagement/demo-request", {
+      const response = await fetch(`${API_BASE}/api/customer-engagement/demo-requests`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
