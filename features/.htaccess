@@ -1,5 +1,6 @@
 # Static Next.js export — feature pages are served as features/slug.html files.
-# The root .htaccess rewrites /features/slug -> features/slug.html
+# Each mod_rewrite directive in a subdirectory .htaccess runs in its own context,
+# so the root .htaccess feature rule does not apply here — we need our own.
 
 Options -MultiViews -Indexes
 
@@ -7,6 +8,14 @@ Options -MultiViews -Indexes
   RewriteEngine On
   RewriteBase /Hometest/features/
 
-  # Redirect legacy /features/slug.html bookmarks to clean URLs
+  # Serve feature page HTML for clean slug URLs.
+  # [^/.] excludes dots so /slug.html requests fall through to the legacy redirect below.
+  # [END] prevents re-processing after the internal rewrite (avoids redirect loop).
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^([^/.]+)/?$ $1.html [END,NC]
+
+  # Redirect legacy /features/slug.html bookmarks to clean URLs.
+  RewriteCond %{THE_REQUEST} \s[^\s]*\.html[\s?] [NC]
   RewriteRule ^([^/]+)\.html$ /Hometest/features/$1 [R=301,L,NC]
 </IfModule>

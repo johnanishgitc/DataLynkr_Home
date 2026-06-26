@@ -132,12 +132,21 @@ if (fs.existsSync(outDir)) {
     console.log(`Feature pages: ${featurePages.join(", ") || "(none)"}`);
   }
 
-  // Copy .htaccess to out/ directory for deployment convenience
+  // Copy root .htaccess to out/ for deployment
   const htaccessSrc = path.join(root, ".htaccess");
   const htaccessDest = path.join(outDir, ".htaccess");
   if (fs.existsSync(htaccessSrc)) {
     fs.copyFileSync(htaccessSrc, htaccessDest);
     console.log("Copied .htaccess to out/ directory.");
+  }
+
+  // Copy features/.htaccess to out/features/ — features subdirectory runs its own
+  // mod_rewrite context so it needs its own .htaccess to serve slug.html files.
+  const featuresHtaccessSrc = path.join(root, "features", ".htaccess");
+  const featuresHtaccessDest = path.join(outDir, "features", ".htaccess");
+  if (fs.existsSync(featuresHtaccessSrc) && fs.existsSync(featuresOutDir)) {
+    fs.copyFileSync(featuresHtaccessSrc, featuresHtaccessDest);
+    console.log("Copied features/.htaccess to out/features/ directory.");
   }
 
   deployOutToWebRoot();
