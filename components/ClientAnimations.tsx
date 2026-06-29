@@ -31,6 +31,10 @@ export default function ClientAnimations() {
     );
 
     document.querySelectorAll(".reveal-on-scroll").forEach((el) => {
+      if (el.closest("#hero-section")) {
+        el.classList.add("is-visible");
+        return;
+      }
       el.classList.remove("is-visible");
       revealObserver.observe(el);
     });

@@ -75,7 +75,7 @@ export default function HomeClient() {
       {/* Main Content Canvas */}
       <main className="min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 pt-24 md:pt-20 bg-white relative">
         {/* Hero Section */}
-        <div id="hero-section" className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 lg:gap-8 items-center">
+        <div id="hero-section" className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 lg:gap-8 items-center lg:min-h-[36rem]">
           <div className="space-y-6 relative z-20">
             {/* Primary Headline */}
             <div className="space-y-4">
@@ -612,6 +612,9 @@ export default function HomeClient() {
                     <img
                       src={basePath + "/resources/poster_images/orders.webp"}
                       alt=""
+                      width={280}
+                      height={497}
+                      decoding="async"
                       className="absolute inset-0 w-full h-full object-contain z-20 transition-opacity duration-300 pointer-events-none"
                       loading="lazy"
                     />
@@ -695,8 +698,11 @@ export default function HomeClient() {
                       <img
                         src={basePath + "/resources/poster_images/extendportal.webp"}
                         alt=""
+                        width={516}
+                        height={322}
+                        decoding="async"
                         className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
-                      loading="lazy"
+                        loading="lazy"
                       />
                       <video
                         width={1920}

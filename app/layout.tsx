@@ -345,7 +345,9 @@ export default function RootLayout({
         {/* Tiny inline script to enable progressive-enhancement scroll animations.
             Without this class, .reveal-on-scroll content stays visible (no blank page). */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js-ready')" }} />
-        {/* Fonts load after idle — not on the critical render path */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Non-blocking fonts: load immediately (not idle) to avoid late swap CLS */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){
@@ -353,15 +355,12 @@ export default function RootLayout({
                 "https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&display=swap",
                 "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
               ];
-              function loadFonts(){
-                urls.forEach(function(h){
-                  var l=document.createElement("link");
-                  l.rel="stylesheet";l.href=h;
-                  document.head.appendChild(l);
-                });
-              }
-              if("requestIdleCallback" in window){requestIdleCallback(loadFonts);}
-              else{setTimeout(loadFonts,1);}
+              urls.forEach(function(h){
+                var l=document.createElement("link");
+                l.rel="stylesheet";l.href=h;l.media="print";
+                l.onload=function(){l.media="all";};
+                document.head.appendChild(l);
+              });
             })();`,
           }}
         />

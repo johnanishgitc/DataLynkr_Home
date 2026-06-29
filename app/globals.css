@@ -23,9 +23,9 @@
   --color-outline: #906f6c;
   --color-outline-variant: #e4beb9;
 
-  --font-headline: "Wix Madefor Display", sans-serif;
-  --font-body: "Wix Madefor Text", sans-serif;
-  --font-label: "Wix Madefor Text", sans-serif;
+  --font-headline: "Wix Madefor Display", "Wix Madefor Display Fallback", sans-serif;
+  --font-body: "Wix Madefor Text", "Wix Madefor Text Fallback", sans-serif;
+  --font-label: "Wix Madefor Text", "Wix Madefor Text Fallback", sans-serif;
 
   --radius-xs: 0.125rem;
   --radius-sm: 0.125rem;
@@ -35,13 +35,46 @@
   --radius-full: 0.75rem;
 }
 
+/* Matched fallbacks reduce layout shift when Wix fonts load */
+@font-face {
+  font-family: "Wix Madefor Display Fallback";
+  src: local("Segoe UI"), local("Helvetica Neue"), local("Arial");
+  font-style: normal;
+  font-weight: 400 800;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+  size-adjust: 106%;
+}
+
+@font-face {
+  font-family: "Wix Madefor Text Fallback";
+  src: local("Segoe UI"), local("Helvetica Neue"), local("Arial");
+  font-style: normal;
+  font-weight: 400 800;
+  ascent-override: 92%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+  size-adjust: 103%;
+}
+
+/* Reserve icon box so Material Symbols loading does not shift layout */
+.material-symbols-outlined {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
 /* Base body styles */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Wix Madefor Text", sans-serif;
+  font-family: "Wix Madefor Text", "Wix Madefor Text Fallback", sans-serif;
   background-color: #ffffff !important;
   color: var(--color-on-surface);
   min-height: 100dvh;
