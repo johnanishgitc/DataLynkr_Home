@@ -206,7 +206,7 @@ export default function HomeClient() {
                     <span className="material-symbols-outlined text-emerald-600">verified</span>
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-slate-800">Invoice Approved</h4>
+                    <p className="text-sm font-bold text-slate-800">Invoice Approved</p>
                     <p className="text-[10px] text-slate-500 uppercase tracking-widest font-medium">Auto-Workflow</p>
                   </div>
                 </div>
@@ -244,7 +244,7 @@ export default function HomeClient() {
                   <div className="w-5 h-5 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center overflow-hidden">
                     <span className="material-symbols-outlined text-[10px] text-slate-400">domain</span>
                   </div>
-                  <span className="text-[9px] text-slate-500 font-medium">Acme Corp</span>
+                  <span className="text-[9px] text-slate-400 font-medium">Acme Corp</span>
                 </div>
               </div>
 
@@ -378,7 +378,7 @@ export default function HomeClient() {
                       <span className="material-symbols-outlined text-xl">{item.icon}</span>
                     </div>
                     <div>
-                      <h4 className="font-body font-bold text-slate-800 text-sm">{item.title}</h4>
+                      <h3 className="font-body font-bold text-slate-800 text-sm">{item.title}</h3>
                       <p className="font-body text-xs text-slate-500 leading-relaxed mt-0.5">{item.desc}</p>
                     </div>
                   </div>
