@@ -12,25 +12,20 @@ DirectoryIndex index.html
   # Homepage when accessed via /DataLynkr_Home/
   RewriteRule ^$ index.html [END]
 
-  # Known app routes -> .html
-  RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)/?$ $1.html [END,NC]
+  # Known app routes -> /index.html
+  RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)/?$ $1/index.html [END,NC]
 
-  # Feature pages -> .html
-  RewriteRule ^features/(authorization-workflows|custom-reports|daily-ledger-reports|dynamic-dashboards|extend-portal-customers|invoice-creation|modern-bcommerce-ordering|offline-transactions|payments-collections|sales-order-management|stock-summary)/?$ features/$1.html [END,NC]
+  # Feature pages -> /index.html
+  RewriteRule ^features/(authorization-workflows|custom-reports|daily-ledger-reports|dynamic-dashboards|extend-portal-customers|invoice-creation|modern-bcommerce-ordering|offline-transactions|payments-collections|sales-order-management|stock-summary)/?$ features/$1/index.html [END,NC]
 
   # Legacy *.html bookmarks -> clean URLs (browser request only)
   RewriteCond %{THE_REQUEST} \s[^\s]*\.html[\s?] [NC]
-  RewriteRule ^features/([^/]+)\.html$ /features/$1 [R=301,L,NC]
+  RewriteRule ^features/([^/]+)\.html$ /features/$1/ [R=301,L,NC]
   RewriteRule ^code\.html$ / [R=301,L,NC]
-  RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)\.html$ /$1 [R=301,L,NC]
+  RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)\.html$ /$1/ [R=301,L,NC]
 
-  # Trailing slash -> clean URL
-  RewriteCond %{THE_REQUEST} \s[^\s]*/.+?/[\s?] [NC]
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(.+)/$ /DataLynkr_Home/$1 [R=301,L]
-
-  # Serve .html for any other clean URL
+  # Serve index.html inside a directory for other clean URLs
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteRule ^(.+?)/?$ $1.html [END]
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.+?)/?$ $1/index.html [END]
 </IfModule>

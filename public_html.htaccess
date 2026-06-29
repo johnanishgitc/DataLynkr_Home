@@ -25,11 +25,11 @@
   # Homepage
   RewriteRule ^$ DataLynkr_Home/index.html [L]
 
-  # Marketing pages → .html in DataLynkr_Home
-  RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)/?$ DataLynkr_Home/$1.html [END,NC]
+  # Marketing pages → index.html in DataLynkr_Home subdirectories
+  RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)/?$ DataLynkr_Home/$1/index.html [END,NC]
 
   # Feature pages
-  RewriteRule ^features/(authorization-workflows|custom-reports|daily-ledger-reports|dynamic-dashboards|extend-portal-customers|invoice-creation|modern-bcommerce-ordering|offline-transactions|payments-collections|sales-order-management|stock-summary)/?$ DataLynkr_Home/features/$1.html [END,NC]
+  RewriteRule ^features/(authorization-workflows|custom-reports|daily-ledger-reports|dynamic-dashboards|extend-portal-customers|invoice-creation|modern-bcommerce-ordering|offline-transactions|payments-collections|sales-order-management|stock-summary)/?$ DataLynkr_Home/features/$1/index.html [END,NC]
 
   # Legacy *.html bookmarks → clean URLs (marketing only)
   RewriteCond %{THE_REQUEST} \s[^\s]*\.html[\s?] [NC]
@@ -55,8 +55,8 @@
   RewriteCond %{DOCUMENT_ROOT}/index.html -f
   RewriteRule ^ index.html [L]
 
-  # Other clean URLs → .html in DataLynkr_Home if present
-  RewriteCond %{DOCUMENT_ROOT}/DataLynkr_Home/$1.html -f
-  RewriteRule ^(.+?)/?$ DataLynkr_Home/$1.html [END]
+  # Other clean URLs → index.html in DataLynkr_Home if present
+  RewriteCond %{DOCUMENT_ROOT}/DataLynkr_Home/$1/index.html -f
+  RewriteRule ^(.+?)/?$ DataLynkr_Home/$1/index.html [END]
 </IfModule>
 # END DataLynkr Home

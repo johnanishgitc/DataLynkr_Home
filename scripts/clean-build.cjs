@@ -24,8 +24,8 @@ const outDir = path.join(root, "out");
 const MARKER_BEGIN = "# BEGIN DataLynkr Home";
 const MARKER_END = "# END DataLynkr Home";
 
-/** Top-level route names that must be .html files, not physical directories. */
-const STALE_ROUTE_DIRS = [
+/** Top-level route names that are now directories, meaning any root .html files are stale. */
+const ROUTE_NAMES = [
   "about",
   "pricing",
   "contact",
@@ -36,8 +36,8 @@ const STALE_ROUTE_DIRS = [
   "changepswd",
 ];
 
-/** Feature slugs whose old per-slug directories shadow the new .html files. */
-const STALE_FEATURE_DIRS = [
+/** Feature slugs whose pages are now directories, meaning any features/*.html files are stale. */
+const FEATURE_SLUGS = [
   "authorization-workflows",
   "custom-reports",
   "daily-ledger-reports",
@@ -83,24 +83,29 @@ function copyRecursive(src, dest) {
   fs.copyFileSync(src, dest);
 }
 
-function removeStaleRouteDirectories(targetDir) {
-  for (const name of STALE_ROUTE_DIRS) {
-    const dirPath = path.join(targetDir, name);
-    if (fs.existsSync(dirPath) && fs.statSync(dirPath).isDirectory()) {
-      fs.rmSync(dirPath, { recursive: true, force: true });
-      console.log(`Removed stale directory ${name}/`);
+function removeStaleRouteFiles(targetDir) {
+  for (const name of ROUTE_NAMES) {
+    const filePath = path.join(targetDir, `${name}.html`);
+    if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+      fs.unlinkSync(filePath);
+      console.log(`Removed stale route file: ${name}.html`);
+    }
+    const txtPath = path.join(targetDir, `${name}.txt`);
+    if (fs.existsSync(txtPath) && fs.statSync(txtPath).isFile()) {
+      fs.unlinkSync(txtPath);
+      console.log(`Removed stale route file: ${name}.txt`);
     }
   }
 }
 
-function removeStaleFeatureDirectories(targetDir) {
+function removeStaleFeatureFiles(targetDir) {
   const featuresDir = path.join(targetDir, "features");
   if (!fs.existsSync(featuresDir)) return;
-  for (const slug of STALE_FEATURE_DIRS) {
-    const dirPath = path.join(featuresDir, slug);
-    if (fs.existsSync(dirPath) && fs.statSync(dirPath).isDirectory()) {
-      fs.rmSync(dirPath, { recursive: true, force: true });
-      console.log(`Removed stale features/${slug}/`);
+  for (const slug of FEATURE_SLUGS) {
+    const filePath = path.join(featuresDir, `${slug}.html`);
+    if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+      fs.unlinkSync(filePath);
+      console.log(`Removed stale feature file: features/${slug}.html`);
     }
   }
 }
@@ -162,8 +167,8 @@ function deployOutToProjectRoot() {
 
   console.log(`\nDeploying to: ${root}`);
 
-  removeStaleRouteDirectories(root);
-  removeStaleFeatureDirectories(root);
+  removeStaleRouteFiles(root);
+  removeStaleFeatureFiles(root);
 
   for (const entry of fs.readdirSync(outDir)) {
     copyRecursive(path.join(outDir, entry), path.join(root, entry));
@@ -171,8 +176,8 @@ function deployOutToProjectRoot() {
 
   removeNextDefaultArtifacts(root);
 
-  removeStaleRouteDirectories(root);
-  removeStaleFeatureDirectories(root);
+  removeStaleRouteFiles(root);
+  removeStaleFeatureFiles(root);
 
   installParentHtaccess();
 
