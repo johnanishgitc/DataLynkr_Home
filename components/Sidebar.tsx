@@ -25,26 +25,10 @@ const featureLinks = [
 export function SidebarTrigger() {
   const { jsReady, toggleSidebar, isSidebarOpen } = useSidebar();
 
-  return (
-    <label
-      htmlFor={jsReady ? undefined : "sidebar-toggle"}
-      onClick={jsReady ? toggleSidebar : undefined}
-      id="menu-btn"
-      role="button"
-      tabIndex={0}
-      aria-label="Open menu"
-      onKeyDown={
-        jsReady
-          ? (e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                toggleSidebar();
-              }
-            }
-          : undefined
-      }
-      className="relative flex items-center justify-center lg:gap-2 p-0 lg:px-4 lg:py-1.5 rounded-full border-0 lg:border-2 border-primary bg-transparent lg:bg-primary lg:hover:bg-primary/90 lg:hover:border-primary/90 text-[#0E172B] lg:text-white shadow-none lg:shadow-sm lg:hover:shadow-md hover:translate-y-0 lg:hover:-translate-y-0.5 transition-all duration-300 focus:outline-none group active:scale-95 cursor-pointer"
-    >
+  const triggerClassName = "relative flex items-center justify-center lg:gap-2 p-0 lg:px-4 lg:py-1.5 rounded-full border-0 lg:border-2 border-primary bg-transparent lg:bg-primary lg:hover:bg-primary/90 lg:hover:border-primary/90 text-[#0E172B] lg:text-white shadow-none lg:shadow-sm lg:hover:shadow-md hover:translate-y-0 lg:hover:-translate-y-0.5 transition-all duration-300 focus:outline-none group active:scale-95 cursor-pointer";
+
+  const triggerChildren = (
+    <>
       {/* Mobile hamburger — visible only below lg breakpoint */}
       <svg
         className="block lg:hidden w-6 h-5 text-[#0E172B] hover:opacity-80 transition-opacity"
@@ -76,7 +60,38 @@ export function SidebarTrigger() {
       >
         Menu
       </span>
-    </label>
+    </>
+  );
+
+  if (!jsReady) {
+    return (
+      <label
+        htmlFor="sidebar-toggle"
+        id="menu-btn"
+        aria-label="Open menu"
+        className={triggerClassName}
+      >
+        {triggerChildren}
+      </label>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={toggleSidebar}
+      id="menu-btn"
+      aria-label="Open menu"
+      className={triggerClassName}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          toggleSidebar();
+        }
+      }}
+    >
+      {triggerChildren}
+    </button>
   );
 }
 
