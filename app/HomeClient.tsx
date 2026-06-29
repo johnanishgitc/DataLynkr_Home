@@ -2,12 +2,13 @@
 
 import { basePath } from "@/lib/site";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import SiteLink from "@/components/SiteLink";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FaqSection from "@/components/FaqSection";
 import { HOME_FAQ } from "@/lib/seo";
+import PosterPicture from "@/components/PosterPicture";
 
 export default function HomeClient() {
   // Controlled state for Mobile / Laptop view toggles
@@ -58,14 +59,15 @@ export default function HomeClient() {
     );
   };
 
-  const getContainerClass = (sectionId: string, view: "mobile" | "laptop") => {
-    const isActive = activeViews[sectionId] === view;
-    return `col-start-1 row-start-1 w-full flex justify-center transition-all duration-500 ease-out ${
-      isActive
-        ? "opacity-100 scale-100 pointer-events-auto z-10 visible"
-        : "opacity-0 scale-95 pointer-events-none z-0 invisible"
-    }`;
-  };
+  const renderToggleMedia = (
+    sectionId: string,
+    mobile: ReactNode,
+    laptop: ReactNode,
+  ) => (
+    <div className="w-full flex justify-center transition-all duration-500 ease-out">
+      {activeViews[sectionId] === "mobile" ? mobile : laptop}
+    </div>
+  );
 
   return (
     <div className="cdn-tailwind-content">
@@ -605,9 +607,8 @@ export default function HomeClient() {
             {/* Media Container with Mobile/Laptop Toggle */}
             <div className="h-full flex flex-col items-center justify-center reveal-on-scroll reveal-fade-in-right w-full">
               {renderToggleButtons("sales-order")}
-              <div className="grid w-full items-center">
-                <div className={getContainerClass("sales-order", "mobile")}>
-                  <div className="w-full max-w-[280px] aspect-[9/19] bg-black rounded-2xl border-[12px] border-zinc-900 shadow-2xl relative overflow-hidden group">
+              {renderToggleMedia("sales-order",
+                (<div className="w-full max-w-[280px] aspect-[9/19] bg-black rounded-2xl border-[12px] border-zinc-900 shadow-2xl relative overflow-hidden group">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={basePath + "/resources/poster_images/orders.webp"}
@@ -621,21 +622,19 @@ export default function HomeClient() {
                     <video
                       width={720}
                       height={1600}
-                      autoPlay
                       loop
                       muted
                       playsInline
-                      preload="metadata"
+                      preload="none"
                       poster={basePath + "/resources/poster_images/orders.webp"}
                       className="absolute inset-0 w-full h-full object-contain rounded-xl z-10"
                       onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                      data-src={basePath + "/resources/videos/orders.mp4"}
                     >
-                      <source src={basePath + "/resources/videos/orders.mp4"} type="video/mp4" />
+                      <source type="video/mp4" />
                     </video>
-                  </div>
-                </div>
-                <div className={getContainerClass("sales-order", "laptop")}>
-                  <div className="relative w-full max-w-2xl group">
+                  </div>),
+                (<div className="relative w-full max-w-2xl group">
                     <div className="relative rounded-t-xl border-[4px] md:border-[8px] lg:border-[12px] border-zinc-900 bg-zinc-900 aspect-[16/10] overflow-hidden shadow-2xl">
                       <div className="absolute inset-0 bg-white flex flex-col">
                         <div className="absolute inset-0 overflow-hidden">
@@ -649,25 +648,24 @@ export default function HomeClient() {
                           <video
                             width={1920}
                             height={1200}
-                            autoPlay
                             loop
                             muted
                             playsInline
-                            preload="metadata"
+                            preload="none"
                             poster={basePath + "/resources/poster_images/orders_laptop.webp"}
                             className="w-full h-full object-cover z-10"
                             onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                            data-src={basePath + "/resources/videos/orders_laptop.mp4"}
                           >
-                            <source src={basePath + "/resources/videos/orders_laptop.mp4"} type="video/mp4" />
+                            <source type="video/mp4" />
                           </video>
                         </div>
                       </div>
                     </div>
                     <div className="relative h-4 bg-zinc-800 rounded-b-xl w-[105%] -left-[2.5%] shadow-xl"></div>
                     <div className="relative h-2 bg-zinc-700/50 rounded-b-2xl w-[80%] mx-auto"></div>
-                  </div>
-                </div>
-              </div>
+                  </div>),
+              )}
             </div>
           </div>
 
@@ -707,16 +705,16 @@ export default function HomeClient() {
                       <video
                         width={1920}
                         height={1200}
-                        autoPlay
                         loop
                         muted
                         playsInline
-                        preload="metadata"
+                        preload="none"
                         poster={basePath + "/resources/poster_images/extendportal.webp"}
                         className="w-full h-full object-cover"
                         onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                        data-src={basePath + "/resources/videos/extendportal.mp4"}
                       >
-                        <source src={basePath + "/resources/videos/extendportal.mp4"} type="video/mp4" />
+                        <source type="video/mp4" />
                       </video>
                     </div>
                   </div>
@@ -887,9 +885,8 @@ export default function HomeClient() {
             {/* Right Column: Media Container */}
             <div className="h-full flex flex-col items-center justify-center reveal-on-scroll reveal-fade-in-right w-full">
               {renderToggleButtons("bcommerce")}
-              <div className="grid w-full items-center">
-                <div className={getContainerClass("bcommerce", "mobile")}>
-                  <div className="w-full max-w-[280px] aspect-[9/19] bg-zinc-900 rounded-2xl border-[10px] border-zinc-900 shadow-2xl relative overflow-hidden group">
+              {renderToggleMedia("bcommerce",
+                (<div className="w-full max-w-[280px] aspect-[9/19] bg-zinc-900 rounded-2xl border-[10px] border-zinc-900 shadow-2xl relative overflow-hidden group">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={basePath + "/resources/poster_images/bcomm.webp"}
@@ -900,21 +897,19 @@ export default function HomeClient() {
                     <video
                       width={720}
                       height={1520}
-                      autoPlay
                       loop
                       muted
                       playsInline
-                      preload="metadata"
+                      preload="none"
                       poster={basePath + "/resources/poster_images/bcomm.webp"}
                       className="absolute inset-0 w-full h-full object-cover rounded-xl z-10"
                       onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                      data-src={basePath + "/resources/videos/bcomm.mp4"}
                     >
-                      <source src={basePath + "/resources/videos/bcomm.mp4"} type="video/mp4" />
+                      <source type="video/mp4" />
                     </video>
-                  </div>
-                </div>
-                <div className={getContainerClass("bcommerce", "laptop")}>
-                  <div className="relative w-full max-w-2xl group">
+                  </div>),
+                (<div className="relative w-full max-w-2xl group">
                     <div className="relative rounded-t-xl border-[4px] md:border-[8px] lg:border-[12px] border-zinc-900 bg-zinc-900 aspect-[16/10] overflow-hidden shadow-2xl">
                       <div className="absolute inset-0 bg-white flex flex-col">
                         <div className="absolute inset-0 overflow-hidden">
@@ -928,25 +923,24 @@ export default function HomeClient() {
                           <video
                             width={1920}
                             height={1200}
-                            autoPlay
                             loop
                             muted
                             playsInline
-                            preload="metadata"
+                            preload="none"
                             poster={basePath + "/resources/poster_images/bcomm_laptop.webp"}
                             className="w-full h-full object-cover z-10"
                             onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                            data-src={basePath + "/resources/videos/bcomm_laptop.mp4"}
                           >
-                            <source src={basePath + "/resources/videos/bcomm_laptop.mp4"} type="video/mp4" />
+                            <source type="video/mp4" />
                           </video>
                         </div>
                       </div>
                     </div>
                     <div className="relative h-4 bg-zinc-800 rounded-b-xl w-[105%] -left-[2.5%] shadow-xl"></div>
                     <div className="relative h-2 bg-zinc-700/50 rounded-b-2xl w-[80%] mx-auto"></div>
-                  </div>
-                </div>
-              </div>
+                  </div>),
+              )}
             </div>
           </div>
 
@@ -970,9 +964,8 @@ export default function HomeClient() {
             {/* Left Column: Media Container */}
             <div className="order-2 lg:order-1 h-full flex flex-col items-center justify-center reveal-on-scroll reveal-fade-in-left w-full">
               {renderToggleButtons("invoice")}
-              <div className="grid w-full items-center">
-                <div className={getContainerClass("invoice", "mobile")}>
-                  <div className="w-full max-w-[280px] aspect-[9/19] bg-zinc-900 rounded-2xl border-[10px] border-zinc-900 shadow-2xl relative overflow-hidden group">
+              {renderToggleMedia("invoice",
+                (<div className="w-full max-w-[280px] aspect-[9/19] bg-zinc-900 rounded-2xl border-[10px] border-zinc-900 shadow-2xl relative overflow-hidden group">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={basePath + "/resources/poster_images/invoice.webp"}
@@ -983,21 +976,19 @@ export default function HomeClient() {
                     <video
                       width={720}
                       height={1600}
-                      autoPlay
                       loop
                       muted
                       playsInline
-                      preload="metadata"
+                      preload="none"
                       poster={basePath + "/resources/poster_images/invoice.webp"}
                       className="absolute inset-0 w-full h-full object-cover rounded-xl z-10"
                       onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                      data-src={basePath + "/resources/videos/invoice.mp4"}
                     >
-                      <source src={basePath + "/resources/videos/invoice.mp4"} type="video/mp4" />
+                      <source type="video/mp4" />
                     </video>
-                  </div>
-                </div>
-                <div className={getContainerClass("invoice", "laptop")}>
-                  <div className="relative w-full max-w-2xl group">
+                  </div>),
+                (<div className="relative w-full max-w-2xl group">
                     <div className="relative rounded-t-xl border-[4px] md:border-[8px] lg:border-[10px] border-zinc-900 bg-zinc-900 aspect-[16/10] overflow-hidden shadow-2xl">
                       <div className="absolute inset-0 bg-white flex flex-col">
                         <div className="absolute inset-0 overflow-hidden">
@@ -1011,25 +1002,24 @@ export default function HomeClient() {
                           <video
                             width={1920}
                             height={1200}
-                            autoPlay
                             loop
                             muted
                             playsInline
-                            preload="metadata"
+                            preload="none"
                             poster={basePath + "/resources/poster_images/invoice_laptop.webp"}
                             className="w-full h-full object-cover"
                             onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                            data-src={basePath + "/resources/videos/invoice_laptop.mp4"}
                           >
-                            <source src={basePath + "/resources/videos/invoice_laptop.mp4"} type="video/mp4" />
+                            <source type="video/mp4" />
                           </video>
                         </div>
                       </div>
                     </div>
                     <div className="relative h-4 bg-zinc-800 rounded-b-xl w-[105%] -left-[2.5%] shadow-xl"></div>
                     <div className="relative h-2 bg-zinc-700/50 rounded-b-2xl w-[80%] mx-auto"></div>
-                  </div>
-                </div>
-              </div>
+                  </div>),
+              )}
             </div>
 
             {/* Right Column: Content */}
@@ -1196,9 +1186,8 @@ export default function HomeClient() {
             {/* Right Column: Media Container */}
             <div className="h-full flex flex-col items-center justify-center reveal-on-scroll reveal-fade-in-right w-full">
               {renderToggleButtons("workflows")}
-              <div className="grid w-full items-center">
-                <div className={getContainerClass("workflows", "mobile")}>
-                  <div className="w-full max-w-[280px] aspect-[9/19] bg-zinc-900 rounded-2xl border-[10px] border-zinc-900 shadow-2xl relative overflow-hidden group">
+              {renderToggleMedia("workflows",
+                (<div className="w-full max-w-[280px] aspect-[9/19] bg-zinc-900 rounded-2xl border-[10px] border-zinc-900 shadow-2xl relative overflow-hidden group">
                     <div className="absolute inset-0 bg-black overflow-hidden">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
@@ -1210,22 +1199,20 @@ export default function HomeClient() {
                       <video
                         width={720}
                         height={1600}
-                        autoPlay
                         loop
                         muted
                         playsInline
-                        preload="metadata"
+                        preload="none"
                         poster={basePath + "/resources/poster_images/approvals.webp"}
                         className="absolute inset-0 w-full h-full object-cover rounded-xl z-10"
                         onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                        data-src={basePath + "/resources/videos/approvals.mp4"}
                       >
-                        <source src={basePath + "/resources/videos/approvals.mp4"} type="video/mp4" />
+                        <source type="video/mp4" />
                       </video>
                     </div>
-                  </div>
-                </div>
-                <div className={getContainerClass("workflows", "laptop")}>
-                  <div className="relative w-full max-w-2xl group">
+                  </div>),
+                (<div className="relative w-full max-w-2xl group">
                     <div className="relative rounded-t-xl border-[4px] md:border-[8px] lg:border-[12px] border-zinc-900 bg-zinc-900 aspect-[16/10] overflow-hidden shadow-2xl">
                       <div className="absolute inset-0 bg-white flex flex-col">
                         <div className="absolute inset-0 overflow-hidden">
@@ -1239,25 +1226,24 @@ export default function HomeClient() {
                           <video
                             width={1920}
                             height={1200}
-                            autoPlay
                             loop
                             muted
                             playsInline
-                            preload="metadata"
+                            preload="none"
                             poster={basePath + "/resources/poster_images/approvals_laptop.webp"}
                             className="w-full h-full object-cover"
                             onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                            data-src={basePath + "/resources/videos/approvals_laptop.mp4"}
                           >
-                            <source src={basePath + "/resources/videos/approvals_laptop.mp4"} type="video/mp4" />
+                            <source type="video/mp4" />
                           </video>
                         </div>
                       </div>
                     </div>
                     <div className="relative h-4 bg-zinc-800 rounded-b-xl w-[105%] -left-[2.5%] shadow-xl"></div>
                     <div className="relative h-2 bg-zinc-700/50 rounded-b-2xl w-[80%] mx-auto"></div>
-                  </div>
-                </div>
-              </div>
+                  </div>),
+              )}
             </div>
           </div>
 
@@ -1281,9 +1267,8 @@ export default function HomeClient() {
             {/* Left Column: Media Container */}
             <div className="order-2 lg:order-1 h-full flex flex-col items-center justify-center reveal-on-scroll reveal-fade-in-left w-full">
               {renderToggleButtons("ledgers")}
-              <div className="grid w-full items-center">
-                <div className={getContainerClass("ledgers", "mobile")}>
-                  <div className="w-full max-w-[280px] aspect-[9/19] bg-black rounded-2xl border-[12px] border-zinc-900 shadow-2xl relative overflow-hidden group">
+              {renderToggleMedia("ledgers",
+                (<div className="w-full max-w-[280px] aspect-[9/19] bg-black rounded-2xl border-[12px] border-zinc-900 shadow-2xl relative overflow-hidden group">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={basePath + "/resources/poster_images/ledgers.webp"}
@@ -1294,21 +1279,19 @@ export default function HomeClient() {
                     <video
                       width={720}
                       height={1600}
-                      autoPlay
                       loop
                       muted
                       playsInline
-                      preload="metadata"
+                      preload="none"
                       poster={basePath + "/resources/poster_images/ledgers.webp"}
                       className="absolute inset-0 w-full h-full object-cover rounded-xl z-10"
                       onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                      data-src={basePath + "/resources/videos/ledgers.mp4"}
                     >
-                      <source src={basePath + "/resources/videos/ledgers.mp4"} type="video/mp4" />
+                      <source type="video/mp4" />
                     </video>
-                  </div>
-                </div>
-                <div className={getContainerClass("ledgers", "laptop")}>
-                  <div className="relative w-full max-w-2xl group">
+                  </div>),
+                (<div className="relative w-full max-w-2xl group">
                     <div className="relative rounded-t-xl border-[4px] md:border-[8px] lg:border-[12px] border-zinc-900 bg-zinc-900 aspect-[16/10] overflow-hidden shadow-2xl">
                       <div className="absolute inset-0 bg-white flex flex-col">
                         <div className="absolute inset-0 overflow-hidden">
@@ -1322,25 +1305,24 @@ export default function HomeClient() {
                           <video
                             width={1920}
                             height={1200}
-                            autoPlay
                             loop
                             muted
                             playsInline
-                            preload="metadata"
+                            preload="none"
                             poster={basePath + "/resources/poster_images/ledgers_laptop.webp"}
                             className="w-full h-full object-cover"
                             onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                            data-src={basePath + "/resources/videos/ledgers_laptop.mp4"}
                           >
-                            <source src={basePath + "/resources/videos/ledgers_laptop.mp4"} type="video/mp4" />
+                            <source type="video/mp4" />
                           </video>
                         </div>
                       </div>
                     </div>
                     <div className="relative h-4 bg-zinc-800 rounded-b-xl w-[105%] -left-[2.5%] shadow-xl"></div>
                     <div className="relative h-2 bg-zinc-700/50 rounded-b-2xl w-[80%] mx-auto"></div>
-                  </div>
-                </div>
-              </div>
+                  </div>),
+              )}
             </div>
 
             {/* Right Column: Content */}
@@ -1507,9 +1489,8 @@ export default function HomeClient() {
             {/* Right Column: Media Container */}
             <div className="h-full flex flex-col items-center justify-center reveal-on-scroll reveal-fade-in-right w-full">
               {renderToggleButtons("offline")}
-              <div className="grid w-full items-center">
-                <div className={getContainerClass("offline", "mobile")}>
-                  <div className="w-full max-w-[280px] aspect-[9/19] bg-zinc-900 rounded-2xl border-[10px] border-zinc-900 shadow-2xl relative overflow-hidden group">
+              {renderToggleMedia("offline",
+                (<div className="w-full max-w-[280px] aspect-[9/19] bg-zinc-900 rounded-2xl border-[10px] border-zinc-900 shadow-2xl relative overflow-hidden group">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={basePath + "/resources/poster_images/offline.webp"}
@@ -1520,21 +1501,19 @@ export default function HomeClient() {
                     <video
                       width={720}
                       height={1600}
-                      autoPlay
                       loop
                       muted
                       playsInline
-                      preload="metadata"
+                      preload="none"
                       poster={basePath + "/resources/poster_images/offline.webp"}
                       className="absolute inset-0 w-full h-full object-cover rounded-xl z-10"
                       onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                      data-src={basePath + "/resources/videos/offline.mp4"}
                     >
-                      <source src={basePath + "/resources/videos/offline.mp4"} type="video/mp4" />
+                      <source type="video/mp4" />
                     </video>
-                  </div>
-                </div>
-                <div className={getContainerClass("offline", "laptop")}>
-                  <div className="relative w-full max-w-2xl group">
+                  </div>),
+                (<div className="relative w-full max-w-2xl group">
                     <div className="relative rounded-t-xl border-[4px] md:border-[8px] lg:border-[12px] border-zinc-900 bg-zinc-900 aspect-[16/10] overflow-hidden shadow-2xl">
                       <div className="absolute inset-0 bg-white flex flex-col">
                         <div className="absolute inset-0 overflow-hidden">
@@ -1548,25 +1527,24 @@ export default function HomeClient() {
                           <video
                             width={1920}
                             height={1200}
-                            autoPlay
                             loop
                             muted
                             playsInline
-                            preload="metadata"
+                            preload="none"
                             poster={basePath + "/resources/poster_images/offline_laptop.webp"}
                             className="w-full h-full object-cover"
                             onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                            data-src={basePath + "/resources/videos/offline_laptop.mp4"}
                           >
-                            <source src={basePath + "/resources/videos/offline_laptop.mp4"} type="video/mp4" />
+                            <source type="video/mp4" />
                           </video>
                         </div>
                       </div>
                     </div>
                     <div className="relative h-4 bg-zinc-800 rounded-b-xl w-[105%] -left-[2.5%] shadow-xl"></div>
                     <div className="relative h-2 bg-zinc-700/50 rounded-b-2xl w-[80%] mx-auto"></div>
-                  </div>
-                </div>
-              </div>
+                  </div>),
+              )}
             </div>
           </div>
 
@@ -1603,16 +1581,16 @@ export default function HomeClient() {
                       <video
                         width={1920}
                         height={1200}
-                        autoPlay
                         loop
                         muted
                         playsInline
-                        preload="metadata"
+                        preload="none"
                         poster={basePath + "/resources/poster_images/dash.webp"}
                         className="w-full h-full object-cover"
                         onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                        data-src={basePath + "/resources/videos/dash.mp4"}
                       >
-                        <source src={basePath + "/resources/videos/dash.mp4"} type="video/mp4" />
+                        <source type="video/mp4" />
                       </video>
                     </div>
                   </div>
@@ -1783,9 +1761,8 @@ export default function HomeClient() {
             {/* Right Column: Media Container */}
             <div className="h-full flex flex-col items-center justify-center reveal-on-scroll reveal-fade-in-right w-full">
               {renderToggleButtons("payments")}
-              <div className="grid w-full items-center">
-                <div className={getContainerClass("payments", "mobile")}>
-                  <div className="w-full max-w-[280px] aspect-[9/19] bg-zinc-900 rounded-2xl border-[10px] border-zinc-900 shadow-2xl relative overflow-hidden group">
+              {renderToggleMedia("payments",
+                (<div className="w-full max-w-[280px] aspect-[9/19] bg-zinc-900 rounded-2xl border-[10px] border-zinc-900 shadow-2xl relative overflow-hidden group">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={basePath + "/resources/poster_images/collections.webp"}
@@ -1796,21 +1773,19 @@ export default function HomeClient() {
                     <video
                       width={720}
                       height={1600}
-                      autoPlay
                       loop
                       muted
                       playsInline
-                      preload="metadata"
+                      preload="none"
                       poster={basePath + "/resources/poster_images/collections.webp"}
                       className="absolute inset-0 w-full h-full object-cover rounded-xl z-10"
                       onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                      data-src={basePath + "/resources/videos/collections.mp4"}
                     >
-                      <source src={basePath + "/resources/videos/collections.mp4"} type="video/mp4" />
+                      <source type="video/mp4" />
                     </video>
-                  </div>
-                </div>
-                <div className={getContainerClass("payments", "laptop")}>
-                  <div className="relative w-full max-w-2xl group">
+                  </div>),
+                (<div className="relative w-full max-w-2xl group">
                     <div className="relative rounded-t-xl border-[4px] md:border-[8px] lg:border-[12px] border-zinc-900 bg-zinc-900 aspect-[16/10] overflow-hidden shadow-2xl">
                       <div className="absolute inset-0 bg-white flex flex-col">
                         <div className="absolute inset-0 overflow-hidden">
@@ -1824,25 +1799,24 @@ export default function HomeClient() {
                           <video
                             width={1920}
                             height={1200}
-                            autoPlay
                             loop
                             muted
                             playsInline
-                            preload="metadata"
+                            preload="none"
                             poster={basePath + "/resources/poster_images/collections_laptop.webp"}
                             className="w-full h-full object-cover"
                             onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                            data-src={basePath + "/resources/videos/collections_laptop.mp4"}
                           >
-                            <source src={basePath + "/resources/videos/collections_laptop.mp4"} type="video/mp4" />
+                            <source type="video/mp4" />
                           </video>
                         </div>
                       </div>
                     </div>
                     <div className="relative h-4 bg-zinc-800 rounded-b-xl w-[105%] -left-[2.5%] shadow-xl"></div>
                     <div className="relative h-2 bg-zinc-700/50 rounded-b-2xl w-[80%] mx-auto"></div>
-                  </div>
-                </div>
-              </div>
+                  </div>),
+              )}
             </div>
           </div>
 
@@ -1866,9 +1840,8 @@ export default function HomeClient() {
             {/* Left Column: Media Container */}
             <div className="order-2 lg:order-1 h-full flex flex-col items-center justify-center reveal-on-scroll reveal-fade-in-left w-full">
               {renderToggleButtons("stock")}
-              <div className="grid w-full items-center">
-                <div className={getContainerClass("stock", "mobile")}>
-                  <div className="w-full max-w-[280px] aspect-[9/19] bg-zinc-900 rounded-2xl border-[10px] border-zinc-900 shadow-2xl relative overflow-hidden group">
+              {renderToggleMedia("stock",
+                (<div className="w-full max-w-[280px] aspect-[9/19] bg-zinc-900 rounded-2xl border-[10px] border-zinc-900 shadow-2xl relative overflow-hidden group">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={basePath + "/resources/poster_images/stock.webp"}
@@ -1879,21 +1852,19 @@ export default function HomeClient() {
                     <video
                       width={720}
                       height={1600}
-                      autoPlay
                       loop
                       muted
                       playsInline
-                      preload="metadata"
+                      preload="none"
                       poster={basePath + "/resources/poster_images/stock.webp"}
                       className="absolute inset-0 w-full h-full object-cover rounded-xl z-10"
                       onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                      data-src={basePath + "/resources/videos/stock.mp4"}
                     >
-                      <source src={basePath + "/resources/videos/stock.mp4"} type="video/mp4" />
+                      <source type="video/mp4" />
                     </video>
-                  </div>
-                </div>
-                <div className={getContainerClass("stock", "laptop")}>
-                  <div className="relative w-full max-w-2xl group">
+                  </div>),
+                (<div className="relative w-full max-w-2xl group">
                     <div className="relative rounded-t-xl border-[4px] md:border-[8px] lg:border-[12px] border-zinc-900 bg-zinc-900 aspect-[16/10] overflow-hidden shadow-2xl">
                       <div className="absolute inset-0 bg-white flex flex-col">
                         <div className="absolute inset-0 overflow-hidden">
@@ -1907,25 +1878,24 @@ export default function HomeClient() {
                           <video
                             width={1920}
                             height={1200}
-                            autoPlay
                             loop
                             muted
                             playsInline
-                            preload="metadata"
+                            preload="none"
                             poster={basePath + "/resources/poster_images/stock_laptop.webp"}
                             className="w-full h-full object-cover"
                             onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                            data-src={basePath + "/resources/videos/stock_laptop.mp4"}
                           >
-                            <source src={basePath + "/resources/videos/stock_laptop.mp4"} type="video/mp4" />
+                            <source type="video/mp4" />
                           </video>
                         </div>
                       </div>
                     </div>
                     <div className="relative h-4 bg-zinc-800 rounded-b-xl w-[105%] -left-[2.5%] shadow-xl"></div>
                     <div className="relative h-2 bg-zinc-700/50 rounded-b-2xl w-[80%] mx-auto"></div>
-                  </div>
-                </div>
-              </div>
+                  </div>),
+              )}
             </div>
 
             {/* Right Column: Content */}
@@ -2108,16 +2078,16 @@ export default function HomeClient() {
                       <video
                         width={1920}
                         height={1200}
-                        autoPlay
                         loop
                         muted
                         playsInline
-                        preload="metadata"
+                        preload="none"
                         poster={basePath + "/resources/poster_images/dealer_growth.webp"}
                         className="w-full h-full object-cover"
                         onPlaying={(e) => e.currentTarget.previousElementSibling?.classList.add("opacity-0")}
+                        data-src={basePath + "/resources/videos/dealer_growth.mp4"}
                       >
-                        <source src={basePath + "/resources/videos/dealer_growth.mp4"} type="video/mp4" />
+                        <source type="video/mp4" />
                       </video>
                     </div>
                   </div>

@@ -347,20 +347,22 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js-ready')" }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Non-blocking fonts: load immediately (not idle) to avoid late swap CLS */}
+        {/* Wix fonts early; Material Symbols deferred (1MB+ icon font) */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){
-              var urls=[
-                "https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&display=swap",
-                "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-              ];
-              urls.forEach(function(h){
+              function addStyle(href){
                 var l=document.createElement("link");
-                l.rel="stylesheet";l.href=h;l.media="print";
+                l.rel="stylesheet";l.href=href;l.media="print";
                 l.onload=function(){l.media="all";};
                 document.head.appendChild(l);
-              });
+              }
+              addStyle("https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&display=swap");
+              function loadSymbols(){
+                addStyle("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+              }
+              if("requestIdleCallback" in window){requestIdleCallback(loadSymbols);}
+              else{setTimeout(loadSymbols,1500);}
             })();`,
           }}
         />

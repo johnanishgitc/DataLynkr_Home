@@ -208,6 +208,12 @@ if (fs.existsSync(featuresDir)) {
   }
 }
 
+try {
+  execSync("node scripts/optimize-posters.cjs", { cwd: root, stdio: "inherit" });
+} catch {
+  console.warn("Poster optimization skipped.");
+}
+
 execSync("npx next build", { cwd: root, stdio: "inherit" });
 
 // ---------------------------------------------------------------------------

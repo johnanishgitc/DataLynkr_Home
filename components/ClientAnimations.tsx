@@ -44,13 +44,21 @@ export default function ClientAnimations() {
         entries.forEach((entry) => {
           const video = entry.target as HTMLVideoElement;
           if (entry.isIntersecting) {
+            const src = video.dataset.src;
+            if (src && !video.dataset.loaded) {
+              const source = video.querySelector("source");
+              if (source) source.src = src;
+              else video.src = src;
+              video.dataset.loaded = "1";
+              video.load();
+            }
             video.play().catch(() => {});
           } else {
             video.pause();
           }
         });
       },
-      { root: null, rootMargin: "0px", threshold: 0.15 }
+      { root: null, rootMargin: "200px 0px", threshold: 0.1 },
     );
 
     document.querySelectorAll("video").forEach((video) => {
@@ -78,11 +86,11 @@ export default function ClientAnimations() {
     if (nav && section) {
       navVisibilityObserver = new IntersectionObserver(
         ([entry]) => {
-          if (!entry.isIntersecting && entry.boundingClientRect.top > 100) {
+          if (entry.isIntersecting) {
             nav.classList.remove("-translate-y-full");
           }
         },
-        { root: null, threshold: 0 },
+        { root: null, rootMargin: "-100px 0px 0px 0px", threshold: 0 },
       );
       navVisibilityObserver.observe(section);
     }
