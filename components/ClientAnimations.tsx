@@ -46,13 +46,18 @@ export default function ClientAnimations() {
           if (entry.isIntersecting) {
             const src = video.dataset.src;
             if (src && !video.dataset.loaded) {
-              const source = video.querySelector("source");
-              if (source) source.src = src;
-              else video.src = src;
               video.dataset.loaded = "1";
-              video.load();
+              // Defer load() to avoid forced reflow on the scroll thread
+              setTimeout(() => {
+                const source = video.querySelector("source");
+                if (source) source.src = src;
+                else video.src = src;
+                video.load();
+                video.play().catch(() => {});
+              }, 0);
+            } else {
+              video.play().catch(() => {});
             }
-            video.play().catch(() => {});
           } else {
             video.pause();
           }

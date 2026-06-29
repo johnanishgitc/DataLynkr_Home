@@ -345,6 +345,8 @@ export default function RootLayout({
         {/* Tiny inline script to enable progressive-enhancement scroll animations.
             Without this class, .reveal-on-scroll content stays visible (no blank page). */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js-ready')" }} />
+        {/* Preload mobile LCP image (first feature section poster, visible immediately on mobile) */}
+        <link rel="preload" as="image" href={`${basePath}/resources/poster_images/orders.webp`} fetchPriority="high" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Wix fonts early; Material Symbols deferred (1MB+ icon font) */}

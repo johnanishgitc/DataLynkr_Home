@@ -616,8 +616,8 @@ export default function HomeClient() {
                       width={280}
                       height={497}
                       decoding="async"
+                      fetchPriority="high"
                       className="absolute inset-0 w-full h-full object-contain z-20 transition-opacity duration-300 pointer-events-none"
-                      loading="lazy"
                     />
                     <video
                       width={720}

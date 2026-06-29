@@ -25,11 +25,10 @@
     "eslint-config-next": "16.2.9"
   },
   "browserslist": [
-    "Chrome >= 90",
-    "Firefox >= 90",
-    "Safari >= 15",
-    "Edge >= 90",
-    "not dead",
-    "not ie 11"
+    "Chrome >= 107",
+    "Firefox >= 107",
+    "Safari >= 16",
+    "Edge >= 107",
+    "not dead"
   ]
 }
