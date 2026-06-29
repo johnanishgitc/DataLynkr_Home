@@ -109,10 +109,15 @@ body {
   100% { left: 100%; }
 }
 
-/* Reveal on scroll */
+/* Reveal on scroll — content visible by default (critical for FCP).
+   Only hide elements when JS is confirmed ready via html.js-ready class. */
 .reveal-on-scroll {
-  opacity: 0;
+  opacity: 1;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.js-ready .reveal-on-scroll:not(.is-visible) {
+  opacity: 0;
 }
 
 .reveal-on-scroll.is-visible:not([class*="reveal-fade"]) {
@@ -152,10 +157,10 @@ body {
 }
 
 /* Prevent conflict when reveal-on-scroll is combined with animation classes */
-.reveal-on-scroll.reveal-fade-up:not(.is-visible),
-.reveal-on-scroll.reveal-fade-in-left:not(.is-visible),
-.reveal-on-scroll.reveal-fade-in-right:not(.is-visible),
-.reveal-on-scroll.reveal-scale-in:not(.is-visible) {
+html.js-ready .reveal-on-scroll.reveal-fade-up:not(.is-visible),
+html.js-ready .reveal-on-scroll.reveal-fade-in-left:not(.is-visible),
+html.js-ready .reveal-on-scroll.reveal-fade-in-right:not(.is-visible),
+html.js-ready .reveal-on-scroll.reveal-scale-in:not(.is-visible) {
   animation: none !important;
   opacity: 0;
 }

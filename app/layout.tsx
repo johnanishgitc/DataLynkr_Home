@@ -345,22 +345,34 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Tiny inline script to enable progressive-enhancement scroll animations.
+            Without this class, .reveal-on-scroll content stays visible (no blank page). */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js-ready')" }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Non-blocking font loading: load as preload then swap to stylesheet */}
         <link
+          rel="preload"
+          as="style"
           href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&display=swap"
-          rel="stylesheet"
         />
         <link
+          rel="preload"
+          as="style"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-          rel="stylesheet"
         />
+        {/* Swap preloaded fonts to stylesheets once ready */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function(){
+            var fonts = document.querySelectorAll('link[rel="preload"][as="style"]');
+            fonts.forEach(function(l){ l.rel = "stylesheet"; });
+          })();
+        ` }} />
         <link rel="shortcut icon" href={`${basePath}/logo.svg`} type="image/svg+xml" />
         <link rel="icon" href={`${basePath}/logo.svg`} type="image/svg+xml" />
         {/* When JS is disabled, override all animation-gated visibility so content is shown */}
         <noscript>
           <style>{`
-            .animate-fade-in { opacity: 1 !important; animation: none !important; }
             .reveal-on-scroll { opacity: 1 !important; }
             .reveal-on-scroll.reveal-fade-up,
             .reveal-on-scroll.reveal-fade-in-left,
@@ -371,11 +383,20 @@ export default function RootLayout({
               transform: none !important;
             }
           `}</style>
+          {/* Load fonts normally when JS is disabled */}
+          <link
+            href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            rel="stylesheet"
+          />
         </noscript>
         <JsonLd data={organizationJsonLd} />
         <JsonLd data={webSiteJsonLd()} />
       </head>
-      <body className="bg-white text-on-surface antialiased overflow-x-hidden animate-fade-in">
+      <body className="bg-white text-on-surface antialiased overflow-x-hidden">
         <SidebarProvider>
           <SidebarPanel />
           <LegacyLinkInterceptor />
