@@ -19,7 +19,7 @@ export default function Footer() {
       <div className="flex gap-8">
         <SiteLink
           className="text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors"
-          href="/privacy"
+          href="/privacy-policy"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -27,7 +27,7 @@ export default function Footer() {
         </SiteLink>
         <SiteLink
           className="text-zinc-400 font-['Wix_Madefor_Text'] text-xs hover:text-[#1F3A89] transition-colors"
-          href="/terms"
+          href="/terms-of-service"
           target="_blank"
           rel="noopener noreferrer"
         >

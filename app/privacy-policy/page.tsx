@@ -8,12 +8,12 @@ export const metadata = buildPageMetadata({
   title: "Privacy Policy",
   description:
     "Review the DataLynkr Privacy Policy. Learn how we collect, use, store, and safeguard your personal information and business data.",
-  path: "/privacy",
+  path: "/privacy-policy",
 });
 
 const breadcrumbs = [
   { name: "Home", path: "/" },
-  { name: "Privacy Policy", path: "/privacy" },
+  { name: "Privacy Policy", path: "/privacy-policy" },
 ];
 
 export default function PrivacyPage() {
@@ -21,7 +21,7 @@ export default function PrivacyPage() {
     <div className="bg-[#f7f9fc] text-on-surface antialiased overflow-x-hidden min-h-screen flex flex-col pt-16">
       <JsonLd
         data={webPageJsonLd({
-          path: "/privacy",
+          path: "/privacy-policy",
           name: "DataLynkr Privacy Policy",
           description:
             "How DataLynkr collects, uses, and protects personal information and business data.",
@@ -244,12 +244,12 @@ export default function PrivacyPage() {
         </div>
         <div className="flex items-center gap-6">
           <Link
-            href="/privacy"
+            href="/privacy-policy"
             className="text-primary font-bold hover:text-[#15275e] transition-colors pb-1 border-b-[2px] border-primary"
           >
             Privacy Policy
           </Link>
-          <Link href="/terms" className="text-zinc-500 font-medium hover:text-primary transition-colors">
+          <Link href="/terms-of-service" className="text-zinc-500 font-medium hover:text-primary transition-colors">
             Terms of Service
           </Link>
           <Link href="/support" className="text-zinc-500 font-medium hover:text-primary transition-colors">

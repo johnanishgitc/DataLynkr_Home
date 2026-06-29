@@ -11,8 +11,8 @@ export function rewriteLegacyHtmlLinks(html: string): string {
     .replace(/href=["'](?:\.\.\/)?contact\.html["']/gi, `href="${bp}/contact"`)
     .replace(/href=["'](?:\.\.\/)?support\.html["']/gi, `href="${bp}/support"`)
     .replace(/href=["'](?:\.\.\/)?login\.html["']/gi, `href="${bp}/login"`)
-    .replace(/href=["'](?:\.\.\/)?privacy\.html["']/gi, `href="${bp}/privacy"`)
-    .replace(/href=["'](?:\.\.\/)?terms\.html["']/gi, `href="${bp}/terms"`)
+    .replace(/href=["'](?:\.\.\/)?privacy\.html["']/gi, `href="${bp}/privacy-policy"`)
+    .replace(/href=["'](?:\.\.\/)?terms\.html["']/gi, `href="${bp}/terms-of-service"`)
     .replace(/href=["'](?:\.\.\/)?changepswd\.html["']/gi, `href="${bp}/changepswd"`)
     .replace(
       /href=["'](?:\.\.\/)?(?:features\/)?([a-z0-9-]+)\.html["']/gi,

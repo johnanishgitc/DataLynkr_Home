@@ -15,6 +15,13 @@
   # Legacy test path → site root
   RewriteRule ^Hometest/?(.*)$ /$1 [R=301,L,NC]
 
+  # Block and return 404 for the deleted datalynkr-home directory
+  RewriteRule ^datalynkr-home(/.*)?$ - [R=404,L,NC]
+
+  # Redirect old privacy and terms paths to new routes
+  RewriteRule ^privacy(\.html)?/?$ /privacy-policy/ [R=301,L,NC]
+  RewriteRule ^terms(\.html)?/?$ /terms-of-service/ [R=301,L,NC]
+
   # Marketing static assets (Next export uses root-absolute paths)
   RewriteRule ^_next/(.*)$ DataLynkr_Home/_next/$1 [L]
   RewriteRule ^resources/(.*)$ DataLynkr_Home/resources/$1 [L]
@@ -26,16 +33,16 @@
   RewriteRule ^$ DataLynkr_Home/index.html [L]
 
   # Marketing pages → index.html in DataLynkr_Home subdirectories
-  RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)/?$ DataLynkr_Home/$1/index.html [END,NC]
+  RewriteRule ^(about|pricing|contact|support|login|privacy-policy|terms-of-service|changepswd)/?$ DataLynkr_Home/$1/index.html [END,NC]
 
   # Feature pages
   RewriteRule ^features/(authorization-workflows|custom-reports|daily-ledger-reports|dynamic-dashboards|extend-portal-customers|invoice-creation|modern-bcommerce-ordering|offline-transactions|payments-collections|sales-order-management|stock-summary)/?$ DataLynkr_Home/features/$1/index.html [END,NC]
 
   # Legacy *.html bookmarks → clean URLs (marketing only)
   RewriteCond %{THE_REQUEST} \s[^\s]*\.html[\s?] [NC]
-  RewriteRule ^features/([^/]+)\.html$ /features/$1 [R=301,L,NC]
+  RewriteRule ^features/([^/]+)\.html$ /features/$1/ [R=301,L,NC]
   RewriteRule ^code\.html$ / [R=301,L,NC]
-  RewriteRule ^(about|pricing|contact|support|login|privacy|terms|changepswd)\.html$ /$1 [R=301,L,NC]
+  RewriteRule ^(about|pricing|contact|support|login|privacy-policy|terms-of-service|changepswd)\.html$ /$1/ [R=301,L,NC]
 
   # Trailing slash → clean URL (skip real directories)
   RewriteCond %{THE_REQUEST} \s[^\s]*/.+?/[\s?] [NC]
@@ -51,7 +58,7 @@
   RewriteCond %{REQUEST_URI} !^/favicon\.ico$ [NC]
   RewriteCond %{REQUEST_URI} !^/_next/
   RewriteCond %{REQUEST_URI} !^/resources/
-  RewriteCond %{REQUEST_URI} !^/(about|pricing|contact|support|login|privacy|terms|changepswd|features)(/|$) [NC]
+  RewriteCond %{REQUEST_URI} !^/(about|pricing|contact|support|login|privacy-policy|terms-of-service|changepswd|features)(/|$) [NC]
   RewriteCond %{DOCUMENT_ROOT}/index.html -f
   RewriteRule ^ index.html [L]
 

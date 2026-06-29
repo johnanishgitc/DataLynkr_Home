@@ -8,12 +8,12 @@ export const metadata = buildPageMetadata({
   title: "Terms of Service",
   description:
     "Review the DataLynkr Terms of Service. Understand the rules, subscription payments, intellectual property policies, and liabilities associated with our Service.",
-  path: "/terms",
+  path: "/terms-of-service",
 });
 
 const breadcrumbs = [
   { name: "Home", path: "/" },
-  { name: "Terms of Service", path: "/terms" },
+  { name: "Terms of Service", path: "/terms-of-service" },
 ];
 
 export default function TermsPage() {
@@ -21,7 +21,7 @@ export default function TermsPage() {
     <div className="bg-[#f7f9fc] text-on-surface antialiased overflow-x-hidden min-h-screen flex flex-col pt-16">
       <JsonLd
         data={webPageJsonLd({
-          path: "/terms",
+          path: "/terms-of-service",
           name: "DataLynkr Terms of Service",
           description:
             "Terms and conditions governing use of the DataLynkr platform and services.",
@@ -213,11 +213,11 @@ export default function TermsPage() {
           <span>Software India Pvt Ltd. 2026.</span>
         </div>
         <div className="flex items-center gap-6">
-          <Link href="/privacy" className="text-zinc-500 font-medium hover:text-primary transition-colors">
+          <Link href="/privacy-policy" className="text-zinc-500 font-medium hover:text-primary transition-colors">
             Privacy Policy
           </Link>
           <Link
-            href="/terms"
+            href="/terms-of-service"
             className="text-primary font-bold hover:text-[#15275e] transition-colors pb-1 border-b-[2px] border-primary"
           >
             Terms of Service

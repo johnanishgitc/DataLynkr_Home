@@ -20,8 +20,8 @@ const TOP_LEVEL_PAGES: Record<string, string> = {
   contact: "/contact",
   support: "/support",
   login: "/login",
-  privacy: "/privacy",
-  terms: "/terms",
+  privacy: "/privacy-policy",
+  terms: "/terms-of-service",
   changepswd: "/changepswd",
 };
 

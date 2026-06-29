@@ -24,8 +24,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl("/pricing"), changeFrequency: "weekly", priority: 0.9 },
     { url: absoluteUrl("/contact"), changeFrequency: "monthly", priority: 0.7 },
     { url: absoluteUrl("/support"), changeFrequency: "monthly", priority: 0.7 },
-    { url: absoluteUrl("/privacy"), changeFrequency: "yearly", priority: 0.3 },
-    { url: absoluteUrl("/terms"), changeFrequency: "yearly", priority: 0.3 },
+    { url: absoluteUrl("/privacy-policy"), changeFrequency: "yearly", priority: 0.3 },
+    { url: absoluteUrl("/terms-of-service"), changeFrequency: "yearly", priority: 0.3 },
   ];
 
   const featurePages: MetadataRoute.Sitemap = featureSlugs.map((slug) => ({
