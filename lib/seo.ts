@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { absoluteUrl, siteOrigin } from "@/lib/site";
+import { absoluteUrl, IT_CATALYST_URL, siteOrigin } from "@/lib/site";
 
 export type FaqItem = { question: string; answer: string };
 
@@ -278,6 +278,11 @@ export function softwareApplicationJsonLd() {
     "@id": `${siteOrigin()}/#software`,
     name: "DataLynkr",
     applicationCategory: "BusinessApplication",
+    creator: {
+      "@type": "Organization",
+      name: "IT Catalyst Software India Pvt Ltd",
+      url: IT_CATALYST_URL,
+    },
     operatingSystem: "Windows, Web, Android, iOS",
     logo: absoluteUrl("/logo.svg"),
     url: siteOrigin(),
@@ -285,7 +290,6 @@ export function softwareApplicationJsonLd() {
     description:
       "DataLynkr extends Tally ERP beyond the accounts department, giving sales teams, managers, operations, customers, and business owners secure real-time access to live Tally data from mobile and browser. It operates via secure, encrypted tunnels without storing your business data on external servers.",
     offers: datalynkrAggregateOffer(),
-    publisher: { "@id": `${siteOrigin()}/#organization` },
     screenshot: [
       absoluteUrl("/resources/poster_images/orders_laptop.webp"),
       absoluteUrl("/resources/poster_images/extendportal.webp"),

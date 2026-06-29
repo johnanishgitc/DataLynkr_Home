@@ -16,3 +16,5 @@ export function absoluteUrl(path: string): string {
   const normalized = path.startsWith("/") ? path : `/${path}`;
   return `${siteOrigin()}${normalized}`;
 }
+
+export const IT_CATALYST_URL = "https://itcatalystindia.com";

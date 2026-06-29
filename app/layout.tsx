@@ -5,8 +5,8 @@ import ClientAnimations from "@/components/ClientAnimations";
 import LegacyLinkInterceptor from "@/components/LegacyLinkInterceptor";
 import { SidebarProvider } from "@/components/SidebarContext";
 import { SidebarPanel } from "@/components/Sidebar";
-import { absoluteUrl, siteOrigin, basePath } from "@/lib/site";
-import { DEFAULT_OG_IMAGE, HOME_DESCRIPTION, HOME_TITLE, webSiteJsonLd } from "@/lib/seo";
+import { absoluteUrl, IT_CATALYST_URL, siteOrigin, basePath } from "@/lib/site";
+import { DEFAULT_OG_IMAGE, HOME_DESCRIPTION, HOME_TITLE, softwareApplicationJsonLd, webSiteJsonLd } from "@/lib/seo";
 
 export const viewport: Viewport = {
   themeColor: "#ffffff",
@@ -279,7 +279,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Organization JSON-LD for AEO
+// Organization JSON-LD (company details) + SoftwareApplication (AEO: DataLynkr created by IT Catalyst)
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -291,13 +291,14 @@ const organizationJsonLd = {
     name: "DataLynkr",
     logo: absoluteUrl("/logo.svg"),
   },
-  url: siteOrigin(),
+  url: IT_CATALYST_URL,
   logo: {
     "@type": "ImageObject",
     url: absoluteUrl("/logo.svg"),
     caption: "DataLynkr Logo",
   },
   sameAs: [
+    IT_CATALYST_URL,
     "https://play.google.com/store/apps/details?id=com.datalynkr",
     "https://www.linkedin.com/company/it-catalyst-software-india-private-limited/",
     "https://www.youtube.com/@datalynkr",
@@ -393,6 +394,7 @@ export default function RootLayout({
           />
         </noscript>
         <JsonLd data={organizationJsonLd} />
+        <JsonLd data={softwareApplicationJsonLd()} />
         <JsonLd data={webSiteJsonLd()} />
       </head>
       <body className="bg-white text-on-surface antialiased overflow-x-hidden">

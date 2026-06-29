@@ -8,7 +8,6 @@ import {
   HOME_TITLE,
   productJsonLd,
   siteNavigationJsonLd,
-  softwareApplicationJsonLd,
   webPageJsonLd,
 } from "@/lib/seo";
 
@@ -39,7 +38,6 @@ const homeWebPageJsonLd = webPageJsonLd({
 export default function HomePage() {
   return (
     <>
-      <JsonLd data={softwareApplicationJsonLd()} />
       <JsonLd data={productJsonLd()} />
       <JsonLd data={faqPageJsonLd(HOME_FAQ)} />
       <JsonLd data={homeWebPageJsonLd} />
