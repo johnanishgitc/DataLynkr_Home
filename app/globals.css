@@ -23,9 +23,9 @@
   --color-outline: #906f6c;
   --color-outline-variant: #e4beb9;
 
-  --font-headline: var(--font-wix-display), sans-serif;
-  --font-body: var(--font-wix-text), sans-serif;
-  --font-label: var(--font-wix-text), sans-serif;
+  --font-headline: "Wix Madefor Display", sans-serif;
+  --font-body: "Wix Madefor Text", sans-serif;
+  --font-label: "Wix Madefor Text", sans-serif;
 
   --radius-xs: 0.125rem;
   --radius-sm: 0.125rem;
@@ -107,6 +107,13 @@ body {
 @keyframes shine {
   0% { left: -100%; }
   100% { left: 100%; }
+}
+
+/* Above-the-fold hero stays visible immediately for LCP (scroll reveal is below-fold only). */
+html.js-ready #hero-section .reveal-on-scroll {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
 }
 
 /* Reveal on scroll — content visible by default (critical for FCP).

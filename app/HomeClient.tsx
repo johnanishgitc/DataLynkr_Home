@@ -75,7 +75,7 @@ export default function HomeClient() {
       {/* Main Content Canvas */}
       <main className="min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 pt-24 md:pt-20 bg-white relative">
         {/* Hero Section */}
-        <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 lg:gap-8 items-center">
+        <div id="hero-section" className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 lg:gap-8 items-center">
           <div className="space-y-6 relative z-20">
             {/* Primary Headline */}
             <div className="space-y-4">
