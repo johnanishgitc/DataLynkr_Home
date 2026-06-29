@@ -6,6 +6,7 @@ import LegacyLinkInterceptor from "@/components/LegacyLinkInterceptor";
 import { SidebarProvider } from "@/components/SidebarContext";
 import { SidebarPanel } from "@/components/Sidebar";
 import { absoluteUrl, siteOrigin, basePath } from "@/lib/site";
+import { fontClassNames } from "@/lib/fonts";
 import { DEFAULT_OG_IMAGE, HOME_DESCRIPTION, HOME_TITLE, webSiteJsonLd } from "@/lib/seo";
 
 export const viewport: Viewport = {
@@ -340,31 +341,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={fontClassNames} suppressHydrationWarning>
       <head>
         {/* Tiny inline script to enable progressive-enhancement scroll animations.
             Without this class, .reveal-on-scroll content stays visible (no blank page). */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js-ready')" }} />
+        {/* Icons only — deferred so Wix fonts (self-hosted) stay off the critical path. */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Non-blocking font loading: load as preload then swap to stylesheet */}
         <link
-          rel="preload"
-          as="style"
-          href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&display=swap"
-        />
-        <link
-          rel="preload"
-          as="style"
+          id="material-symbols-css"
+          rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+          media="print"
         />
-        {/* Swap preloaded fonts to stylesheets once ready */}
-        <script dangerouslySetInnerHTML={{ __html: `
-          (function(){
-            var fonts = document.querySelectorAll('link[rel="preload"][as="style"]');
-            fonts.forEach(function(l){ l.rel = "stylesheet"; });
-          })();
-        ` }} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var l=document.getElementById("material-symbols-css");if(l)l.media="all";})();`,
+          }}
+        />
         <link rel="shortcut icon" href={`${basePath}/logo.svg`} type="image/svg+xml" />
         <link rel="icon" href={`${basePath}/logo.svg`} type="image/svg+xml" />
         {/* When JS is disabled, override all animation-gated visibility so content is shown */}
@@ -380,11 +375,6 @@ export default function RootLayout({
               transform: none !important;
             }
           `}</style>
-          {/* Load fonts normally when JS is disabled */}
-          <link
-            href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&family=Wix+Madefor+Text:wght@400..800&display=swap"
-            rel="stylesheet"
-          />
           <link
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
             rel="stylesheet"

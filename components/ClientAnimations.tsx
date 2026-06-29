@@ -55,15 +55,10 @@ export default function ClientAnimations() {
 
     const handleScroll = () => {
       const nav = document.getElementById("main-nav");
-      const section = document.getElementById("analytics-section");
-      if (!nav || !section) return;
+      if (!nav) return;
 
       const currentScrollY = window.scrollY;
-      const sectionTop = section.getBoundingClientRect().top;
-
-      if (sectionTop > 100) {
-        nav.classList.remove("-translate-y-full");
-      } else if (currentScrollY > lastScrollY.current) {
+      if (currentScrollY > lastScrollY.current) {
         nav.classList.add("-translate-y-full");
       } else if (currentScrollY < lastScrollY.current) {
         nav.classList.remove("-translate-y-full");
@@ -72,11 +67,28 @@ export default function ClientAnimations() {
       lastScrollY.current = Math.max(0, currentScrollY);
     };
 
+    const nav = document.getElementById("main-nav");
+    const section = document.getElementById("analytics-section");
+    let navVisibilityObserver: IntersectionObserver | undefined;
+
+    if (nav && section) {
+      navVisibilityObserver = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry.isIntersecting && entry.boundingClientRect.top > 100) {
+            nav.classList.remove("-translate-y-full");
+          }
+        },
+        { root: null, threshold: 0 },
+      );
+      navVisibilityObserver.observe(section);
+    }
+
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       revealObserver.disconnect();
       videoObserver.disconnect();
+      navVisibilityObserver?.disconnect();
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
