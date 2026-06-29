@@ -3,9 +3,9 @@ import JsonLd from "@/components/JsonLd";
 import { breadcrumbJsonLd, buildPageMetadata, contactPageJsonLd } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Contact DataLynkr - Request a Free Tally App Demo",
+  title: "Contact Us",
   description:
-    "Get in touch with DataLynkr for a free demo, pricing details, partnership queries, or general support questions. Speak to our Tally integration experts today.",
+    "Contact DataLynkr for demos, Tally integration, and business automation solutions.",
   path: "/contact",
   keywords: [
     "contact DataLynkr",

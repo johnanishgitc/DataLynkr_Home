@@ -11,9 +11,9 @@ import {
 } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "DataLynkr Pricing - Plans from ₹1,800/user/year",
+  title: "Pricing",
   description:
-    "Explore DataLynkr subscription plans: Silver, Gold, Diamond, and Enterprise. Yearly plans from ₹1,800/user/year (₹3,600/year for smaller teams). Monthly billing also available. 14-day free trial, no credit card required.",
+    "DataLynkr pricing plans for connecting teams with live Tally data.",
   path: "/pricing",
   keywords: [
     "DataLynkr pricing plans",
@@ -41,9 +41,9 @@ export default async function PricingPage() {
       <JsonLd
         data={webPageJsonLd({
           path: "/pricing",
-          name: "DataLynkr Pricing",
+          name: "Pricing",
           description:
-            "Compare DataLynkr subscription plans and choose the tier that fits your team size and Tally integration needs.",
+            "DataLynkr pricing plans for connecting teams with live Tally data.",
         })}
       />
       <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />

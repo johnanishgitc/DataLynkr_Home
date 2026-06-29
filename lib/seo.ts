@@ -31,12 +31,91 @@ export function faqQuestionsForSchema(items: FaqItem[]) {
 /** Default social / OG preview image */
 export const DEFAULT_OG_IMAGE = absoluteUrl("/resources/poster_images/orders_laptop.webp");
 
+export const HOME_TITLE =
+  "DataLynkr | Live Tally Data Access & Business Automation Platform";
+
+export const HOME_DESCRIPTION =
+  "DataLynkr enables every team to access live Tally data, execute workflows, and make better decisions from anywhere—without changing the way you work in Tally.";
+
+/** Primary navigation targets that influence Google sitelink selection. */
+export const SITELINK_PAGES = [
+  {
+    name: "Sales Order & Invoicing",
+    path: "/features/sales-order-management",
+    description:
+      "Create Tally sales orders and invoices from anywhere with live data, approval workflows, and real-time inventory visibility.",
+  },
+  {
+    name: "Customer Portal",
+    path: "/features/extend-portal-customers",
+    description:
+      "Give customers secure access to invoices, outstanding balances, orders, and payments directly from Tally.",
+  },
+  {
+    name: "ECommerce Style B2B Ordering Portal",
+    path: "/features/modern-bcommerce-ordering",
+    description:
+      "Create an e-commerce style ordering experience powered by Tally products, pricing, and inventory.",
+  },
+  {
+    name: "Business Dashboards",
+    path: "/features/dynamic-dashboards",
+    description:
+      "Turn live Tally data into interactive dashboards for sales, receivables, payables, and business insights.",
+  },
+  {
+    name: "Payments & Collections",
+    path: "/features/payments-collections",
+    description:
+      "Manage collections, vendor payments, and expenses with mobile workflows connected to Tally Real-Time.",
+  },
+  {
+    name: "Custom Reports",
+    path: "/features/custom-reports",
+    description:
+      "Build dynamic reports from live Tally data using drag-and-drop reporting tools.",
+  },
+  {
+    name: "Pricing",
+    path: "/pricing",
+    description:
+      "DataLynkr pricing plans for connecting teams with live Tally data.",
+  },
+  {
+    name: "Contact Us",
+    path: "/contact",
+    description:
+      "Contact DataLynkr for demos, Tally integration, and business automation solutions.",
+  },
+  {
+    name: "Customer Login",
+    path: "/login",
+    description: "Login to your secure DataLynkr account.",
+  },
+] as const;
+
+export function siteNavigationJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "DataLynkr Solutions",
+    itemListElement: SITELINK_PAGES.map((page, index) => ({
+      "@type": "SiteNavigationElement",
+      position: index + 1,
+      name: page.name,
+      description: page.description,
+      url: absoluteUrl(page.path),
+    })),
+  };
+}
+
 export function buildPageMetadata(options: {
   title: string;
   description: string;
   path: string;
   ogImage?: string;
   noIndex?: boolean;
+  absoluteTitle?: boolean;
   ogType?: "website" | "article";
   keywords?: string[];
 }): Metadata {
@@ -46,13 +125,14 @@ export function buildPageMetadata(options: {
     path,
     ogImage = DEFAULT_OG_IMAGE,
     noIndex = false,
+    absoluteTitle = false,
     ogType = "website",
     keywords,
   } = options;
   const url = path === "/" ? siteOrigin() : absoluteUrl(path);
 
   return {
-    title,
+    title: absoluteTitle ? { absolute: title } : title,
     description,
     keywords,
     alternates: { canonical: url },
@@ -92,8 +172,7 @@ export function webSiteJsonLd() {
     "@id": `${siteOrigin()}/#website`,
     name: "DataLynkr",
     url: siteOrigin(),
-    description:
-      "DataLynkr extends Tally ERP beyond the accounts department with real-time mobile and browser access for sales, operations, and management teams.",
+    description: HOME_DESCRIPTION,
     publisher: { "@id": `${siteOrigin()}/#organization` },
     inLanguage: "en-IN",
   };
@@ -152,9 +231,9 @@ export function contactPageJsonLd() {
     "@type": "ContactPage",
     "@id": `${absoluteUrl("/contact")}#contactpage`,
     url: absoluteUrl("/contact"),
-    name: "Contact DataLynkr",
+    name: "Contact Us",
     description:
-      "Contact DataLynkr for demos, pricing, partnerships, or support. Speak with our Tally integration experts.",
+      "Contact DataLynkr for demos, Tally integration, and business automation solutions.",
     isPartOf: { "@id": `${siteOrigin()}/#website` },
     mainEntity: { "@id": `${siteOrigin()}/#organization` },
   };

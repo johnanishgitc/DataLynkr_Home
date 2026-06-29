@@ -6,7 +6,7 @@ import LegacyLinkInterceptor from "@/components/LegacyLinkInterceptor";
 import { SidebarProvider } from "@/components/SidebarContext";
 import { SidebarPanel } from "@/components/Sidebar";
 import { absoluteUrl, siteOrigin, basePath } from "@/lib/site";
-import { DEFAULT_OG_IMAGE, webSiteJsonLd } from "@/lib/seo";
+import { DEFAULT_OG_IMAGE, HOME_DESCRIPTION, HOME_TITLE, webSiteJsonLd } from "@/lib/seo";
 
 export const viewport: Viewport = {
   themeColor: "#ffffff",
@@ -15,7 +15,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin()),
   title: {
-    default: "DataLynkr - Take Tally Beyond The Finance Team",
+    default: HOME_TITLE,
     template: "%s | DataLynkr",
   },
   icons: {
@@ -23,8 +23,7 @@ export const metadata: Metadata = {
     shortcut: `${basePath}/logo.svg`,
     apple: `${basePath}/logo.svg`,
   },
-  description:
-    "DataLynkr extends Tally beyond the accounts department. Give your sales teams, managers, operations, and customers secure real-time access to Tally data from mobile and browser — anywhere, anytime.",
+  description: HOME_DESCRIPTION,
   keywords: [
     // Core Brand & Product
     "DataLynkr",
@@ -261,23 +260,21 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: siteOrigin(),
     siteName: "DataLynkr",
-    title: "DataLynkr - Take Tally Beyond The Finance Team",
-    description:
-      "Empower every team with real-time access to Tally. From orders and approvals to payments, insights, and execution — anywhere, anytime.",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     images: [
       {
         url: DEFAULT_OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "DataLynkr - Take Tally Beyond The Finance Team",
+        alt: HOME_TITLE,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DataLynkr - Take Tally Beyond The Finance Team",
-    description:
-      "Extend Tally to your entire organization. Sales orders, invoices, dashboards, and more — from mobile and browser.",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     images: [DEFAULT_OG_IMAGE],
   },
 };

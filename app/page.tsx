@@ -3,17 +3,20 @@ import JsonLd from "@/components/JsonLd";
 import {
   buildPageMetadata,
   faqPageJsonLd,
+  HOME_DESCRIPTION,
   HOME_FAQ,
+  HOME_TITLE,
   productJsonLd,
+  siteNavigationJsonLd,
   softwareApplicationJsonLd,
   webPageJsonLd,
 } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "DataLynkr - Take Tally Beyond The Finance Team",
-  description:
-    "DataLynkr extends Tally beyond the accounts department. Give your sales teams, managers, operations, and customers secure real-time access to Tally data from mobile and browser — anywhere, anytime.",
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
   path: "/",
+  absoluteTitle: true,
   keywords: [
     "Tally ERP integration",
     "TallyPrime mobile app",
@@ -28,9 +31,8 @@ export const metadata = buildPageMetadata({
 
 const homeWebPageJsonLd = webPageJsonLd({
   path: "/",
-  name: "DataLynkr - Take Tally Beyond The Finance Team",
-  description:
-    "DataLynkr extends Tally ERP beyond the accounts department with real-time mobile and browser access for sales, operations, and management teams.",
+  name: HOME_TITLE,
+  description: HOME_DESCRIPTION,
   speakableSelectors: ["#hero-headline", "#faq"],
 });
 
@@ -41,6 +43,7 @@ export default function HomePage() {
       <JsonLd data={productJsonLd()} />
       <JsonLd data={faqPageJsonLd(HOME_FAQ)} />
       <JsonLd data={homeWebPageJsonLd} />
+      <JsonLd data={siteNavigationJsonLd()} />
       <HomeClient />
     </>
   );
