@@ -275,20 +275,30 @@ export function SidebarPanel() {
               : "translate-x-full sm:translate-x-[-10px] opacity-0 pointer-events-none"
           }`}
         >
-          <label
-            htmlFor={jsReady ? undefined : "features-flyout-toggle"}
-            id="features-back-btn"
-            role="button"
-            className="flex items-center gap-2 text-amber-400 hover:text-amber-200 transition-colors font-medium mb-6 sm:hidden focus:outline-none cursor-pointer"
-            onClick={
-              jsReady ? () => toggleFeatures() : undefined
-            }
-          >
-            <span className="material-symbols-outlined text-lg">
-              arrow_back
-            </span>
-            <span>Back to Menu</span>
-          </label>
+          {!jsReady && (
+            <label
+              htmlFor="features-flyout-toggle"
+              className="flex items-center gap-2 text-amber-400 hover:text-amber-200 transition-colors font-medium mb-6 sm:hidden focus:outline-none cursor-pointer"
+            >
+              <span className="material-symbols-outlined text-lg">
+                arrow_back
+              </span>
+              <span>Back to Menu</span>
+            </label>
+          )}
+          {jsReady && (
+            <button
+              type="button"
+              id="features-back-btn"
+              className="flex items-center gap-2 text-amber-400 hover:text-amber-200 transition-colors font-medium mb-6 sm:hidden focus:outline-none cursor-pointer bg-transparent border-0 p-0 text-left"
+              onClick={toggleFeatures}
+            >
+              <span className="material-symbols-outlined text-lg">
+                arrow_back
+              </span>
+              <span>Back to Menu</span>
+            </button>
+          )}
           <div className="hidden sm:block text-amber-400 font-bold mb-6 text-xl tracking-wide border-b border-white/10 pb-2">
             Features
           </div>

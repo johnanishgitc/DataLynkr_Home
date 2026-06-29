@@ -343,7 +343,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Tiny inline script to enable progressive-enhancement scroll animations.
             Without this class, .reveal-on-scroll content stays visible (no blank page). */}
