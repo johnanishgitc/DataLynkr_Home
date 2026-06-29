@@ -17,25 +17,14 @@ import {
   getFeatureFaqSubtitle,
   getFeatureSchemas,
 } from "@/lib/featureSchemas";
+import { FEATURE_SLUGS } from "@/lib/feature-slugs";
 import { buildPageMetadata } from "@/lib/seo";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-const AVAILABLE_SLUGS = [
-  "authorization-workflows",
-  "custom-reports",
-  "daily-ledger-reports",
-  "dynamic-dashboards",
-  "extend-portal-customers",
-  "invoice-creation",
-  "modern-bcommerce-ordering",
-  "offline-transactions",
-  "payments-collections",
-  "sales-order-management",
-  "stock-summary",
-];
+const AVAILABLE_SLUGS: string[] = [...FEATURE_SLUGS];
 
 /** Remove legacy hardcoded FAQ blocks — React FaqSection + FEATURE_FAQ is the single source of truth. */
 function stripInlineFaqSection(html: string): string {

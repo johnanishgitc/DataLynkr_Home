@@ -1,18 +1,7 @@
+import { FEATURE_SLUGS as FEATURE_SLUG_LIST } from "@/lib/feature-slugs";
 import { basePath } from "@/lib/site";
 
-export const FEATURE_SLUGS = new Set([
-  "authorization-workflows",
-  "custom-reports",
-  "daily-ledger-reports",
-  "dynamic-dashboards",
-  "extend-portal-customers",
-  "invoice-creation",
-  "modern-bcommerce-ordering",
-  "offline-transactions",
-  "payments-collections",
-  "sales-order-management",
-  "stock-summary",
-]);
+export const FEATURE_SLUGS = new Set<string>(FEATURE_SLUG_LIST);
 
 const TOP_LEVEL_PAGES: Record<string, string> = {
   about: "/about",
