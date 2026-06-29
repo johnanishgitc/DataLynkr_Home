@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -21,13 +20,6 @@ type PricingClientProps = {
 const delayClasses = ["delay-100", "delay-200", "delay-300", "delay-400", "delay-500", "delay-600"];
 
 export default function PricingClient({ plans, bankDetails }: PricingClientProps) {
-  const [billingPeriod, setBillingPeriod] = useState<"monthly" | "yearly">("yearly");
-
-  const activeBtnClass =
-    "bg-blue-600 text-white text-[13px] font-semibold py-2 px-8 rounded cursor-default shadow transition-all";
-  const inactiveBtnClass =
-    "text-slate-500 text-[13px] font-semibold py-2 px-8 rounded hover:text-slate-800 transition-all";
-
   return (
     <div className="cdn-tailwind-content pricing-page bg-[#F4F6F9] min-h-screen text-slate-800 antialiased relative overflow-x-hidden">
       {/* Decorative Floating Elements */}
@@ -45,28 +37,6 @@ export default function PricingClient({ plans, bankDetails }: PricingClientProps
         <p className="text-slate-500 text-sm mb-6 reveal-fade-up delay-100">
           Select the plan that best fits your needs
         </p>
-
-        {/* Billing Period Toggle */}
-        <div className="flex justify-center reveal-fade-up delay-200">
-          <div className="bg-white p-1 rounded-lg shadow-sm border border-slate-200 inline-flex items-center">
-            <button
-              onClick={() => setBillingPeriod("yearly")}
-              className={billingPeriod === "yearly" ? activeBtnClass : inactiveBtnClass}
-            >
-              Yearly
-            </button>
-            <button
-              onClick={() => setBillingPeriod("monthly")}
-              className={billingPeriod === "monthly" ? activeBtnClass : inactiveBtnClass}
-            >
-              Monthly
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div className="text-center mb-8 relative z-10 reveal-fade-up delay-300">
-        <h2 className="text-xl font-bold text-slate-700">Subscription Plans</h2>
       </div>
 
       {/* Grid Container */}
@@ -84,11 +54,8 @@ export default function PricingClient({ plans, bankDetails }: PricingClientProps
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
             {plans.map((plan, index) => {
-              const isYearly = billingPeriod === "yearly";
-              const price = isYearly ? plan.yearly_price : plan.monthly_price;
-              const secondaryPrice = isYearly
-                ? `₹${formatPrice(String(Number.parseFloat(plan.yearly_price) / 12))}/month`
-                : `₹${formatPrice(plan.yearly_price)}/year`;
+              const price = plan.yearly_price;
+              const secondaryPrice = `₹${formatPrice(String(Number.parseFloat(plan.yearly_price) / 12))}/month`;
 
               return (
                 <div
@@ -106,9 +73,7 @@ export default function PricingClient({ plans, bankDetails }: PricingClientProps
                     <span className="text-4xl font-extrabold text-slate-800 tracking-tight">
                       {formatPrice(price)}
                     </span>
-                    <span className="text-slate-500 text-xs font-medium">
-                      {isYearly ? "/year" : "/month"}
-                    </span>
+                    <span className="text-slate-500 text-xs font-medium">/year</span>
                   </div>
                   <div className="text-[10px] text-slate-400 font-medium mb-8">
                     {secondaryPrice}

@@ -371,7 +371,7 @@ export const PRICING_FAQ: FaqItem[] = [
   {
     question: "What are the pricing options?",
     answer:
-      "DataLynkr offers yearly and monthly plans based on user count and feature requirements.",
+      "DataLynkr only offers Yearly subscriptions plans based on user count and feature requirements.",
   },
   {
     question: "Are there any setup fees?",
@@ -381,7 +381,7 @@ export const PRICING_FAQ: FaqItem[] = [
   {
     question: "Can I change plans later?",
     answer:
-      "Yes. You can upgrade, downgrade, or add/remove user licenses as your business requirements change.",
+      "Yes. You can upgrade DataLynkr anytime. Contact sales team for downgrade, or add/remove user licenses as your business requirements change.",
   },
 ];
 
