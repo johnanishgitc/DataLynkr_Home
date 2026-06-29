@@ -168,37 +168,42 @@ export function SidebarPanel() {
             </SiteLink>
 
             {/* Features toggle */}
-            <label
-              htmlFor={jsReady ? undefined : "features-flyout-toggle"}
-              id="features-toggle-btn"
-              role="button"
-              tabIndex={0}
-              className={`flex items-center justify-between w-full transition-colors text-left focus:outline-none cursor-pointer ${
-                isFeaturesActive ? "text-amber-400" : "hover:text-amber-200"
-              }`}
-              onClick={
-                jsReady
-                  ? (e) => {
-                      e.preventDefault();
-                      toggleFeatures();
-                    }
-                  : undefined
-              }
-            >
-              <span>Features</span>
-              <span
-                id="features-arrow"
-                className="material-symbols-outlined transition-transform duration-300 pointer-events-none"
-                style={{
-                  transform:
-                    isFeaturesOpen || isFeaturesActive
-                      ? "rotate(90deg)"
-                      : "rotate(0deg)",
-                }}
+            {!jsReady && (
+              <label
+                htmlFor="features-flyout-toggle"
+                className={`flex items-center justify-between w-full transition-colors text-left focus:outline-none cursor-pointer ${
+                  isFeaturesActive ? "text-amber-400" : "hover:text-amber-200"
+                }`}
               >
-                keyboard_arrow_right
-              </span>
-            </label>
+                <span>Features</span>
+                <span
+                  id="features-arrow"
+                  className="material-symbols-outlined transition-transform duration-300 pointer-events-none"
+                  style={{ transform: isFeaturesOpen || isFeaturesActive ? "rotate(90deg)" : "rotate(0deg)" }}
+                >
+                  keyboard_arrow_right
+                </span>
+              </label>
+            )}
+            {jsReady && (
+              <button
+                type="button"
+                id="features-toggle-btn"
+                className={`flex items-center justify-between w-full transition-colors text-left focus:outline-none cursor-pointer ${
+                  isFeaturesActive ? "text-amber-400" : "hover:text-amber-200"
+                }`}
+                onClick={toggleFeatures}
+              >
+                <span>Features</span>
+                <span
+                  id="features-arrow"
+                  className="material-symbols-outlined transition-transform duration-300 pointer-events-none"
+                  style={{ transform: isFeaturesOpen || isFeaturesActive ? "rotate(90deg)" : "rotate(0deg)" }}
+                >
+                  keyboard_arrow_right
+                </span>
+              </button>
+            )}
 
             <SiteLink
               href="/about"

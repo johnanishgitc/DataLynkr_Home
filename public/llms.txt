@@ -1,0 +1,44 @@
+# DataLynkr
+
+> DataLynkr extends Tally ERP beyond the accounts department, giving sales teams, managers, operations, customers, and business owners secure real-time access to live Tally data from mobile and browser — anywhere, anytime.
+
+## About
+
+DataLynkr is a business management platform that connects with your existing Tally setup and makes important business information accessible to teams outside the accounting department. It operates via secure, encrypted tunnels without storing your business data on external servers.
+
+- Built by [IT Catalyst Software India Pvt Ltd](https://datalynkr.com/about/)
+- Available on [Google Play](https://play.google.com/store/apps/details?id=com.datalynkr)
+
+## Pages
+
+- [Home](https://datalynkr.com/)
+- [About DataLynkr](https://datalynkr.com/about/)
+- [Pricing](https://datalynkr.com/pricing/)
+- [Contact Us](https://datalynkr.com/contact/)
+- [Get Support](https://datalynkr.com/support/)
+- [Privacy Policy](https://datalynkr.com/privacy-policy/)
+- [Terms of Service](https://datalynkr.com/terms-of-service/)
+
+## Features
+
+- [Sales Order Management](https://datalynkr.com/features/sales-order-management/)
+- [Extend a Portal for Your Customers](https://datalynkr.com/features/extend-portal-customers/)
+- [Modern B-Commerce Ordering](https://datalynkr.com/features/modern-bcommerce-ordering/)
+- [Invoice Creation](https://datalynkr.com/features/invoice-creation/)
+- [Authorization Workflows](https://datalynkr.com/features/authorization-workflows/)
+- [Daily Ledger Reports](https://datalynkr.com/features/daily-ledger-reports/)
+- [Offline Transactions](https://datalynkr.com/features/offline-transactions/)
+- [Dynamic Dashboards](https://datalynkr.com/features/dynamic-dashboards/)
+- [Payments & Collections](https://datalynkr.com/features/payments-collections/)
+- [Stock Summary](https://datalynkr.com/features/stock-summary/)
+- [Custom Reports](https://datalynkr.com/features/custom-reports/)
+
+## Key Information
+
+- **Pricing**: Plans start at ₹300/month (₹3,600/year) per user
+- **Free Trial**: 14-day free trial, no credit card required
+- **Compatibility**: Works with TallyPrime
+- **Data Security**: No business data stored on DataLynkr servers — information stays connected to your Tally environment
+- **Platforms**: Windows, Web, Android, iOS
+- **Target Users**: Sales teams, managers, operations, finance teams, and customers
+- **Industries**: Manufacturing, Distribution, Wholesale, Retail, Trading, Services

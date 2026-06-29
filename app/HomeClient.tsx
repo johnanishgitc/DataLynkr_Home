@@ -613,6 +613,7 @@ export default function HomeClient() {
                       src={basePath + "/resources/poster_images/orders.webp"}
                       alt=""
                       className="absolute inset-0 w-full h-full object-contain z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                     />
                     <video
                       width={720}
@@ -640,6 +641,7 @@ export default function HomeClient() {
                             src={basePath + "/resources/poster_images/orders_laptop.webp"}
                             alt=""
                             className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                           />
                           <video
                             width={1920}
@@ -694,6 +696,7 @@ export default function HomeClient() {
                         src={basePath + "/resources/poster_images/extendportal.webp"}
                         alt=""
                         className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                       />
                       <video
                         width={1920}
@@ -886,6 +889,7 @@ export default function HomeClient() {
                       src={basePath + "/resources/poster_images/bcomm.webp"}
                       alt=""
                       className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                     />
                     <video
                       width={720}
@@ -913,6 +917,7 @@ export default function HomeClient() {
                             src={basePath + "/resources/poster_images/bcomm_laptop.webp"}
                             alt=""
                             className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                           />
                           <video
                             width={1920}
@@ -967,6 +972,7 @@ export default function HomeClient() {
                       src={basePath + "/resources/poster_images/invoice.webp"}
                       alt=""
                       className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                     />
                     <video
                       width={720}
@@ -994,6 +1000,7 @@ export default function HomeClient() {
                             src={basePath + "/resources/poster_images/invoice_laptop.webp"}
                             alt=""
                             className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                           />
                           <video
                             width={1920}
@@ -1192,6 +1199,7 @@ export default function HomeClient() {
                         src={basePath + "/resources/poster_images/approvals.webp"}
                         alt=""
                         className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                       />
                       <video
                         width={720}
@@ -1220,6 +1228,7 @@ export default function HomeClient() {
                             src={basePath + "/resources/poster_images/approvals_laptop.webp"}
                             alt=""
                             className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                           />
                           <video
                             width={1920}
@@ -1274,6 +1283,7 @@ export default function HomeClient() {
                       src={basePath + "/resources/poster_images/ledgers.webp"}
                       alt=""
                       className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                     />
                     <video
                       width={720}
@@ -1301,6 +1311,7 @@ export default function HomeClient() {
                             src={basePath + "/resources/poster_images/ledgers_laptop.webp"}
                             alt=""
                             className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                           />
                           <video
                             width={1920}
@@ -1498,6 +1509,7 @@ export default function HomeClient() {
                       src={basePath + "/resources/poster_images/offline.webp"}
                       alt=""
                       className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                     />
                     <video
                       width={720}
@@ -1525,6 +1537,7 @@ export default function HomeClient() {
                             src={basePath + "/resources/poster_images/offline_laptop.webp"}
                             alt=""
                             className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                           />
                           <video
                             width={1920}
@@ -1579,6 +1592,7 @@ export default function HomeClient() {
                         src={basePath + "/resources/poster_images/dash.webp"}
                         alt=""
                         className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                       />
                       <video
                         width={1920}
@@ -1771,6 +1785,7 @@ export default function HomeClient() {
                       src={basePath + "/resources/poster_images/collections.webp"}
                       alt=""
                       className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                     />
                     <video
                       width={720}
@@ -1798,6 +1813,7 @@ export default function HomeClient() {
                             src={basePath + "/resources/poster_images/collections_laptop.webp"}
                             alt=""
                             className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                           />
                           <video
                             width={1920}
@@ -1852,6 +1868,7 @@ export default function HomeClient() {
                       src={basePath + "/resources/poster_images/stock.webp"}
                       alt=""
                       className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                     />
                     <video
                       width={720}
@@ -1879,6 +1896,7 @@ export default function HomeClient() {
                             src={basePath + "/resources/poster_images/stock_laptop.webp"}
                             alt=""
                             className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                           />
                           <video
                             width={1920}
@@ -2079,6 +2097,7 @@ export default function HomeClient() {
                         src={basePath + "/resources/poster_images/dealer_growth.webp"}
                         alt=""
                         className="absolute inset-0 w-full h-full object-cover z-20 transition-opacity duration-300 pointer-events-none"
+                      loading="lazy"
                       />
                       <video
                         width={1920}

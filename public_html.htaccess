@@ -7,6 +7,52 @@
 # Clean URLs (datalynkr.com/, /login, /about, …) → DataLynkr_Home/
 # App routes (datalynkr.com/admin-dashboard, …) → public_html/index.html (SPA)
 
+# ─── GZIP / BROTLI COMPRESSION ───────────────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/ld+json
+  AddOutputFilterByType DEFLATE application/xml application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml application/atom+xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE font/woff2 font/woff font/ttf application/font-woff
+</IfModule>
+
+# ─── CACHE CONTROL ───────────────────────────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/x-javascript "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType video/webm "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/json "access plus 1 day"
+  ExpiresByType application/manifest+json "access plus 1 day"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(webp|png|jpg|jpeg|gif|svg|ico|mp4|webm|woff2|woff)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
 # BEGIN DataLynkr Home
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -27,7 +73,7 @@
   RewriteRule ^resources/(.*)$ DataLynkr_Home/resources/$1 [L]
 
   # Marketing SEO files (do not include favicon.ico — admin app uses its own at public_html root)
-  RewriteRule ^(robots\.txt|sitemap\.xml|manifest\.webmanifest|logo\.svg)$ DataLynkr_Home/$1 [L,NC]
+  RewriteRule ^(robots\.txt|sitemap\.xml|manifest\.webmanifest|logo\.svg|llms\.txt)$ DataLynkr_Home/$1 [L,NC]
 
   # Homepage
   RewriteRule ^$ DataLynkr_Home/index.html [L]
