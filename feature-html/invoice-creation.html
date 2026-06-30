@@ -1404,7 +1404,7 @@
                     <!-- Value UI -->
                     <div class="mt-6 pt-4 border-t border-slate-100 flex items-baseline justify-between">
                         <span class="text-xs text-slate-400 font-medium">Current Balance:</span>
-                        <span id="counter-balance" class="text-2xl font-black text-[#1F3A89] font-mono">$4,850.00</span>
+                        <span id="counter-balance" class="text-2xl font-black text-[#1F3A89] font-mono">₹4,85,000.00</span>
                     </div>
                 </div>
 
@@ -1452,7 +1452,7 @@
                     <!-- Value UI -->
                     <div class="mt-6 pt-4 border-t border-slate-100 flex items-baseline justify-between">
                         <span class="text-xs text-slate-400 font-medium">Total Overdue:</span>
-                        <span id="counter-overdue" class="text-2xl font-black text-red-600 font-mono">$1,120.00</span>
+                        <span id="counter-overdue" class="text-2xl font-black text-red-600 font-mono">₹1,12,000.00</span>
                     </div>
                 </div>
 
@@ -1476,7 +1476,7 @@
                     <!-- Value UI -->
                     <div class="mt-6 pt-4 border-t border-slate-100 flex items-baseline justify-between w-full">
                         <span class="text-xs text-slate-400 font-medium">Remaining Limit:</span>
-                        <span id="counter-credit" class="text-2xl font-black text-[#1F3A89] font-mono">$8,000.00</span>
+                        <span id="counter-credit" class="text-2xl font-black text-[#1F3A89] font-mono">₹8,00,000.00</span>
                     </div>
                 </div>
 
@@ -1965,6 +1965,9 @@
             // ==========================================
             // 6. Section 7: Live Visibility Sync Data simulation
             // ==========================================
+            const formatINR = (amount) =>
+                "₹" + amount.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
             const runVisibilityDataSimulation = () => {
                 const stockVal = document.getElementById('counter-stock');
                 const balanceVal = document.getElementById('counter-balance');
@@ -1981,9 +1984,9 @@
                     setTimeout(() => {
                         // Change counts slightly to show live updates
                         stockVal.textContent = (1200 + Math.floor(Math.random() * 80)) + " Units";
-                        balanceVal.textContent = "$" + (4500 + Math.floor(Math.random() * 400)).toLocaleString() + ".00";
-                        overdueVal.textContent = "$" + (1000 + Math.floor(Math.random() * 200)).toLocaleString() + ".00";
-                        creditVal.textContent = "$" + (7500 + Math.floor(Math.random() * 1000)).toLocaleString() + ".00";
+                        balanceVal.textContent = formatINR(450000 + Math.floor(Math.random() * 50000));
+                        overdueVal.textContent = formatINR(100000 + Math.floor(Math.random() * 30000));
+                        creditVal.textContent = formatINR(750000 + Math.floor(Math.random() * 150000));
 
                         [stockVal, balanceVal, overdueVal, creditVal].forEach(v => {
                             v.classList.remove('opacity-50', 'scale-95');
