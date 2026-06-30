@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { LogoSvg } from "@/components/LogoSvg";
@@ -21,6 +21,7 @@ function ResetPasswordContent() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
   const [ready, setReady] = useState(false);
+  const newPasswordRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const storedEmail = sessionStorage.getItem("email") || "";
@@ -38,6 +39,10 @@ function ResetPasswordContent() {
     setAuthToken(storedToken);
     setReady(true);
   }, [router]);
+
+  useEffect(() => {
+    if (ready) newPasswordRef.current?.focus();
+  }, [ready]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -143,6 +148,7 @@ function ResetPasswordContent() {
             </label>
             <div className="relative rounded-[0.5rem] bg-surface-container/30 border border-zinc-200 focus-within:border-primary focus-within:ring-[1px] focus-within:ring-primary overflow-hidden transition-all duration-300 hover:border-primary/30 hover:shadow-sm">
               <input
+                ref={newPasswordRef}
                 type="password"
                 required
                 value={newPassword}
