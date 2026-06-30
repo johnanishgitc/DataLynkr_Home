@@ -1,5 +1,10 @@
 const DEFAULT_API_URL = "https://itcatalystindia.com/Development/CustomerPortal_API";
 
+export const SESSION_KEYS = {
+  pendingOldPassword: "pending_old_password",
+  requiresPasswordReset: "requires_password_reset",
+} as const;
+
 export function getApiBaseUrl(): string {
   if (typeof window === "undefined") return DEFAULT_API_URL;
   const host = window.location.hostname || "";
@@ -15,10 +20,16 @@ export function getApiBaseUrl(): string {
 export async function apiPost(
   endpoint: string,
   payload?: Record<string, unknown>,
+  options?: { token?: string },
 ): Promise<Record<string, unknown>> {
+  const headers: Record<string, string> = { "Content-Type": "application/json" };
+  if (options?.token) {
+    headers.Authorization = `Bearer ${options.token}`;
+  }
+
   const res = await fetch(`${getApiBaseUrl()}${endpoint}`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers,
     body: JSON.stringify(payload || {}),
   });
   const text = await res.text();

@@ -1,6 +1,7 @@
 "use client";
 
 import { basePath, IT_CATALYST_URL } from "@/lib/site";
+import { SESSION_KEYS } from "@/lib/customerPortalApi";
 
 import { useState, useEffect, useRef, useCallback, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -474,7 +475,8 @@ function LoginContent({ view }: LoginContentProps) {
     if (typeof window !== "undefined") {
       const token = sessionStorage.getItem("token");
       const storedEmail = sessionStorage.getItem("email");
-      if (token && storedEmail) navigateApp("/admin-dashboard");
+      const requiresReset = sessionStorage.getItem(SESSION_KEYS.requiresPasswordReset) === "1";
+      if (token && storedEmail && !requiresReset) navigateApp("/admin-dashboard");
     }
   }, []);
 
@@ -498,7 +500,7 @@ function LoginContent({ view }: LoginContentProps) {
     }, 1000);
   };
 
-  function applyLoginResponse(data: Record<string, unknown>) {
+  function applyLoginResponse(data: Record<string, unknown>, loginPassword?: string) {
     const details = data.user_type_details as Record<string, unknown> | undefined;
     const employee = data.employee as Record<string, unknown> | undefined;
     const partner = data.partner as Record<string, unknown> | undefined;
@@ -533,7 +535,18 @@ function LoginContent({ view }: LoginContentProps) {
       /* ignore */
     }
 
-    navigateApp(data.is_first_login === 1 ? "/change-password" : "/admin-dashboard");
+    if (data.is_first_login === 1) {
+      if (loginPassword) {
+        sessionStorage.setItem(SESSION_KEYS.pendingOldPassword, loginPassword);
+      }
+      sessionStorage.setItem(SESSION_KEYS.requiresPasswordReset, "1");
+      navigateApp("/reset-password");
+      return;
+    }
+
+    sessionStorage.removeItem(SESSION_KEYS.pendingOldPassword);
+    sessionStorage.removeItem(SESSION_KEYS.requiresPasswordReset);
+    navigateApp("/admin-dashboard");
   }
 
   const handlePasswordLogin = async (e: React.FormEvent) => {
@@ -544,7 +557,7 @@ function LoginContent({ view }: LoginContentProps) {
     try {
       const data = await apiPost("/api/login", { email, password });
       if (data?.token) {
-        applyLoginResponse(data);
+        applyLoginResponse(data, password);
       } else {
         throw new Error("Invalid response from server");
       }

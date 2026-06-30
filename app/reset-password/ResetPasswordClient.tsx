@@ -1,26 +1,43 @@
 "use client";
 
 import { useState, useEffect, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { LogoSvg } from "@/components/LogoSvg";
-import { apiPost, applyLoginResponse } from "@/lib/customerPortalApi";
+import { apiPost, applyLoginResponse, SESSION_KEYS } from "@/lib/customerPortalApi";
+
+const readOnlyFieldClassName =
+  "peer block w-full border-0 bg-zinc-50 py-3.5 px-4 text-zinc-700 focus:ring-0 text-[15px] font-medium outline-none cursor-not-allowed";
 
 function ResetPasswordContent() {
-  const searchParams = useSearchParams();
+  const router = useRouter();
 
   const [email, setEmail] = useState("");
   const [oldPassword, setOldPassword] = useState("");
+  const [authToken, setAuthToken] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const emailParam = searchParams.get("email");
-    if (emailParam) setEmail(emailParam);
-  }, [searchParams]);
+    const storedEmail = sessionStorage.getItem("email") || "";
+    const storedOldPassword = sessionStorage.getItem(SESSION_KEYS.pendingOldPassword) || "";
+    const storedToken = sessionStorage.getItem("token") || "";
+    const requiresReset = sessionStorage.getItem(SESSION_KEYS.requiresPasswordReset) === "1";
+
+    if (!requiresReset || !storedEmail || !storedOldPassword || !storedToken) {
+      router.replace("/login");
+      return;
+    }
+
+    setEmail(storedEmail);
+    setOldPassword(storedOldPassword);
+    setAuthToken(storedToken);
+    setReady(true);
+  }, [router]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,11 +50,15 @@ function ResetPasswordContent() {
 
     setLoading(true);
     try {
-      await apiPost("/api/change-password", {
-        email: email.trim(),
-        oldPassword,
-        newPassword,
-      });
+      await apiPost(
+        "/api/change-password",
+        {
+          email: email.trim(),
+          oldPassword,
+          newPassword,
+        },
+        { token: authToken },
+      );
 
       const loginData = await apiPost("/api/login", {
         email: email.trim(),
@@ -48,6 +69,9 @@ function ResetPasswordContent() {
         throw new Error("Password changed but login failed. Please sign in manually.");
       }
 
+      sessionStorage.removeItem(SESSION_KEYS.pendingOldPassword);
+      sessionStorage.removeItem(SESSION_KEYS.requiresPasswordReset);
+
       setSuccess(true);
       applyLoginResponse(loginData, "/admin-dashboard");
     } catch (err) {
@@ -57,6 +81,10 @@ function ResetPasswordContent() {
       setLoading(false);
     }
   };
+
+  if (!ready) {
+    return <div className="flex items-center justify-center min-h-screen">Loading...</div>;
+  }
 
   return (
     <div className="bg-white text-on-surface antialiased min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden">
@@ -78,32 +106,32 @@ function ResetPasswordContent() {
 
         <form className="space-y-6 w-full" onSubmit={handleSubmit}>
           <div className="relative group reveal-fade-up">
-            <label className="absolute -top-2 left-3 inline-block bg-white px-1.5 text-xs font-semibold text-zinc-500 z-10 transition-colors group-focus-within:text-primary">
+            <label className="absolute -top-2 left-3 inline-block bg-white px-1.5 text-xs font-semibold text-zinc-500 z-10">
               Email ID <span className="text-red-500">*</span>
             </label>
-            <div className="relative rounded-[0.5rem] bg-surface-container/30 border border-zinc-200 focus-within:border-primary focus-within:ring-[1px] focus-within:ring-primary overflow-hidden transition-all duration-300 hover:border-primary/30 hover:shadow-sm">
+            <div className="relative rounded-[0.5rem] border border-zinc-200 overflow-hidden">
               <input
                 type="email"
                 required
+                readOnly
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="peer block w-full border-0 bg-transparent py-3.5 px-4 text-zinc-900 focus:ring-0 text-[15px] font-medium outline-none"
+                className={readOnlyFieldClassName}
                 placeholder="Email"
               />
             </div>
           </div>
 
           <div className="relative group reveal-fade-up">
-            <label className="absolute -top-2 left-3 inline-block bg-white px-1.5 text-xs font-semibold text-zinc-500 z-10 transition-colors group-focus-within:text-primary">
+            <label className="absolute -top-2 left-3 inline-block bg-white px-1.5 text-xs font-semibold text-zinc-500 z-10">
               Old Password <span className="text-red-500">*</span>
             </label>
-            <div className="relative rounded-[0.5rem] bg-surface-container/30 border border-zinc-200 focus-within:border-primary focus-within:ring-[1px] focus-within:ring-primary overflow-hidden transition-all duration-300 hover:border-primary/30 hover:shadow-sm">
+            <div className="relative rounded-[0.5rem] border border-zinc-200 overflow-hidden">
               <input
                 type="password"
                 required
+                readOnly
                 value={oldPassword}
-                onChange={(e) => setOldPassword(e.target.value)}
-                className="peer block w-full border-0 bg-transparent py-3.5 px-4 text-zinc-900 focus:ring-0 text-[15px] font-medium outline-none"
+                className={readOnlyFieldClassName}
                 placeholder="Old Password"
               />
             </div>
