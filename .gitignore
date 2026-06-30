@@ -80,7 +80,7 @@ Desktop.ini
 /login.html
 /privacy.html
 /terms.html
-/changepswd.html
+/reset-password.html
 /about/
 /pricing/
 /contact/
@@ -88,7 +88,7 @@ Desktop.ini
 /login/
 /privacy/
 /terms/
-/changepswd/
+/reset-password/
 /features/*.html
 /features/*.txt
 /features/*/

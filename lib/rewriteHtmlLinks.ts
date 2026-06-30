@@ -13,7 +13,7 @@ export function rewriteLegacyHtmlLinks(html: string): string {
     .replace(/href=["'](?:\.\.\/)?login\.html["']/gi, `href="${bp}/login"`)
     .replace(/href=["'](?:\.\.\/)?privacy\.html["']/gi, `href="${bp}/privacy-policy"`)
     .replace(/href=["'](?:\.\.\/)?terms\.html["']/gi, `href="${bp}/terms-of-service"`)
-    .replace(/href=["'](?:\.\.\/)?changepswd\.html["']/gi, `href="${bp}/changepswd"`)
+    .replace(/href=["'](?:\.\.\/)?changepswd\.html["']/gi, `href="${bp}/reset-password"`)
     .replace(
       /href=["'](?:\.\.\/)?(?:features\/)?([a-z0-9-]+)\.html["']/gi,
       `href="${bp}/features/$1"`

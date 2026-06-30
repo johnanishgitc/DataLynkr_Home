@@ -61,6 +61,11 @@
   # Legacy test path → site root
   RewriteRule ^Hometest/?(.*)$ /$1 [R=301,L,NC]
 
+  # Legacy reset-password paths
+  RewriteRule ^datalynkr-home/changepswd\.html$ /reset-password/ [R=301,L,NC]
+  RewriteRule ^changepswd/?$ /reset-password/ [R=301,L,NC]
+  RewriteRule ^changepswd\.html$ /reset-password/ [R=301,L,NC]
+
   # Block and return 404 for the deleted datalynkr-home directory
   RewriteRule ^datalynkr-home(/.*)?$ - [R=404,L,NC]
 
@@ -79,7 +84,7 @@
   RewriteRule ^$ DataLynkr_Home/index.html [L]
 
   # Marketing pages → index.html in DataLynkr_Home subdirectories
-  RewriteRule ^(about|pricing|contact|support|login|signup|forgot-password|privacy-policy|terms-of-service|changepswd)/?$ DataLynkr_Home/$1/index.html [END,NC]
+  RewriteRule ^(about|pricing|contact|support|login|signup|forgot-password|reset-password|privacy-policy|terms-of-service)/?$ DataLynkr_Home/$1/index.html [END,NC]
 
   # Feature pages
   RewriteRule ^features/(authorization-workflows|custom-reports|daily-ledger-reports|dynamic-dashboards|extend-portal-customers|invoice-creation|modern-bcommerce-ordering|offline-transactions|payments-collections|sales-order-management|stock-summary)/?$ DataLynkr_Home/features/$1/index.html [END,NC]
@@ -88,7 +93,7 @@
   RewriteCond %{THE_REQUEST} \s[^\s]*\.html[\s?] [NC]
   RewriteRule ^features/([^/]+)\.html$ /features/$1/ [R=301,L,NC]
   RewriteRule ^code\.html$ / [R=301,L,NC]
-  RewriteRule ^(about|pricing|contact|support|login|signup|forgot-password|privacy-policy|terms-of-service|changepswd)\.html$ /$1/ [R=301,L,NC]
+  RewriteRule ^(about|pricing|contact|support|login|signup|forgot-password|privacy-policy|terms-of-service)\.html$ /$1/ [R=301,L,NC]
 
   # Trailing slash → clean URL (skip real directories)
   RewriteCond %{THE_REQUEST} \s[^\s]*/.+?/[\s?] [NC]
@@ -104,7 +109,7 @@
   RewriteCond %{REQUEST_URI} !^/favicon\.ico$ [NC]
   RewriteCond %{REQUEST_URI} !^/_next/
   RewriteCond %{REQUEST_URI} !^/resources/
-  RewriteCond %{REQUEST_URI} !^/(about|pricing|contact|support|login|signup|forgot-password|privacy-policy|terms-of-service|changepswd|features)(/|$) [NC]
+  RewriteCond %{REQUEST_URI} !^/(about|pricing|contact|support|login|signup|forgot-password|reset-password|privacy-policy|terms-of-service|features)(/|$) [NC]
   RewriteCond %{DOCUMENT_ROOT}/index.html -f
   RewriteRule ^ index.html [L]
 

@@ -73,8 +73,11 @@ DirectoryIndex index.html
   # Homepage when accessed via /DataLynkr_Home/
   RewriteRule ^$ index.html [END]
 
+  RewriteRule ^changepswd/?$ /reset-password/ [R=301,L,NC]
+  RewriteRule ^changepswd\.html$ /reset-password/ [R=301,L,NC]
+
   # Known app routes -> /index.html
-  RewriteRule ^(about|pricing|contact|support|login|signup|forgot-password|privacy-policy|terms-of-service|changepswd)/?$ $1/index.html [END,NC]
+  RewriteRule ^(about|pricing|contact|support|login|signup|forgot-password|reset-password|privacy-policy|terms-of-service)/?$ $1/index.html [END,NC]
 
   # Feature pages -> /index.html
   RewriteRule ^features/(authorization-workflows|custom-reports|daily-ledger-reports|dynamic-dashboards|extend-portal-customers|invoice-creation|modern-bcommerce-ordering|offline-transactions|payments-collections|sales-order-management|stock-summary)/?$ features/$1/index.html [END,NC]
@@ -83,7 +86,7 @@ DirectoryIndex index.html
   RewriteCond %{THE_REQUEST} \s[^\s]*\.html[\s?] [NC]
   RewriteRule ^features/([^/]+)\.html$ /features/$1/ [R=301,L,NC]
   RewriteRule ^code\.html$ / [R=301,L,NC]
-  RewriteRule ^(about|pricing|contact|support|login|signup|forgot-password|privacy-policy|terms-of-service|changepswd)\.html$ /$1/ [R=301,L,NC]
+  RewriteRule ^(about|pricing|contact|support|login|signup|forgot-password|privacy-policy|terms-of-service)\.html$ /$1/ [R=301,L,NC]
 
   # Serve index.html inside a directory for other clean URLs
   RewriteCond %{REQUEST_FILENAME} !-f

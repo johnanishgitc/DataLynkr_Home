@@ -11,7 +11,7 @@ const TOP_LEVEL_PAGES: Record<string, string> = {
   login: "/login",
   privacy: "/privacy-policy",
   terms: "/terms-of-service",
-  changepswd: "/changepswd",
+  changepswd: "/reset-password",
 };
 
 /** Map a legacy .html href to the matching Next.js route path. */

@@ -33,9 +33,9 @@ const ROUTE_NAMES = [
   "login",
   "signup",
   "forgot-password",
+  "reset-password",
   "privacy",
   "terms",
-  "changepswd",
 ];
 
 /** Feature slugs whose pages are now directories, meaning any features/*.html files are stale. */

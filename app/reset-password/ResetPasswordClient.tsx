@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { LogoSvg } from "@/components/LogoSvg";
 
-export default function ChangePswdClient() {
+export default function ResetPasswordClient() {
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -25,12 +25,10 @@ export default function ChangePswdClient() {
 
   return (
     <div className="bg-white text-on-surface antialiased min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden">
-      {/* Decorative Theme Elements */}
       <div className="absolute top-0 right-0 -mr-32 -mt-32 w-[30rem] h-[30rem] bg-brand-accent opacity-[0.05] rounded-full blur-[100px] animate-float pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 -ml-32 -mb-32 w-[40rem] h-[40rem] bg-primary/5 rounded-full blur-[120px] animate-float-delayed pointer-events-none"></div>
 
       <div className="w-full max-w-[400px] flex flex-col items-center reveal-fade-up">
-        {/* Branding Header */}
         <div className="flex flex-col items-center gap-4 md:gap-6 mb-12">
           <Link
             href="/"
@@ -39,13 +37,11 @@ export default function ChangePswdClient() {
             <LogoSvg className="h-20 md:h-24 w-auto" />
           </Link>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tighter text-black headline-font reveal-fade-up">
-            Change Password
+            Reset Password
           </h1>
         </div>
 
-        {/* Form */}
         <form className="space-y-6 w-full" onSubmit={handleSubmit}>
-          {/* Old Password */}
           <div className="relative group reveal-fade-up">
             <label className="absolute -top-2 left-3 inline-block bg-white px-1.5 text-xs font-semibold text-zinc-500 z-10 transition-colors group-focus-within:text-primary">
               Old Password <span className="text-red-500">*</span>
@@ -62,7 +58,6 @@ export default function ChangePswdClient() {
             </div>
           </div>
 
-          {/* New Password */}
           <div className="relative group reveal-fade-up">
             <label className="absolute -top-2 left-3 inline-block bg-white px-1.5 text-xs font-semibold text-zinc-500 z-10 transition-colors group-focus-within:text-primary">
               New Password <span className="text-red-500">*</span>
@@ -79,7 +74,6 @@ export default function ChangePswdClient() {
             </div>
           </div>
 
-          {/* Confirm Password */}
           <div className="relative group reveal-fade-up">
             <label className="absolute -top-2 left-3 inline-block bg-white px-1.5 text-xs font-semibold text-zinc-500 z-10 transition-colors group-focus-within:text-primary">
               Confirm Password <span className="text-red-500">*</span>
@@ -99,33 +93,29 @@ export default function ChangePswdClient() {
             </div>
           </div>
 
-          {/* Save Button */}
           {!success && (
             <button
               type="submit"
               className="w-full flex justify-center py-[14px] px-4 rounded-[8px] shadow-sm tracking-wide text-[16px] font-bold text-white bg-black hover:bg-zinc-800 hover:shadow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition-all duration-200 active:scale-[0.98] reveal-fade-up cursor-pointer"
             >
-              Change Password
+              Reset Password
             </button>
           )}
 
-          {/* Error Message */}
           {error && (
             <div className="text-center text-[13px] font-bold text-red-700 bg-red-50 p-3 rounded-lg border border-red-200 shadow-sm mt-4 animate-in">
               {error}
             </div>
           )}
 
-          {/* Success Message */}
           {success && (
             <div className="text-center text-[13px] font-bold text-emerald-700 bg-emerald-50 p-3 rounded-lg border border-emerald-200 shadow-sm mt-4 animate-in">
-              Password Changed Successfully!
+              Password Reset Successfully!
             </div>
           )}
         </form>
       </div>
 
-      {/* Footer */}
       <div className="absolute bottom-8 w-full text-center text-[12px] text-zinc-400 flex flex-col gap-1 left-0">
         <div className="flex items-center justify-center gap-1.5 px-6">
           <span>©</span>
