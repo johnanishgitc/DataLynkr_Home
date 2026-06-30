@@ -1,17 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { LogoSvg } from "@/components/LogoSvg";
+import { apiPost, applyLoginResponse } from "@/lib/customerPortalApi";
 
-export default function ResetPasswordClient() {
+function ResetPasswordContent() {
+  const searchParams = useSearchParams();
+
+  const [email, setEmail] = useState("");
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    const emailParam = searchParams.get("email");
+    if (emailParam) setEmail(emailParam);
+  }, [searchParams]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
@@ -20,7 +31,31 @@ export default function ResetPasswordClient() {
       return;
     }
 
-    setSuccess(true);
+    setLoading(true);
+    try {
+      await apiPost("/api/change-password", {
+        email: email.trim(),
+        oldPassword,
+        newPassword,
+      });
+
+      const loginData = await apiPost("/api/login", {
+        email: email.trim(),
+        password: newPassword,
+      });
+
+      if (!loginData?.token) {
+        throw new Error("Password changed but login failed. Please sign in manually.");
+      }
+
+      setSuccess(true);
+      applyLoginResponse(loginData, "/admin-dashboard");
+    } catch (err) {
+      setSuccess(false);
+      setError((err as Error).message || "Failed to reset password");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -42,6 +77,22 @@ export default function ResetPasswordClient() {
         </div>
 
         <form className="space-y-6 w-full" onSubmit={handleSubmit}>
+          <div className="relative group reveal-fade-up">
+            <label className="absolute -top-2 left-3 inline-block bg-white px-1.5 text-xs font-semibold text-zinc-500 z-10 transition-colors group-focus-within:text-primary">
+              Email ID <span className="text-red-500">*</span>
+            </label>
+            <div className="relative rounded-[0.5rem] bg-surface-container/30 border border-zinc-200 focus-within:border-primary focus-within:ring-[1px] focus-within:ring-primary overflow-hidden transition-all duration-300 hover:border-primary/30 hover:shadow-sm">
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="peer block w-full border-0 bg-transparent py-3.5 px-4 text-zinc-900 focus:ring-0 text-[15px] font-medium outline-none"
+                placeholder="Email"
+              />
+            </div>
+          </div>
+
           <div className="relative group reveal-fade-up">
             <label className="absolute -top-2 left-3 inline-block bg-white px-1.5 text-xs font-semibold text-zinc-500 z-10 transition-colors group-focus-within:text-primary">
               Old Password <span className="text-red-500">*</span>
@@ -96,9 +147,10 @@ export default function ResetPasswordClient() {
           {!success && (
             <button
               type="submit"
-              className="w-full flex justify-center py-[14px] px-4 rounded-[8px] shadow-sm tracking-wide text-[16px] font-bold text-white bg-black hover:bg-zinc-800 hover:shadow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition-all duration-200 active:scale-[0.98] reveal-fade-up cursor-pointer"
+              disabled={loading}
+              className="w-full flex justify-center py-[14px] px-4 rounded-[8px] shadow-sm tracking-wide text-[16px] font-bold text-white bg-black hover:bg-zinc-800 hover:shadow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition-all duration-200 active:scale-[0.98] reveal-fade-up cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Reset Password
+              {loading ? "Resetting..." : "Reset Password"}
             </button>
           )}
 
@@ -110,7 +162,7 @@ export default function ResetPasswordClient() {
 
           {success && (
             <div className="text-center text-[13px] font-bold text-emerald-700 bg-emerald-50 p-3 rounded-lg border border-emerald-200 shadow-sm mt-4 animate-in">
-              Password Reset Successfully!
+              Password changed successfully. Redirecting to dashboard...
             </div>
           )}
         </form>
@@ -127,5 +179,13 @@ export default function ResetPasswordClient() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ResetPasswordClient() {
+  return (
+    <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+      <ResetPasswordContent />
+    </Suspense>
   );
 }
