@@ -31,6 +31,8 @@ const ROUTE_NAMES = [
   "contact",
   "support",
   "login",
+  "signup",
+  "forgot-password",
   "privacy",
   "terms",
   "changepswd",
