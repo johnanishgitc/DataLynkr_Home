@@ -1,9 +1,9 @@
 "use client";
 
-import { basePath } from "@/lib/site";
+import { basePath, IT_CATALYST_URL } from "@/lib/site";
 
 import { useState, useEffect, useRef, useCallback, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { LogoSvg } from "@/components/LogoSvg";
 
@@ -421,10 +421,16 @@ function CodeDropdown({ value, onChange, onSelect }: CodeDropdownProps) {
 // Main Login Form
 // ---------------------------------------------------------------------------
 
-function LoginContent() {
-  const searchParams = useSearchParams();
+type LoginView = "login" | "signup" | "forgot_password";
 
-  const [view, setView] = useState<"login" | "signup" | "forgot_password">("login");
+interface LoginContentProps {
+  view: LoginView;
+}
+
+function LoginContent({ view }: LoginContentProps) {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
   const [otpStep, setOtpStep] = useState<0 | 1 | 2>(0);
 
   const [email, setEmail] = useState("");
@@ -448,13 +454,21 @@ function LoginContent() {
   const resendTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    const isSignup = searchParams.get("signup") === "true";
+    if (view !== "signup") return;
     const emailParam = searchParams.get("email");
-    if (isSignup) {
-      setView("signup");
-      if (emailParam) setSignupEmail(emailParam);
+    if (emailParam) setSignupEmail(emailParam);
+  }, [searchParams, view]);
+
+  useEffect(() => {
+    if (view !== "login") return;
+    if (searchParams.get("signup") === "true") {
+      const emailParam = searchParams.get("email");
+      const url = emailParam
+        ? `/signup?email=${encodeURIComponent(emailParam)}`
+        : "/signup";
+      router.replace(url);
     }
-  }, [searchParams]);
+  }, [searchParams, view, router]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -640,13 +654,15 @@ function LoginContent() {
     }
   };
 
-  const resetToLogin = () => {
+  const backToLogin = () => {
     setOtpStep(0);
-    setView("login");
     setMessage(null);
     setPassword("");
     setOtp("");
     setShowPassword(false);
+    if (view !== "login") {
+      router.push("/login");
+    }
   };
 
   return (
@@ -965,28 +981,26 @@ function LoginContent() {
               <>
                 <div className="text-[14px] text-zinc-500">
                   New to DataLynkr?
-                  <button
-                    type="button"
-                    onClick={() => { setView("signup"); setMessage(null); }}
-                    className="font-bold text-[#1f3a89] hover:text-[#15275e] transition-colors ml-1 cursor-pointer"
+                  <Link
+                    href="/signup"
+                    className="font-bold text-[#1f3a89] hover:text-[#15275e] transition-colors ml-1"
                   >
                     Sign up
-                  </button>
+                  </Link>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => { setView("forgot_password"); setMessage(null); }}
-                  className="text-[13px] font-bold text-zinc-500 hover:text-zinc-700 transition-colors cursor-pointer"
+                <Link
+                  href="/forget-password"
+                  className="text-[13px] font-bold text-zinc-500 hover:text-zinc-700 transition-colors"
                 >
                   Forgot Password?
-                </button>
+                </Link>
               </>
             )}
 
             {(view !== "login" || otpStep !== 0) && (
               <button
                 type="button"
-                onClick={resetToLogin}
+                onClick={backToLogin}
                 className="text-[13px] font-bold text-[#1f3a89] hover:text-[#15275e] transition-colors cursor-pointer"
               >
                 Back to Login
@@ -999,11 +1013,19 @@ function LoginContent() {
         <div className="w-full absolute bottom-8 left-0 flex flex-col items-center justify-center gap-2.5 text-[12px] text-zinc-400">
           <div className="flex items-center gap-1.5">
             <span>©</span>
-            <span className="font-bold">
-              <span style={{ color: "#e46b0c" }}>IT</span>{" "}
-              <span style={{ color: "black" }}>Catalyst</span>
-            </span>
-            <span>Software India Pvt Ltd. 2026.</span>
+            <a
+              href={IT_CATALYST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+            >
+              <span className="font-bold">
+                <span style={{ color: "#e46b0c" }}>IT</span>{" "}
+                <span style={{ color: "black" }}>Catalyst</span>
+              </span>{" "}
+              <span>Software India Pvt Ltd.</span>
+            </a>
+            <span>2026.</span>
           </div>
           <div className="flex items-center gap-5">
             <Link
@@ -1027,10 +1049,14 @@ function LoginContent() {
   );
 }
 
-export default function LoginClient() {
+interface LoginClientProps {
+  view?: LoginView;
+}
+
+export default function LoginClient({ view = "login" }: LoginClientProps) {
   return (
     <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
-      <LoginContent />
+      <LoginContent view={view} />
     </Suspense>
   );
 }

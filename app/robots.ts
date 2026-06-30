@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: "/",
+        allow: ["/", "/login"],
         disallow: ["/api/", "/changepswd"],
       },
       // Explicitly welcome AI search/answer engine bots

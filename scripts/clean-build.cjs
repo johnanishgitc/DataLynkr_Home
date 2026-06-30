@@ -246,6 +246,17 @@ if (fs.existsSync(outDir)) {
 
   removeNextDefaultArtifacts(outDir);
 
+  const robotsPath = path.join(outDir, "robots.txt");
+  if (fs.existsSync(robotsPath)) {
+    const robotsContent = fs.readFileSync(robotsPath, "utf8");
+    if (/Disallow:\s*\/login/i.test(robotsContent)) {
+      console.warn("WARNING: out/robots.txt blocks /login — remove Disallow: /login before deploy.");
+    }
+    if (!/Allow:\s*\/login/i.test(robotsContent)) {
+      console.warn("WARNING: out/robots.txt does not explicitly Allow: /login.");
+    }
+  }
+
   deployOutToProjectRoot();
 } else {
   console.warn("WARNING: out/ directory missing — static export may have failed.");

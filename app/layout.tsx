@@ -6,7 +6,7 @@ import LegacyLinkInterceptor from "@/components/LegacyLinkInterceptor";
 import { SidebarProvider } from "@/components/SidebarContext";
 import { SidebarPanel } from "@/components/Sidebar";
 import { absoluteUrl, IT_CATALYST_URL, siteOrigin, basePath } from "@/lib/site";
-import { DEFAULT_OG_IMAGE, HOME_DESCRIPTION, HOME_TITLE, softwareApplicationJsonLd, webSiteJsonLd } from "@/lib/seo";
+import { DEFAULT_OG_IMAGE, HOME_DESCRIPTION, HOME_TITLE, SITE_NAME, softwareApplicationJsonLd } from "@/lib/seo";
 
 export const viewport: Viewport = {
   themeColor: "#ffffff",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin()),
   title: {
     default: HOME_TITLE,
-    template: "%s | DataLynkr",
+    template: `%s | ${SITE_NAME}`,
   },
   icons: {
     icon: [{ url: `${basePath}/logo.svg`, type: "image/svg+xml" }],
@@ -252,14 +252,14 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  applicationName: "DataLynkr",
+  applicationName: SITE_NAME,
   category: "business",
   manifest: absoluteUrl("/manifest.webmanifest"),
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: siteOrigin(),
-    siteName: "DataLynkr",
+    siteName: SITE_NAME,
     title: HOME_TITLE,
     description: HOME_DESCRIPTION,
     images: [
@@ -288,7 +288,7 @@ const organizationJsonLd = {
   legalName: "IT Catalyst Software India Pvt Ltd",
   brand: {
     "@type": "Brand",
-    name: "DataLynkr",
+    name: SITE_NAME,
     logo: absoluteUrl("/logo.svg"),
   },
   url: IT_CATALYST_URL,
@@ -395,7 +395,6 @@ export default function RootLayout({
         </noscript>
         <JsonLd data={organizationJsonLd} />
         <JsonLd data={softwareApplicationJsonLd()} />
-        <JsonLd data={webSiteJsonLd()} />
       </head>
       <body className="bg-white text-on-surface antialiased overflow-x-hidden">
         <SidebarProvider>

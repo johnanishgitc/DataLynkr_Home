@@ -117,7 +117,7 @@ export default function HomeClient() {
                   e.preventDefault();
                   const form = e.target as HTMLFormElement;
                   const emailInput = form.elements.namedItem("email") as HTMLInputElement;
-                  window.location.href = `/login?signup=true&email=${encodeURIComponent(emailInput.value)}`;
+                  window.location.href = `/signup?email=${encodeURIComponent(emailInput.value)}`;
                 }}
               >
                 <div className="relative flex-1 flex items-center min-w-0 pl-3">

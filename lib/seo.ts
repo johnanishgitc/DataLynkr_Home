@@ -34,6 +34,9 @@ export const DEFAULT_OG_IMAGE = absoluteUrl("/resources/poster_images/orders_lap
 export const HOME_TITLE =
   "DataLynkr | Live Tally Data Access & Business Automation Platform";
 
+/** Brand name shown in Google site name, og:site_name, and WebSite schema. */
+export const SITE_NAME = "DataLynkr";
+
 export const HOME_DESCRIPTION =
   "DataLynkr enables every team to access live Tally data, execute workflows, and make better decisions from anywhere—without changing the way you work in Tally.";
 
@@ -143,7 +146,7 @@ export function buildPageMetadata(options: {
       type: ogType,
       locale: "en_IN",
       url,
-      siteName: "DataLynkr",
+      siteName: SITE_NAME,
       title,
       description,
       images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
@@ -166,15 +169,14 @@ export function faqPageJsonLd(items: FaqItem[]) {
 }
 
 export function webSiteJsonLd() {
+  const homeUrl = `${siteOrigin()}/`;
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": `${siteOrigin()}/#website`,
-    name: "DataLynkr",
-    url: siteOrigin(),
-    description: HOME_DESCRIPTION,
-    publisher: { "@id": `${siteOrigin()}/#organization` },
-    inLanguage: "en-IN",
+    "@id": `${homeUrl}#website`,
+    name: SITE_NAME,
+    alternateName: ["datalynkr.com"],
+    url: homeUrl,
   };
 }
 

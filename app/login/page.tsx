@@ -8,5 +8,5 @@ export const metadata = buildPageMetadata({
 });
 
 export default function LoginPage() {
-  return <LoginClient />;
+  return <LoginClient view="login" />;
 }

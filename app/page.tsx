@@ -9,6 +9,7 @@ import {
   productJsonLd,
   siteNavigationJsonLd,
   webPageJsonLd,
+  webSiteJsonLd,
 } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -38,6 +39,7 @@ const homeWebPageJsonLd = webPageJsonLd({
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={webSiteJsonLd()} />
       <JsonLd data={productJsonLd()} />
       <JsonLd data={faqPageJsonLd(HOME_FAQ)} />
       <JsonLd data={homeWebPageJsonLd} />
