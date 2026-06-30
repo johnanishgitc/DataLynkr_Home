@@ -989,7 +989,7 @@ function LoginContent({ view }: LoginContentProps) {
                   </Link>
                 </div>
                 <Link
-                  href="/forget-password"
+                  href="/forgot-password"
                   className="text-[13px] font-bold text-zinc-500 hover:text-zinc-700 transition-colors"
                 >
                   Forgot Password?

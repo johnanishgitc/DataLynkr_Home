@@ -4,9 +4,9 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata = buildPageMetadata({
   title: "Forgot Password",
   description: "Reset your DataLynkr account password.",
-  path: "/forget-password",
+  path: "/forgot-password",
 });
 
-export default function ForgetPasswordPage() {
+export default function ForgotPasswordPage() {
   return <LoginClient view="forgot_password" />;
 }
